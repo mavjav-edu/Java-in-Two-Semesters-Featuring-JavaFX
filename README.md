@@ -2,7 +2,7 @@
 
 Source code for programs from [the textbook *Java in Two Semesters Featuring JavaFX* by Quentin Charatan and Aaron Kans](https://www.springer.com/gp/book/9783319994192). The text is divided into two parts. Each part supports a one-semester module, the first part addressing fundamental programming concepts, and the second part building on this foundation, teaching the skills required to develop more advanced applications.
 
-Fourth edition covers the developments introduced in Java 8, including JavaFX, lambda expressions and the Stream API.
+Fourth edition covers the developments introduced in Java 8, including JavaFX, lambda expressions and the Stream API. <img sizes="(max-width: 200px) 100vw, 200px" src="cover.tiff"/>
 
 ## Topics and features
 
