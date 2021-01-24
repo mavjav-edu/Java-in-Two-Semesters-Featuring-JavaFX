@@ -3,6 +3,9 @@
 		{
 			"name": "Java-in-Two-Semesters-Featuring-JavaFX",
 			"path": "."
+		},
+		{
+			"path": "..\\j2s"
 		}
 	],
 	"settings": {}

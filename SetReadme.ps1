@@ -6,4 +6,10 @@ foreach($xhtmlFile in $xhtmlFiles){
     $chapter  = $zipFile.GetEntry($xhtmlFile) 
     $chapter.Open().Read(($chContentBytes = [byte[]]::new($chapter.Length)),0,$($chapter.Length))
     $chContentStr = [System.Text.Encoding]::Default.GetString($chContentBytes)
+    $HTML = New-Object -Com "HTMLFile"
+    $HTML.write([ref]$chContentStr) | Out-Null
+    $tiys = $HTML.getElementsByClassName('sidebar')
+    foreach($tiy in $tiys){
+        "<BR/>" + $tiy.innerHTML -creplace '<STRONG>TRY IT YOURSELF</STRONG>','<H2>TRY IT YOURSELF</H2>' -replace '\[([^\]]+)\]\{\.literal\}','`$1`' | pandoc @("--from=HTML", "--to=MARKDOWN")  
+    }
 }
