@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:9pt Times New Roman, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">372</span></p>
+<p><span class="font6">第</span><span class="font8">18</span><span class="font6">章</span><span class="font8">Django</span><span class="font6">入门</span></p>
+<p><span class="font8">URL</span><span class="font6">请求与我们刚才定义的模式匹配时，</span><span class="font8">Django</span><span class="font6">将在文件</span><span class="font8">views.py</span><span class="font6">中查找函数</span><span class="font3">index()</span><span class="font6">,再将 请求对象传递给这个视图函数。在这里，我们不需要处理任何数据，因此这个函数只包含调用 </span><span class="font3">render()</span><span class="font6">的代码。这里向函数</span><span class="font3">render()</span><span class="font6">提供了两个实参：原始请求对象以及一个可用于创建网页 的模板。下面来编写这个模板。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>18.3.3</span><span class="font5"> 编写模板</span></h5></li></ul>
+<p><span class="font6">模板定义了网页的结构。模板指定了网页是什么样的，而每当网页被请求时，</span><span class="font8">Django</span><span class="font6">将填入 相关的数据。模板让你能够访问视图提供的任何数据。我们的主页视图没有提供任何数据，因此 相应的模板非常简单。</span></p>
+<p><span class="font6">在文件夹</span><span class="font8">learning_logs</span><span class="font6">中新建一个文件夹，并将其命名为</span><span class="font8">templates</span><span class="font6">。在文件夹</span><span class="font8">templates</span><span class="font6">中，再 新建一个文件夹，并将其命名为</span><span class="font8">learning_logs</span><span class="font6">。这好像有点多余(我们在文件夹</span><span class="font8">learning_logs</span><span class="font6">中创 建了文件夹</span><span class="font8">templates</span><span class="font6">，又在这个文件夹中创建了文件夹</span><span class="font8">learning_logs</span><span class="font6">)，但建立了</span><span class="font8">Django</span><span class="font6">能够明确 解读的结构，即便项目很大，包含很多应用程序亦如此。在最里面的文件夹</span><span class="font8">learning_logs</span><span class="font6">中，新 建一个文件，并将其命名为</span><span class="font8">indexhtml</span><span class="font6">，再在这个文件中编写如下代码：</span></p>
+<p><span class="font1">index.html</span></p>
+<p><span class="font0">&lt;p&gt;Learning Log&lt;/p&gt;</span></p>
+<p><span class="font0">&lt;p&gt;Learning Log helps you keep track of your learning, for any topic you're</span></p>
+<p><span class="font0">learning about.&lt;/p&gt;</span></p>
+<p><span class="font6">这个文件非常简单。对于不熟悉</span><span class="font8">HTML</span><span class="font6">的读者，这里解释一下：标签</span><span class="font3">&lt;p&gt;&lt;/p&gt;</span><span class="font6">标识段落；标签 </span><span class="font3">&lt;p&gt;</span><span class="font6">指出了段落的开头位置，而标签</span><span class="font3">&lt;/p&gt;</span><span class="font6">指出了段落的结束位置。这里定义了两个段落：第一个 充当标题，第二个阐述了用户可使用“学习笔记”来做什么。</span></p>
+<p><span class="font6">现在，如果你请求这个项目的基础</span><span class="font8">URL—</span><a href="http://localhost:8000/%ef%bc%8c%e5%b0%86%e7%9c%8b%e5%88%b0%e5%88%9a%e6%89%8d%e5%88%9b%e5%bb%ba%e7%9a%84%e7%bd%91%e9%a1%b5%ef%bc%8c"><span class="font8">http://localhost:8000/</span><span class="font6">，将看到刚才创建的网页，</span></a><span class="font6"> 而不是默认的</span><span class="font8">Django</span><span class="font6">网页。</span><span class="font8">Djang</span><span class="font6">。接受请求的</span><span class="font8">URL</span><span class="font6">，发现该</span><span class="font8">URL</span><span class="font6">与模式</span><span class="font3">r'&quot;'</span><span class="font6">匹配，因此调用函 数</span><span class="font3">views.index()</span><span class="font6">，这将使用</span><span class="font8">indexhtml</span><span class="font6">包含的模板来渲染网页，结果如图</span><span class="font8">18-3</span><span class="font6">所示。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0389_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200389-1.jpg" alt="" style="width:298pt;height:131pt;">
+<p><span class="font4">图</span><span class="font7">18-3 </span><span class="font4">学习笔记的主页</span></p>
+</body>
+</html>

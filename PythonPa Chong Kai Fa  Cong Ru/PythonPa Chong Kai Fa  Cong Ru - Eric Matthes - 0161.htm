@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">144</span></p>
+<p><span class="font8">第</span><span class="font9">9</span><span class="font8">章 类</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>下面来添加一个名为</span><span class="font3">odometer_reading</span><span class="font8">的属性，其初始值总是为</span><span class="font9">0</span><span class="font8">。我们还添加了一个名为 </span><span class="font3">read_odometer()</span><span class="font8">的方法，用于读取汽车的里程表：</span></h6>
+<p><span class="font0">class Car():</span></p>
+<p><span class="font0">def __init__(self, make, model, year):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">初始化描述汽车的属性</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.make = make</span></p>
+<p><span class="font0">self.model = model self.year = year </span><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.odometer_reading = 0</span></p>
+<p><span class="font0">def get_descriptive_name(self):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font4">❷ </span><span class="font0">def read_odometer(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">打印一条指出汽车里程的消息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;This car has &quot;&nbsp;+ str(self.odometer_reading) + &quot;&nbsp;miles on it.&quot;)</span></p>
+<p><span class="font0">my_new_car = Car('audi', 'a4', 2016)</span></p>
+<p><span class="font0">print(my_new_car.get_descriptive_name())</span></p>
+<p><span class="font0">my_new_car.read_odometer()</span></p>
+<p><span class="font8">现在，当</span><span class="font9">Python</span><span class="font8">调用方法</span><span class="font3">_init_()</span><span class="font8">来创建新实例时，将像前一个示例一样以属性的方式存 储制造商、型号和生产年份。接下来，</span><span class="font9">Python</span><span class="font8">将创建一个名为</span><span class="font3">odometer_reading</span><span class="font8">的属性，并将其 初始值设置为</span><span class="font9">0</span><span class="font8">(见</span><span class="font5">❶</span><span class="font8">)。在</span><span class="font5">❷</span><span class="font8">处，我们还定义了一个名为</span><span class="font3">read_odometer()</span><span class="font8">的方法，它让你能够轻 松地获悉汽车的里程。</span></p>
+<p><span class="font8">一开始汽车的里程为</span><span class="font9">0</span><span class="font8">：</span></p>
+<p><span class="font0">2016 Audi A4</span></p>
+<p><span class="font0">This car has 0 miles on it.</span></p>
+<p><span class="font8">出售时里程表读数为</span><span class="font9">0</span><span class="font8">的汽车并不多，因此我们需要一个修改该属性的值的途径。</span></p>
+<ul style="list-style:none;"><li><a name="caption2"></a>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>9.2.3 </span><span class="font6">修改属性的值</span></h5></li></ul>
+<p><span class="font8">可以以三种不同的方式修改属性的值：直接通过实例进行修改；通过方法进行设置；通过方 法进行递增(增加特定的值)。下面依次介绍这些方法。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1.</span><span class="font8"> 直接修改属性的值</span></p></li></ul>
+<p><span class="font8">要修改属性的值，最简单的方式是通过实例直接访问它。下面的代码直接将里程表读数设置 为</span><span class="font9">23</span><span class="font8">：</span></p>
+<p><span class="font0">class Car():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">my_new_car = Car('audi', 'a4', 2016)</span></p>
+<p><span class="font0">print(my_new_car.get_descriptive_name())</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

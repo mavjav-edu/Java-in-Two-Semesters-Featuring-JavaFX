@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:11pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">4.4 </span><span class="font8">使用列表的一部分</span></p>
+<p><span class="font10">55</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>players.py</span></h6>
+<p><span class="font0">players = ['charles', 'martina', 'michael', 'florence', 'eli']</span></p>
+<p><span class="font4">❶ </span><span class="font0">print(players[0</span><span class="font7">：</span><span class="font0">3])</span></p>
+<p><span class="font6">❶</span><span class="font8">处的代码打印该列表的一个切片，其中只包含三名队员。输出也是一个列表，其中包含前 三名队员：</span></p>
+<p><span class="font0">['charles', 'martina', 'michael']</span></p>
+<h6><a name="bookmark2"></a><span class="font8"><a name="bookmark3"></a>你可以生成列表的任何子集，例如，如果你要提取列表的第</span><span class="font10">2~4</span><span class="font8">个元素，可将起始索引指定 为</span><span class="font3">1</span><span class="font8">，并将终止索引指定为</span><span class="font3">4</span><span class="font8">：</span></h6>
+<p><span class="font0">players = ['charles', 'martina', 'michael', 'florence', 'eli'] print(players[1:4])</span></p>
+<h6><a name="bookmark4"></a><span class="font8"><a name="bookmark5"></a>这一次，切片始于</span><span class="font3">‘marita'</span><span class="font8">，终于</span><span class="font3">florence'</span><span class="font8">：</span></h6>
+<p><span class="font0">['martina', 'michael', 'florence']</span></p>
+<h6><a name="bookmark6"></a><span class="font8"><a name="bookmark7"></a>如果你没有指定第一个索引，</span><span class="font10">Python</span><span class="font8">将自动从列表开头开始:</span></h6>
+<p><span class="font0">players = ['charles', 'martina', 'michael', 'florence', 'eli'] print(players[:4])</span></p>
+<h6><a name="bookmark8"></a><span class="font8"><a name="bookmark9"></a>由于没有指定起始索引，</span><span class="font10">Python</span><span class="font8">从列表开头开始提取：</span></h6>
+<p><span class="font0">['charles', 'martina', 'michael', 'florence']</span></p>
+<h6><a name="bookmark10"></a><span class="font8"><a name="bookmark11"></a>要让切片终止于列表末尾，也可使用类似的语法。例如，如果要提取从第</span><span class="font10">3</span><span class="font8">个元素到列表末 尾的所有元素，可将起始索引指定为</span><span class="font3">2</span><span class="font8">，并省略终止索引：</span></h6>
+<p><span class="font0">players = ['charles', 'martina', 'michael', 'florence', 'eli']</span></p>
+<p><span class="font0">print(players[2:])</span></p>
+<h6><a name="bookmark12"></a><span class="font10"><a name="bookmark13"></a>Python</span><span class="font8">将返回从第</span><span class="font10">3</span><span class="font8">个元素到列表末尾的所有元素：</span></h6>
+<p><span class="font0">['michael', 'florence', 'eli']</span></p>
+<p><span class="font8">无论列表多长，这种语法都能够让你输出从特定位置到列表末尾的所有元素。本书前面说过， 负数索引返回离列表末尾相应距离的元素，因此你可以输出列表末尾的任何切片。例如，如果你 要输出名单上的最后三名队员，可使用切片</span><span class="font3">players[-3</span><span class="font9">：</span><span class="font3">]</span><span class="font8">：</span></p>
+<p><span class="font0">players = ['charles', 'martina', 'michael', 'florence', 'eli']</span></p>
+<p><span class="font0">print(players[-3</span><span class="font7">：</span><span class="font0">])</span></p>
+<p><span class="font8">上述代码打印最后三名队员的名字，即便队员名单的长度发生变化，也依然如此。</span></p>
+</body>
+</html>

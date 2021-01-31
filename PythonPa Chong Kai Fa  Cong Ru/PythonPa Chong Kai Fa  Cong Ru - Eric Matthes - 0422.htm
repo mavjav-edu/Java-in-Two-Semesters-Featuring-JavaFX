@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">19.3 </span><span class="font8">让用户拥有自己的数据 &nbsp;</span><span class="font9">405</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">19.3.3</span><span class="font6"> 只允许用户访问自己的主题</span></p></li></ul>
+<p><span class="font8">当前，不管你以哪个用户的身份登录，都能够看到所有的主题。我们来改变这种情况，只向 用户显示属于自己的主题。</span></p>
+<p><span class="font8">在</span><span class="font9">views.py</span><span class="font8">中，对函数</span><span class="font4">topics</span><span class="font8">。做如下修改：</span></p>
+<p><span class="font2">views.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">@login_required</span></p>
+<p><span class="font1">def topics(request):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">显示所有的主题</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">topics = Topic.objects.filter(owner=request.user).order_by('date_added')</span></p>
+<p><span class="font1">context = {'topics': topics}</span></p>
+<p><span class="font1">return render(request, 'learning_logs/topics.html', context)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font8">用户登录后，</span><span class="font4">request</span><span class="font8">对象将有一个</span><span class="font4">user</span><span class="font8">属性，这个属性存储了有关该用户的信息。代码 </span><span class="font4">Topic.objectsfilter(owner=request.user)</span><span class="font8">让</span><span class="font9">Django</span><span class="font8">只从数据库中获取</span><span class="font4">owner</span><span class="font8">属性为当前用户的 </span><span class="font4">Topic</span><span class="font8">对象。由于我们没有修改主题的显示方式，因此无需对页面</span><span class="font9">topics</span><span class="font8">的模板做任何修改。</span></p>
+<p><span class="font8">要查看结果，以所有既有主题关联到的用户的身份登录，并访问</span><span class="font9">topics</span><span class="font8">页面，你将看到所有 的主题。然后，注销并以另一个用户的身份登录，</span><span class="font9">topics</span><span class="font8">页面将不会列出任何主题。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>19.3.4</span><span class="font6"> 保护用户的主题</span></h5></li></ul>
+<p><span class="font8">我们还没有限制对显示单个主题的页面的访问，因此任何已登录的用户都可输入类似于 </span><span class="font9">http://localhost:8000/topics/1/</span><span class="font8">的</span><span class="font9">URL</span><span class="font8">，来访问显示相应主题的页面。</span></p>
+<p><span class="font8">你自己试一试就明白了。以拥有所有主题的用户的身份登录，访问特定的主题，并复制该页 面的</span><span class="font9">URL</span><span class="font8">，或将其中的</span><span class="font9">ID</span><span class="font8">记录下来。然后，注销并以另一个用户的身份登录，再输入显示前述主 题的页面的</span><span class="font9">URL</span><span class="font8">。虽然你是以另一个用户登录的，但依然能够查看该主题中的条目。</span></p>
+<p><span class="font8">为修复这种问题，我们在视图函数</span><span class="font4">topic()</span><span class="font8">获取请求的条目前执行检查：</span></p>
+<p><span class="font2">views.py</span></p>
+<p><span class="font1">from django.shortcuts import render</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">from django.http import HttpResponseRedirect, Http404</span></p>
+<p><span class="font1">from django.core.urlresolvers import reverse</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">@login_required</span></p>
+<p><span class="font1">def topic(request, topic_id):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">显示单个主题及其所有的条目</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">topic = Topic.objects.get(id=topic_id)</span></p>
+<p><span class="font1"># </span><span class="font7">确认请求的主题属于当前用户</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">if topic.owner != request.user:</span></p>
+<p><span class="font1">raise Http404</span></p>
+<p><span class="font3" style="font-weight:bold;">19</span></p>
+</body>
+</html>

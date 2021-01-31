@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">118</span></p>
+<p><span class="font7">第</span><span class="font8">8</span><span class="font7">章 函数</span></p>
+<p><span class="font0">I have a harry.</span></p>
+<p><span class="font0">My harry's name is Hamster.</span></p>
+<p><span class="font7">如果结果像上面一样搞笑，请确认函数调用中实参的顺序与函数定义中形参的顺序一致。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>8.2.2</span><span class="font4"> 关键字实参</span></h5></li></ul>
+<p><span class="font6">关键字实参</span><span class="font7">是传递给函数的名称</span><span class="font1">—</span><span class="font7">值对。你直接在实参中将名称和值关联起来了，因此向函 数传递实参时不会混淆(不会得到名为</span><span class="font8">Hamster</span><span class="font7">的</span><span class="font8">harry</span><span class="font7">这样的结果)。关键字实参让你无需考虑函 数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</span></p>
+<p><span class="font7">下面来重新编写</span><span class="font8">pets.py</span><span class="font7">，在其中使用关键字实参来调用</span><span class="font3">describe_pet()</span><span class="font7">:</span></p>
+<p><span class="font0">def describe_pet(animal_type, pet_name):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">显示宠物的信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nI have a &quot;&nbsp;+ animal_type + &quot;.&quot;)</span></p>
+<p><span class="font0">print(&quot;My &quot;&nbsp;+ animal_type + &quot;'s name is &quot;&nbsp;+ pet_name.title() + &quot;.&quot;)</span></p>
+<p><span class="font0">describe_pet(animal_type='hamster', pet_name='harry')</span></p>
+<p><span class="font7">函数</span><span class="font3">describe_pet()</span><span class="font7">还是原来那样，但调用这个函数时，我们向</span><span class="font8">Python</span><span class="font7">明确地指出了各个实 参对应的形参。看到这个函数调用时，</span><span class="font8">Python</span><span class="font7">知道应该将实参</span><span class="font3">‘hamster'</span><span class="font7">和</span><span class="font3">'harry'</span><span class="font7">分别存储在形 参</span><span class="font3">animal_type</span><span class="font7">和</span><span class="font3">pet_name</span><span class="font7">中。输出正确无误，它指出我们有一只名为</span><span class="font8">Harry</span><span class="font7">的仓鼠。</span></p>
+<p><span class="font7">关键字实参的顺序无关紧要，因为</span><span class="font8">Python</span><span class="font7">知道各个值该存储到哪个形参中。下面两个函数调 用是等效的：</span></p>
+<p><span class="font0">describe_pet(animal_type='hamster', pet_name='harry') describe_pet(pet_name='harry', animal_type='hamster')</span></p>
+<p><span class="font7">注意 </span><span class="font6">使用关键字实参时，务必准确地指定函数定义中的形参名。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>8.2.3</span><span class="font4"> 默认值</span></h5></li></ul>
+<p><span class="font7">编写函数时，可给每个形参指定</span><span class="font6">默认值</span><span class="font7">。在调用函数中给形参提供了实参时，</span><span class="font8">Python</span><span class="font7">将使用 指定的实参值；否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略 相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。</span></p>
+<p><span class="font7">例如，如果你发现调用</span><span class="font3">describe_pet</span><span class="font7">。时，描述的大都是小狗，就可将形参</span><span class="font3">animal_type</span><span class="font7">的默 认值设置为</span><span class="font3">‘dog'</span><span class="font7">。这样，调用</span><span class="font3">describe_pet()</span><span class="font7">来描述小狗时，就可不提供这种信息：</span></p>
+<p><span class="font0">def describe_pet(pet_name, animal_type='dog'):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">显示宠物的信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nI have a &quot;&nbsp;+ animal_type + &quot;.&quot;)</span></p>
+<p><span class="font0">print(&quot;My &quot;&nbsp;+ animal_type + &quot;'s name is &quot;&nbsp;+ pet_name.title() + &quot;.&quot;)</span></p>
+</body>
+</html>

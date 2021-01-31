@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">20.2 </span><span class="font7">部署“学习笔记” </span><span class="font8">421</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>20.2.4</span><span class="font5"> 创建包含包列表的文件</span><span class="font2">requirements.txt</span></h5></li></ul>
+<p><span class="font8">Heroku</span><span class="font7">需要知道我们的项目依赖于哪些包，因此我们将使用</span><span class="font8">pip</span><span class="font7">来生成一个文件，其中列出 了这些包。同样，进入活动虚拟环境，并执行如下命令：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip freeze &gt;&nbsp;requirements.txt</span></p>
+<p><span class="font7">命令</span><span class="font3">freeze</span><span class="font7">让</span><span class="font8">pip</span><span class="font7">将项目中当前安装的所有包的名称都写入到文件</span><span class="font8">requirements.txt</span><span class="font7">中。请打开 文件</span><span class="font8">requirements.txt</span><span class="font7">，查看项目中安装的包及其版本(如果你使用的是</span><span class="font8">Windows</span><span class="font7">系统，看到的内 容可能不全)：</span></p>
+<p><span class="font1">requirements.txt</span></p>
+<p><span class="font0">Django==1.8.4</span></p>
+<p><span class="font0">dj-database-url==0.3.0</span></p>
+<p><span class="font0">dj-static==0.0.6</span></p>
+<p><span class="font0">django-bootstrap3==6.2.2</span></p>
+<p><span class="font0">gunicorn==19.3.0</span></p>
+<p><span class="font0">static3==0.6.1</span></p>
+<p><span class="font7">“学习笔记”依赖于</span><span class="font8">6</span><span class="font7">个特定版本的包，因此需要在相应的环境中才能正确地运行。我们部署 “学习笔记”时，</span><span class="font8">Heroku</span><span class="font7">将安装</span><span class="font8">requirements.txt</span><span class="font7">列出的所有包，从而创建一个环境，其中包含我们 在本地使用的所有包。有鉴于此，我们可以信心满满，深信项目部署到</span><span class="font8">Heroku</span><span class="font7">后，行为将与它在 本地系统上的完全相同。当你在自己的系统上开发并维护各种项目时，这将是一个巨大的优点。</span></p>
+<p><span class="font7">接下来，我们需要在包列表中添加</span><span class="font3">psycopg2</span><span class="font7">,它帮助</span><span class="font8">Heroku</span><span class="font7">管理活动数据库。为此，打开文 件</span><span class="font8">requirements.txt</span><span class="font7">，并添加代码行</span><span class="font3">psycopg2&gt;=2.6.1</span><span class="font7">。这将安装</span><span class="font8">2.6.1</span><span class="font7">版的</span><span class="font8">psycopg2 </span><span class="font7">如果有更高 的版本，则安装更高的版本：</span></p>
+<p><span class="font1">requirements.txt</span></p>
+<p><span class="font0">Django==1.8.4</span></p>
+<p><span class="font0">dj-database-url==0.3.0</span></p>
+<p><span class="font0">dj-static==0.0.6</span></p>
+<p><span class="font0">django-bootstrap3==6.2.2</span></p>
+<p><span class="font0">gunicorn==19.3.0</span></p>
+<p><span class="font0">static3==0.6.1</span></p>
+<p><span class="font0">psycopg2&gt;=2.6.1</span></p>
+<p><span class="font7">如果有必不可少的包在你的系统中没有安装，请将其添加到文件</span><span class="font8">requirements.txt</span><span class="font7">中。最终的 文件</span><span class="font8">requirements.txt</span><span class="font7">应包含上面列出的每个包。如果在你的系统中，</span><span class="font8">requirements.txt</span><span class="font7">列出的包的版 本与上面列出的不同，请保留原来的版本号。</span></p>
+<p><span class="font4">注意</span><span class="font6">如果你使用的是</span><span class="font8">Windows</span><span class="font6">系统，请确保文件</span><span class="font8">requirements.txt</span><span class="font6">的内容与前面列出的一致，而 不要管你在系统中能够安装哪些包。</span></p>
+<p><span class="font2" style="font-weight:bold;">20</span></p>
+</body>
+</html>

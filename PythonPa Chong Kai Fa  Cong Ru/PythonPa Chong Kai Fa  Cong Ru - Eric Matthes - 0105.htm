@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">88</span></p>
+<p><span class="font7">第</span><span class="font8">6</span><span class="font7">章 字典</span></p>
+<p><span class="font0">user_0 = {</span></p>
+<p><span class="font0">'username': 'efermi',</span></p>
+<p><span class="font0">'first': 'enrico', 'last': 'fermi', }</span></p>
+<p><span class="font7">利用本章前面介绍过的知识，可访问</span><span class="font3">user_</span><span class="font5">。</span><span class="font7">的任何一项信息，但如果要获悉该用户字典中的 所有信息，该怎么办呢？可以使用一个</span><span class="font3">for</span><span class="font7">循环来遍历这个字典：</span></p>
+<p><span class="font2">user.py</span></p>
+<p><span class="font0">user_0 = {</span></p>
+<p><span class="font0">'username': 'efermi',</span></p>
+<p><span class="font0">'first': 'enrico', 'last': 'fermi', }</span></p>
+<p><span class="font4">❶ </span><span class="font0">for key, value in user_0.items():</span></p>
+<p><span class="font4">❷ </span><span class="font0">print(&quot;\nKey: &quot;&nbsp;+ key)</span></p>
+<p><span class="font4">❸ </span><span class="font0">print(&quot;Value: &quot;&nbsp;+ value)</span></p>
+<p><span class="font7">如</span><span class="font5">❶</span><span class="font7">所示，要编写用于遍历字典的</span><span class="font3">for</span><span class="font7">循环，可声明两个变量，用于存储键</span><span class="font1">-</span><span class="font7">值对中的键和值。 对于这两个变量，可使用任何名称。下面的代码使用了简单的变量名，这完全可行：</span></p>
+<p><span class="font0">for k, v in user_0.items()</span></p>
+<p><span class="font3">for</span><span class="font7">语句的第二部分包含字典名和方法</span><span class="font3">items()</span><span class="font7">(见</span><span class="font5">❶</span><span class="font7">)，它返回一个键</span><span class="font1">-</span><span class="font7">值对列表。接下来， </span><span class="font3">for</span><span class="font7">循环依次将每个键</span><span class="font1">-</span><span class="font7">值对存储到指定的两个变量中。在前面的示例中，我们使用这两个变量来 打印每个键(见</span><span class="font5">❷</span><span class="font7">)及其相关联的值(见</span><span class="font5">❸</span><span class="font7">)。第一条</span><span class="font3">print</span><span class="font7">语句中的</span><span class="font3">“\n”</span><span class="font7">确保在输出每个键</span><span class="font1">-</span><span class="font7">值对 前都插入一个空行：</span></p>
+<p><span class="font0">Key: last Value: fermi</span></p>
+<p><span class="font0">Key: first Value: enrico</span></p>
+<p><span class="font0">Key: username</span></p>
+<p><span class="font0">Value: efermi</span></p>
+<p><span class="font7">注意，即便遍历字典时，键</span><span class="font1">-</span><span class="font7">值对的返回顺序也与存储顺序不同。</span><span class="font8">Python</span><span class="font7">不关心键</span><span class="font1">-</span><span class="font7">值对的存 储顺序，而只跟踪键和值之间的关联关系。</span></p>
+<p><span class="font7">在</span><span class="font8">6.2.6</span><span class="font7">节的示例</span><span class="font8">favorite_languages.py</span><span class="font7">中，字典存储的是不同人的同一种信息；对于类似这 样的字典，遍历所有的键</span><span class="font6">一</span><span class="font7">值对很合适。如果遍历字典</span><span class="font3">favorite_languages</span><span class="font7">，将得到其中每个人 的姓名和喜欢的编程语言。由于其中的键都是人名，而值都是语言，因此我们在循环中使用变量 </span><span class="font3">name</span><span class="font7">和</span><span class="font3">language</span><span class="font7">，而不是</span><span class="font3">key</span><span class="font7">和</span><span class="font3">value</span><span class="font7">，这让人更容易明白循环的作用：</span></p>
+</body>
+</html>

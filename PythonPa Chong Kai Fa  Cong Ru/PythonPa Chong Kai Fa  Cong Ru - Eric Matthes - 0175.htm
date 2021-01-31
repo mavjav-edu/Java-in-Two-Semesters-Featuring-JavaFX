@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">158</span></p>
+<p><span class="font8">第</span><span class="font9">9</span><span class="font8">章 类</span></p>
+<p><span class="font3">Battery</span><span class="font8">和</span><span class="font3">ElectricCar</span><span class="font8">类复制到这个模块中：</span></p>
+<p><span class="font1">electric_car.py</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">一组可用于表示电动汽车的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font4">❶ </span><span class="font0">from car import Car</span></p>
+<p><span class="font0">class Battery():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">class ElectricCar(Car):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font3">ElectricCar</span><span class="font8">类需要访问其父类</span><span class="font3">Car</span><span class="font8">,因此在</span><span class="font5">❶</span><span class="font8">处，我们直接将</span><span class="font3">Car</span><span class="font8">类导入该模块中。如果我们 忘记了这行代码，</span><span class="font9">Python</span><span class="font8">将在我们试图创建</span><span class="font3">ElectricCar</span><span class="font8">实例时引发错误。我们还需要更新模块 </span><span class="font3">car</span><span class="font8">，使其包含</span><span class="font3">Car</span><span class="font8">类：</span></p>
+<p><span class="font1">car.py</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">一个可用于表示汽车的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">class Car():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font8">现在可以分别从每个模块中导入类，以根据需要创建任何类型的汽车了：</span></p>
+<p><span class="font1">my_cars.py</span></p>
+<p><span class="font4">❶ </span><span class="font0">from car import Car</span></p>
+<p><span class="font0">from electric_car import ElectricCar</span></p>
+<p><span class="font0">my_beetle = Car('volkswagen', 'beetle', 2016)</span></p>
+<p><span class="font0">print(my_beetle.get_descriptive_name())</span></p>
+<p><span class="font0">my_tesla = ElectricCar('tesla', 'roadster', 2016)</span></p>
+<p><span class="font0">print(my_tesla.get_descriptive_name())</span></p>
+<p><span class="font8">在</span><span class="font5">❶</span><span class="font8">处，我们从模块</span><span class="font3">car</span><span class="font8">中导入了</span><span class="font3">Car</span><span class="font8">类，并从模块</span><span class="font3">electric_car</span><span class="font8">中导入</span><span class="font3">ElectricCar</span><span class="font8">类。接下 来，我们创建了一辆普通汽车和一辆电动汽车。这两种汽车都得以正确地创建：</span></p>
+<p><span class="font0">2016 Volkswagen Beetle</span></p>
+<p><span class="font0">2016 Tesla Roadster</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">9.4.7</span><span class="font6"> 自定义工作流程</span></p></li></ul>
+<p><span class="font8">正如你看到的，在组织大型项目的代码方面，</span><span class="font9">Python</span><span class="font8">提供了很多选项。熟悉所有这些选项很 重要，这样你才能确定哪种项目组织方式是最佳的，并能理解别人开发的项目。</span></p>
+<p><span class="font8">一开始应让代码结构尽可能简单。先尽可能在一个文件中完成所有的工作，确定一切都能正</span></p>
+</body>
+</html>

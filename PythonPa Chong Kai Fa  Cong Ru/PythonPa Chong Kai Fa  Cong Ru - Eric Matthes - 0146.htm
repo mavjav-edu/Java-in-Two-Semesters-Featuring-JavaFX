@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">8.4</span><span class="font8">传递列表 </span><span class="font3">129</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">8.4.2</span><span class="font7">禁止函数修改列表</span></p></li></ul>
+<p><span class="font8">有时候，需要禁止函数修改列表。例如，假设像前一个示例那样，你有一个未打印的设计列 表，并编写了一个将这些设计移到打印好的模型列表中的函数。你可能会做出这样的决定：即便 打印所有设计后，也要保留原来的未打印的设计列表，以供备案。但由于你将所有的设计都移出 了</span><span class="font9">u</span><span class="font8">叩</span><span class="font9">rirrted designs,</span><span class="font8">这个列表变成了空的，原来的列表没有了。为解决这个问题，可向函数传 递列表的副未而不是原件；这样函数所做的任何修改都只影响副本，而丝毫不影响原件。</span></p>
+<p><span class="font8">要将列表的副本传递给函数，可以像下面这样做：</span></p>
+<p><span class="font1" style="font-style:italic;">function_name(list_name[:])</span></p>
+<p><span class="font8">切片表示法[:]创建列表的副本。在</span><span class="font9">print_models.py</span><span class="font8">中，如果不想清空未打印的设计列表， 可像下面这样调用</span><span class="font9">print_models()</span><span class="font8">：</span></p>
+<p><span class="font0" style="font-weight:bold;">print_models(unprinted_designs[:], completed_models)</span></p>
+<p><span class="font8">这样函数</span><span class="font9">print_models()</span><span class="font8">依然能够完成其工作，因为它获得了所有未打印的设计的名称，但 它使用的是列表</span><span class="font9">u</span><span class="font8">叩</span><span class="font9">rinted designs</span><span class="font8">的副本，而不是列表</span><span class="font9">u</span><span class="font8">叩：</span><span class="font9">rinted designs</span><span class="font8">本身。像以前一样，列 表</span><span class="font9">co</span><span class="font8">叩</span><span class="font9">letedjnodels</span><span class="font8">也将包含打印好的模型的名称，但函数所做的修改不会影响到列表 </span><span class="font9">unprinted_designs<sub>o</sub></span></p>
+<p><span class="font8">虽然向函数传递列表的副本可保留原始列表的内容，但除非有充分的理由需要传递副本，否 则还是应该将原始列表传递给函数，因为让函数使用现成列表可避免花时间和内存创建副本，从 而提高效率，在处理大型列表时尤其如此。</span></p>
+<p><span class="font7">动手试一试</span></p>
+<p><span class="font2">8-9</span><span class="font6">魔</span><span class="font8">术师：创建一个包含魔术师名字的列表，并将其传递给一个名为 </span><span class="font9">show_magicians()</span><span class="font8">的函数，这个函数打印列表中每个魔术师的名字。</span></p>
+<p><span class="font2">8-10 </span><span class="font8">了不</span><span class="font6">起的魔</span><span class="font8">术师：在你为完成练习</span><span class="font9">8-9</span><span class="font8">而编写的程序中，编写一个名为 </span><span class="font9">make_great()</span><span class="font8">的函数，对魔术师列表进行修改，在每个魔术师的名字中都加入字样</span><span class="font9">”the Great&quot;</span><span class="font8">。调用函数</span><span class="font9">show_magicians(),</span><span class="font8">确认魔术师列表确实变了。</span></p>
+<p><span class="font2">8-11</span><span class="font6">不变的魔</span><span class="font8">术师：修改你为完成练习</span><span class="font9">8-10</span><span class="font8">而编写的程序，在调用函数 </span><span class="font9">make_great()</span><span class="font8">时，向它传递魔术师列表的副本。由于不想修改原始列表，请返回修改后 的列表，并将其存储到另一个列表中。分别使用这两个列表来调用</span><span class="font9">show magicians(), </span><span class="font8">确认一个列表包含的是原来的魔术师名字，而另一个列表包含的是添加了字样</span><span class="font9">“the Great&quot;</span><span class="font8">的魔术师名字。</span></p>
+<p><span class="font5">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font5">专享尊重版权</span></p>
+</body>
+</html>

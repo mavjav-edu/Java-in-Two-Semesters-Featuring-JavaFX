@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">410 </span><span class="font6">第</span><span class="font7">20</span><span class="font6">章 设置应用程序的样式并对其进行部署</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>20.1.1</span><span class="font4"> 应用程序 </span><span class="font2">django-bootstrap3</span></h5></li></ul>
+<p><span class="font6">我们将使用</span><span class="font7">django-bootstrap3</span><span class="font6">来将</span><span class="font7">Bootstrap</span><span class="font6">继承到项目中。这个应用程序下载必要的</span><span class="font7">Bootstrap </span><span class="font6">文件，将它们放到项目的合适位置，让你能够在项目的模板中使用样式设置指令。</span></p>
+<p><span class="font6">为安装</span><span class="font7">django-bootstrap3</span><span class="font6">，在活动的虚拟环境中执行如下命令：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip install django-bootstrap3</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">Successfully installed django-bootstrap3</span></p>
+<p><span class="font6">接下来，需要在</span><span class="font7">settings.py</span><span class="font6">的</span><span class="font3">INSTALLED_APPS</span><span class="font6">中添加如下代码，在项目中包含应用程序 </span><span class="font7">django-boostrap3</span><span class="font6">：</span></p>
+<p><span class="font1">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">INSTALLED_APPS = (</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">'django.contrib.staticfiles',</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 第三方应用程序 </span><span class="font0">'bootstrap3',</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font5"> 我的应用程序 </span><span class="font0">'learning_logs', 'users',</span></p></li></ul>
+<p><span class="font0">)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font6">新建一个用于指定其他开发人员开发的应用程序的片段，将其命名为“第三方应用程序”， 并在其中添加</span><span class="font3">‘bootstraps'</span><span class="font6">。大多数应用程序都需要包含在</span><span class="font3">INSTALLED_APPS</span><span class="font6">中，为确定这一点， 请阅读要使用的应用程序的设置说明。</span></p>
+<p><span class="font6">我们需要让</span><span class="font7">django-bootstrap3</span><span class="font6">包含</span><span class="font7">jQuery</span><span class="font6">，这是一个</span><span class="font7">JavaScript</span><span class="font6">库，让你能够使用</span><span class="font7">Bootstrap</span><span class="font6">模板 提供的一些交互式元素。请在</span><span class="font7">settings.py</span><span class="font6">的末尾添加如下代码：</span></p>
+<p><span class="font1">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font5"> 我的设置</span></p></li></ul>
+<p><span class="font0">LOGIN_URL = '/users/login/'</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># django-bootstrap3 </span><span class="font5">的设置</span></p></li></ul>
+<p><span class="font0">BOOTSTRAP3 = {</span></p>
+<p><span class="font0">'include_jquery': True, }</span></p>
+<p><span class="font6">这些代码让你无需手工下载</span><span class="font7">jQuery</span><span class="font6">并将其放到正确的地方。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

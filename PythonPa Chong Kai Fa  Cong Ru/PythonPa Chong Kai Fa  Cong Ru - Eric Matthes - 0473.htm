@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:14pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">456</span></p>
+<p><span class="font8">附录</span><span class="font9">D </span><span class="font8">使用</span><span class="font9">Git</span><span class="font8">进行版本控制</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">git_practice$ git </span><span class="font1" style="font-weight:bold;">commit -am &quot;Extended greeting.&quot;</span></p>
+<p><span class="font1">[master 08d4d5e] Extended greeting.</span></p>
+<p><span class="font1">1 file changed, 1 insertion(+)</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git log --pretty=oneline</span></p>
+<p><span class="font1">08d4d5e39cb906f6cff197bd48e9ab32203d7ed6 Extended greeting.</span></p>
+<p><span class="font1">be017b7f06d390261dbc64ff593be6803fd2e3a1 Started project. git_practice$</span></p>
+<p><span class="font8">我们再次执行了提交，并在执行命令</span><span class="font4">git commit</span><span class="font8">时指定了标志</span><span class="font4">-am </span><span class="font8">(见</span><span class="font6">❶</span><span class="font8">)。标志</span><span class="font4">-a</span><span class="font8">让</span><span class="font9">Git</span><span class="font8">将仓 库中所有修改了的文件都加入到当前提交中(如果你在两次提交之间创建了新文件，可再次执行 命令</span><span class="font4">git add .</span><span class="font8">将这些新文件加入到仓库中)。标志</span><span class="font4">-m</span><span class="font8">让</span><span class="font9">Git</span><span class="font8">在提交历史中记录一条消息。</span></p>
+<p><span class="font8">我们查看项目的状态时，发现工作目录也是干净的(见</span><span class="font6">❷</span><span class="font8">)。最后，我们发现提交历史中包 含两个提交(见</span><span class="font6">❸</span><span class="font8">)。</span></p>
+<p><span class="font3">D.10 </span><span class="font7">撤销修改</span></p>
+<p><span class="font8">下面来看看如何放弃所做的修改，恢复到前一个可行状态。为此，首先在</span><span class="font9">hello_world.py</span><span class="font8">中再 添加一行代码：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>hello_world.py</span></h6>
+<p><span class="font1">print(&quot;Hello Git world!&quot;)</span></p>
+<p><span class="font1">print(&quot;Hello everyone.&quot;)</span></p>
+<p><span class="font1">print(&quot;Oh no, I broke the project!&quot;)</span></p>
+<h6><a name="bookmark2"></a><span class="font8"><a name="bookmark3"></a>保存并运行这个文件。</span><br><br><span class="font8"><a name="bookmark4"></a>我们查看状态，发现</span><span class="font9">Git</span><span class="font8">注意到了所做的修改:</span></h6>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li>
+<li>
+<p><span class="font1"># Changes not staged for commit:</span></p></li>
+<li>
+<p><span class="font1"># (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span></p></li>
+<li>
+<p><span class="font1"># (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li></ul>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1"># modified: hello_world.py #</span></p>
+<p><span class="font1">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;) git_practice$</span></p>
+<p><span class="font9">Git</span><span class="font8">注意到我们修改了</span><span class="font9">hello_world.py </span><span class="font8">(见</span><span class="font6">❶</span><span class="font8">)。我们可以提交所做的修改，但这次我们不提交 所做的修改，而要恢复到最后一个提交(我们知道，那次提交时项目能够正常地运行)。为此， 我们不对</span><span class="font9">hello_world.py</span><span class="font8">执行任何操作一不删除刚添加的代码行，也不使用文本编辑器的撤销功</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

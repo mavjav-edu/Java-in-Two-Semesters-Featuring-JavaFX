@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">20.1 </span><span class="font8">设置项目“学习笔记”的样式</span></p>
+<p><span class="font9">415</span></p>
+<p><span class="font8">在</span><span class="font6">。</span><span class="font8">处，我们告诉</span><span class="font9">Django</span><span class="font8">,我们要定义</span><span class="font4">header</span><span class="font8">块包含的内容。在一个</span><span class="font4">jumbotron</span><span class="font8">元素（见</span><span class="font6">❷</span><span class="font8">） 中，我们放置了一条简短的标语一</span><span class="font9">Track your Learning</span><span class="font8">,让首次访问者大致知道“学习笔记” 是做什么用的。</span></p>
+<p><span class="font8">在</span><span class="font6">❸</span><span class="font8">处，我们通过添加一些文本，做了更详细的说明。我们邀请用户建立账户，并描述了用 户可执行的两种主要操作：添加新主题以及在主题中创建条目。现在的主页类似于图</span><span class="font9">20-1</span><span class="font8">所示, 与设置样式前相比,有了很大的改进。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">20.1.5</span><span class="font7"> 设置登录页面的样式</span></p></li></ul>
+<p><span class="font8">我们改进了登录页面的整体外观,但还未改进登录表单,下面来让表单与页面的其他部分一致： </span><span class="font2">login.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font0">❶</span><span class="font1">{% load bootstraps %}</span></p>
+<p><span class="font0">❷</span><span class="font1">{% block header %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;h2&gt;Log in to your account.&lt;/h2&gt;</span></p></li></ul>
+<p><span class="font1">{% endblock header %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">&lt;form method=&quot;post&quot; action=&quot;{% url 'users:login' %}&quot; class=&quot;form&quot;&gt; {% csrf_token %}</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% bootstrap_form form %}</span></p>
+<p><span class="font0">❺</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% buttons %}</span></p>
+<p><span class="font1">&lt;button name=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;log in&lt;/button&gt; {% endbuttons %}</span></p>
+<p><span class="font1">&lt;input type=&quot;hidden&quot; name=&quot;next&quot; value=&quot;{% url 'learning_logs:index' %}&quot; /&gt; &lt;/form&gt;</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font8">在</span><span class="font6">❶</span><span class="font8">处，我们在这个模板中加载了</span><span class="font9">bootstrap3</span><span class="font8">模板标签。在</span><span class="font6">❷</span><span class="font8">处，我们定义了</span><span class="font4">header</span><span class="font8">块，它描 述了这个页面是做什么用的。注意,我们从这个模板中删除了</span><span class="font4">{</span><span class="font6">% </span><span class="font4">if form.errors </span><span class="font6">%</span><span class="font4">}</span><span class="font8">代码块,因 为</span><span class="font9">django-bootstrap3</span><span class="font8">会自动管理表单错误。</span></p>
+<p><span class="font8">在</span><span class="font6">❸</span><span class="font8">处，我们添加了属性</span><span class="font4">class = &quot;form&quot;</span><span class="font8">；然后使用模板标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">bootstrap_form </span><span class="font6">%</span><span class="font4">}</span><span class="font8">来显示表 单（见</span><span class="font6">❹</span><span class="font8">）；这个标签替换了我们在第</span><span class="font9">19</span><span class="font8">章使用的标签</span><span class="font4">{{ form.as_p }}</span><span class="font8">。模板标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">booststrap_form %W</span><span class="font8">弁</span><span class="font9">Bootstrap</span><span class="font8">样式规则应用于各个表单元素。</span><span class="font6">❺</span><span class="font8">处是</span><span class="font9">bootstrap3</span><span class="font8">起始模板标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">buttons </span><span class="font6">%</span><span class="font4">}</span><span class="font8">，它将</span><span class="font9">Bootstrap</span><span class="font8">样式应用于按钮。</span></p>
+<p><span class="font8">图</span><span class="font9">20-2</span><span class="font8">显示了现在渲染的登录表单。这个页面比以前整洁得多,其风格一致,用途明确。如 果你尝试使用错误的用户名或密码登录,将发现消息的样式与整个网站也是一致的,毫无违和感。</span></p>
+<p><span class="font3" style="font-weight:bold;">20</span></p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:11pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">20.2 </span><span class="font9">部署“学习笔记”</span></p>
+<p><span class="font11">433</span></p>
+<p><span class="font6">注意</span><span class="font11">500</span><span class="font8">错误页面不会显示任何有关当前用户的信息，因为发生服务器错误时，</span><span class="font11">Django</span><span class="font8">不会通 过响应发送任何上下文信息。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3 .</span><span class="font6">将修改推送到</span><span class="font2">Heroku</span></p></li></ul>
+<p><span class="font9">现在需要提交对模板所做的修改，并将这些修改推送到</span><span class="font11">Heroku</span><span class="font9">:</span></p>
+<p><span class="font0">❶</span><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">git add .</span></p>
+<p><span class="font0">❷</span><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">git commit -am &quot;Added custom 404 and 500 error pages.&quot;</span></p>
+<p><span class="font1">3 files changed, 15 insertions(+), 10 deletions(-)</span></p>
+<p><span class="font1">create mode 100644 learning_log/templates/404.html</span></p>
+<p><span class="font1">create mode 100644 learning_log/templates/500.html</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">git push heroku master</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">-</span></p></li></ul>
+<p><span class="font1">remote: Verifying deploy.... done.</span></p>
+<p><span class="font1">To </span><a href="https://git.heroku.com/learning-log.git"><span class="font1">https://git.heroku.com/learning-log.git</span></a></p>
+<p><span class="font1">2b34ca1..a64d8d3 master -&gt; master</span></p>
+<p><span class="font1">(ll_env)learning_log$</span></p>
+<p><span class="font9">在</span><span class="font6">❶</span><span class="font9">处，我们执行了命令</span><span class="font4">git add</span><span class="font9">，这是因为我们在项目中创建了一些新文件，因此需要让 </span><span class="font11">Git</span><span class="font9">跟踪这些文件。然后，我们提交所做的修改(见</span><span class="font6">❷</span><span class="font9">)，并将修改后的项目推送到</span><span class="font11">Heroku </span><span class="font9">(见</span><span class="font6">❸</span><span class="font9">)。</span></p>
+<p><span class="font9">现在，错误页面出现时，其样式应该与网站的其他部分一致，这样在发生错误时，用户将不 会感到突兀。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">4 .</span><span class="font6">使用方法 </span><span class="font4">get_object_or_404</span><span class="font10">(</span><span class="font4">)</span></p></li></ul>
+<p><span class="font9">现在，如果用户手工请求不存在的主题或条目，将导致</span><span class="font11">500</span><span class="font9">错误。</span><span class="font11">Django</span><span class="font9">尝试渲染请求的页 面，但没有足够的信息来完成这项任务，进而引发</span><span class="font11">500</span><span class="font9">错误。对于这种情形，将其视为</span><span class="font11">404</span><span class="font9">错误更 合适，为此可使用</span><span class="font11">Django</span><span class="font9">快捷函数</span><span class="font4">get_object_or_404</span><span class="font10">(</span><span class="font4">)</span><span class="font9">。这个函数尝试从数据库获取请求的对象， 如果这个对象不存在，就引发</span><span class="font11">404</span><span class="font9">异常。我们在近</span><span class="font11">6</span><span class="font9">亚</span><span class="font11">$</span><span class="font9">刀丫中导入这个函数，并用它替换函数</span><span class="font4">get()</span><span class="font9">：</span></p>
+<p><span class="font2">views.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">from django.shortcuts import render, get_object_or_404</span></p>
+<p><span class="font1">from django.http import HttpResponseRedirect, Http404</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">@login_required</span></p>
+<p><span class="font1">def topic(request, topic_id):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">显示单个主题及其所有的条目</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">topic = get_object_or_404(Topic, id=topic_id)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font7">确定主题属于当前用户</span></p></li>
+<li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font9">现在，如果你请求不存在的主题(例如，使用</span><span class="font11">URL </span><a href="http://localhost:8000/topics/999999/)%ef%bc%8c%e5%b0%86"><span class="font11">http://localhost:8000/topics/999999/</span><span class="font9">)，将</span></a><span class="font9"> 看到</span><span class="font11">404</span><span class="font9">错误页面。为部署这里所做的修改，再次提交，并将项目推送到</span><span class="font11">Heroku</span><span class="font9">。</span></p>
+<p><span class="font3" style="font-weight:bold;">20</span></p>
+</body>
+</html>

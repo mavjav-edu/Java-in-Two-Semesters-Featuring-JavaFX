@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Segoe UI, sans-serif; }
+ .font2 { font:10pt SimSun, serif; }
+ .font3 { font:9pt Times New Roman, serif; }
+ .font4 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font4">1.2 </span><span class="font2">在不同操作系统中搭建</span><span class="font4">Python</span><span class="font2">编程环境</span></p>
+<p><span class="font4">5</span></p>
+<p><span class="font2">和文件夹名中，最好使用小写字母，并使用下划线来表示空格，因为这是</span><span class="font4">Python</span><span class="font2">采用的命名约定）。 回到</span><span class="font4">Geany</span><span class="font2">,选择菜单</span><span class="font4">File </span><span class="font4" style="font-weight:bold;">&gt;&nbsp;</span><span class="font4">Save As</span><span class="font2">，将当前的空</span><span class="font4">Python</span><span class="font2">文件保存到文件夹</span><span class="font4">python_work</span><span class="font2">，并将其 命名为</span><span class="font4">hello_world.py</span><span class="font2">。扩展名</span><span class="font4">.py</span><span class="font2">告诉</span><span class="font4">Geany</span><span class="font2">，文件包含的是</span><span class="font4">Python</span><span class="font2">程序；它还让</span><span class="font4">Geany</span><span class="font2">知道如何 运行该程序，并以有益的方式突出其中的代码。</span></p>
+<p><span class="font2">保存文件后，在其中输入下面一行代码：</span></p>
+<p><span class="font0">print（&quot;Hello Python world!&quot;）</span></p>
+<p><span class="font2">如果你的系统安装了多个</span><span class="font4">Python</span><span class="font2">版本，就必须对</span><span class="font4">Geany</span><span class="font2">进行配置，使其使用正确的版本。为 此，可选择菜单</span><span class="font4">Build </span><span class="font2">（生成）</span><span class="font2" style="font-weight:bold;">〉</span><span class="font4">Set Build Commands </span><span class="font2">（设置生成命令）；你将看到文字</span><span class="font4">Compile </span><span class="font2">（编 译）和</span><span class="font4">Execute</span><span class="font2">（执行），它们旁边都有一个命令。默认情况下，这两个命令都是</span><span class="font1">python</span><span class="font2">，要让</span><span class="font4">Geany </span><span class="font2">使用命令</span><span class="font1">python3</span><span class="font2">,必须做相应的修改。</span></p>
+<p><span class="font2">如果在终端会话中能够执行命令</span><span class="font1">python3</span><span class="font2">,请修改编译命令和执行命令，让</span><span class="font4">Geany</span><span class="font2">使用</span><span class="font4">Python 3 </span><span class="font2">解释器。为此，将编译命令修改成下面这样：</span></p>
+<p><span class="font0">python3 -m py_compile &quot;%f&quot;</span></p>
+<p><span class="font2">你必须完全按上面的代码显示的那样输出这个命令，确保空格和大小写都完全相同。 将执行命令修改成下面这样：</span></p>
+<p><span class="font0">python3 &quot;%f&quot;</span></p>
+<p><span class="font2">同样，务必确保空格和大小写都完全与显示的相同。图</span><span class="font4">1-1</span><span class="font2">显示了该如何在</span><span class="font4">Geany</span><span class="font2">中配置这些 命令。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0022_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200022-1.jpg" alt="" style="width:229pt;height:195pt;">
+<p><span class="font2">图</span><span class="font3">1-1 </span><span class="font2">在</span><span class="font3">Linux</span><span class="font2">中配置</span><span class="font3">Geany</span><span class="font2">，使其使用</span><span class="font3">Python 3</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

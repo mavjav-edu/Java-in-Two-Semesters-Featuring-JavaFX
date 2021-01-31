@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">18.3 </span><span class="font8">创建网页：学习笔记主页 </span><span class="font9">371</span></p>
+<p><span class="font8">实际的</span><span class="font9">URL</span><span class="font8">模式是一个对函数</span><span class="font3">url()</span><span class="font8">的调用，这个函数接受三个实参(见</span><span class="font4">❸)。</span><span class="font8">第一个是一个 正则表达式。</span><span class="font9">Django</span><span class="font8">在</span><span class="font3">urlpatterns</span><span class="font8">中查找与请求的</span><span class="font9">URL</span><span class="font8">字符串匹配的正则表达式，因此正则表达 式定义了 </span><span class="font9">Django</span><span class="font8">可查找的模式。</span></p>
+<p><span class="font8">我们来看看正则表达式</span><span class="font3">r'”'</span><span class="font8">。其中的</span><span class="font3">r</span><span class="font8">让</span><span class="font9">Python</span><span class="font8">将接下来的字符串视为原始字符串，而引号 告诉</span><span class="font9">Python</span><span class="font8">正则表达式始于和终于何处。脱字符(</span><span class="font4">人</span><span class="font8">)让</span><span class="font9">Python</span><span class="font8">查看字符串的开头，而美元符号让 </span><span class="font9">Python</span><span class="font8">查看字符串的末尾。总体而言，这个正则表达式让</span><span class="font9">Python</span><span class="font8">查找开头和末尾之间没有任何东 西的</span><span class="font9">URL</span><span class="font8">。</span><span class="font9">Python</span><span class="font8">忽略项目的基础</span><span class="font9">URL</span><span class="font8">(</span><span class="font9">http://localhost:8000/</span><span class="font8">)，因此这个正则表达式与基础</span><span class="font9">URL </span><span class="font8">匹配。其他</span><span class="font9">URL</span><span class="font8">都与这个正则表达式不匹配。如果请求的</span><span class="font9">URL</span><span class="font8">不与任何</span><span class="font9">URL</span><span class="font8">模式匹配，</span><span class="font9">Django </span><span class="font8">将返回一个错误页面。</span></p>
+<p><span class="font3">url()</span><span class="font8">的第二个实参(见</span><span class="font4">❺</span><span class="font8">)指定了要调用的视图函数。请求的</span><span class="font9">URL</span><span class="font8">与前述正则表达式匹配时， </span><span class="font9">Django</span><span class="font8">将调用</span><span class="font3">views.index </span><span class="font8">(这个视图函数将在下一节编写)。第三个实参将这个</span><span class="font9">URL</span><span class="font8">模式的名称 指定为</span><span class="font9">index</span><span class="font8">，让我们能够在代码的其他地方引用它。每当需要提供到这个主页的链接时，我们 都将使用这个名称，而不编写</span><span class="font9">URL</span><span class="font8">。</span></p>
+<p><span class="font4">注意 </span><span class="font7">正则表达式通常被称为</span><span class="font9">regex</span><span class="font7">,几乎每种编程语言都使用它。它们的用途多得难以置信， 但需要经过一定的练习才能熟悉。如果你不明白前面介绍的内容，也不用担心，你在完 成这个项目的过程中,将会看到很多正则表达式。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>18.3.2</span><span class="font5"> 编写视图</span></h5></li></ul>
+<p><span class="font8">视图函数接受请求中的信息，准备好生成网页所需的数据，再将这些数据发送给浏览器</span><span class="font9">—— </span><span class="font8">这通常是使用定义了网页是什么样的模板实现的。</span></p>
+<p><span class="font9">learning_logs</span><span class="font8">中的文件</span><span class="font9">views.py</span><span class="font8">是你执行命令</span><span class="font3">python manage.py startapp</span><span class="font8">时自动生成的，当前 其内容如下：</span></p>
+<p><span class="font1">views.py</span></p>
+<p><span class="font0">from django.shortcuts import render</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font6">在这里创建视图</span></p></li></ul>
+<p><span class="font8">当前，这个文件只导入了函数</span><span class="font3">render</span><span class="font8">。，它根据视图提供的数据渲染响应。下面的代码演示 了该如何为主页编写视图：</span></p>
+<p><span class="font0">from django.shortcuts import render</span></p>
+<p><span class="font0">def index(request):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">学习笔记的主页</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">return render(request, 'learning_logs/index.html')</span></p>
+<p><span class="font2" style="font-weight:bold;">18</span></p>
+</body>
+</html>

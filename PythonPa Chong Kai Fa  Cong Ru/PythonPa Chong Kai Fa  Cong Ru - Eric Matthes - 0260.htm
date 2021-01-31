@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">13.4 </span><span class="font8">让外星人群移动</span></p>
+<p><span class="font9">243</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>13.4.1</span><span class="font6"> 向右移动外星人</span></h5></li></ul>
+<p><span class="font8">为移动外星人，我们将使用</span><span class="font9">alien.py</span><span class="font8">中的方法</span><span class="font3">update()</span><span class="font8">,且对外星人群中的每个外星人都调用 它。首先，添加一个控制外星人速度的设置：</span></p>
+<p><span class="font1">settings.py</span></p>
+<p><span class="font0">def __init__(self):</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0"># </span><span class="font7">外星人设置</span></p>
+<p><span class="font0">self.alien_speed_factor = 1</span></p>
+<p><span class="font8">然后，使用这个设置来实现</span><span class="font3">update()</span><span class="font8">：</span></p>
+<p><span class="font1">alien.py</span></p>
+<p><span class="font0">def update(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">向右移动外星人</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.x += self.ai_settings.alien_speed_factor</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect.x = self.x</span></p>
+<p><span class="font8">每次更新外星人位置时，都将它向右移动，移动量为</span><span class="font3">alien_speed_factor</span><span class="font8">的值。我们使用属 性</span><span class="font3">self.x</span><span class="font8">跟踪每个外星人的准确位置，这个属性可存储小数值(见</span><span class="font10" style="font-weight:bold;">O</span><span class="font8">)。然后，我们使用</span><span class="font3">self.x </span><span class="font8">的值来更新外星人的</span><span class="font3">rect</span><span class="font8">的位置(见</span><span class="font5">❷</span><span class="font8">)。</span></p>
+<p><span class="font8">在主</span><span class="font3">while</span><span class="font8">循环中已调用了更新飞船和子弹的方法，但现在还需更新每个外星人的位置：</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">13</span></p>
+</div><br clear="all">
+<p><span class="font0">gf.check_events(ai_settings, screen, ship, bullets)</span></p>
+<p><span class="font0">ship.update()</span></p>
+<p><span class="font0">gf.update_bullets(bullets)</span></p>
+<p><span class="font0">gf.update_aliens(aliens)</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship, aliens, bullets)</span></p>
+<p><span class="font8">我们在更新子弹后再更新外星人的位置，因为稍后要检查是否有子弹撞到了外星人。</span></p>
+<p><span class="font8">最后，在文件</span><span class="font9">game_functions.py</span><span class="font8">末尾添加新函数</span><span class="font3">update_aliens()</span><span class="font8">:</span></p>
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">def update_aliens(aliens):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">更新外星人群中所有外星人的位置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">aliens.update()</span></p>
+<p><span class="font8">我们对编组</span><span class="font3">aliens</span><span class="font8">调用方法</span><span class="font3">update</span><span class="font8">。，这将自动对每个外星人调用方法</span><span class="font3">update</span><span class="font8">。。如果你现 在运行这个游戏，会看到外星人群向右移，并逐渐在屏幕右边缘消失。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

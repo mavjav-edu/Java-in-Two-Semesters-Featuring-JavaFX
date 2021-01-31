@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:11pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:10pt Segoe UI, sans-serif; }
+ .font7 { font:7pt SimHei, sans-serif; }
+ .font8 { font:10pt SimHei, sans-serif; }
+ .font9 { font:12pt SimHei, sans-serif; }
+ .font10 { font:14pt SimHei, sans-serif; }
+ .font11 { font:8pt SimSun, serif; }
+ .font12 { font:9pt SimSun, serif; }
+ .font13 { font:10pt SimSun, serif; }
+ .font14 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font14">224 </span><span class="font13">第</span><span class="font14">12</span><span class="font13">章武装飞船</span></p>
+<p><span class="font1">12-4</span><span class="font8">按键</span><span class="font12">：创建一个程序，显示一个空屏幕。在事件循环中，每当检测到 </span><span class="font6">pygame.KEYDOWN</span><span class="font12">事件时都打印属性</span><span class="font6">event.key</span><span class="font12">。运行这个程序，并按各种键，看看</span><span class="font14">Pygame </span><span class="font12">如何响应。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">12.8</span><span class="font10"> 射击</span></p></li></ul>
+<p><span class="font13">下面来添加射击功能。我们将编写玩家按空格键时发射子弹(小矩形)的代码。子弹将在屏 幕中向上穿行，抵达屏幕上边缘后消失。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">12.8.</span><span class="font2">1</span><span class="font9"> 添加子弹设置</span></p></li></ul>
+<p><span class="font13">首先，更新</span><span class="font14">settings.py</span><span class="font13">,在其方法</span><span class="font6">_init__()</span><span class="font13">末尾存储新类</span><span class="font6">Bullet</span><span class="font13">所需的值：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>settings.py</span></h6>
+<p><span class="font0">def __init__(self):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font11">子弹设置</span></p></li></ul>
+<p><span class="font0">self.bullet_speed_factor = 1</span></p>
+<p><span class="font0">self.bullet_width = 3</span></p>
+<p><span class="font0">self.bullet_height = 15</span></p>
+<p><span class="font0">self.bullet_color = 60, 60, 60</span></p>
+<p><span class="font13">这些设置创建宽</span><span class="font14">3</span><span class="font13">像素、高</span><span class="font14">15</span><span class="font13">像素的深灰色子弹。子弹的速度比飞船稍低。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">12.8.2</span><span class="font9"> 创建 </span><span class="font3">Bullet </span><span class="font9">类</span></p></li></ul>
+<h6><a name="bookmark2"></a><span class="font13"><a name="bookmark3"></a>下面来创建存储</span><span class="font6">Bullet</span><span class="font13">类的文件</span><span class="font14">bullet.py</span><span class="font13">，其前半部分如下：</span><br><br><span class="font2"><a name="bookmark4"></a>bullet.py</span></h6>
+<p><span class="font0">import pygame</span></p>
+<p><span class="font0">from pygame.sprite import Sprite</span></p>
+<p><span class="font0">class Bullet(Sprite):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font11">一个对飞船发射的子弹进行管理的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, ai_settings, screen, ship):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font11">在飞船所处的位置创建一个子弹对象</span><span class="font0">&quot;&quot;&quot; super(Bullet, self).__init__() self.screen = screen</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font11">在</span><span class="font0">(0,0)</span><span class="font11">处创建一个表示子弹的矩形，再设置正确的位置</span></p></li></ul>
+<p><span class="font7">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect = pygame.Rect</span><span class="font12">(</span><span class="font0">0, 0, ai_settings.bullet_width,</span></p>
+<p><span class="font0">ai_settings.bullet_height)</span></p>
+<p><span class="font7">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect.centerx = ship.rect.centerx</span></p>
+<p><span class="font7">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect.top = ship.rect.top</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

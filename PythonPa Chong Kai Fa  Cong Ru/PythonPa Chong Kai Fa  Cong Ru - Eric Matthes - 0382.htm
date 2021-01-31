@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">18.2 </span><span class="font10">创建应用程序</span></p>
+<p><span class="font11">365</span></p>
+<p><span class="font6">注意 </span><span class="font9">如果你在浏览器中看到一条消息，指出访问的网页不可用，请确认你在终端窗口中运行 着</span><span class="font11">Django</span><span class="font9">服务器。如果没有，请激活虚拟环境，并执行命令</span><span class="font4">python manage.py runserver</span><span class="font9">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">3.</span><span class="font6"> 添加主题</span></p></li></ul>
+<p><span class="font10">向管理网站注册</span><span class="font4">Topic</span><span class="font10">后，我们来添加第一个主题。为此，单击</span><span class="font11">Topics</span><span class="font10">进入主题网页，它几乎 是空的，这是因为我们还没有添加任何主题。单击</span><span class="font11">Add</span><span class="font10">，你将看到一个用于添加新主题的表单。 在第一个方框中输入</span><span class="font4">Chess</span><span class="font10">，再单击</span><span class="font11">Save</span><span class="font10">，这将返回到主题管理页面，其中包含刚创建的主题。</span></p>
+<p><span class="font10">下面再创建一个主题，以便有更多的数据可供使用。再次单击</span><span class="font11">Add</span><span class="font10">，并创建另一个主题</span><span class="font4">Rock Climbing</span><span class="font10">。当你单击</span><span class="font11">Save</span><span class="font10">时，将重新回到主题管理页面，其中包含主题</span><span class="font11">Chess</span><span class="font10">和</span><span class="font11">Rock Climbing</span><span class="font10">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">18.2.4</span><span class="font7"> 定义模型</span><span class="font2">Entry</span></p></li></ul>
+<p><span class="font10">要记录学到的国际象棋和攀岩知识，需要为用户可在学习笔记中添加的条目定义模型。每个 条目都与特定主题相关联，这种关系被称为多对一关系，即多个条目可关联到同一个主题。</span></p>
+<p><span class="font10">下面是模型</span><span class="font4">Entry</span><span class="font10">的代码：</span></p>
+<p><span class="font1">models.py</span></p>
+<p><span class="font0">from django.db import models</span></p>
+<p><span class="font0">class Topic(models.Model):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-style:italic;">--snip--</span></p></li></ul>
+<p><span class="font5">❶ </span><span class="font0">class Entry(models.Model):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">学到的有关某个主题的具体知识</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">topic = models.ForeignKey(Topic)</span></p>
+<p><span class="font5">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">text = models.TextField()</span></p>
+<p><span class="font0">date_added = models.DateTimeField(auto_now_add=True)</span></p>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">class Meta:</span></p>
+<p><span class="font0">verbose_name_plural = 'entries'</span></p>
+<p><span class="font0">def —str—(self):</span></p>
+<p><span class="font0">&quot;&quot;’</span><span class="font8">返回模型的字符串表示&quot;‘''</span></p>
+<p><span class="font5">❺ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">return self.text[:50] + &quot;...&quot;</span></p>
+<p><span class="font10">像</span><span class="font4">Topic</span><span class="font10">一样，</span><span class="font4">Entry</span><span class="font10">也继承了</span><span class="font11">Django</span><span class="font10">基类</span><span class="font4">Model </span><span class="font10">(见</span><span class="font6">❶</span><span class="font10">)。第一个属性</span><span class="font4">topic</span><span class="font10">是一个</span><span class="font4">ForeignKey</span><span class="font10">实 例(见</span><span class="font6">❷)。</span><span class="font10">外键是一个数据库术语，它引用了数据库中的另一条记录；这些代码将每个条目关联 到特定的主题。每个主题创建时，都给它分配了一个键(或</span><span class="font11">ID</span><span class="font10">)。需要在两项数据之间建立联系时， </span><span class="font11">Django</span><span class="font10">使用与每项信息相关联的键。稍后我们将根据这些联系获取与特定主题相关联的所有条目。</span></p>
+<p><span class="font10">接下来是属性</span><span class="font4">text</span><span class="font10">，它是一个</span><span class="font4">TextField</span><span class="font10">实例(见</span><span class="font6">❸</span><span class="font10">)。这种字段不需要长度限制，因为我们 不想限制条目的长度。属性</span><span class="font4">date_added</span><span class="font10">让我们能够按创建顺序呈现条目，并在每个条目旁边放置 时间戳。</span></p>
+<p><span class="font3" style="font-weight:bold;">18</span></p>
+</body>
+</html>

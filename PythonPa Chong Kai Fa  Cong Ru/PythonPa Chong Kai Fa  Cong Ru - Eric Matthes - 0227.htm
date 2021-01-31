@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">210</span></p>
+<p><span class="font8">第</span><span class="font9">12</span><span class="font8">章 武装飞船</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>12.3.3 </span><span class="font6">创建设置类</span></h5></li></ul>
+<p><span class="font8">每次给游戏添加新功能时，通常也将引入一些新设置。下面来编写一个名为</span><span class="font3">settings</span><span class="font8">的模块， 其中包含一个名为</span><span class="font3">Settings</span><span class="font8">的类，用于将所有设置存储在一个地方，以免在代码中到处添加设置。 这样，我们就能传递一个设置对象，而不是众多不同的设置。另外，这让函数调用更简单，且在 项目增大时修改游戏的外观更容易：要修改游戏，只需修改</span><span class="font9">settings.py</span><span class="font8">中的一些值，而无需查找 散布在文件中的不同设置。</span></p>
+<p><span class="font8">下面是最初的</span><span class="font3">Settings</span><span class="font8">类：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>settings.py</span></h6>
+<p><span class="font0">class Settings():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">存储《外星人入侵》的所有设置的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">初始化游戏的设置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">屏幕设置</span></p></li></ul>
+<p><span class="font0">self.screen_width = 1200</span></p>
+<p><span class="font0">self.screen_height = 800 self.bg_color = (230, 230, 230)</span></p>
+<h6><a name="bookmark4"></a><span class="font8"><a name="bookmark5"></a>为创建</span><span class="font3">Settings</span><span class="font8">实例并使用它来访问设置，将</span><span class="font9">alien_invasion.py</span><span class="font8">修改成下面这样：</span><br><br><span class="font1"><a name="bookmark6"></a>alien_invasion.py</span></h6>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-import pygame</span></p>
+<p><span class="font0">from settings import Settings</span></p>
+<p><span class="font0">def run_game():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">#</span><span class="font7">初始化</span><span class="font5">「丫</span><span class="font0">8</span><span class="font5">己巾</span><span class="font0">0</span><span class="font7">、设置和屏幕对象 </span><span class="font0">pygame.init()</span></p></li></ul>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">ai_settings = Settings</span><span class="font7">。</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">screen = pygame.display.set_mode(</span></p>
+<p><span class="font0">(ai_settings.screen_width, ai_settings.screen_height))</span></p>
+<p><span class="font0">pygame.display.set_caption(&quot;Alien Invasion&quot;)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">开始游戏主循环 </span><span class="font0">while True:</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font7"> 每次循环时都重绘屏幕</span></p></li></ul>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">screen.fill(ai_settings.bg_color)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 让最近绘制的屏幕可见</span></p></li></ul>
+<p><span class="font0">pygame.display.flip()</span></p>
+<p><span class="font0">run_game()</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

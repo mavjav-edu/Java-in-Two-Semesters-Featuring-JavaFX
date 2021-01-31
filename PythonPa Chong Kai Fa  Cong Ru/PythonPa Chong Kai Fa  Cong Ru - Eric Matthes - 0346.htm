@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">16.2 </span><span class="font8">制作世界人口地图：</span><span class="font9">JSON</span><span class="font8">格式 </span><span class="font9">329</span></p>
+<p><span class="font0">ERROR - Yemen, Rep. zm: 12927000 zw: 12571000</span></p>
+<p><span class="font8">导致显示错误消息的原因有两个。首先，并非所有人口数量对应的都是国家，有些人口数量 对应的是地区(阿拉伯世界)和经济类群(所有收入水平)。其次，有些统计数据使用了不同的 完整国家名(如</span><span class="font9">Yemen, Rep.</span><span class="font8">,而不是</span><span class="font9">Yemen</span><span class="font8">)。当前，我们将忽略导致错误的数据，看看根据成 功恢复了的数据制作出的地图是什么样的。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>16.2.5 </span><span class="font7">制作世界地图</span></h5></li></ul>
+<p><span class="font8">有了国别码后，制作世界地图易如反掌。</span><span class="font9">Pygal</span><span class="font8">提供了图表类型</span><span class="font4">Worldmap</span><span class="font8">，可帮助你制作呈现 各国数据的世界地图。为演示如何使用</span><span class="font4">Worldmap</span><span class="font8">，我们来创建一个突出北美、中美和南美的简单 地图：</span></p>
+<p><span class="font2">americas.py</span></p>
+<p><span class="font0">import pygal</span></p>
+<p><span class="font5">❶ </span><span class="font0">wm = pygal.Worldmap()</span></p>
+<p><span class="font0">wm.title = 'North, Central, and South America'</span></p>
+<p><span class="font1">❷ </span><span class="font0">wm.add('North America', ['ca', 'mx', 'us'])</span></p>
+<p><span class="font0">wm.add('Central America', ['bz', 'cr', 'gt', 'hn', 'ni', 'pa', 'sv'])</span></p>
+<p><span class="font0">wm.add('South America', ['ar', 'bo', 'br', 'cl', 'co', 'ec', 'gf', 'gy', 'pe', 'py', 'sr', 'uy', 've'])</span></p>
+<p><span class="font1">❸ </span><span class="font0">wm.render_to_file('americas.svg')</span></p>
+<p><span class="font8">在</span><span class="font6">❶</span><span class="font8">处，我们创建了一个</span><span class="font4">Worldmap</span><span class="font8">实例，并设置了该地图的的</span><span class="font4">title</span><span class="font8">属性。在</span><span class="font6">❷</span><span class="font8">处，我们使用 了方法</span><span class="font4">add()</span><span class="font8">，它接受一个标签和一个列表，其中后者包含我们要突出的国家的国别码。每次调 用</span><span class="font4">add()</span><span class="font8">都将为指定的国家选择一种新颜色，并在图表左边显示该颜色和指定的标签。我们要以 同一种颜色显示整个北美地区，因此第一次调用</span><span class="font4">add()</span><span class="font8">时，在传递给它的列表中包含</span><span class="font4">‘ca‘</span><span class="font8">、</span><span class="font4">'mx' </span><span class="font8">和</span><span class="font4">‘us'</span><span class="font8">，以同时突出加拿大、墨西哥和美国。接下来，对中美和南美国家做同样的处理。</span></p>
+<p><span class="font6">❸</span><span class="font8">处的方法</span><span class="font4">render_to_file</span><span class="font8">。创建一个包含该图表的</span><span class="font9">.svg</span><span class="font8">文件，你可以在浏览器中打开它。输 出是一幅以不同颜色突出北美、中美和南美的地图，如图</span><span class="font9">16-7</span><span class="font8">所示。</span></p>
+<p><span class="font3" style="font-weight:bold;">16</span></p>
+</body>
+</html>

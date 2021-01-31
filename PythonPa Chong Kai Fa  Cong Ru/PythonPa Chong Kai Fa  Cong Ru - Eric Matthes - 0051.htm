@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Calibri, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">34 </span><span class="font6">第</span><span class="font7">3</span><span class="font6">章 列表简介</span></p>
+<p><span class="font6">如，你创建一个游戏，要求玩家射杀从天而降的外星人；为此，可在开始时将一些外星人存储在 列表中，然后每当有外星人被射杀时，都将其从列表中删除，而每次有新的外星人出现在屏幕上 时，都将其添加到列表中。在整个游戏运行期间，外星人列表的长度将不断变化。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>3.2.1</span><span class="font5"> 修改列表元素</span></h5></li></ul>
+<p><span class="font6">修改列表元素的语法与访问列表元素的语法类似。要修改列表元素，可指定列表名和要修改 的元素的索引，再指定该元素的新值。</span></p>
+<p><span class="font6">例如，假设有一个摩托车列表，其中的第一个元素为</span><span class="font3">'honda'</span><span class="font6">,如何修改它的值呢？</span></p>
+<p><span class="font7">motorcycles.py</span></p>
+<p><span class="font0" style="font-weight:bold;">O </span><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki'] print(motorcycles)</span></p>
+<p><span class="font0" style="font-weight:bold;">@ </span><span class="font0">motorcycles[</span><span class="font4">。] </span><span class="font0">= 'ducati' print(motorcycles)</span></p>
+<p><span class="font6">我们首先定义一个摩托车列表，其中的第一个元素为</span><span class="font3">'honda'</span><span class="font6">(见</span><span class="font2">O</span><span class="font6">)。接下来，我们将第一 个元素的值改为</span><span class="font3">‘ducati'</span><span class="font6">(见</span><span class="font2">❷</span><span class="font6">)。输出表明，第一个元素的值确实变了，但其他列表元素的值 没变：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">['ducati', 'yamaha', 'suzuki']</span></p>
+<p><span class="font6">你可以修改任何列表元素的值,而不仅仅是第一个元素的值。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">3.2.2</span><span class="font5"> 在列表中添加元素</span></p></li></ul>
+<p><span class="font6">你可能出于众多原因要在列表中添加新元素,例如,你可能希望游戏中出现新的外星人、添 加可视化数据或给网站添加新注册的用户。</span><span class="font7">Python</span><span class="font6">提供了多种在既有列表中添加新数据的方式。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font7">1.</span><span class="font6"> 在列表末尾添加元素</span></p></li></ul>
+<p><span class="font6">在列表中添加新元素时,最简单的方式是将元素附加到列表末尾。给列表附加元素时,它将 添加到列表末尾。继续使用前一个示例中的列表，在其末尾添加新元素</span><span class="font3">'ducati'</span><span class="font6">：</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font0" style="font-weight:bold;">O </span><span class="font0">motorcycles.append('ducati')</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font6" style="text-decoration:underline;">方法</span><span class="font3" style="text-decoration:underline;">append()</span><span class="font6" style="text-decoration:underline;">将元素</span><span class="font3" style="text-decoration:underline;">'ducati’</span><span class="font6" style="text-decoration:underline;">添加到了列表末尾(见</span><span class="font2" style="text-decoration:underline;">O</span><span class="font6" style="text-decoration:underline;">)，而不影响列表中的其他所有元素：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki', 'ducati']</span></p>
+</body>
+</html>

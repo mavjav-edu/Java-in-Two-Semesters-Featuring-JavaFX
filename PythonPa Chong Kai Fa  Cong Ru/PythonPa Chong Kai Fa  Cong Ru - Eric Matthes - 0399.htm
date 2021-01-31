@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:10pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:15pt SimHei, sans-serif; }
+ .font7 { font:23pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:15pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<div>
+<p><span class="font6">第</span><span class="font10">19</span><span class="font6">章</span></p>
+</div><br clear="all">
+<div><a name="caption1"></a>
+<h4><a name="bookmark0"></a><span class="font7"><a name="bookmark1"></a>用户账户</span></h4>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0399_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200399-1.jpg" alt="" style="width:98pt;height:98pt;">
+</div><br clear="all">
+<p><span class="font9">Web</span><span class="font8">应用程序的核心是让任何用户都能够注册账户并能够使用 它，不管用户身处何方。在本章中，你将创建一些表单，让用户能 够添加主题和条目，以及编辑既有的条目。你还将学习口</span><span class="font9">）@</span><span class="font8">口</span><span class="font9">8</span><span class="font8">。如何 防范对基于表单的网页发起的常见攻击，这让你无需花太多时间考 虑确保应用程序安全的问题。</span></p>
+<p><span class="font8">然后，我们将实现一个用户身份验证系统。你将创建一个注册 页面，供用户创建账户，并让有些页面只能供已登录的用户访问。 接下来，我们将修改一些视图函数，使得用户只能看到自己的数据。 你将学习如何确保用户数据的安全。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>19.1</span><span class="font5"> 让用户能够输入数据</span></h5></li></ul>
+<p><span class="font8">建立用于创建用户账户的身份验证系统之前，我们先来添加几个页面，让用户能够输入数据。 我们将让用户能够添加新主题、添加新条目以及编辑既有条目。</span></p>
+<p><span class="font8">当前，只有超级用户能够通过管理网站输入数据。我们不想让用户与管理网站交互，因此我 们将使用</span><span class="font9">Django</span><span class="font8">的表单创建工具来创建让用户能够输入数据的页面。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>19.1.1</span><span class="font4"> 添加新主题</span></h5></li></ul>
+<p><span class="font8">首先来让用户能够添加新主题。创建基于表单的页面的方法几乎与前面创建网页一样：定义 一个</span><span class="font9">URL</span><span class="font8">,编写一个视图函数并编写一个模板。一个主要差别是，需要导入包含表单的模块 </span><span class="font9">forms.py</span><span class="font8">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">1.</span><span class="font3"> 用于添加主题的表单</span></p></li></ul>
+<p><span class="font8">让用户输入并提交信息的页面都是表单，那怕它看起来不像表单。用户输入信息时，我们需 要进行验证，确认提供的信息是正确的数据类型，且不是恶意的信息，如中断服务器的代码。然 后，我们再对这些有效信息进行处理，并将其保存到数据库的合适地方。这些工作很多都是由 </span><span class="font9">Django</span><span class="font8">自动完成的。</span></p>
+</body>
+</html>

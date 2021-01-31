@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">12.6 </span><span class="font9">驾驶飞船</span></p>
+<p><span class="font10">221</span></p>
+<p><span class="font0">self.moving_right = False self.moving_left = False</span></p>
+<p><span class="font0">def update(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">根据移动标志调整飞船的位置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 更新飞船的</span><span class="font0">center</span><span class="font8">值，而不是</span><span class="font0">rect</span></p></li></ul>
+<p><span class="font0">if self.moving_right:</span></p>
+<p><span class="font4">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.center += self.ai_settings.ship_speed_factor</span></p>
+<p><span class="font0">if self.moving_left:</span></p>
+<p><span class="font0">self.center -= self.ai_settings.ship_speed_factor</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 根据</span><span class="font0">501</span><span class="font5">千&quot;</span><span class="font0">0</span><span class="font5">门七</span><span class="font0">0</span><span class="font5">『</span><span class="font8">更新</span><span class="font5">『</span><span class="font0">0^</span><span class="font8">对象</span></p></li></ul>
+<p><span class="font4">❺ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect.centerx = self.center</span></p>
+<p><span class="font0">def blitme(self):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font9">在</span><span class="font6">。</span><span class="font9">处，我们在</span><span class="font3">_init__()</span><span class="font9">的形参列表中添加了 </span><span class="font3">ai_settings</span><span class="font9">,让飞船能够获取其速度设置。 接下来，我们将形参</span><span class="font3">ai_settings</span><span class="font9">的值存储在一个属性中，以便能够在</span><span class="font3">update</span><span class="font9">。中使用它(见</span><span class="font6">❷</span><span class="font9">)。 鉴于现在调整飞船的位置时，将增加或减去一个单位为像素的小数值，因此需要将位置存储在一 个能够存储小数值的变量中。可以使用小数来设置</span><span class="font3">rect</span><span class="font9">的属性，但</span><span class="font3">rect</span><span class="font9">将只存储这个值的整数部 分。为准确地存储飞船的位置，我们定义了一个可存储小数值的新属性</span><span class="font3">self.center </span><span class="font9">(见</span><span class="font6">❸</span><span class="font9">)。我 们使用函数</span><span class="font3">float()</span><span class="font9">将</span><span class="font3">self.rect.centerx</span><span class="font9">的值转换为小数，并将结果存储到</span><span class="font10">s</span><span class="font3">elf.center</span><span class="font9">中。</span></p>
+<p><span class="font9">现在在</span><span class="font3">update()</span><span class="font9">中调整飞船的位置时，将</span><span class="font3">self.center</span><span class="font9">的值增加或减去</span><span class="font3">ai_settings.ship_ speed_factor</span><span class="font9">的值(见</span><span class="font6">❹</span><span class="font9">)。更新</span><span class="font3">self.center</span><span class="font9">后，我们再根据它来更新控制飞船位置的 </span><span class="font3">self.rect.centerx </span><span class="font9">(见</span><span class="font6">❺</span><span class="font9">)。</span><span class="font3">self.rect.centerx</span><span class="font9">将只存储</span><span class="font3">self.center</span><span class="font9">的整数部分，但对显示飞船 而言，这问题不大。</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<p><span class="font9">在</span><span class="font10">alien_invasion.py</span><span class="font9">中创建</span><span class="font3">Ship</span><span class="font9">实例时，需要传入实参</span><span class="font3">ai_settings</span><span class="font9">:</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p>
+<p><span class="font0">def run_game():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0"># </span><span class="font8">创建飞船</span></p>
+<p><span class="font0">ship = Ship(ai_settings, screen)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font9">现在，只要</span><span class="font3">ship_speed_factor</span><span class="font9">的值大于</span><span class="font10">1</span><span class="font9">,飞船的移动速度就会比以前更快。这有助于让飞 船的反应速度足够快，能够将外星人射下来，还让我们能够随着游戏的进行加快游戏的节奏。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">12.6.5 </span><span class="font7">限制飞船的活动范围</span></p></li></ul>
+<p><span class="font9">当前,如果玩家按住箭头键的时间足够长,飞船将移到屏幕外面,消失得无影无踪。下面来 修复这种问题，让飞船到达屏幕边缘后停止移动。为此，我们将修改</span><span class="font3">Ship</span><span class="font9">类的方法</span><span class="font3">update</span><span class="font9">。：</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

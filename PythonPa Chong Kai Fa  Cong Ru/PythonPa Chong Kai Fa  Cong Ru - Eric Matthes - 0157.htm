@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">140 </span><span class="font8">第</span><span class="font9">9</span><span class="font8">章 类</span></p>
+<p><span class="font8">像这样可通过实例访问的变量称为</span><span class="font7">属性</span><span class="font8">。</span></p>
+<p><span class="font3">Dog</span><span class="font8">类还定义了另外两个方法：</span><span class="font3">sit()</span><span class="font8">和</span><span class="font3">roll_over()</span><span class="font8">(见</span><span class="font5">❺</span><span class="font8">)。由于这些方法不需要额外的信 息，如名字或年龄，因此它们只有一个形参</span><span class="font3">sef</span><span class="font8">。我们后面将创建的实例能够访问这些方法，换 句话说，它们都会蹲下和打滚。当前，</span><span class="font3">sit()</span><span class="font8">和</span><span class="font3">roll_over()</span><span class="font8">所做的有限，它们只是打印一条消息， 指出小狗正蹲下或打滚。但可以扩展这些方法以模拟实际情况：如果这个类包含在一个计算机游 戏中，这些方法将包含创建小狗蹲下和打滚动画效果的代码。如果这个类是用于控制机器狗的， 这些方法将引导机器狗做出蹲下和打滚的动作。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2 .</span><span class="font8">在</span><span class="font1">Python 2.7</span><span class="font8">中创建类</span></p></li></ul>
+<p><span class="font8">在</span><span class="font9">Python 2.7</span><span class="font8">中创建类时，需要做细微的修改——在括号内包含单词</span><span class="font3">object</span><span class="font8">:</span></p>
+<p><span class="font0">class </span><span class="font0" style="font-style:italic;">ClassName</span><span class="font0">(object):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font8">这让</span><span class="font9">Python 2.7</span><span class="font8">类的行为更像</span><span class="font9">Python 3</span><span class="font8">类，从而简化了你的工作。</span></p>
+<p><span class="font8">在</span><span class="font9">Python 2.7</span><span class="font8">中定义</span><span class="font3">Dog</span><span class="font8">类时，代码类似于下面这样：</span></p>
+<p><span class="font0">class Dog(object):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font2">9.1.2 </span><span class="font6">根据类创建实例</span></p></li></ul>
+<p><span class="font8">可将类视为有关如何创建实例的说明。</span><span class="font3">Dog</span><span class="font8">类是一系列说明，让</span><span class="font9">Python</span><span class="font8">知道如何创建表示特 定小狗的实例。</span></p>
+<p><span class="font8">下面来创建一个表示特定小狗的实例：</span></p>
+<p><span class="font0">class Dog():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font4">❶ </span><span class="font0">my_dog = Dog('willie', 6)</span></p>
+<p><span class="font4">❷ </span><span class="font0">print(&quot;My dog's name is &quot;&nbsp;+ my_dog.name.title() + &quot;.&quot;)</span></p>
+<p><span class="font4">❸ </span><span class="font0">print(&quot;My dog is &quot;&nbsp;+ str(my_dog.age) + &quot;&nbsp;years old.&quot;)</span></p>
+<p><span class="font8">这里使用的是前一个示例中编写的</span><span class="font3">Dog</span><span class="font8">类。在</span><span class="font5">❶</span><span class="font8">处，我们让</span><span class="font9">Python</span><span class="font8">创建一条名字为</span><span class="font3">‘willie'</span><span class="font8">、 年龄为</span><span class="font3">6</span><span class="font8">的小狗。遇到这行代码时，</span><span class="font9">Python</span><span class="font8">使用实参</span><span class="font3">'willie'</span><span class="font8">和</span><span class="font3">6</span><span class="font8">调用</span><span class="font3">Dog</span><span class="font8">类中的方法</span><span class="font3">_init_()</span><span class="font8">。 方法</span><span class="font3">_init_()</span><span class="font8">创建一个表示特定小狗的示例，并使用我们提供的值来设置属性</span><span class="font3">name</span><span class="font8">和</span><span class="font3">age</span><span class="font8">。方法 </span><span class="font3">_init__()</span><span class="font8">并未显式地包含</span><span class="font3">return</span><span class="font8">语句，但</span><span class="font9">Python</span><span class="font8">自动返回一个表示这条小狗的实例。我们将这 个实例存储在变量</span><span class="font3">my_dog</span><span class="font8">中。在这里，命名约定很有用：我们通常可以认为首字母大写的名称(如 </span><span class="font3">Dog</span><span class="font8">)指的是类，而小写的名称(如</span><span class="font3">my_dog</span><span class="font8">)指的是根据类创建的实例。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1.</span><span class="font8"> 访问属性</span></p></li></ul>
+<p><span class="font8">要访问实例的属性，可使用句点表示法。在</span><span class="font5">❷</span><span class="font8">处，我们编写了如下代码来访问</span><span class="font3">my_dog</span><span class="font8">的属性</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

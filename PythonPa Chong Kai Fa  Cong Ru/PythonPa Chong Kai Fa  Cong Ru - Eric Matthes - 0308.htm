@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:9pt Times New Roman, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">15.2 </span><span class="font8">绘制简单的折线图</span></p>
+<p><span class="font10">291</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 设置图表标题并给坐标轴加上标签</span></p></li></ul>
+<p><span class="font0">plt.title(&quot;Square Numbers&quot;, fontsize=24)</span></p>
+<p><span class="font0">plt.xlabel(&quot;Value&quot;, fontsize=14)</span></p>
+<p><span class="font0">plt.ylabel(&quot;Square of Value&quot;, fontsize=14)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 设置刻度标记的大小</span></p></li></ul>
+<p><span class="font0">plt.tick_params(axis='both', which='major', labelsize=14)</span></p>
+<p><span class="font0">plt.show()</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>在。处，我们调用了</span><span class="font4">scatter</span><span class="font8">。，并使用实参</span><span class="font4">s</span><span class="font8">设置了绘制图形时使用的点的尺寸。如果此时 运行</span><span class="font10">scatter_squares.py</span><span class="font8">,将在图表中央看到一个点，如图</span><span class="font10">15-4</span><span class="font8">所示。</span></h6>
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0308_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200308-1.jpg" alt="" style="width:315pt;height:173pt;">
+<p><span class="font5">图</span><span class="font9">15-4 </span><span class="font5">绘制单个点</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<p><span class="font3">15.2.4</span><span class="font6"> 使用</span><span class="font2">scatter</span><span class="font6">。绘制一系列点</span></p></li></ul>
+<h6><a name="bookmark2"></a><span class="font8"><a name="bookmark3"></a>要绘制一系列的点，可向</span><span class="font4">scatter</span><span class="font8">。传递两个分别包含</span><span class="font10" style="font-style:italic;">x</span><span class="font8">值和</span><span class="font10" style="font-style:italic;">y</span><span class="font8">值的列表，如下所示: </span><span class="font1">scatter_squares.py</span></h6>
+<div>
+<p><span class="font3" style="font-weight:bold;">15</span></p>
+</div><br clear="all">
+<p><span class="font0">import matplotlib.pyplot as plt</span></p>
+<p><span class="font0">x_values = [1, 2, 3, 4, 5]</span></p>
+<p><span class="font0">y_values = [1, 4, 9, 16, 25]</span></p>
+<p><span class="font0">plt.scatter(x_values, y_values, s=100)</span></p>
+<p><span class="font0"># </span><span class="font7">设置图表标题并给坐标轴指定标签</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+</body>
+</html>

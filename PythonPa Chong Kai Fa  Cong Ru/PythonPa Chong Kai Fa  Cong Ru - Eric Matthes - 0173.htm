@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">156</span></p>
+<p><span class="font8">第</span><span class="font9">9</span><span class="font8">章 类</span></p>
+<p><span class="font0">def __init__(self, make, model, year): &quot;&quot;&quot;</span></p>
+<p><span class="font7">初始化父类的属性，再初始化电动汽车特有的属性 </span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">super().__init__(make, model, year)</span></p>
+<p><span class="font0">self.battery = Battery()</span></p>
+<p><span class="font8">现在，可以新建一个名为</span><span class="font9">my_electric_car.py</span><span class="font8">的文件，导入</span><span class="font3">£16</span><span class="font5">。</span><span class="font3">h1”8</span><span class="font5">工</span><span class="font8">类，并创建一辆电动汽 车了：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>my_electric_car.py</span></h6>
+<p><span class="font0">from car import ElectricCar</span></p>
+<p><span class="font0">my_tesla = ElectricCar('tesla', 'model s', 2016)</span></p>
+<p><span class="font0">print(my_tesla.get_descriptive_name())</span></p>
+<p><span class="font0">my_tesla.battery.describe_battery()</span></p>
+<p><span class="font0">my_tesla.battery.get_range()</span></p>
+<p><span class="font8">输出与我们前面看到的相同，但大部分逻辑都隐藏在一个模块中：</span></p>
+<p><span class="font0">2016 Tesla Model S</span></p>
+<p><span class="font0">This car has a 70-kWh battery.</span></p>
+<p><span class="font0">This car can go approximately 240 miles on a full charge.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">9.4.3</span><span class="font6"> 从一个模块中导入多个类</span></p></li></ul>
+<p><span class="font8">可根据需要在程序文件中导入任意数量的类。如果我们要在同一个程序中创建普通汽车和电 动汽车，就需要将</span><span class="font3">Car</span><span class="font8">和</span><span class="font3">ElectricCar</span><span class="font8">类都导入：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>my_cars.py</span></h6>
+<p><span class="font4">❶ </span><span class="font0">from car import Car, ElectricCar</span></p>
+<p><span class="font4">❷ </span><span class="font0">my_beetle = Car('volkswagen', 'beetle', 2016)</span></p>
+<p><span class="font0">print(my_beetle.get_descriptive_name())</span></p>
+<p><span class="font4">❸ </span><span class="font0">my_tesla = ElectricCar('tesla', 'roadster', 2016)</span></p>
+<p><span class="font0">print(my_tesla.get_descriptive_name())</span></p>
+<p><span class="font8">在</span><span class="font5">❶</span><span class="font8">处从一个模块中导入多个类时，用逗号分隔了各个类。导入必要的类后，就可根据需要 创建每个类的任意数量的实例。</span></p>
+<p><span class="font8">在这个示例中，我们在</span><span class="font5">❷</span><span class="font8">处创建了一辆大众甲壳虫普通汽车，并在</span><span class="font5">❸</span><span class="font8">处创建了一辆特斯拉 </span><span class="font9">Roadster</span><span class="font8">电动汽车：</span></p>
+<p><span class="font0">2016 Volkswagen Beetle</span></p>
+<p><span class="font0">2016 Tesla Roadster</span></p>
+</body>
+</html>

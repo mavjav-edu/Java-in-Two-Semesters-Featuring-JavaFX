@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">附录</span><span class="font8">D</span><span class="font7">使用</span><span class="font8">Git</span><span class="font7">进行版本控制</span></p>
+<p><span class="font8">457</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font7"><a name="bookmark1"></a>能，而在终端会话中执行如下命令：</span></h6>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git checkout </span><span class="font1">.</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean git_practice$</span></p>
+<p><span class="font7">命令</span><span class="font3">git checkout</span><span class="font7">让你能够恢复到以前的任何提交。命令</span><span class="font3">git checkout .</span><span class="font7">放弃自最后一次提 交后所做的所有修改，将项目恢复到最后一次提交的状态。</span></p>
+<p><span class="font7">如果我们返回到文本编辑器，将发现</span><span class="font8">hello_world.py</span><span class="font7">被修改成了下面这样：</span></p>
+<p><span class="font1">print(&quot;Hello Git world!&quot;)</span></p>
+<p><span class="font1">print(&quot;Hello everyone.&quot;)</span></p>
+<p><span class="font7">就这个项目而言，恢复到前一个状态微不足道，但如果我们开发的是大型项目，其中数十个 文件都被修改了，那么恢复到前一个状态，将撤销自最后一次提交后对这些文件所做的所有修改。 这个功能很有用：实现新功能时，你可以根据需要做任意数量的修改，如果这些修改不可行，可 撤销它们，而不会对项目有任何伤害。你无需记住做了哪些修改，因而不必手工撤销所做的修改， </span><span class="font8">Git</span><span class="font7">会替你完成所有这些工作。</span></p>
+<p><span class="font4">注意 </span><span class="font6">想要看到以前的版本，你可能需要在编辑器窗口中单击，以刷新文件。</span></p><a name="caption2"></a>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>D.11 </span><span class="font5">检出以前的提交</span></h5>
+<p><span class="font7">你可以检出提交历史中的任何提交，而不仅仅是最后一次提交，为此可在命令</span><span class="font3">git check</span><span class="font7">末 尾指定该提交的引用</span><span class="font8">ID</span><span class="font7">的前</span><span class="font8">6</span><span class="font7">个字符(而不是句点)。通过检出以前的提交，你可以对其进行审核， 然后返回到最后一次提交，或者放弃最近所做的工作，并选择以前的提交：</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git log --pretty=oneline</span></p>
+<p><span class="font1">08d4d5e39cb906f6cff197bd48e9ab32203d7ed6 Extended greeting.</span></p>
+<p><span class="font1">be017b7f06d390261dbc64ff593be6803fd2e3a1 Started project.</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git checkout be017b</span></p>
+<p><span class="font1">Note: checking out 'be017b'.</span></p>
+<p><span class="font0">❶</span><span class="font1">You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by performing another checkout.</span></p>
+<p><span class="font1">If you want to create a new branch to retain commits you create, you may do so (now or later) by using -b with the checkout command again. Example:</span></p>
+<p><span class="font1">git checkout -b new_branch_name</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

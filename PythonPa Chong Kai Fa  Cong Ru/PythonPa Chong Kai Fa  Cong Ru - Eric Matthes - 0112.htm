@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:8pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">6.4 </span><span class="font5">嵌套 </span><span class="font6">95</span></p>
+<p><span class="font0">new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'} aliens.append(new_alien)</span></p>
+<p><span class="font0">for alien in aliens[0:3]:</span></p>
+<p><span class="font0">if alien['color'] == 'green': alien['color'] = 'yellow' alien['speed'] = 'medium' alien['points'] = 10</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font4"> 显示前五个外星人</span></p></li></ul>
+<p><span class="font0">for alien in aliens[0:5]:</span></p>
+<p><span class="font0">print(alien)</span></p>
+<p><span class="font0">print(&quot;...&quot;)</span></p>
+<p><span class="font5">鉴于我们要修改前三个外星人，需要遍历一个只包含这些外星人的切片。当前，所有外星人 都是绿色的，但情况并非总是如此，因此我们编写了一条</span><span class="font2">if</span><span class="font5">语句来确保只修改绿色外星人。如果 外星人是绿色的，我们就将其颜色改为</span><span class="font2">'yellow'</span><span class="font5">，将其速度改为</span><span class="font2">'medium'</span><span class="font5">，并将其点数改为</span><span class="font2">10</span><span class="font5">， 如下面的输出所示：</span></p>
+<table border="1">
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">{'speed':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">'medium', 'color'</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">: 'yellow', 'points':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">10}</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">{'speed':</span></p></td><td style="vertical-align:top;">
+<p><span class="font0">'medium', 'color'</span></p></td><td style="vertical-align:top;">
+<p><span class="font0">: 'yellow', 'points':</span></p></td><td style="vertical-align:top;">
+<p><span class="font0">10}</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">{'speed':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">'medium', 'color'</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">: 'yellow', 'points':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">10}</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">{'speed':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">'slow', 'color':</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font0">'green', 'points': 5}</span></p></td><td style="vertical-align:top;"></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">{'speed':</span></p></td><td style="vertical-align:top;">
+<p><span class="font0">'slow', 'color':</span></p></td><td style="vertical-align:top;">
+<p><span class="font0">'green', 'points': 5}</span></p></td><td style="vertical-align:top;"></td></tr>
+</table><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font5"><a name="bookmark1"></a>你可以进一步扩展这个循环，在其中添加一个</span><span class="font2">elif</span><span class="font5">代码块，将黄色外星人改为移动速度快且 值</span><span class="font6">15</span><span class="font5">个点的红色外星人，如下所示(这里只列出了循环，而没有列出整个程序)：</span></h6>
+<p><span class="font0">for alien in aliens[0:3]:</span></p>
+<p><span class="font0">if alien['color'] == 'green':</span></p>
+<p><span class="font0">alien['color'] = 'yellow'</span></p>
+<p><span class="font0">alien['speed'] = 'medium'</span></p>
+<p><span class="font0">alien['points'] = 10</span></p>
+<p><span class="font0">elif alien['color'] == 'yellow':</span></p>
+<p><span class="font0">alien['color'] = 'red'</span></p>
+<p><span class="font0">alien['speed'] = 'fast'</span></p>
+<p><span class="font0">alien['points'] = 15</span></p>
+<p><span class="font5">经常需要在列表中包含大量的字典，而其中每个字典都包含特定对象的众多信息。例如，你 可能需要为网站的每个用户创建一个字典(就像</span><span class="font6">6.3.1</span><span class="font5">节的</span><span class="font6">user.py</span><span class="font5">中那样)，并将这些字典存储在 一个名为</span><span class="font2">users</span><span class="font5">的列表中。在这个列表中，所有字典的结构都相同，因此你可以遍历这个列表， 并以相同的方式处理其中的每个字典。</span></p>
+<p><span class="font1">6.4.2 </span><span class="font3">在字典中存储列表</span></p>
+<p><span class="font5">有时候，需要将列表存储在字典中，而不是将字典存储在列表中。例如，你如何描述顾客点 </span></p>
+</body>
+</html>

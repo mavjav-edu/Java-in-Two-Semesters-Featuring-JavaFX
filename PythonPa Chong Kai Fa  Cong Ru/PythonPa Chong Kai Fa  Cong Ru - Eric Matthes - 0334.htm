@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:7pt SimHei, sans-serif; }
+ .font7 { font:8pt SimHei, sans-serif; }
+ .font8 { font:9pt SimHei, sans-serif; }
+ .font9 { font:10pt SimHei, sans-serif; }
+ .font10 { font:12pt SimHei, sans-serif; }
+ .font11 { font:8pt SimSun, serif; }
+ .font12 { font:9pt SimSun, serif; }
+ .font13 { font:10pt SimSun, serif; }
+ .font14 { font:8pt Times New Roman, serif; }
+ .font15 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font15">16.1 CSV</span><span class="font13">文件格式</span></p>
+<p><span class="font15">317</span></p>
+<p><span class="font13">我们首先导入了模块</span><span class="font5">datetime</span><span class="font13">中的</span><span class="font5">datetime</span><span class="font13">类，然后调用方法</span><span class="font5">strptime（）</span><span class="font13">,并将包含所需日 期的字符串作为第一个实参。第二个实参告诉</span><span class="font15">Python</span><span class="font13">如何设置日期的格式。在这个示例中，</span><span class="font5">‘</span><span class="font9">％</span><span class="font5">Y-' </span><span class="font13">让</span><span class="font15">Python</span><span class="font13">将字符串中第一个连字符前面的部分视为四位的年份；</span><span class="font5">‘</span><span class="font9">％</span><span class="font5">m-'</span><span class="font13">让</span><span class="font15">Python</span><span class="font13">将第二个连字符前 面的部分视为表示月份的数字；而</span><span class="font5">‘</span><span class="font9">％</span><span class="font5">d'</span><span class="font13">让</span><span class="font15">Python</span><span class="font13">将字符串的最后一部分视为月份中的一天 （</span><span class="font15">1~31</span><span class="font13">）。</span></p>
+<p><span class="font13">方法</span><span class="font5">strptime（）</span><span class="font13">可接受各种实参，并根据它们来决定如何解读日期。表</span><span class="font15">16-1</span><span class="font13">列出了其中一些 这样的实参。</span></p>
+<p><span class="font8">表</span><span class="font2">16-1</span><span class="font8">模块</span><span class="font2">datetime</span><span class="font8">中设置日期和时间格式的实参</span></p>
+<table border="1">
+<tr><td style="vertical-align:top;">
+<p><span class="font7">实 参</span></p></td><td style="vertical-align:top;">
+<p><span class="font7">含 义</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">制</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">星期的名称，如乂。血</span><span class="font14">2</span><span class="font11">丫</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">B</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">月份名，如</span><span class="font14">January</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">m</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">用数字表示的月份（</span><span class="font14">01~12</span><span class="font11">）</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">d</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">用数字表示月份中的一天（</span><span class="font14">01~31</span><span class="font11">）</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">Y</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">四位的年份，如</span><span class="font14">2015</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font12">%</span><span class="font0">y</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font11">两位的年份，如</span><span class="font14">15</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">H</span></p></td><td style="vertical-align:top;">
+<p><span class="font14">24</span><span class="font11">小时制的小时数（</span><span class="font14">00~23</span><span class="font11">）</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">I</span></p></td><td style="vertical-align:top;">
+<p><span class="font14">12</span><span class="font11">小时制的小时数（</span><span class="font14">01~12</span><span class="font11">）</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font12">%</span><span class="font0">p</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font14">am </span><span class="font11">或 </span><span class="font14">pm</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">M</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">分钟数（</span><span class="font14">00~59</span><span class="font11">）</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font12">%</span><span class="font0">S</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">秒数（</span><span class="font14">00~61</span><span class="font11">）</span></p></td></tr>
+</table>
+<ul style="list-style:none;"><li>
+<p><span class="font4">16.1.6</span><span class="font10"> 在图表中添加日期</span></p></li></ul><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font13"><a name="bookmark1"></a>知道如何处理</span><span class="font15">CSV</span><span class="font13">文件中的日期后，就可对气温图形进行改进了，即提取日期和最高气温， 并将它们传递给</span><span class="font5">plot（）</span><span class="font13">，如下所示：</span></h6>
+<h6><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>highs_lows.py</span></h6>
+<p><span class="font1">import csv</span></p>
+<p><span class="font1">from datetime import datetime</span></p>
+<div>
+<p><span class="font4" style="font-weight:bold;">16</span></p>
+</div><br clear="all">
+<p><span class="font1">from matplotlib import pyplot as plt</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font11">从文件中获取日期和最高气温 </span><span class="font1">filename = 'sitka_weather_07-2014.csv with open(filename) as f:</span></p></li></ul>
+<p><span class="font1">reader = csv.reader(f) header_row = next(reader)</span></p>
+<p><span class="font6">❶ </span><span class="font1">dates, highs = □</span><span class="font13">，口</span></p>
+<p><span class="font1">for row in reader:</span></p>
+<p><span class="font6">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">current_date = datetime.strptime(row[o], &quot;%Y-%m-%d&quot;)</span></p>
+<p><span class="font1">dates.append(current_date)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

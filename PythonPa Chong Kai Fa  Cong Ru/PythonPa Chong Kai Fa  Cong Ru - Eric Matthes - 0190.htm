@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:11pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">10.3 </span><span class="font7">异常 </span><span class="font9">173</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">10.3.2</span><span class="font6"> 使用 </span><span class="font2">try-except </span><span class="font6">代码块</span></p></li></ul>
+<p><span class="font7">当你认为可能发生了错误时，可编写一个</span><span class="font4">try-except</span><span class="font7">代码块来处理可能引发的异常。你让 </span><span class="font9">Python</span><span class="font7">尝试运行一些代码，并告诉它如果这些代码引发了指定的异常，该怎么办。</span></p>
+<p><span class="font7">处理</span><span class="font4">ZeroDivisionError</span><span class="font7">异常的</span><span class="font4">try-except</span><span class="font7">代码块类似于下面这样：</span></p>
+<p><span class="font0">try:</span></p>
+<p><span class="font0">print(5/0)</span></p>
+<p><span class="font0">except ZeroDivisionError:</span></p>
+<p><span class="font0">print(&quot;You can't divide by zero!&quot;)</span></p>
+<p><span class="font7">我们将导致错误的代码行</span><span class="font4">print</span><span class="font8">(</span><span class="font4">5/0</span><span class="font8">)</span><span class="font7">放在了一个</span><span class="font4">try</span><span class="font7">代码块中。如果</span><span class="font4">try</span><span class="font7">代码块中的代码运行 起来没有问题，</span><span class="font9">Python</span><span class="font7">将跳过</span><span class="font4">except</span><span class="font7">代码块；如果</span><span class="font4">try</span><span class="font7">代码块中的代码导致了错误，</span><span class="font9">Python</span><span class="font7">将查找 这样的</span><span class="font4">except</span><span class="font7">代码块，并运行其中的代码，即其中指定的错误与引发的错误相同。</span></p>
+<p><span class="font7">在这个示例中，</span><span class="font4">try</span><span class="font7">代码块中的代码引发了</span><span class="font4">ZeroDivisionError</span><span class="font7">异常，因此</span><span class="font9">Python</span><span class="font7">指出了该如 何解决问题的</span><span class="font4">except</span><span class="font7">代码块，并运行其中的代码。这样，用户看到的是一条友好的错误消息，而 不是 </span><span class="font9">traceback</span><span class="font7">:</span></p>
+<p><span class="font0">You can't divide by zero!</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">10</span></p>
+</div><br clear="all">
+<p><span class="font7">如果</span><span class="font4">try-except</span><span class="font7">代码块后面还有其他代码，程序将接着运行，因为已经告诉了</span><span class="font9">4</span><span class="font7">也。口如何处 理这种错误。下面来看一个捕获错误后程序将继续运行的示例。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">10.3.3</span><span class="font6"> 使用异常避免崩溃</span></p></li></ul>
+<p><span class="font7">发生错误时，如果程序还有工作没有完成，妥善地处理错误就尤其重要。这种情况经常会出 现在要求用户提供输入的程序中；如果程序能够妥善地处理无效输入，就能再提示用户提供有效 输入，而不至于崩溃。</span></p>
+<p><span class="font7">下面来创建一个只执行除法运算的简单计算器：</span></p>
+<p><span class="font1">division.py</span></p>
+<p><span class="font0">print(&quot;Give me two numbers, and I'll divide them.&quot;)</span></p>
+<p><span class="font0">print(&quot;Enter 'q' to quit.&quot;)</span></p>
+<p><span class="font0">while True:</span></p>
+<p><span class="font5">❶ </span><span class="font0">first_number = input(&quot;\nFirst number:&quot;)</span></p>
+<p><span class="font0">if first_number == 'q':</span></p>
+<p><span class="font0">break</span></p>
+<p><span class="font5">❷ </span><span class="font0">second_number = input(&quot;Second number:&quot;)</span></p>
+<p><span class="font0">if second_number == 'q':</span></p>
+<p><span class="font0">break</span></p>
+<p><span class="font5">❸ </span><span class="font0">answer = int(first_number) / int(second_number)</span></p>
+<p><span class="font0">print(answer)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

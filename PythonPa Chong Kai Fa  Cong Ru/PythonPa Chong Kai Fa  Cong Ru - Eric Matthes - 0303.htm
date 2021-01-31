@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">286</span></p>
+<p><span class="font6">第</span><span class="font7">15</span><span class="font6">章 生成数据</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>15.1.1</span><span class="font4"> 在 </span><span class="font1">Linux </span><span class="font4">系统中安装 </span><span class="font1">matplotlib</span></h5></li></ul>
+<p><span class="font6">如果你使用的是系统自带的</span><span class="font7">Python</span><span class="font6">版本，可使用系统的包管理器来安装</span><span class="font7">matplotlib</span><span class="font6">,为此只需 执行一行命令：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python3-matplotlib</span></p></li></ul>
+<p><span class="font6">如果你使用的是</span><span class="font7">Python 2.7</span><span class="font6">，请执行如下命令：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python-matplotlib</span></p></li></ul>
+<p><span class="font6">如果你安装了较新的</span><span class="font7">Python</span><span class="font6">版本，就必须安装</span><span class="font7">matplotlib</span><span class="font6">依赖的一些库：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python3.5-dev python3.5-tk tk-dev</span></p></li>
+<li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install libfreetype6-dev g++</span></p></li></ul>
+<p><span class="font6">再使用</span><span class="font7">pip</span><span class="font6">来安装</span><span class="font7">matplotlib</span><span class="font6">:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> pip install --user matplotlib</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>15.1.2</span><span class="font4"> 在 </span><span class="font1">OS X </span><span class="font4">系统中安装 </span><span class="font1">matplotlib</span></h5></li></ul>
+<p><span class="font7">Apple</span><span class="font6">的标准</span><span class="font7">Python</span><span class="font6">安装自带了 </span><span class="font7">matplotlib</span><span class="font6">。要检查系统是否安装了 </span><span class="font7">matplotlib</span><span class="font6">，可打开一个终 端会话并尝试导入</span><span class="font7">matplotlib</span><span class="font6">。如果系统没有自带</span><span class="font7">matplotlib</span><span class="font6">,且你的</span><span class="font7">Python</span><span class="font6">是使用</span><span class="font7">Homebrew</span><span class="font6">安装 的，则可以像下面这样安装</span><span class="font7">matplotlib</span><span class="font6">：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">pip install --user matplotlib</span></p></li></ul>
+<p><span class="font3">注意 </span><span class="font5">安装包时可能需要使用</span><span class="font2">pip3</span><span class="font5">,而不是</span><span class="font2">pip</span><span class="font5">。另外，如果这个命令不管用，你可能需要删除 标志</span><span class="font2">--user</span><span class="font5">。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>15.1.3</span><span class="font4"> 在 </span><span class="font1">Windows </span><span class="font4">系统中安装 </span><span class="font1">matplotlib</span></h5></li></ul>
+<p><span class="font6">在</span><span class="font7">Windows</span><span class="font6">系统中，首先需要安装</span><span class="font7">Visual Studio</span><span class="font6">。为此，请访问</span><a href="https://dev.windows.com/%ef%bc%8c%e5%8d%95"><span class="font7">https://dev.windows.com/</span><span class="font6">，单</span></a><span class="font6"> 击</span><span class="font7">Downloads</span><span class="font6">，再查找</span><span class="font7">Visual Studio Community </span><span class="font6">一组免费的</span><span class="font7">Windows</span><span class="font6">开发工具。请下载并运行 该安装程序。</span></p>
+<p><span class="font6">接下来，需要下载</span><span class="font7">matplotlib</span><span class="font6">安装程序。为此，请访问</span><a href="https://pypi.python.org/pypi/matplotlib/%ef%bc%8c"><span class="font7">https://pypi.python.org/pypi/matplotlib/</span><span class="font6">，</span></a><span class="font6"> 并查找与你使用的</span><span class="font7">Python</span><span class="font6">版本匹配的</span><span class="font7">wheel</span><span class="font6">文件（扩展名为</span><span class="font7">.whl</span><span class="font6">的文件）。例如，如果你使用的是 </span><span class="font7">32 </span><span class="font6">位的</span><span class="font7">Python 3.5</span><span class="font6">，则需要下载 </span><span class="font7">matplotlib-1.4.3-cp35-none-win32.whl</span><span class="font6">。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

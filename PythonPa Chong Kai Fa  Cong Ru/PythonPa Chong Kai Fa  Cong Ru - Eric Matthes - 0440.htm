@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:11pt SimSun, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font12">20.2 </span><span class="font10">部署“学习笔记”</span></p>
+<p><span class="font12">423</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font8">静态资产配置</span></p></li></ul>
+<p><span class="font0">❺</span><span class="font5"> </span><span class="font1">BASE_DIR = os.path.dirname（os.path.abspath（__file__））</span></p>
+<p><span class="font1">STATIC_ROOT = 'staticfiles'</span></p>
+<p><span class="font1">STATICFILES_DIRS = （</span></p>
+<p><span class="font1">os.path.join（BASE_DIR, 'static'）,</span></p>
+<p><span class="font1">） &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font5">一</span></p>
+<p><span class="font10">在</span><span class="font6">。</span><span class="font10">处，我们使用了函数</span><span class="font4">getcwd（）</span><span class="font10">,它获取</span><span class="font9">当前的工作目录</span><span class="font10">（当前运行的文件所在的目录）。 在</span><span class="font12">Heroku</span><span class="font10">部署中，这个目录总是</span><span class="font12">/app</span><span class="font10">。在本地部署中，这个目录通常是项目文件夹的名称（就我 们的项目而言，为</span><span class="font12">learning_log</span><span class="font10">）。这个</span><span class="font4">if</span><span class="font10">测试确保仅当项目被部署到</span><span class="font12">Heroku</span><span class="font10">时，才运行这个代码 块。这种结构让我们能够将同一个设置文件用于本地开发环境和在线服务器。</span></p>
+<p><span class="font10">在</span><span class="font6">❷</span><span class="font10">处，我们导入了</span><span class="font4">dj_database_url</span><span class="font10">，用于在</span><span class="font12">Heroku</span><span class="font10">上配置服务器。</span><span class="font12">Heroku</span><span class="font10">使用</span><span class="font12">PostgreSQL </span><span class="font10">（也叫</span><span class="font12">Postgres</span><span class="font11">）</span><span class="font4">----</span><span class="font10">■种比</span><span class="font12">SQLite</span><span class="font10">更高级的数据库；这些设置对项目进行配置，使其在</span><span class="font12">Heroku</span><span class="font10">上</span></p>
+<p><span class="font10">使用</span><span class="font12">Postgres</span><span class="font10">数据库。其他设置的作用分别如下：支持</span><span class="font12">HTTPS</span><span class="font10">请求（见</span><span class="font6">❸</span><span class="font10">）；让</span><span class="font12">Django</span><span class="font10">能够使用 </span><span class="font12">Heroku</span><span class="font10">的</span><span class="font12">URL</span><span class="font10">来提供项目提供的服务（见</span><span class="font6">❹</span><span class="font10">）；设置项目，使其能够在</span><span class="font12">Heroku</span><span class="font10">上正确地提供静态 文件（见</span><span class="font6">❺</span><span class="font10">）。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.2.7</span><span class="font7"> 创建启动进程的</span><span class="font3">Procfile</span></h5></li></ul>
+<p><span class="font12">Procfile</span><span class="font10">告诉</span><span class="font12">Heroku</span><span class="font10">启动哪些进程，以便能够正确地提供项目提供的服务。这个文件只包含一 行，你应将其命名为</span><span class="font12">Procfile </span><span class="font10">（其中的</span><span class="font12">P</span><span class="font10">为大写），不指定文件扩展名，并保存到</span><span class="font12">manage.py</span><span class="font10">所在的 目录中。</span></p>
+<p><span class="font12">Procfile</span><span class="font10">的内容如下：</span></p>
+<p><span class="font2">Procfile</span></p>
+<p><span class="font1">web: gunicorn learning_log.wsgi --log-file -</span></p>
+<p><span class="font10">这行代码让</span><span class="font12">Heroku</span><span class="font10">将</span><span class="font12">gunicorn</span><span class="font10">用作服务器，并使用</span><span class="font12">learning_log/wsgi.py</span><span class="font10">中的设置来启动应用程 序。标志</span><span class="font4">logfile</span><span class="font10">告诉</span><span class="font12">Heroku</span><span class="font10">应将哪些类型的事件写入日志。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>20.2.8</span><span class="font7"> 为部署到</span><span class="font3">Herohu</span><span class="font7">而修改</span><span class="font3">wsgi.py</span></h5></li></ul>
+<p><span class="font10">为部署到</span><span class="font12">Heroku</span><span class="font10">，我们还需修改</span><span class="font12">wsgi.py</span><span class="font10">，因为</span><span class="font12">Heroku</span><span class="font10">需要的设置与我们一直在使用的设置稍 有不同：</span></p>
+<p><span class="font2">wsgi.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">-import os</span></p></li></ul>
+<p><span class="font1">from django.core.wsgi import get_wsgi_application</span></p>
+<p><span class="font1">from dj_static import Cling</span></p>
+<div>
+</div><br clear="all">
+<p><span class="font3" style="font-weight:bold;">20</span></p>
+</body>
+</html>

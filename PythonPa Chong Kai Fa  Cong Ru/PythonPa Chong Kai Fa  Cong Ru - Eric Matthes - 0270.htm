@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">13.6 </span><span class="font8">结束游戏</span></p>
+<p><span class="font9">253</span></p>
+<p><span class="font8">用这些实参来跟踪玩家还有多少艘飞船，以及创建一群新的外星人。</span></p>
+<p><span class="font8">有外星人撞到飞船时，我们将余下的飞船数减</span><span class="font9">1</span><span class="font8">，创建一群新的外星人，并将飞船重新放置 到屏幕底端中央(我们还将让游戏暂停一段时间，让玩家在新外星人群出现前注意到发生了碰撞， 并将重新创建外星人群)。</span></p>
+<p><span class="font8">下面将实现这些功能的大部分代码放到函数</span><span class="font3">ship_hit()</span><span class="font8">中：</span></p>
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">import sys</span></p>
+<p><span class="font4">❶ </span><span class="font0">from time import sleep</span></p>
+<p><span class="font0">import pygame</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p>
+<p><span class="font0">def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">响应被外星人撞到的飞船</span><span class="font0">&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 将</span><span class="font0">ships_left</span><span class="font6">减</span><span class="font0">1</span></p></li></ul>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">stats.ships_left -= 1</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 清空外星人列表和子弹列表</span></p></li></ul>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">aliens.empty()</span></p>
+<p><span class="font0">bullets.empty()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 创建一群新的外星人，并将飞船放到屏幕底端中央</span></p></li></ul>
+<p><span class="font4">❹ </span><span class="font0">create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font0">ship.center_ship()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 暂停</span></p></li></ul>
+<p><span class="font4">❺ </span><span class="font0">sleep</span><span class="font7">(</span><span class="font0">0.5</span><span class="font7">)</span></p>
+<p><span class="font4">❻ </span><span class="font0">def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">13</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font6"> 检测外星人和飞船碰撞</span></p></li></ul>
+<p><span class="font0">if pygame.sprite.spritecollideany(ship, aliens):</span></p>
+<p><span class="font0">ship_hit(ai_settings, stats, screen, ship, aliens, bullets)</span></p>
+<p><span class="font8">我们首先从模块</span><span class="font3">time</span><span class="font8">中导入了函数</span><span class="font3">sleep()</span><span class="font8">,以便使用它来让游戏暂停(见</span><span class="font10" style="font-weight:bold;">O </span><span class="font8">)。新函数 </span><span class="font3">ship_hit()</span><span class="font8">在飞船被外星人撞到时作出响应。在这个函数内部，将余下的飞船数减</span><span class="font9">1 </span><span class="font8">(见</span><span class="font5">❷</span><span class="font8">)，然 后清空编组</span><span class="font3">aliens</span><span class="font8">和</span><span class="font3">bullets </span><span class="font8">(见</span><span class="font5">❸</span><span class="font8">)。</span></p>
+<p><span class="font8">接下来，我们创建一群新的外星人，并将飞船居中(见</span><span class="font5">❹</span><span class="font8">)，稍后将在</span><span class="font3">Ship</span><span class="font8">类中添加方法 </span><span class="font3">center_ship()</span><span class="font8">。最后，我们更新所有元素后(但在将修改显示到屏幕前)暂停，让玩家知道其 飞船被撞到了(见</span><span class="font5">❺</span><span class="font8">)。屏幕将暂时停止变化，让玩家能够看到外星人撞到了飞船。函数</span><span class="font3">sleep() </span><span class="font8">执行完毕后，将接着执行函数</span><span class="font3">update_screen()</span><span class="font8">，将新的外星人群绘制到屏幕上。</span></p>
+<p><span class="font8">我们还更新了</span><span class="font3">update_aliens()</span><span class="font8">的定义，使其包含形参</span><span class="font3">stats</span><span class="font8">、</span><span class="font3">screen</span><span class="font8">和</span><span class="font3">bullets </span><span class="font8">(见</span><span class="font5">❻</span><span class="font8">)，让它 能够在调用</span><span class="font3">ship_hit()</span><span class="font8">时传递这些值。</span></p>
+<p><span class="font8">下面是新方法</span><span class="font3">center_ship()</span><span class="font8">，请将其添加到</span><span class="font9">ship.py</span><span class="font8">的末尾：</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

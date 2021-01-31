@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">388</span></p>
+<p><span class="font4">第</span><span class="font5">19</span><span class="font4">章 用户账户</span></p>
+<p><span class="font0">new_entry.save()</span></p>
+<p><span class="font0" style="font-weight:bold;">6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">return HttpResponseRedirect(reverse('learning_logs:topic',</span></p>
+<p><span class="font0">args=[topic_id]))</span></p>
+<p><span class="font0">context = {'topic': topic, 'form': form}</span></p>
+<p><span class="font0">return render(request, 'learning_logs/new_entry.html', context)</span></p>
+<p><span class="font4">我们修改了</span><span class="font2">import</span><span class="font4">语句，在其中包含了刚创建的</span><span class="font2">EntryForm</span><span class="font4">。</span><span class="font2">new_entry()</span><span class="font4">的定义包含形参 </span><span class="font2">topic_id</span><span class="font4">,用于存储从</span><span class="font5">URL</span><span class="font4">中获得的值。渲染页面以及处理表单数据时，都需要知道针对的是哪 个主题，因此我们使用</span><span class="font2">topic_id</span><span class="font4">来获得正确的主题(见</span><span class="font3">❶</span><span class="font4">)。</span></p>
+<p><span class="font4">在</span><span class="font3">❷</span><span class="font4">处，我们检查请求方法是</span><span class="font5">POST</span><span class="font4">还是</span><span class="font5">GET</span><span class="font4">。如果是</span><span class="font5">GET</span><span class="font4">请求，将执行</span><span class="font2">if</span><span class="font4">代码块：创建一 个空的</span><span class="font2">EntryForm</span><span class="font4">实例(见</span><span class="font3">❸</span><span class="font4">)。如果请求方法为</span><span class="font5">POST</span><span class="font4">，我们就对数据进行处理:创建一个</span><span class="font2">EntryForm </span><span class="font4">实例，使用</span><span class="font2">request</span><span class="font4">对象中的</span><span class="font5">POST</span><span class="font4">数据来填充它(见</span><span class="font3">❹</span><span class="font4">)；再检查表单是否有效，如果有效，就设 置条目对象的属性</span><span class="font2">topic</span><span class="font4">，再将条目对象保存到数据库。</span></p>
+<p><span class="font4">调用</span><span class="font2">save()</span><span class="font4">时，我们传递了实参</span><span class="font2">commit=False </span><span class="font4">(见</span><span class="font3">❺</span><span class="font4">)，让</span><span class="font5">Django</span><span class="font4">创建一个新的条目对象，并 将其存储到</span><span class="font2">new_entry</span><span class="font4">中，但不将它保存到数据库中。我们将</span><span class="font2">new_entry</span><span class="font4">的属性</span><span class="font2">topic</span><span class="font4">设置为在这个 函数开头从数据库中获取的主题(见</span><span class="font3">❻</span><span class="font4">)，然后调用</span><span class="font2">save()</span><span class="font4">，且不指定任何实参。这将把条目保 存到数据库，并将其与正确的主题相关联。</span></p>
+<p><span class="font4">在</span><span class="font3">❼</span><span class="font4">处，我们将用户重定向到显示相关主题的页面。调用</span><span class="font2">reverse</span><span class="font4">。时，需要提供两个实参: 要根据它来生成</span><span class="font5">URL</span><span class="font4">的</span><span class="font5">URL</span><span class="font4">模式的名称；歹列表</span><span class="font2">args</span><span class="font4">，其中包含要包含在</span><span class="font5">URL</span><span class="font4">中的所有实参。在这 里，列表</span><span class="font2">args</span><span class="font4">只有一个元素 </span><span class="font2">topic_id</span><span class="font4">。接下来，调用</span><span class="font2">HttpResponseRedirect()</span><span class="font4">将用户重定向到 显示新增条目所属主题的页面，用户将在该页面的条目歹表中看到新添加的条目。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">4 .</span><span class="font3">模板 </span><span class="font2">new_entry</span></p></li></ul>
+<p><span class="font4">从下面的代码可知，模板</span><span class="font2">new_entry</span><span class="font4">类似于模板</span><span class="font2">new_topic </span><span class="font4">：</span></p>
+<p><span class="font1">new_entry.html</span></p>
+<p><span class="font0">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font0">{% block content %}</span></p>
+<p><span class="font0" style="font-weight:bold;">❶ &nbsp;&nbsp;</span><span class="font0">&lt;p&gt;&lt;a href=&quot;{% url 'learning_logs:topic' topic.id %}&quot;&gt;{{ topic }}&lt;/a&gt;&lt;/p&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&lt;p&gt;Add a new entry:&lt;/p&gt;</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">❷ </span><span class="font0">form action=&quot;{% url 'learning_logs:new_entry' topic.id %}&quot; method='post'&gt;</span></p>
+<p><span class="font0">{% csrf_token %}</span></p>
+<p><span class="font0">{{ form.as_p }}</span></p>
+<p><span class="font0">&lt;button name='submit'&gt;add entry&lt;/button&gt;</span></p>
+<p><span class="font0">&lt;/form&gt;</span></p>
+<p><span class="font0">{% endblock content %}</span></p>
+<p><span class="font4">我们在页面顶端显示了主题(见</span><span class="font3">❶</span><span class="font4">)，让用户知道他是在哪个主题中添加条目；该主题名也 是一个链接，可用于返回到该主题的主页面。</span></p>
+</body>
+</html>

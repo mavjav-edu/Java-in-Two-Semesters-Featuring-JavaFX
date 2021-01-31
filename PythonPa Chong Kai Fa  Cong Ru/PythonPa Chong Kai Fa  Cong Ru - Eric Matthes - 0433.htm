@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:11pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:7pt SimHei, sans-serif; }
+ .font7 { font:8pt SimHei, sans-serif; }
+ .font8 { font:10pt SimHei, sans-serif; }
+ .font9 { font:12pt SimHei, sans-serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:9pt Times New Roman, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font12">416</span></p>
+<p><span class="font10">第</span><span class="font12">20</span><span class="font10">章 设置应用程序的样式并对其进行部署</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0433_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200433-1.jpg" alt="" style="width:288pt;height:182pt;">
+<p><span class="font7">图</span><span class="font11">20-2</span><span class="font7">使用</span><span class="font11">Bootstrap</span><span class="font7">设置样式后的登录页面</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">20.1.6</span><span class="font9"> 设置</span><span class="font3">new_topic</span><span class="font9">页面的样式</span></p></li></ul><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font10"><a name="bookmark1"></a>下面来让其他网页的风格也一致。首先来修改</span><span class="font5">new_topic</span><span class="font10">页面</span><br><br><span class="font2"><a name="bookmark2"></a>new_topic.html</span></h6>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font1">{% load bootstrap3 %}</span></p>
+<p><span class="font0">❶</span><span class="font1">{% block header %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;h2&gt;Add a new topic:&lt;/h2&gt;</span></p></li></ul>
+<p><span class="font1">{% endblock header %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font0">❷</span><span class="font6"> </span><span class="font1">&lt;form action=&quot;{% url 'learning_logs:new_topic' %}&quot; method='post' class=&quot;form&quot;&gt;</span></p>
+<p><span class="font1">{% csrf_token %}</span></p>
+<p><span class="font0">❸</span><span class="font6"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% bootstrap_form form %}</span></p>
+<p><span class="font0">❹</span><span class="font6"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% buttons %}</span></p>
+<p><span class="font1">&lt;button name=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;add topic&lt;/button&gt; {% endbuttons %}</span></p>
+<p><span class="font1">&lt;/form&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">{% endblock content %}</span></p></li></ul>
+<p><span class="font10">这里的大多数修改都类似于对</span><span class="font12">login.html</span><span class="font10">所做的修改：在</span><span class="font8">❶</span><span class="font10">处加载</span><span class="font12">bootstrap3</span><span class="font10">，添加</span><span class="font5">header</span><span class="font10">块并</span></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Segoe UI, sans-serif; }
+ .font2 { font:7pt SimHei, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:8pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+ .font7 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">128</span></p>
+<p><span class="font5">第</span><span class="font6">8</span><span class="font5">章 函数</span></p>
+<p><span class="font2">❷ </span><span class="font0">def show_completed_models(completed_models):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font4">显示打印好的所有模型</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nThe following models have been printed:&quot;)</span></p>
+<p><span class="font0">for completed_model in completed_models:</span></p>
+<p><span class="font0">print(completed_model)</span></p>
+<p><span class="font0">unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']</span></p>
+<p><span class="font0">completed_models = []</span></p>
+<p><span class="font0">print_models(unprinted_designs, completed_models)</span></p>
+<p><span class="font0">show_completed_models(completed_models)</span></p>
+<p><span class="font5">在</span><span class="font7" style="font-weight:bold;">0</span><span class="font5">处，我们定义了函数</span><span class="font1">print_models()</span><span class="font5">,它包含两个形参：一个需要打印的设计列表和一 个打印好的模型列表。给定这两个列表，这个函数模拟打印每个设计的过程：将设计逐个地从未 打印的设计列表中取出，并加入到打印好的模型列表中。在</span><span class="font3">❷</span><span class="font5">处，我们定义了函数 </span><span class="font1">show_completed_models()</span><span class="font5">，它包含一个形参：打印好的模型列表。给定这个列表，函数 </span><span class="font1">show_completed_models()</span><span class="font5">显示打印出来的每个模型的名称。</span></p>
+<p><span class="font5">这个程序的输出与未使用函数的版本相同，但组织更为有序。完成大部分工作的代码都移到 了两个函数中，让主程序更容易理解。只要看看主程序，你就知道这个程序的功能容易看清得多：</span></p>
+<p><span class="font0">unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']</span></p>
+<p><span class="font0">completed_models = []</span></p>
+<p><span class="font0">print_models(unprinted_designs, completed_models)</span></p>
+<p><span class="font0">show_completed_models(completed_models)</span></p>
+<p><span class="font5">我们创建了一个未打印的设计列表，还创建了一个空列表，用于存储打印好的模型。接下来， 由于我们已经定义了两个函数，因此只需调用它们并传入正确的实参即可。我们调用 </span><span class="font1">print_models()</span><span class="font5">并向它传递两个列表；像预期的一样，</span><span class="font1">print_models()</span><span class="font5">模拟打印设计的过程。接 下来，我们调用</span><span class="font1">show_completed_models()</span><span class="font5">，并将打印好的模型列表传递给它，让其能够指出打印 了哪些模型。描述性的函数名让别人阅读这些代码时也能明白，虽然其中没有任何注释。</span></p>
+<p><span class="font5">相比于没有使用函数的版本，这个程序更容易扩展和维护。如果以后需要打印其他设计， 只需再次调用</span><span class="font1">print_models()</span><span class="font5">即可。如果我们发现需要对打印代码进行修改，只需修改这些代码 一次，就能影响所有调用该函数的地方；与必须分别修改程序的多个地方相比，这种修改的效 率更高。</span></p>
+<p><span class="font5">这个程序还演示了这样一种理念，即每个函数都应只负责一项具体的工作。第一个函数打印 每个设计，而第二个显示打印好的模型；这优于使用一个函数来完成两项工作。编写函数时，如 果你发现它执行的任务太多，请尝试将这些代码划分到两个函数中。别忘了，总是可以在一个函 数中调用另一个函数，这有助于将复杂的任务划分成一系列的步骤。</span></p>
+</body>
+</html>

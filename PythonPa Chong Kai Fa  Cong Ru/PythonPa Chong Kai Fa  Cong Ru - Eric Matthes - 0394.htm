@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Calibri, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">18.4 </span><span class="font7">创建其他网页 </span><span class="font9">377</span></p>
+<p><span class="font7">因此在模板中，循环类似于下面这样：</span></p>
+<p><span class="font0">{% for </span><span class="font0" style="font-style:italic;">item</span><span class="font0"> in </span><span class="font0" style="font-style:italic;">list</span><span class="font0"> %}</span></p>
+<p><span class="font0" style="font-style:italic;">do something with each item</span></p>
+<p><span class="font0">{% endfor %}</span></p>
+<p><span class="font7">在循环中，我们要将每个主题转换为一个项目列表项。要在模板中打印变量，需要将变量名 用双花括号括起来。每次循环时，</span><span class="font3">❸</span><span class="font7">处的代码</span><span class="font4">{{ topic }}</span><span class="font7">都被替换为</span><span class="font4">topic</span><span class="font7">的当前值。这些花括 号不会出现在网页中，它们只是用于告诉</span><span class="font9">Django</span><span class="font7">我们使用了一个模板变量。</span><span class="font9">HTML</span><span class="font7">标签</span><span class="font4">&lt;li&gt;&lt;/li&gt; </span><span class="font7">表示一个项目列表项，在标签对</span><span class="font4">&lt;ul&gt;&lt;/ul&gt;</span><span class="font7">内部，位于标签</span><span class="font4">&lt;li&gt;</span><span class="font7">和</span><span class="font4">&lt;/li&gt;</span><span class="font7">之间的内容都是一个项目 列表项。</span></p>
+<p><span class="font7">在</span><span class="font3">❹</span><span class="font7">处，我们使用了模板标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">empty </span><span class="font6">%</span><span class="font4">}</span><span class="font7">，它告诉</span><span class="font9">Django</span><span class="font7">在列表</span><span class="font4">topics</span><span class="font7">为空时该怎么办：这 里是打印一条消息，告诉用户还没有添加任何主题。最后两行分别结束</span><span class="font4">for</span><span class="font7">循环（见</span><span class="font3">❺</span><span class="font7">）和项目 列表（见</span><span class="font3">❻</span><span class="font7">）。</span></p>
+<p><span class="font7">现在需要修改父模板，使其包含到显示所有主题的页面的链接：</span></p>
+<p><span class="font1">base.html</span></p>
+<p><span class="font0">&lt;p&gt;</span></p>
+<p><span class="font0" style="font-weight:bold;">O </span><span class="font0">&lt;a href=&quot;{% url 'learning_logs:index' %}&quot;&gt;Learning Log&lt;/a&gt; -</span></p>
+<p><span class="font0" style="font-weight:bold;">@ </span><span class="font0">&lt;a href=&quot;{% url 'learning_logs:topics' %}&quot;&gt;Topics&lt;/a&gt;</span></p>
+<p><span class="font0">&lt;/p&gt;</span></p>
+<p><span class="font0">{% block content %}{% endblock content %}</span></p>
+<p><span class="font7">我们在到主页的链接后面添加了一个连字符（见</span><span class="font3">O</span><span class="font7">），然后添加了一个到显示所有主题的页 面的链接--使用的也是模板标签</span><span class="font4">url </span><span class="font7">（见</span><span class="font3">❷</span><span class="font7">）。这一行让</span><span class="font9">Django</span><span class="font7">生成一个链接，它与</span><span class="font9">learning_logs/</span></p>
+<p><span class="font9">urls.py</span><span class="font7">中名为</span><span class="font4">topics</span><span class="font7">的</span><span class="font9">URL</span><span class="font7">模式匹配。</span></p>
+<p><span class="font7">现在如果你刷新浏览器中的主页，将看到链接</span><span class="font9">Topics</span><span class="font7">。单击这个链接，将看到类似于图</span><span class="font9">18-4 </span><span class="font7">所示的网页。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0394_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200394-1.jpg" alt="" style="width:326pt;height:143pt;">
+<p><span class="font2" style="font-weight:bold;">18</span></p>
+<p><span class="font5">图</span><span class="font8">18-4 </span><span class="font5">显示所有主题的网页</span></p>
+</body>
+</html>

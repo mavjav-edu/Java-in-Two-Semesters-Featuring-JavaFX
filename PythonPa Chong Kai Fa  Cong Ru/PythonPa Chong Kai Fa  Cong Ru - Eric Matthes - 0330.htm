@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">16.1 CSV</span><span class="font8">文件格式</span></p>
+<p><span class="font9">313</span></p>
+<p><span class="font5">注意</span><span class="font7">这个项目使用的天气数据是从</span><a href="http://www.wunderground.com/history/%e4%b8%8b%e8%bd%bd%e8%80%8c%e6%9d%a5%e7%9a%84%e3%80%82"><span class="font9">http://www.wunderground.com/history/</span><span class="font7">下载而来的。</span></a></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>16.1.1</span><span class="font6"> 分析</span><span class="font2">CSV</span><span class="font6">文件头</span></h5></li></ul>
+<p><span class="font3">csv</span><span class="font8">模块包含在</span><span class="font9">Python</span><span class="font8">标准库中，可用于分析</span><span class="font9">CSV</span><span class="font8">文件中的数据行，让我们能够快速提取感兴 趣的值。下面先来查看这个文件的第一行，其中包含一系列有关数据的描述：</span></p>
+<p><span class="font1">highs_lows.py</span></p>
+<p><span class="font0">import csv</span></p>
+<p><span class="font0">filename = 'sitka_weather_07-2014.csv'</span></p>
+<p><span class="font4">❶ </span><span class="font0">with open(filename) as f:</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">reader = csv.reader(f)</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">header_row = next(reader)</span></p>
+<p><span class="font0">print(header_row)</span></p>
+<p><span class="font8">导入模块</span><span class="font3">csv</span><span class="font8">后，我们将要使用的文件的名称存储在</span><span class="font3">filename</span><span class="font8">中。接下来，我们打开这个文 件，并将结果文件对象存储在</span><span class="font3">f</span><span class="font8">中(见</span><span class="font5">❶</span><span class="font8">)。然后，我们调用</span><span class="font3">csv.reader()</span><span class="font8">，并将前面存储的文件 对象作为实参传递给它，从而创建一个与该文件相关联的阅读器(</span><span class="font3">reader</span><span class="font8">)对象(见</span><span class="font5">❷</span><span class="font8">)。我们 将这个阅读器对象存储在</span><span class="font3">reader</span><span class="font8">中。</span></p>
+<p><span class="font8">模块</span><span class="font3">csv</span><span class="font8">包含函数</span><span class="font3">next()</span><span class="font8">，调用它并将阅读器对象传递给它时，它将返回文件中的下一行。 在前面的代码中，我们只调用了</span><span class="font3">next()</span><span class="font8">一次，因此得到的是文件的第一行，其中包含文件头(见 </span><span class="font5">❸</span><span class="font8">)。我们将返回的数据存储在</span><span class="font3">header_row</span><span class="font8">中。正如你看到的，</span><span class="font3">header_row</span><span class="font8">包含与天气相关的文件 头，指出了每行都包含哪些数据：</span></p>
+<p><span class="font0">['AKDT', 'Max TemperatureF', 'Mean TemperatureF', 'Min TemperatureF',</span></p>
+<p><span class="font0">'Max Dew PointF', 'MeanDew PointF', 'Min DewpointF', 'Max Humidity',</span></p>
+<p><span class="font0">' Mean Humidity', ' Min Humidity', ' Max Sea Level PressureIn',</span></p>
+<p><span class="font0">' Mean Sea Level PressureIn', ' Min Sea Level PressureIn',</span></p>
+<p><span class="font0">' Max VisibilityMiles', ' Mean VisibilityMiles', ' Min VisibilityMiles',</span></p>
+<p><span class="font0">' Max Wind SpeedMPH', ' Mean Wind SpeedMPH', ' Max Gust SpeedMPH',</span></p>
+<p><span class="font0">'PrecipitationIn', ' CloudCover', ' Events', ' WindDirDegrees']</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">16</span></p>
+</div><br clear="all">
+<p><span class="font3">reader</span><span class="font8">处理文件中以逗号分隔的第一行数据，并将每项数据都作为一个元素存储在列表中。 文件头</span><span class="font3">AKDT</span><span class="font8">表示阿拉斯加时间(</span><span class="font9">Alaska Daylight Time</span><span class="font8">)，其位置表明每行的第一个值都是日期或 时间。文件头</span><span class="font3">Max TemperatureF</span><span class="font8">指出每行的第二个值都是当天的最高华氏温度。可通过阅读其他 的文件头来确定文件包含的信息类型。</span></p>
+<p><span class="font5">注意 </span><span class="font7">文件头的格式并非总是一致的，空格和单位可能出现在奇怪的地方。这在原始数据文件 中很常见，但不会带来任何问题。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:14pt Arial, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font2">9.4</span><span class="font8">导入类</span></p>
+<p><span class="font2">153</span></p>
+<p><span class="font8">需要经过一定的实践。只要代码像你希望的那样运行，就说明你做得很好！即便你发现自己不得 不多次尝试使用不同的方法来重写类，也不必气馁；要编写出高效、准确的代码，都得经过这样 的过程。</span></p>
+<p><span class="font6">动手试一试</span></p>
+<p><span class="font1">9-6</span><span class="font8">冰淇淋小店：冰淇淋小店是一种特殊的餐馆。编写一个名为</span><span class="font9">IceCreamStand</span><span class="font8">的 类，让它继承你为完成练习</span><span class="font9">9-1</span><span class="font8">或练习</span><span class="font9">9-4</span><span class="font8">而编写的</span><span class="font9">Restaurant</span><span class="font8">类。这两个版本的 </span><span class="font9">Restaurant</span><span class="font8">类都可以，挑选你更喜欢的那个即可。添加一个名为</span><span class="font9">flavors</span><span class="font8">的属性，用于 存储一个由各种口味的冰淇淋组成的列表。编写一个显示这些冰淇淋的方法。创建一个 </span><span class="font9">IceCreamStand</span><span class="font8">实例，并调用这个方法。</span></p>
+<p><span class="font1">9-7</span><span class="font8">管理员：管理员是一种特殊的用户。编写一个名为</span><span class="font9">Admin</span><span class="font8">的类，让它继承你为 完成练习</span><span class="font9">9</span><span class="font8">・</span><span class="font9">3</span><span class="font8">或练习</span><span class="font9">9</span><span class="font8">・</span><span class="font9">5</span><span class="font8">而编写的</span><span class="font9">User</span><span class="font8">类。添加一个名为</span><span class="font9">privileges</span><span class="font8">的属性，用于存 储一个由字符串(如</span><span class="font9">&quot;can add post&quot;</span><span class="font8">、</span><span class="font9">&quot;can delete post&quot;</span><span class="font8">、</span><span class="font9">&quot;can ban user”</span><span class="font8">等)组成的 列表。编写一个名为</span><span class="font9">show_privileges()</span><span class="font8">的方法，它显示管理员的权限。创建一个</span><span class="font9">Admin </span><span class="font8">实例，并调用这个方法。</span></p>
+<p><span class="font1">9-8</span><span class="font8">权限：编写一个名为</span><span class="font9">Privileges</span><span class="font8">的类，它只有一个属性---</span><span class="font9">privileges,</span><span class="font8">其中</span></p>
+<p><span class="font8">存储了练习</span><span class="font9">9</span><span class="font8">・</span><span class="font9">7</span><span class="font8">所说的字符串列表。将方法</span><span class="font9">show_privileges()</span><span class="font8">移到这个类中。在</span><span class="font9">Admin </span><span class="font8">类中，将一个</span><span class="font9">Privileges</span><span class="font8">实例用作其属性。创建一个</span><span class="font9">Admin</span><span class="font8">实例，并使用方法 </span><span class="font9">show_privileges ()</span><span class="font8">来显示其权限。</span></p>
+<p><span class="font1">9-9</span><span class="font8">电瓶升级：在本节最后一个</span><span class="font9">electric_car.py</span><span class="font8">版本中，给</span><span class="font9">Battery</span><span class="font8">类添加一个名为 叩</span><span class="font9">grade_battery()</span><span class="font8">的方法。这个方法检查电瓶容量，如果它不是</span><span class="font9">85,</span><span class="font8">就将它设置为</span><span class="font9">85</span><span class="font8">。 创建一辆电瓶容量为默认值的电动汽车，调用方法</span><span class="font9">get_range(),</span><span class="font8">然后对电瓶进行升级， 并再次调用</span><span class="font9">get_range()<sub>o</sub></span><span class="font8">你会看到这辆汽车的续航里程增加了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">9.4</span><span class="font7"> 导入类</span></p></li></ul>
+<p><span class="font8">随着你不断地给类添加功能，文件可能变得很长，即便你妥善地使用了继承亦如此。为遵循 </span><span class="font0">Python</span><span class="font8">的总体理念，应让文件尽可能整洁。为在这方面提供帮助，</span><span class="font0">Python</span><span class="font8">允许你将类存储在模块 中，然后在主程序中导入所需的模块。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>9.4.1</span><span class="font6"> 导入单个类</span></h5></li></ul>
+<p><span class="font8">下面来创建一个只包含</span><span class="font0">C”</span><span class="font8">类的模块。这让我们面临一个微妙的命名问题：在本章中，已经 有一个名为</span><span class="font0">car.py</span><span class="font8">的文件，但这个模块也应命名为</span><span class="font0">car.py,</span><span class="font8">因为它包含表示汽车的代码。我们将这 样解决这个命名问题：将类存储在一个名为</span><span class="font0">car.py</span><span class="font8">的模块中，该模块将覆盖前面使用的文件</span></p>
+<p><span class="font5">图灵社区会员江子涛</span><span class="font0">Tesla(jiangzitao201314@foxmail.com)</span><span class="font5">专享尊重版权</span></p>
+</body>
+</html>

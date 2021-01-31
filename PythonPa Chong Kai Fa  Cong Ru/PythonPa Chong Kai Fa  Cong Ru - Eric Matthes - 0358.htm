@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">17.1 </span><span class="font6">使用 </span><span class="font7">Web API 341</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 执行</span><span class="font0">API</span><span class="font5">调用并存储响应</span></p></li></ul>
+<p><span class="font0">url = '</span><a href="https://api.github.com/search/repositories?q=language:python&amp;sort=stars"><span class="font0">https://api.github.com/search/repositories?q=language:python&amp;sort=stars</span></a><span class="font0"> r = requests.get(url)</span></p>
+<p><span class="font0">print(&quot;Status code:&quot;, r.status_code)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 将</span><span class="font0">API</span><span class="font5">响应存储在一个变量中</span></p></li></ul>
+<p><span class="font0">response_dict = r.json()</span></p>
+<p><span class="font3">❶ </span><span class="font0">print(&quot;Total repositories:&quot;, response_dict['total_count'])</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 探索有关仓库的信息</span></p></li></ul>
+<p><span class="font3">❷ </span><span class="font0">repo_dicts = response_dict['items']</span></p>
+<p><span class="font0">print(&quot;Repositories returned:&quot;, len(repo_dicts))</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 研究第一个仓库</span></p></li></ul>
+<p><span class="font3">❸ </span><span class="font0">repo_dict = repo_dicts[o]</span></p>
+<p><span class="font3">❹ </span><span class="font0">print(&quot;\nKeys:&quot;, len(repo_dict))</span></p>
+<p><span class="font3">❺ </span><span class="font0">for key in sorted(repo_dict.keys()):</span></p>
+<p><span class="font0">print(key)</span></p>
+<p><span class="font6">在</span><span class="font4">❶</span><span class="font6">处，我们打印了与</span><span class="font2">'total_count'</span><span class="font6">相关联的值，它指出了</span><span class="font7">GitHub</span><span class="font6">总共包含多少个</span><span class="font7">Python</span><span class="font6">仓 库。</span></p>
+<p><span class="font6">与</span><span class="font2">'items'</span><span class="font6">相关联的值是一个列表，其中包含很多字典，而每个字典都包含有关一个</span><span class="font7">Python </span><span class="font6">仓库的信息。在</span><span class="font4">❷</span><span class="font6">处，我们将这个字典列表存储在</span><span class="font2">repo_dicts</span><span class="font6">中。接下来，我们打印</span><span class="font2">repo_dicts </span><span class="font6">的长度，以获悉我们获得了多少个仓库的信息。</span></p>
+<p><span class="font6">为更深入地了解返回的有关每个仓库的信息，我们提取了</span><span class="font2">repo_dicts</span><span class="font6">中的第一个字典，并将 其存储在</span><span class="font2">repo_dict</span><span class="font6">中（见</span><span class="font4">❸</span><span class="font6">）。接下来，我们打印这个字典包含的键数，看看其中有多少信息（见 </span><span class="font4">❹</span><span class="font6">）。在</span><span class="font4">❺</span><span class="font6">处，我们打印这个字典的所有键，看看其中包含哪些信息。</span></p>
+<p><span class="font6">输出让我们对实际包含的数据有了更清晰的认识：</span></p>
+<p><span class="font0">Status code: 200</span></p>
+<p><span class="font0">Total repositories: 713062</span></p>
+<p><span class="font0">Repositories returned: 30</span></p>
+<p><span class="font3">❶ </span><span class="font0">Keys: 68 archive_url assignees_url blobs_url --</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--url watchers watcherscount</span></p>
+<p><span class="font7">GitHub</span><span class="font6">的</span><span class="font7">API</span><span class="font6">返回有关每个仓库的大量信息：</span><span class="font2">repo_dict</span><span class="font6">包含</span><span class="font7">68</span><span class="font6">个键（见</span><span class="font4">❶</span><span class="font6">）。通过仔细查看 这些键，可大致知道可提取有关项目的哪些信息（要准确地获悉</span><span class="font7">API</span><span class="font6">将返回哪些信息，要么阅读 文档，要么像此处这样使用代码来查看这些信息）。</span></p>
+<p><span class="font6">下面来提取</span><span class="font2">repo_dict</span><span class="font6">中与一些键相关联的值：</span></p>
+<p><span class="font1" style="font-weight:bold;">17</span></p>
+</body>
+</html>

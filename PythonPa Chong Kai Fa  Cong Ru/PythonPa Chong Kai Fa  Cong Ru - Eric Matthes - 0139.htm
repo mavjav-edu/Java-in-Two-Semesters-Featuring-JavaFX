@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">122</span></p>
+<p><span class="font6">第</span><span class="font7">8</span><span class="font6">章 函数</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font6" style="text-decoration:underline;"><a name="bookmark1"></a>我们原本只需编写下面的代码就可输出整洁的姓名，相比于此，前面做的工作好像太多了：</span></h6>
+<p><span class="font0">print(&quot;Jimi Hendrix&quot;)</span></p>
+<p><span class="font6">但在需要分别存储大量名和姓的大型程序中，像</span><span class="font2">get_formatted_name()</span><span class="font6">这样的函数非常有用。 你分别存储名和姓，每当需要显示姓名时都调用这个函数。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">8.3.2</span><span class="font4"> 让实参变成可选的</span></p></li></ul>
+<p><span class="font6">有时候，需要让实参变成可选的，这样使用函数的人就只需在必要时才提供额外的信息。可 使用默认值来让实参变成可选的。</span></p>
+<p><span class="font6">例如，假设我们要扩展函数</span><span class="font2">get_formatted_name()</span><span class="font6">，使其还处理中间名。为此，可将其修改 成类似于下面这样：</span></p>
+<p><span class="font0">def get_formatted_name(first_name, middle_name, last_name):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">返回整洁的姓名</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">full_name = first_name + ' ' + middle_name + ' ' + last_name</span></p>
+<p><span class="font0">return full_name.title()</span></p>
+<p><span class="font0">musician = get_formatted_name('john', 'lee', 'hooker')</span></p>
+<p><span class="font0">print(musician)</span></p>
+<p><span class="font6">只要同时提供名、中间名和姓，这个函数就能正确地运行。它根据这三部分创建一个字符串， 在适当的地方加上空格，并将结果转换为首字母大写格式：</span></p>
+<p><span class="font0">John Lee Hooker</span></p>
+<p><span class="font6">然而，并非所有的人都有中间名，但如果你调用这个函数时只提供了名和姓，它将不能正确 地运行。为让中间名变成可选的，可给实参</span><span class="font2">middle_name</span><span class="font6">指定一个默认值一空字符串，并在用 户没有提供中间名时不使用这个实参。为让</span><span class="font2">get_formatted_name()</span><span class="font6">在没有提供中间名时依然可行， 可给实参</span><span class="font2">middle_name</span><span class="font6">指定一个默认值一空字符串，并将其移到形参列表的末尾：</span></p>
+<p><span class="font3">❶ </span><span class="font0">def get_formatted_name(first_name, last_name, middle_name=''):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">返回整洁的姓名</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font3">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">if middle_name:</span></p>
+<p><span class="font0">full_name = first_name + ' ' + middle_name + ' ' + last_name</span></p>
+<p><span class="font3">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">else:</span></p>
+<p><span class="font0">full_name = first_name + ' ' + last_name</span></p>
+<p><span class="font0">return full_name.title()</span></p>
+<p><span class="font0">musician = get_formatted_name('jimi', 'hendrix')</span></p>
+<p><span class="font0">print(musician)</span></p>
+<p><span class="font3">❹ </span><span class="font0">musician = get_formatted_name('john', 'hooker', 'lee')</span></p>
+<p><span class="font0">print(musician)</span></p>
+</body>
+</html>

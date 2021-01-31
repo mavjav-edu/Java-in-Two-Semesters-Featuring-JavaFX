@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Calibri, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">6.3 </span><span class="font5">遍历字典 </span><span class="font6">91</span></p>
+<p><span class="font0">print(&quot;Erin, please take our poll!&quot;)</span></p>
+<p><span class="font5">方法</span><span class="font3">keys()</span><span class="font5">并非只能用于遍历；实际上，它返回一个列表，其中包含字典中的所有键，因此 </span><span class="font2">O</span><span class="font5">处的代码行只是核实</span><span class="font3">‘erin’</span><span class="font5">是否包含在这个列表中。由于她并不包含在这个列表中，因此打印 一条消息，邀请她参加调查：</span></p>
+<p><span class="font0">Erin, please take our poll!</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">6.3.3</span><span class="font4"> 按顺序遍历字典中的所有键</span></p></li></ul>
+<p><span class="font5">字典总是明确地记录键和值之间的关联关系，但获取字典的元素时，获取顺序是不可预测的。 这不是问题，因为通常你想要的只是获取与键相关联的正确的值。</span></p>
+<p><span class="font5">要以特定的顺序返回元素，一种办法是在</span><span class="font3">for</span><span class="font5">循环中对返回的键进行排序。为此，可使用函 数</span><span class="font3">sorted()</span><span class="font5">来获得按特定顺序排列的键列表的副本：</span></p>
+<p><span class="font0">favorite_languages = {</span></p>
+<p><span class="font0">'jen': 'python',</span></p>
+<p><span class="font0">'sarah': 'c',</span></p>
+<p><span class="font0">'edward': 'ruby',</span></p>
+<p><span class="font0">'phil': 'python', }</span></p>
+<p><span class="font0">for name in sorted(favorite_languages.keys()):</span></p>
+<p><span class="font0">print(name.title() + &quot;, thank you for taking the poll.&quot;)</span></p>
+<p><span class="font5">这条</span><span class="font3">for</span><span class="font5">语句类似于其他</span><span class="font3">for</span><span class="font5">语句，但对方法</span><span class="font3">dictionary.keys()</span><span class="font5">的结果调用了函数</span><span class="font3">sorted</span><span class="font5">。。 这让</span><span class="font6">Python</span><span class="font5">列出字典中的所有键，并在遍历前对这个列表进行排序。输出表明，按顺序显示了所 有被调查者的名字：</span></p>
+<p><span class="font0">Edward, thank you for taking the poll.</span></p>
+<p><span class="font0">Jen, thank you for taking the poll.</span></p>
+<p><span class="font0">Phil, thank you for taking the poll.</span></p>
+<p><span class="font0">Sarah, thank you for taking the poll.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">6.3.4</span><span class="font4"> 遍历字典中的所有值</span></p></li></ul>
+<p><span class="font5">如果你感兴趣的主要是字典包含的值，可使用方法</span><span class="font3">values</span><span class="font5">。，它返回一个值列表，而不包含 任何键。例如，如果我们想获得一个这样的列表，即其中只包含被调查者选择的各种语言，而不 包含被调查者的名字，可以这样做：</span></p>
+<p><span class="font0">favorite_languages = {</span></p>
+<p><span class="font0">'jen': 'python',</span></p>
+<p><span class="font0">'sarah': 'c',</span></p>
+<p><span class="font0">'edward': 'ruby',</span></p>
+<p><span class="font0">'phil': 'python',</span></p>
+</body>
+</html>

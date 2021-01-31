@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">附录</span><span class="font8">D</span><span class="font7">使用</span><span class="font8">Git</span><span class="font7">进行版本控制</span></p>
+<p><span class="font8">453</span></p>
+<p><span class="font7">你可能需要修改文本编辑器的设置，使其显示隐藏的文件，这样才能使用它来打开文 件</span><span class="font8">.gitignore</span><span class="font7">。有些编辑器被设置成忽略名称以句点打头的文件。</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>D.4 </span><span class="font5">初始化仓库</span></h5>
+<p><span class="font7">你创建了一个目录，其中包含一个</span><span class="font8">Python</span><span class="font7">文件和一个</span><span class="font8">.gitignore</span><span class="font7">文件，可以初始化一个</span><span class="font8">Git</span><span class="font7">仓库 了。为此，打开一个终端窗口，切换到文件夹</span><span class="font8">git_practice</span><span class="font7">，并执行如下命令：</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git init</span></p>
+<p><span class="font1">Initialized empty Git repository in git_practice/.git/ git_practice$</span></p>
+<p><span class="font7">输出表明</span><span class="font8">Git</span><span class="font7">在</span><span class="font8">git_practice</span><span class="font7">中初始化了一个空仓库。仓库是程序中被</span><span class="font8">Git</span><span class="font7">主动跟踪的一组文件。 </span><span class="font8">Git</span><span class="font7">用来管理仓库的文件都存储在隐藏的</span><span class="font8">.git/</span><span class="font7">中，你根本不需要与这个目录打交道，但千万不要删 除这个目录，否则将丢弃项目的所有历史记录。</span></p>
+<p><span class="font2">D.5 </span><span class="font5">检查状态</span></p>
+<p><span class="font7">执行其他操作前，先来看一下项目的状态：</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<p><span class="font0">❶</span><span class="font3"> </span><span class="font1"># On branch master</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span></p></li>
+<li>
+<p><span class="font1"># Initial commit</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0">❷</span><span class="font3"> </span><span class="font1"># Untracked files:</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li>
+<li>
+<p><span class="font1"># .gitignore</span></p></li>
+<li>
+<p><span class="font1"># hello_world.py</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li></ul>
+<p><span class="font0">❸</span><span class="font3"> </span><span class="font1">nothing added to commit but untracked files present (use &quot;git add&quot; to track) git_practice$</span></p>
+<p><span class="font7">在</span><span class="font8">Git</span><span class="font7">中，</span><span class="font6">分支</span><span class="font7">是项目的一个版本。从这里的输出可知，我们位于分支</span><span class="font8">master</span><span class="font7">上（见</span><span class="font4">❶</span><span class="font7">）。你 每次查看项目的状态时，输出都将指出你位于分支</span><span class="font8">master</span><span class="font7">上。接下来的输出表明，我们将进行初 始提交。</span><span class="font6">提交</span><span class="font7">是项目在特定时间点的快照。</span></p>
+<p><span class="font8">Git</span><span class="font7">指出了项目中未被跟踪的文件（见</span><span class="font4">❷</span><span class="font7">），因为我们还没有告诉它要跟踪哪些文件。接下来， 我们被告知没有将任何东西添加到当前提交中，但我们可能需要将未跟踪的文件加入到仓库中 （见</span><span class="font4">❸</span><span class="font7">）。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

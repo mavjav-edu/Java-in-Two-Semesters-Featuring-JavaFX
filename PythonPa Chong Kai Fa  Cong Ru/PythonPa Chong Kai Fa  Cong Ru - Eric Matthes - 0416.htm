@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Calibri, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">19.2 </span><span class="font6">创建用户账户</span></p>
+<p><span class="font7">399</span></p>
+<p><span class="font6">我们首先导入了函数</span><span class="font4">render</span><span class="font6">。，然后导入了函数</span><span class="font4">login（）</span><span class="font6">和</span><span class="font4">authenticate</span><span class="font6">。，以便在用户正确 地填写了注册信息时让其自动登录。我们还导入了默认表单</span><span class="font4">UserCreationForm</span><span class="font6">。在函数</span><span class="font4">register</span><span class="font6">。 中，我们检查要响应的是否是</span><span class="font7">POST</span><span class="font6">请求。如果不是，就创建一个</span><span class="font4">UserCreationForm</span><span class="font6">实例，且不给 它提供任何初始数据（见</span><span class="font3">O</span><span class="font6">）。</span></p>
+<p><span class="font6">如果响应的是</span><span class="font7">POST</span><span class="font6">请求，我们就根据提交的数据创建一个</span><span class="font4">UserCreationForm</span><span class="font6">实例（见</span><span class="font3">❷</span><span class="font6">）， 并检查这些数据是否有效：就这里而言，是用户名未包含非法字符，输入的两个密码相同，以及 用户没有试图做恶意的事情。</span></p>
+<p><span class="font6">如果提交的数据有效，我们就调用表单的方法</span><span class="font4">save（）</span><span class="font6">，将用户名和密码的散列值保存到数据 库中（见</span><span class="font3">❹</span><span class="font6">）。方法</span><span class="font4">save（）</span><span class="font6">返回新创建的用户对象，我们将其存储在</span><span class="font4">new_user</span><span class="font6">中。</span></p>
+<p><span class="font6">保存用户的信息后，我们让用户自动登录，这包含两个步骤。首先，我们调用</span><span class="font4">authenticate</span><span class="font6">。， 并将实参</span><span class="font4">new_user.username</span><span class="font6">和密码传递给它（见</span><span class="font3">❺</span><span class="font6">）。用户注册时，被要求输入密码两次；由于 表单是有效的，我们知道输入的这两个密码是相同的，因此可以使用其中任何一个。在这里，我 们从表单的</span><span class="font7">POST</span><span class="font6">数据中获取与键</span><span class="font4">’passwordl'</span><span class="font6">相关联的值。如果用户名和密码无误，方法 </span><span class="font4">authenticate</span><span class="font6">。将返回一个通过了身份验证的用户对象，而我们将其存储在</span><span class="font4">authenticated_user </span><span class="font6">中。接下来，我们调用函数</span><span class="font4">login（）</span><span class="font6">，并将对象</span><span class="font4">request</span><span class="font6">和</span><span class="font4">authenticated_user</span><span class="font6">传递给它（见</span><span class="font3">❻</span><span class="font6">）, 这将为新用户创建有效的会话。最后，我们将用户重定向到主页（见</span><span class="font3">❼</span><span class="font6">），其页眉中显示了一条 个性化的问候语，让用户知道注册成功了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">3.</span><span class="font5"> 注册模板</span></p></li></ul>
+<p><span class="font6">注册页面的模板与登录页面的模板类似，请务必将其保存到</span><span class="font7">loginhtml</span><span class="font6">所在的目录中：</span></p>
+<p><span class="font1">register.html</span></p>
+<p><span class="font0">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">{% block content %}</span></p></li></ul>
+<p><span class="font0">&lt;form method=&quot;post&quot; action=&quot;{% url 'users:register' %}&quot;&gt; {% csrf_token %}</span></p>
+<p><span class="font0">{{ form.as_p }}</span></p>
+<p><span class="font0">&lt;button name=&quot;submit&quot;&gt;register&lt;/button&gt;</span></p>
+<p><span class="font0">&lt;input type=&quot;hidden&quot; name=&quot;next&quot; value=&quot;{% url 'learning_logs:index' %}&quot; /&gt; &lt;/form&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">{% endblock content %}</span></p></li></ul>
+<p><span class="font6">这里也使用了方法</span><span class="font4">as_p</span><span class="font6">，让</span><span class="font7">Django</span><span class="font6">在表单中正确地显示所有的字段，包括错误消息一如果 用户没有正确地填写表单。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">4.</span><span class="font5"> 链接到注册页面</span></p></li></ul>
+<p><span class="font6">接下来，我们添加这样的代码，即在用户没有登录时显示到注册页面的链接：</span></p>
+<p><span class="font2" style="font-weight:bold;">19</span></p>
+</body>
+</html>

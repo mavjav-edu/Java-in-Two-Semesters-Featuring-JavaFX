@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:10pt SimSun, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">246 </span><span class="font7">第</span><span class="font3">13</span><span class="font7">章外星人</span></p>
+<p><span class="font0" style="font-weight:bold;">ship.update()</span></p>
+<p><span class="font0" style="font-weight:bold;">gf.update_bullets(bullets)</span></p>
+<p><span class="font0" style="font-weight:bold;">gf.update_aliens(ai_settings, aliens)</span></p>
+<p><span class="font0" style="font-weight:bold;">gf.update_screen(ai_settings, screen, ship, aliens, bullets)</span></p>
+<p><span class="font7">如果你现在运行这个游戏，外星人群将在屏幕上来回移动，并在抵达屏幕边缘后向下移动。 现在可以开始射杀外星人，检查是否有外星人撞到飞船，或抵达了屏幕底端。</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>动手试一试</span></h6>
+<p><span class="font2">13-3</span><span class="font7">雨滴：寻找一幅雨滴图像，并创建一系列整齐排列的雨滴。让这些雨滴往下 落，直到到达屏幕底端后消失。</span></p>
+<p><span class="font2">13-4</span><span class="font7">连绵细雨：修改为完成练习</span><span class="font12">13</span><span class="font11">・</span><span class="font12">3</span><span class="font7">而编写的代码，使得一行雨滴消失在屏幕底 端后，屏幕顶端又出现一行新雨滴，并开始往下落。</span></p>
+<ul style="list-style:none;"><li><a name="caption2"></a>
+<h5><a name="bookmark2"></a><span class="font5"><a name="bookmark3"></a>13.5</span><span class="font9">射杀外星人</span></h5></li></ul>
+<p><span class="font7">我们创建了飞船和外星人群，但子弹击中外星人时，将穿过外星人，因为我们还没有检查碰 撞。在游戏编程中，碰撞指的是游戏元素重叠在一起。要让子弹能够击落外星人，我们将使用 </span><span class="font12">sprite. groupcollide</span><span class="font7">。检测两个编组的成员之间的碰撞。</span></p>
+<ul style="list-style:none;"><li>
+<h6><a name="bookmark4"></a><span class="font4"><a name="bookmark5"></a>13.5.1</span><span class="font8"> 检测子弹与外星人的碰撞</span></h6></li></ul>
+<p><span class="font7">子弹击中外星人时，我们要马上知道，以便碰撞发生后让外星人立即消失。为此，我们将在 更新子弹的位置后立即检测碰撞。</span></p>
+<p><span class="font7">方法</span><span class="font12">sprite.groupcollide()</span><span class="font7">将每颗子弹的</span><span class="font12">rect</span><span class="font7">同每个外星人的</span><span class="font12">rect</span><span class="font7">进行比较，并返回一个字 典，其中包含发生了碰撞的子弹和外星人。在这个字典中，每个键都是一颗子弹，而相应的值都 是被击中的外星人(第</span><span class="font12">14</span><span class="font7">章实现记分系统时，也会用到这个字典)。</span></p>
+<p><span class="font7">在函数叩</span><span class="font12">date_bullets()</span><span class="font7">中，使用下面的代码来检查碰撞：</span></p>
+<h6><a name="bookmark6"></a><span class="font3"><a name="bookmark7"></a>game_functions.py</span></h6>
+<p><span class="font0" style="font-weight:bold;">def update_bullets(aliens, bullets):</span></p>
+<p><span class="font10">'更薪子弹的位置，并删除已消失的子弹&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1" style="font-style:italic;">- -snip--</span></p></li>
+<li>
+<p><span class="font10"># 检查是否有子弹击中了外星人</span></p></li>
+<li>
+<p><span class="font10"># 如果是这样，就删除相应的子弹和外星人</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)</span></p>
+<p><span class="font7">新增的这行代码遍历编组</span><span class="font12">bullets</span><span class="font7">中的每颗子弹，再遍历编组</span><span class="font12">aliens</span><span class="font7">中的每个外星人。每当 有子弹和外星人的</span><span class="font12">rect</span><span class="font7">重叠时，</span><span class="font12">gr</span><span class="font7">。叩</span><span class="font12">collide</span><span class="font7">。就在它返回的字典中添加一个键-值对。两个实参</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

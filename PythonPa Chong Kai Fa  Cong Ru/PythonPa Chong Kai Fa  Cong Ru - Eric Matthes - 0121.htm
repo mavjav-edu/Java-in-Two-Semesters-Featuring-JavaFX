@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:14pt Arial, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">104</span></p>
+<p><span class="font9">第</span><span class="font10">7</span><span class="font9">章用户输入和</span><span class="font10">wliile</span><span class="font9">循环</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>7.1.4</span><span class="font6"> 在</span><span class="font3">Python 2.7</span><span class="font6">中获取输入</span></h5></li></ul>
+<p><span class="font9">如果你使用的是</span><span class="font10">Python 2.7,</span><span class="font9">应使用函数</span><span class="font10">raw_i</span><span class="font9">叩</span><span class="font10">ut</span><span class="font9">。来提示用户输入。这个函数与</span><span class="font10">Python 3 </span><span class="font9">中的</span><span class="font10">i</span><span class="font9">叩</span><span class="font10">ut()</span><span class="font9">一样，也将输入解读为字符串。</span></p>
+<p><span class="font10">Python2.7</span><span class="font9">也包含函数</span><span class="font10">input</span><span class="font9">。，但它将用户输入解读为</span><span class="font10">Python</span><span class="font9">代码，并尝试运行它们。因此, 最好的结果是出现错误，指出</span><span class="font10">Python</span><span class="font9">不明白输入的代码；而最糟的结果是，将运行你原本无意运 行的代码。如果你使用的是</span><span class="font10">Python 2.7,</span><span class="font9">请使用</span><span class="font10">raw_i</span><span class="font9">叩</span><span class="font10">ut()</span><span class="font9">而不是</span><span class="font10">i</span><span class="font9">叩</span><span class="font10">ut()</span><span class="font9">来获取输入。</span></p>
+<p><span class="font6">动手试一试</span></p>
+<p><span class="font10">7-1</span><span class="font9">汽车租赁：编写一个程序，询问用户要租赁什么样的汽车，并打印一条消息， 如 </span><span class="font10">“Let me see if I can find you a Subaru”</span><span class="font9">。</span></p>
+<p><span class="font10">7-2</span><span class="font9">餐馆订位：编写一个程序，询问用户有多少人用餐。如果超过</span><span class="font10">8</span><span class="font9">人，就打印一 条消息，指出没有空桌；否则指出有空桌。</span></p>
+<p><span class="font10">7-3 10</span><span class="font9">的整数倍：让用户输入一个数字，并指出这个数字是否是</span><span class="font10">10</span><span class="font9">的整数倍。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">7.2 while</span><span class="font7">循环简介</span></p></li></ul>
+<p><span class="font10">for</span><span class="font9">循环用于针对集合中的每个元素都一个代码块，而</span><span class="font10">while</span><span class="font9">循环不断地运行，直到指定的条 件不满足为止。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>7.2.1</span><span class="font6"> 使用</span><span class="font3">while</span><span class="font6">循环</span></h5></li></ul>
+<p><span class="font9">你可以使用</span><span class="font10">while</span><span class="font9">循环来数数，例如，下面的</span><span class="font10">while</span><span class="font9">循环从</span><span class="font10">1</span><span class="font9">数到</span><span class="font10">5</span><span class="font9">：</span></p>
+<p><span class="font2">counting.py</span></p>
+<p><span class="font0" style="font-weight:bold;">current_number = 1</span></p>
+<p><span class="font0" style="font-weight:bold;">while current_number &lt;= 5</span><span class="font8" style="font-weight:bold;">：</span></p>
+<p><span class="font0" style="font-weight:bold;">print(current_number)</span></p>
+<p><span class="font0" style="font-weight:bold;">current_number += 1</span></p>
+<p><span class="font9">在第</span><span class="font10">1</span><span class="font9">行，我们将</span><span class="font10">current_number</span><span class="font9">设置为</span><span class="font10">1,</span><span class="font9">从而指定从</span><span class="font10">1</span><span class="font9">开始数。接下来的</span><span class="font10">while</span><span class="font9">循环被设置 成这样：只要</span><span class="font10">current number</span><span class="font9">小于或等于</span><span class="font10">5 ,</span><span class="font9">就接着运行这个循环。循环中的代码打印 </span><span class="font10">current_number</span><span class="font9">的值，再使用代码</span><span class="font10">current_number += 1 </span><span class="font9">(代码</span><span class="font10">current_number = current_number + 1</span><span class="font9">的简写)将其值加</span><span class="font10">1</span><span class="font9">。</span></p>
+<p><span class="font9">只要满足条件</span><span class="font10">current number &lt;= 5, Python</span><span class="font9">就接着运行这个循环。由于</span><span class="font10">1</span><span class="font9">小于</span><span class="font10">5,</span><span class="font9">因此</span><span class="font10">Python </span><span class="font9">打印</span><span class="font10">1,</span><span class="font9">并将</span><span class="font10">current number</span><span class="font9">加</span><span class="font10">1,</span><span class="font9">使其为</span><span class="font10">2;</span><span class="font9">由于</span><span class="font10">2</span><span class="font9">小于</span><span class="font10">5,</span><span class="font9">因此</span><span class="font10">Python</span><span class="font9">打印</span><span class="font10">2,</span><span class="font9">并将</span><span class="font10">current number </span><span class="font9">加</span><span class="font10">1,</span><span class="font9">使其为</span><span class="font10">3,</span><span class="font9">以此类推。一旦</span><span class="font10">current number</span><span class="font9">大于</span><span class="font10">5,</span><span class="font9">循环将停止，整个程序也将到此结束：</span></p>
+<p><span class="font5">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font5">专享尊重版权</span></p>
+</body>
+</html>

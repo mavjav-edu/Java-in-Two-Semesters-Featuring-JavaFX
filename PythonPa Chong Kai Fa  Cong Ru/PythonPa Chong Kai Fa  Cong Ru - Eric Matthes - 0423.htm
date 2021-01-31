@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Calibri, sans-serif; }
+ .font5 { font:10pt Consolas, monospace; }
+ .font6 { font:10pt Segoe UI, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">406</span></p>
+<p><span class="font9">第</span><span class="font10">19</span><span class="font9">章 用户账户</span></p>
+<p><span class="font0">entries = topic.entry_set.order_by('-date_added')</span></p>
+<p><span class="font0">context = {'topic': topic, 'entries': entries}</span></p>
+<p><span class="font0">return render(request, 'learning_logs/topic.html', context)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font9">服务器上没有请求的资源时，标准的做法是返回</span><span class="font10">404</span><span class="font9">响应。在这里，我们导入了异常</span><span class="font6">Http404 </span><span class="font9">(见</span><span class="font4">O</span><span class="font9">),并在用户请求它不能查看的主题时引发这个异常。收到主题请求后，我们在渲染网页前 检查该主题是否属于当前登录的用户。如果请求的主题不归当前用户所有，我们就引发</span><span class="font6">Http404 </span><span class="font9">异常(见</span><span class="font4">❷</span><span class="font9">)，让</span><span class="font10">Django</span><span class="font9">返回一个</span><span class="font10">404</span><span class="font9">错误页面。</span></p>
+<p><span class="font9">现在，如果你试图查看其他用户的主题条目，将看到</span><span class="font10">Django</span><span class="font9">发送的消息</span><span class="font10">Page Not Found</span><span class="font9">。在 第</span><span class="font10">20</span><span class="font9">章，我们将对这个项目进行配置，让用户看到更合适的错误页面。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">19.3.5 </span><span class="font7">保护页面 </span><span class="font2">edit_entry</span></p></li></ul>
+<p><span class="font9">页面</span><span class="font6">edit_entry</span><span class="font9">的</span><span class="font10">URL</span><span class="font9">为</span><span class="font6">http://localhost:8000/edit_entry/</span><span class="font5" style="font-style:italic;">e</span><span class="font9" style="font-style:italic;">〃七竺</span><span class="font5" style="font-style:italic;">2</span><span class="font6">H</span><span class="font9">，其中</span><span class="font5" style="font-style:italic;">entyid</span><span class="font9">是一 个数字。下面来保护这个页面，禁止用户通过输入类似于前面的</span><span class="font10">URL</span><span class="font9">来访问其他用户的条目：</span></p>
+<p><span class="font1">views.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">@login_required</span></p>
+<p><span class="font0">def edit_entry(request, entry_id):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">编辑既有条目</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">entry = Entry.objects.get(id=entry_id)</span></p>
+<p><span class="font0">topic = entry.topic</span></p>
+<p><span class="font0">if topic.owner != request.user:</span></p>
+<p><span class="font0">raise Http404</span></p>
+<p><span class="font0">if request.method != 'POST':</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font8">初次请求，使用当前条目的内容填充表单</span></p></li>
+<li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font9">我们获取指定的条目以及与之相关联的主题，然后检查主题的所有者是否是当前登录的用 户，如果不是，就引发</span><span class="font6">Http404</span><span class="font9">异常。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">19.3.6 </span><span class="font7">将新主题关联到当前用户</span></p></li></ul>
+<p><span class="font9">当前，用于添加新主题的页面存在问题，因此它没有将新主题关联到特定用户。如果你尝试 添加新主题，将看到错误消息</span><span class="font6">IntegrityError</span><span class="font9">，指出</span><span class="font6">learning_logs_topic.user_id</span><span class="font9">不能为</span><span class="font6">NULL</span><span class="font9">。 </span><span class="font10">Django</span><span class="font9">的意思是说，创建新主题时，你必须指定其</span><span class="font6">owner</span><span class="font9">字段的值。- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</span></p>
+<p><span class="font9">由于我们可以通过</span><span class="font6">request</span><span class="font9">对象获悉当前用户，因此存在一个修复这种问题的简单方案。请 添加下面的代码，将新主题关联到当前用户：</span></p>
+</body>
+</html>

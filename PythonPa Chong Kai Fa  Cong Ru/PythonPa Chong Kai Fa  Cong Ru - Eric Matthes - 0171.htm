@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">154</span></p>
+<p><span class="font6">第</span><span class="font7">9</span><span class="font6">章 类</span></p>
+<p><span class="font7">car.py</span><span class="font6">。从现在开始，使用该模块的程序都必须使用更具体的文件名，如</span><span class="font7">my_car.py</span><span class="font6">。下面是模块 </span><span class="font7">car.py</span><span class="font6">,其中只包含</span><span class="font2">Car</span><span class="font6">类的代码：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>car.py</span></h6>
+<p><span class="font3">❶</span><span class="font0">&quot;&quot;&quot;</span><span class="font5">一个可用于表示汽车的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">class Car():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">一次模拟汽车的简单尝试</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, make, model, year):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">初始化描述汽车的属性</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.make = make</span></p>
+<p><span class="font0">self.model = model</span></p>
+<p><span class="font0">self.year = year</span></p>
+<p><span class="font0">self.odometer_reading = 0</span></p>
+<p><span class="font0">def get_descriptive_name(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">返回整洁的描述性名称</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">long_name = str(self.year) + ' ' + self.make + ' ' + self.model return long_name.title()</span></p>
+<p><span class="font0">def read_odometer(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">打印一条消息，指出汽车的里程</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;This car has &quot;&nbsp;+ str(self.odometer_reading) + &quot;&nbsp;miles on it.&quot;)</span></p>
+<p><span class="font0">def update_odometer(self, mileage): &quot;&quot;&quot;</span></p>
+<p><span class="font5">将里程表读数设置为指定的值 拒绝将里程表往回拨</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if mileage &gt;= self.odometer_reading: self.odometer_reading = mileage</span></p>
+<p><span class="font0">else:</span></p>
+<p><span class="font0">print(&quot;You can't roll back an odometer!&quot;)</span></p>
+<p><span class="font0">def increment_odometer(self, miles):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">将里程表读数增加指定的量</span><span class="font0">&quot;&quot;&quot; self.odometer_reading += miles</span></p>
+<p><span class="font6">在</span><span class="font4">❶</span><span class="font6">处，我们包含了一个模块级文档字符串，对该模块的内容做了简要的描述。你应为自己 创建的每个模块都编写文档字符串。</span></p>
+<p><span class="font6">下面来创建另一个文件--</span><span class="font7">my_car.py</span><span class="font6">，在其中导入</span><span class="font2">Car</span><span class="font6">类并创建其实例：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>my_car.py</span></h6>
+<p><span class="font3">❶ </span><span class="font0">from car import Car</span></p>
+<p><span class="font0">my_new_car = Car('audi', 'a4', 2016) print(my_new_car.get_descriptive_name())</span></p>
+<p><span class="font0">my_new_car.odometer_reading = 23</span></p>
+</body>
+</html>

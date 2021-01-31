@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">14.3 </span><span class="font7">记分</span></p>
+<p><span class="font8">277</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>scoreboard.py</span></h6>
+<p><span class="font0">def prep_level(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">将等级转换为渲染的图像</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.level_image = self.font.render(str(self.stats.level), True,</span></p>
+<p><span class="font0">self.text_color, self.ai_settings.bg_color)</span></p>
+<p><span class="font0"># </span><span class="font6">将等级放在得分下方</span></p>
+<p><span class="font0">self.level_rect = self.level_image.get_rect()</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.level_rect.right = self.score_rect.right</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.level_rect.top = self.score_rect.bottom + 10</span></p>
+<p><span class="font7">方法</span><span class="font3">prep_level()</span><span class="font7">根据存储在</span><span class="font3">stats.level</span><span class="font7">中的值创建一幅图像(见</span><span class="font5">❶</span><span class="font7">)，并将其</span><span class="font3">right</span><span class="font7">属性设 置为得分的</span><span class="font3">right</span><span class="font7">属性(见</span><span class="font5">❷</span><span class="font7">)。然后，将</span><span class="font3">top</span><span class="font7">属性设置为比得分图像的</span><span class="font3">bottom</span><span class="font7">属性大</span><span class="font8">10</span><span class="font7">像素，以便 在得分和等级之间留出一定的空间(见</span><span class="font5">❸</span><span class="font7">)。</span></p>
+<p><span class="font7">我们还需要更新</span><span class="font3">show_score()</span><span class="font7">：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>scoreboard.py</span></h6>
+<p><span class="font0">def show_score(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">在屏幕上显示飞船和得分</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.screen.blit(self.score_image, self.score_rect)</span></p>
+<p><span class="font0">self.screen.blit(self.high_score_image, self.high_score_rect) self.screen.blit(self.level_image, self.level_rect)</span></p>
+<p><span class="font7">在这个方法中，添加了一行在屏幕上显示等级图像的代码。</span></p>
+<p><span class="font7">我们在</span><span class="font3">check_bullet_alien_collisions()</span><span class="font7">中提高等级，并更新等级图像：</span></p>
+<h6><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>game_functions.py</span></h6>
+<p><span class="font0">def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets):</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">if len(aliens) == 0:</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">14</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 如果整群外星人都被消灭，就提高一个等级 </span><span class="font0">bullets.empty()</span></p></li></ul>
+<p><span class="font0">ai_settings.increase_speed()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 提高等级</span></p></li></ul>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">stats.level += 1</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">sb.prep_level()</span></p>
+<p><span class="font0">create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font7">如果整群外星人都被消灭，我们就将</span><span class="font3">stats.level</span><span class="font7">的值加</span><span class="font8">1 </span><span class="font7">(见</span><span class="font5">❶</span><span class="font7">)，并调用</span><span class="font3">prep_level()</span><span class="font7">，以 确保正确地显示新等级(见</span><span class="font5">❷</span><span class="font7">)。</span></p>
+<p><span class="font7">为确保开始新游戏时更新记分和等级图像，在按钮</span><span class="font8">Play</span><span class="font7">被单击时触发重置：</span></p>
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">def check_play_button(ai_settings, screen, stats, sb, play_button, ship,</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

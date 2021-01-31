@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">6.2 </span><span class="font8">使用字典</span></p>
+<p><span class="font9">85</span></p>
+<p><span class="font0">print(&quot;New x-position: &quot;&nbsp;+ str(alien_0['x_position']))</span></p>
+<p><span class="font8">我们首先定义了一个外星人，其中包含初始的</span><span class="font9" style="font-style:italic;">X</span><span class="font8">坐标和</span><span class="font9" style="font-style:italic;">y</span><span class="font8">坐标，还有速度</span><span class="font3">'medium'</span><span class="font8">。出于简化 考虑，我们省略了颜色和点数，但即便包含这些键</span><span class="font1">-</span><span class="font8">值对，这个示例的工作原理也不会有任何变 化。我们还打印了</span><span class="font3">x_position</span><span class="font8">的初始值，旨在让用户知道这个外星人向右移动了多远。</span></p>
+<p><span class="font8">在</span><span class="font5">。</span><span class="font8">处，使用了一个</span><span class="font3">if-elif-else</span><span class="font8">结构来确定外星人应向右移动多远，并将这个值存储在变 量</span><span class="font3">x_increment</span><span class="font8">中。如果外星人的速度为</span><span class="font3">‘slow'</span><span class="font8">，它将向右移动一个单位；如果速度为</span><span class="font3">‘medium'</span><span class="font8">， 将向右移动两个单位；如果为</span><span class="font3">‘fast'</span><span class="font8">，将向右移动三个单位。确定移动量后，将其与</span><span class="font3">x_position </span><span class="font8">的当前值相加(见</span><span class="font5">❷</span><span class="font8">)，再将结果关联到字典中的键</span><span class="font3">x_position</span><span class="font8">。</span></p>
+<p><span class="font8">由于这是一个速度中等的外星人，因此其位置将向右移动两个单位：</span></p>
+<p><span class="font0">Original x-position: 0</span></p>
+<p><span class="font0">New x-position: 2</span></p>
+<p><span class="font8">这种技术很棒：通过修改外星人字典中的值，可改变外星人的行为。例如，要将这个速度中 等的外星人变成速度很快的外星人，可添加如下代码行：</span></p>
+<p><span class="font0">alien_0['speed'] = fast</span></p>
+<p><span class="font8">这样，再次运行这些代码时，其中的</span><span class="font3">if-elif-else</span><span class="font8">结构将把一个更大的值赋给变量 </span><span class="font3">x_increment</span><span class="font8">。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>6.2.5</span><span class="font6"> 删除键</span><span class="font6" style="font-weight:bold;">—</span><span class="font6">值对</span></h5></li></ul>
+<p><span class="font8">对于字典中不再需要的信息，可使用</span><span class="font3">del</span><span class="font8">语句将相应的键</span><span class="font1">-</span><span class="font8">值对彻底删除。使用</span><span class="font3">del</span><span class="font8">语句时， 必须指定字典名和要删除的键。</span></p>
+<p><span class="font8">例如，下面的代码从字典</span><span class="font3">alien_0</span><span class="font8">中删除键</span><span class="font3">'points'</span><span class="font8">及其值：</span></p>
+<p><span class="font0">alien_0 = {'color': 'green', 'points': 5}</span></p>
+<p><span class="font0">print(alien_0)</span></p>
+<p><span class="font4">❶ </span><span class="font0">del alien_0['points']</span></p>
+<p><span class="font0">print(alien_0)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">❶</span><span class="font8">处的代码行让</span><span class="font9">Python</span><span class="font8">将键</span><span class="font3">'points'</span><span class="font8">从字典</span><span class="font3">alien_0</span><span class="font8">中删除，同时删除与这个键相关联的值。 输出表明，键</span><span class="font3">'points'</span><span class="font8">及其值</span><span class="font3">5</span><span class="font8">已从字典中删除，但其他键</span><span class="font1">-</span><span class="font8">值对未受影响：</span></p></li></ul>
+<p><span class="font0">{'color': 'green', 'points': 5}</span></p>
+<p><span class="font0">{'color': 'green'}</span></p>
+<p><span class="font8">注意 </span><span class="font7">删除的键</span><span class="font1">—</span><span class="font7">值对永远消失了。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">16.2</span><span class="font8">制作世界人口地图：</span><span class="font9">JSON</span><span class="font8">格式</span></p>
+<p><span class="font9">325</span></p>
+<p><span class="font0">{</span></p>
+<p><span class="font0">&quot;Country Name&quot;: &quot;Arab World&quot;,</span></p>
+<p><span class="font0">&quot;Country Code&quot;: &quot;ARB&quot;,</span></p>
+<p><span class="font0">&quot;Year&quot;: &quot;1961&quot;,</span></p>
+<p><span class="font0">&quot;Value&quot;: &quot;98882541.4&quot;</span></p>
+<p><span class="font0">},</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p>
+<p><span class="font0">]</span></p>
+<p><span class="font8">这个文件实际上就是一个很长的</span><span class="font9">Python</span><span class="font8">列表，其中每个元素都是一个包含四个键的字典：国 家名、国别码、年份以及表示人口数量的值。我们只关心每个国家</span><span class="font9">2010</span><span class="font8">年的人口数量，因此我们 首先编写一个打印这些信息的程序：</span></p>
+<p><span class="font2">world_population.py</span></p>
+<p><span class="font0">import json</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 将数据加载到一个列表中</span></p></li></ul>
+<p><span class="font0">filename = 'population_data.json' with open(filename) as f:</span></p>
+<p><span class="font5">❶ </span><span class="font0">pop_data = json.load(f)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 打印每个国家</span><span class="font0">2010</span><span class="font7">年的人口数量</span></p></li></ul>
+<p><span class="font5">❷ </span><span class="font0">for pop_dict in pop_data:</span></p>
+<p><span class="font5">❸ </span><span class="font0">if pop_dict['Year'] == '2010':</span></p>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">country_name = pop_dict['Country Name']</span></p>
+<p><span class="font0">population = pop_dict['Value'] print(country_name + &quot;: &quot;&nbsp;+ population)</span></p>
+<p><span class="font8">我们首先导入了模块</span><span class="font4">json</span><span class="font8">，以便能够正确地加载文件中的数据，然后，我们将数据存储在 </span><span class="font4">pop_data</span><span class="font8">中（见</span><span class="font6">❶</span><span class="font8">）。函数</span><span class="font4">json.load（）</span><span class="font8">将数据转换为</span><span class="font9">Python</span><span class="font8">能够处理的格式，这里是一个列表。 在</span><span class="font6">❷</span><span class="font8">处，我们遍历</span><span class="font4">pop_data</span><span class="font8">中的每个元素。每个元素都是一个字典，包含四个键</span><span class="font1">-</span><span class="font8">值对，我们将 每个字典依次存储在</span><span class="font4">pop_dict</span><span class="font8">中。</span></p>
+<p><span class="font8">在</span><span class="font6">❸</span><span class="font8">处，我们检查字典的</span><span class="font4">‘Year'</span><span class="font8">键对应的值是否是</span><span class="font9">2010 </span><span class="font8">（由于</span><span class="font9">population_datajson</span><span class="font8">中的值都是 用引号括起的，因此我们执行的是字符串比较）。如果年份为</span><span class="font9">2010</span><span class="font8">，我们就将与</span><span class="font4">‘Country Name' </span><span class="font8">相关联的值存储到</span><span class="font4">country_name</span><span class="font8">中，并将与</span><span class="font4">‘Value'</span><span class="font8">相关联的值存储在</span><span class="font4">population</span><span class="font8">中（见</span><span class="font6">❹</span><span class="font8">）。接下 来，我们打印每个国家的名称和人口数量。</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">16</span></p>
+</div><br clear="all">
+<p><span class="font8">输出为一系列国家的名称和人口数量：</span></p>
+<p><span class="font0">Arab World: 357868000</span></p>
+<p><span class="font0">Caribbean small states: 6880000</span></p>
+<p><span class="font0">East Asia &amp;&nbsp;Pacific (all income levels): 2201536674</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">Zimbabwe: 12571000</span></p>
+<p><span class="font8">我们捕获的数据并非都包含准确的国家名，但这开了一个好头。现在，我们需要将数据转换 </span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

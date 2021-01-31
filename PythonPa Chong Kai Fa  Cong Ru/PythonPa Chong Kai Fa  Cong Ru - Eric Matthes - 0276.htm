@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">14.1 </span><span class="font8">添加</span><span class="font9">Play</span><span class="font8">按钮 </span><span class="font9">259</span></p>
+<p><span class="font0">self.msg_image_rect = self.msg_image.get_rect() self.msg_image_rect.center = self.rect.center</span></p>
+<p><span class="font8">方法</span><span class="font3">prep_msg()</span><span class="font8">接受实参</span><span class="font3">self</span><span class="font8">以及要渲染为图像的文本(</span><span class="font3">msg </span><span class="font8">)。调用</span><span class="font3">font.render()</span><span class="font8">将存储在 </span><span class="font3">msg</span><span class="font8">中的文本转换为图像，然后将该图像存储在</span><span class="font3">msg_image</span><span class="font8">中(见</span><span class="font5">。</span><span class="font8">)。方法</span><span class="font3">font.render()</span><span class="font8">还接受 一个布尔实参，该实参指定开启还是关闭反锯齿功能(反锯齿让文本的边缘更平滑)。余下的两 个实参分别是文本颜色和背景色。我们启用了反锯齿功能，并将文本的背景色设置为按钮的颜色 (如果没有指定背景色，</span><span class="font9">Pygame</span><span class="font8">将以透明背景的方式渲染文本)。</span></p>
+<p><span class="font8">在</span><span class="font5">❷</span><span class="font8">处，我们让文本图像在按钮上居中：根据文本图像创建一个</span><span class="font3">rect</span><span class="font8">，并将其</span><span class="font3">center</span><span class="font8">属性设 置为按钮的</span><span class="font3">center</span><span class="font8">属性。</span></p>
+<p><span class="font8">最后，我们创建方法</span><span class="font3">draw_button()</span><span class="font8">，通过调用它可将这个按钮显示到屏幕上：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>button.py</span></h6>
+<p><span class="font0">def draw_button(self):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">绘制一个用颜色填充的按钮，再绘制文本</span></p></li></ul>
+<p><span class="font0">self.screen.fill(self.button_color, self.rect)</span></p>
+<p><span class="font0">self.screen.blit(self.msg_image, self.msg_image_rect)</span></p>
+<p><span class="font8">我们调用</span><span class="font3">screenfill</span><span class="font8">。来绘制表示按钮的矩形，再调用</span><span class="font3">screen.blit()</span><span class="font8">，并向它传递一幅图 像以及与该图像相关联的</span><span class="font3">rect</span><span class="font8">对象，从而在屏幕上绘制文本图像。至此，</span><span class="font3">Button</span><span class="font8">类便创建好了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">14.1.2 </span><span class="font6">在屏幕上绘制按钮</span></p></li></ul>
+<p><span class="font8">我们将使用</span><span class="font3">Button</span><span class="font8">类来创建一个</span><span class="font9">Play</span><span class="font8">按钮。鉴于只需要一个</span><span class="font9">Play</span><span class="font8">按钮，我们直接在 </span><span class="font9">alien_invasion.py</span><span class="font8">中创建它，如下所示：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>alien_invasion.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">14</span></p>
+</div><br clear="all"></li></ul>
+<p><span class="font0">from game_stats import GameStats</span></p>
+<p><span class="font0">from button import Button</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">def run_game():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">pygame.display.set_caption(&quot;Alien Invasion&quot;)</span></p>
+<p><span class="font0">#</span><span class="font7">创建</span><span class="font0">Play</span><span class="font7">按钮</span></p>
+<p><span class="font4">❶ </span><span class="font0">play_button = Button(ai_settings, screen, &quot;Play&quot;)</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0"># </span><span class="font7">开始游戏主循环 </span><span class="font0">while True:</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets,</span></p>
+<p><span class="font0">play_button)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

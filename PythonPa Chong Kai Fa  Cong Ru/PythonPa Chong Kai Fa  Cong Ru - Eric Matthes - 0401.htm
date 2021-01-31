@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:8pt SimSun, serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">384</span></p>
+<p><span class="font6">第</span><span class="font7">19</span><span class="font6">章 用户账户</span></p>
+<p><span class="font0">from .models import Topic from .forms import TopicForm</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p>
+<p><span class="font0">def new_topic(request):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font4">添加新主题</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0" style="font-weight:bold;">❶ </span><span class="font0">if request.method != 'POST':</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font4"> 未提交数据 创建一个新表单</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">form = TopicForm()</span></p>
+<p><span class="font0">else:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># POST</span><span class="font4">提交的数据</span><span class="font5">，</span><span class="font4">对数据进行处理</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">form = TopicForm(request.POST)</span></p>
+<p><span class="font0" style="font-weight:bold;">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">if form.is_valid():</span></p>
+<p><span class="font0" style="font-weight:bold;">❺ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">form.save()</span></p>
+<p><span class="font0" style="font-weight:bold;">❻ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">return HttpResponseRedirect(reverse('learning_logs:topics'))</span></p>
+<p><span class="font0" style="font-weight:bold;">6 </span><span class="font0">context = {'form': form}</span></p>
+<p><span class="font0">return render(request, 'learning_logs/new_topic.html', context)</span></p>
+<p><span class="font6">我们导入了 </span><span class="font2">HttpResponseRedirect</span><span class="font6">类，用户提交主题后我们将使用这个类将用户重定向到网 页</span><span class="font2">topics</span><span class="font6">。函数</span><span class="font2">reverse</span><span class="font6">。根据指定的</span><span class="font7">URL</span><span class="font6">模型确定</span><span class="font7">URL</span><span class="font6">,这意味着</span><span class="font7">Django</span><span class="font6">将在页面被请求时生成 </span><span class="font7">URL</span><span class="font6">。我们还导入了刚才创建的表单</span><span class="font2">TopicForm</span><span class="font6">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">4 . GET</span><span class="font3">请求和</span><span class="font1">POST</span><span class="font3">请求</span></p></li></ul>
+<p><span class="font6">创建</span><span class="font7">Web</span><span class="font6">应用程序时，将用到的两种主要请求类型是</span><span class="font7">GET</span><span class="font6">请求和</span><span class="font7">POST</span><span class="font6">请求。对于只是从服务 器读取数据的页面，使用</span><span class="font7">GET</span><span class="font6">请求；在用户需要通过表单提交信息时，通常使用</span><span class="font7">POST</span><span class="font6">请求。处理 所有表单时，我们都将指定使用</span><span class="font7">POST</span><span class="font6">方法。还有一些其他类型的请求，但这个项目没有使用。</span></p>
+<p><span class="font6">函数</span><span class="font2">new_topic（）</span><span class="font6">将请求对象作为参数。用户初次请求该网页时，其浏览器将发送</span><span class="font7">GET</span><span class="font6">请求； 用户填写并提交表单时，其浏览器将发送</span><span class="font7">POST</span><span class="font6">请求。根据请求的类型，我们可以确定用户请求 的是空表单（</span><span class="font7">GET</span><span class="font6">请求）还是要求对填写好的表单进行处理（</span><span class="font7">POST</span><span class="font6">请求）。</span></p>
+<p><span class="font3">❶</span><span class="font6">处的测试确定请求方法是</span><span class="font7">GET</span><span class="font6">还是</span><span class="font7">POST</span><span class="font6">。如果请求方法不是</span><span class="font7">POST</span><span class="font6">，请求就可能是</span><span class="font7">GET</span><span class="font6">， 因此我们需要返回一个空表单（即便请求是其他类型的,返回一个空表单也不会有任何问题）。 我们创建一个</span><span class="font2">TopicForm</span><span class="font6">实例（见</span><span class="font3">❷</span><span class="font6">），将其存储在变量</span><span class="font2">form</span><span class="font6">中，再通过上下文字典将这个表单发 送给模板（见</span><span class="font3">❼</span><span class="font6">）。由于实例化</span><span class="font2">TopicForm</span><span class="font6">时我们没有指定任何实参，</span><span class="font7">Django</span><span class="font6">将创建一个可供用户 填写的空表单。</span></p>
+<p><span class="font6">如果请求方法为</span><span class="font7">POST</span><span class="font6">，将执行</span><span class="font2">else</span><span class="font6">代码块，对提交的表单数据进行处理。我们使用用户输 人的数据（它们存储在</span><span class="font2">request.POST</span><span class="font6">中）创建一个</span><span class="font2">TopicForm</span><span class="font6">实例（见</span><span class="font3">❸</span><span class="font6">），这样对象</span><span class="font2">form</span><span class="font6">将包含 用户提交的信息。</span></p>
+<p><span class="font6">要将提交的信息保存到数据库，必须先通过检查确定它们是有效的（见</span><span class="font3">❹</span><span class="font6">）。函数</span><span class="font2">is_valid（） </span><span class="font6">核实用户填写了所有必不可少的字段（表单字段默认都是必不可少的），且输入的数据与要求的 字段类型一致（例如，字段</span><span class="font2">text</span><span class="font6">少于</span><span class="font7">200</span><span class="font6">个字符，这是我们在第</span><span class="font7">18</span><span class="font6">章中的</span><span class="font7">models.py</span><span class="font6">中指定的）。这 种自动验证避免了我们去做大量的工作。如果所有字段都有效，我们就可调用</span><span class="font2">save（）</span><span class="font6">（见</span><span class="font3">❺</span><span class="font6">）， 将表单中的数据写入数据库。保存数据后，就可离开这个页面了。我们使用</span><span class="font2">reverse</span><span class="font6">。获取页面</span></p>
+</body>
+</html>

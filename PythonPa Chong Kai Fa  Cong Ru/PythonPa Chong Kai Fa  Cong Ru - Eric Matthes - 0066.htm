@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">4.2 </span><span class="font9">避免缩进错误</span></p>
+<p><span class="font10">49</span></p>
+<p><span class="font0">Alice, that was a great trick!</span></p>
+<p><span class="font0">David, that was a great trick!</span></p>
+<p><span class="font0">Carolina, that was a great trick!</span></p>
+<p><span class="font0">I can't wait to see your next trick, Carolina.</span></p>
+<p><span class="font9">这是一个</span><span class="font8">逻辑错误</span><span class="font9">。从语法上看，这些</span><span class="font10">Python</span><span class="font9">代码是合法的，但由于存在逻辑错误，结果并 不符合预期。如果你预期某项操作将针对每个列表元素都执行一次，但它却只执行了一次，请确 定是否需要将一行或多行代码缩进。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>4.2.3</span><span class="font7"> 不必要的缩进</span></h5></li></ul>
+<h6><a name="bookmark2"></a><span class="font9"><a name="bookmark3"></a>如果你不小心缩进了无需缩进的代码行，</span><span class="font10">Python</span><span class="font9">将指出这一点：</span><br><br><span class="font1"><a name="bookmark4"></a>hello_world.py</span></h6>
+<p><span class="font0">message = &quot;Hello Python world!&quot;</span></p>
+<p><span class="font4">❶ </span><span class="font0">print(message)</span></p>
+<h6><a name="bookmark5"></a><span class="font3"><a name="bookmark6"></a>print</span><span class="font9">语句(见</span><span class="font6">❶</span><span class="font9">)无需缩进，因为它并不属于前一行代码，因此</span><span class="font10">Python</span><span class="font9">将指出这种错误:</span></h6>
+<p><span class="font0">File &quot;hello_world.py&quot;, line 2</span></p>
+<p><span class="font0">print(message)</span></p>
+<p><span class="font5">八</span></p>
+<p><span class="font0">IndentationError: unexpected indent</span></p>
+<p><span class="font9">为避免意外缩进错误，请只缩进需要缩进的代码。在前面编写的程序中，只有要在</span><span class="font3">for</span><span class="font9">循环 中对每个元素执行的代码需要缩进。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">4.2.4</span><span class="font7"> 循环后不必要的缩进</span></p></li></ul>
+<p><span class="font9">如果你不小心缩进了应在循环结束后执行的代码，这些代码将针对每个列表元素重复执行。 在有些情况下，这可能导致</span><span class="font10">Python</span><span class="font9">报告语法错误，但在大多数情况下，这只会导致逻辑错误。</span></p>
+<p><span class="font9">例如，如果不小心缩进了感谢全体魔术师精彩表演的代码行，结果将如何呢？</span></p>
+<p><span class="font0">magicians = ['alice', 'david', 'carolina']</span></p>
+<p><span class="font0">for magician in magicians:</span></p>
+<p><span class="font0">print(magician.title() + &quot;, that was a great trick!&quot;)</span></p>
+<p><span class="font0">print(&quot;I can't wait to see your next trick, &quot;&nbsp;+ magician.title() + &quot;.\n&quot;)</span></p>
+<p><span class="font4">❶ </span><span class="font0">print(&quot;Thank you everyone, that was a great magic show!&quot;)</span></p>
+<h6><a name="bookmark7"></a><span class="font9"><a name="bookmark8"></a>由于</span><span class="font6">❶</span><span class="font9">处的代码行被缩进，它将针对列表中的每位魔术师执行一次，如</span><span class="font6">❷</span><span class="font9">所示:</span></h6>
+<p><span class="font0">Alice, that was a great trick!</span></p>
+<p><span class="font0">I can't wait to see your next trick, Alice.</span></p>
+<p><span class="font4">❷ </span><span class="font0">Thank you everyone, that was a great magic show!</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

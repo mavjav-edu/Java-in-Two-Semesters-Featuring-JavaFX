@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">10.2 </span><span class="font8">写入文件 </span><span class="font9">171</span></p>
+<p><span class="font8">如果你打开</span><span class="font9">programming.txt</span><span class="font8">,将发现两行内容挤在一起：</span></p>
+<p><span class="font0">I love programming.I love creating new games.</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>要让每个字符串都单独占一行，需要在</span><span class="font3">write()</span><span class="font8">语句中包含换行符：</span></h6>
+<p><span class="font0">filename = 'programming.txt'</span></p>
+<p><span class="font0">with open(filename, 'w') as file_object:</span></p>
+<p><span class="font0">file_object.write(&quot;I love programming.\n&quot;)</span></p>
+<p><span class="font0">file_object.write(&quot;I love creating new games.\n&quot;)</span></p>
+<h6><a name="bookmark2"></a><span class="font8"><a name="bookmark3"></a>现在，输出出现在不同行中：</span></h6>
+<p><span class="font0">I love programming.</span></p>
+<p><span class="font0">I love creating new games.</span></p>
+<p><span class="font8">像显示到终端的输出一样，还可以使用空格、制表符和空行来设置这些输出的格式。</span></p>
+<ul style="list-style:none;"><li><a name="caption2"></a>
+<h5><a name="bookmark4"></a><span class="font2"><a name="bookmark5"></a>10.2.3</span><span class="font6"> 附加到文件</span></h5></li></ul>
+<p><span class="font8">如果你要给文件添加内容，而不是覆盖原有的内容，可以</span><span class="font7">附加模式</span><span class="font8">打开文件。你以附加模式 打开文件时，</span><span class="font9">Python</span><span class="font8">不会在返回文件对象前清空文件，而你写入到文件的行都将添加到文件末尾。 如果指定的文件不存在，</span><span class="font9">Python</span><span class="font8">将为你创建一个空文件。</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">10</span></p>
+</div><br clear="all">
+<p><span class="font8">下面来修改</span><span class="font9">write_message.py</span><span class="font8">，在既有文件</span><span class="font9">programming.txt</span><span class="font8">中再添加一些你酷爱编程的原因：</span></p>
+<h6><a name="bookmark6"></a><span class="font1"><a name="bookmark7"></a>write_message.py</span></h6>
+<p><span class="font0">filename = 'programming.txt'</span></p>
+<p><span class="font4">❶ </span><span class="font0">with open(filename, 'a') as file_object:</span></p>
+<p><span class="font4">❷ </span><span class="font0">file_object.write(&quot;I also love finding meaning in large datasets.\n&quot;)</span></p>
+<p><span class="font0">file_object.write(&quot;I love creating apps that can run in a browser.\n&quot;)</span></p>
+<p><span class="font8">在。处，我们打开文件时指定了实参</span><span class="font3">'a'</span><span class="font8">，以便将内容附加到文件末尾，而不是覆盖文件原 来的内容。在</span><span class="font5">❷</span><span class="font8">处，我们又写入了两行，它们被添加到文件</span><span class="font9">programming.txt</span><span class="font8">末尾：</span></p>
+<h6><a name="bookmark8"></a><span class="font1"><a name="bookmark9"></a>programming.txt</span></h6>
+<p><span class="font0">I love programming.</span></p>
+<p><span class="font0">I love creating new games.</span></p>
+<p><span class="font0">I also love finding meaning in large datasets.</span></p>
+<p><span class="font0">I love creating apps that can run in a browser.</span></p>
+<p><span class="font8">最终的结果是，文件原来的内容还在，它们后面是我们刚添加的内容。</span></p>
+</body>
+</html>

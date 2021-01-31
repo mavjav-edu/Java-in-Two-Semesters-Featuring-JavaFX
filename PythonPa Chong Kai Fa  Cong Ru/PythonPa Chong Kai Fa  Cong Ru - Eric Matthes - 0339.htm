@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:8pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">322</span></p>
+<p><span class="font5">第</span><span class="font6">16</span><span class="font5">章 下载数据</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>highs_lows.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0"># </span><span class="font4">从文件中获取日期、最高气温和最低气温 </span><span class="font0">filename = 'death_valley_2014.csv' with open(filename) as f:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<h6><a name="bookmark2"></a><span class="font5"><a name="bookmark3"></a>运行这个程序时，出现了一个错误，如下述输出的最后一行所示：</span></h6>
+<p><span class="font0">Traceback (most recent call last):</span></p>
+<p><span class="font0">File &quot;highs_lows.py&quot;, line 17, in &lt;module&gt;</span></p>
+<p><span class="font0">high = int(row[1])</span></p>
+<p><span class="font0">ValueError: invalid literal for int() with base 10: ''</span></p>
+<p><span class="font5">该</span><span class="font6">traceback</span><span class="font5">指出，</span><span class="font6">Python</span><span class="font5">无法处理其中一天的最高气温，因为它无法将空字符串(</span><span class="font2">’‛</span><span class="font5">)转换 为整数。只要看一下</span><span class="font6">death_valley_2014.csv</span><span class="font5">，就能发现其中的问题：</span></p>
+<p><span class="font0">2014-2-16,,,,,,,,,,,,,,,,,,,0.00,,,-1</span></p>
+<p><span class="font5">其中好像没有记录</span><span class="font6">2014</span><span class="font5">年</span><span class="font6">2</span><span class="font5">月</span><span class="font6">16</span><span class="font5">日的数据，表示最高温度的字符串为空。为解决这种问题， 我们在从</span><span class="font6">CSV</span><span class="font5">文件中读取值时执行错误检查代码，对分析数据集时可能出现的异常进行处理，如 下所示：</span></p>
+<h6><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>highs_lows.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font4"> 从文件中获取日期、最高气温和最低气温</span></p></li></ul>
+<p><span class="font0">filename = 'death_valley_2014.csv'</span></p>
+<p><span class="font0">with open(filename) as f:</span></p>
+<p><span class="font0">reader = csv.reader(f)</span></p>
+<p><span class="font0">header_row = next(reader)</span></p>
+<p><span class="font0">dates, highs, lows = [], [], [] for row in reader:</span></p>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">try:</span></p>
+<p><span class="font0">current_date = datetime.strptime(row[0], &quot;%Y-%m-%d&quot;)</span></p>
+<p><span class="font0">high = int(row[1])</span></p>
+<p><span class="font0">low = int(row[3])</span></p>
+<p><span class="font0">except ValueError:</span></p>
+<p><span class="font3">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">print(current_date, 'missing data')</span></p>
+<p><span class="font0">else:</span></p>
+<p><span class="font3">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">dates.append(current_date)</span></p>
+<p><span class="font0">highs.append(high)</span></p>
+<p><span class="font0">lows.append(low)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font4"> 根据数据绘制图形</span></p></li>
+<li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">#</span><span class="font4">设置图形的格式</span></p>
+</body>
+</html>

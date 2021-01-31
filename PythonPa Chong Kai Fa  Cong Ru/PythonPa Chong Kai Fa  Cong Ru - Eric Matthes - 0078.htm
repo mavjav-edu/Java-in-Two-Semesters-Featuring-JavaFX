@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:12pt Arial, sans-serif; }
+ .font1 { font:14pt Arial, sans-serif; }
+ .font2 { font:12pt SimHei, sans-serif; }
+ .font3 { font:14pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">4.6 </span><span class="font5">设置代码格式 </span><span class="font6">61</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>4.6</span><span class="font3"> 设置代码格式</span></h5></li></ul>
+<p><span class="font5">随着你编写的程序越来越长，有必要了解一些代码格式设置约定。请花时间让你的代码尽可 能易于阅读；让代码易于阅读有助于你掌握程序是做什么的，也可以帮助他人理解你编写的代码。</span></p>
+<p><span class="font5">为确保所有人编写的代码的结构都大致一致，</span><span class="font6">Python</span><span class="font5">程序员都遵循一些格式设置约定。学会 编写整洁的</span><span class="font6">Python</span><span class="font5">后，就能明白他人编写的</span><span class="font6">Python</span><span class="font5">代码的整体结构一只要他们和你遵循相同的 指南。要成为专业程序员，应从现在开始就遵循这些指南，以养成良好的习惯。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font0"><a name="bookmark3"></a>4.6.1</span><span class="font2"> 格式设置指南</span></h5></li></ul>
+<p><span class="font5">若要提出</span><span class="font6">Python</span><span class="font5">语言修改建议，需要编写</span><span class="font6">Python</span><span class="font4">改进提案</span><span class="font5">(</span><span class="font6">Python Enhancement Proposal</span><span class="font5">， </span><span class="font6">PEP</span><span class="font5">)。</span><span class="font6">PEP 8</span><span class="font5">是最古老的</span><span class="font6">PEP</span><span class="font5">之一，它向</span><span class="font6">Python</span><span class="font5">程序员提供了代码格式设置指南。</span><span class="font6">PEP 8</span><span class="font5">的篇幅很 长，但大都与复杂的编码结构相关。</span></p>
+<p><span class="font6">Python</span><span class="font5">格式设置指南的编写者深知，代码被阅读的次数比编写的次数多。代码编写出来后， 调试时你需要阅读它；给程序添加新功能时，需要花很长的时间阅读代码；与其他程序员分享代 码时，这些程序员也将阅读它们。</span></p>
+<p><span class="font5">如果一定要在让代码易于编写和易于阅读之间做出选择，</span><span class="font6">Python</span><span class="font5">程序员几乎总是会选择后 者。下面的指南可帮助你从一开始就编写出清晰的代码。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font0"><a name="bookmark5"></a>4.6.2</span><span class="font2"> 缩进</span></h5></li></ul>
+<p><span class="font6">PEP 8</span><span class="font5">建议每级缩进都使用四个空格，这既可提高可读性，又留下了足够的多级缩进空间。</span></p>
+<p><span class="font5">在字处理文档中，大家常常使用制表符而不是空格来缩进。对于字处理文档来说，这样做的 效果很好，但混合使用制表符和空格会让</span><span class="font6">Python</span><span class="font5">解释器感到迷惑。每款文本编辑器都提供了一种 设置，可将输入的制表符转换为指定数量的空格。你在编写代码时应该使用制表符键，但一定要 对编辑器进行设置，使其在文档中插入空格而不是制表符。</span></p>
+<p><span class="font5">在程序中混合使用制表符和空格可能导致极难解决的问题。如果你混合使用了制表符和空 格，可将文件中所有的制表符转换为空格，大多数编辑器都提供了这样的功能。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark6"></a><span class="font0"><a name="bookmark7"></a>4.6.3</span><span class="font2"> 行长</span></h5></li></ul>
+<p><span class="font5">很多</span><span class="font6">Python</span><span class="font5">程序员都建议每行不超过</span><span class="font6">80</span><span class="font5">字符。最初制定这样的指南时，在大多数计算机中， 终端窗口每行只能容纳</span><span class="font6">79</span><span class="font5">字符；当前，计算机屏幕每行可容纳的字符数多得多，为何还要使用</span><span class="font6">79 </span><span class="font5">字符的标准行长呢？这里有别的原因。专业程序员通常会在同一个屏幕上打开多个文件，使用标 准行长可以让他们在屏幕上并排打开两三个文件时能同时看到各个文件的完整行。</span><span class="font6">PEP 8</span><span class="font5">还建议 注释的行长都不超过</span><span class="font6">72</span><span class="font5">字符，因为有些工具为大型项目自动生成文档时，会在每行注释开头添加 格式化字符。</span></p>
+<p><span class="font6">PEP 8</span><span class="font5">中有关行长的指南并非不可逾越的红线，有些小组将最大行长设置为</span><span class="font6">99</span><span class="font5">字符。在学习</span></p>
+</body>
+</html>

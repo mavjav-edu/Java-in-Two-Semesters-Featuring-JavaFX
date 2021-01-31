@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">430</span></p>
+<p><span class="font9">第</span><span class="font10">20</span><span class="font9">章 设置应用程序的样式并对其进行部署</span></p>
+<p><span class="font9">错误时显示调试信息。开发项目时，</span><span class="font10">Django</span><span class="font9">的错误页面向你显示了重要的调试信息，如果将项目 部署到服务器后依然保留这个设置，将给攻击者提供大量可供利用的信息。我们还需确保任何人 都无法看到这些信息，也不能冒充项目托管网站来重定向请求。</span></p>
+<p><span class="font9">下面来修改</span><span class="font10">settings.py</span><span class="font9">，以让我们能够在本地看到错误消息，但部署到服务器后不显示任何 错误消息：</span></p>
+<p><span class="font2">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li>
+<li>
+<p><span class="font1"># Heroku </span><span class="font8">设置</span></p></li></ul>
+<p><span class="font1">if os.getcwd() == '/app':</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 让</span><span class="font1">request.is_secure()</span><span class="font8">承认 </span><span class="font1">X-Forwarded-Proto </span><span class="font8">头</span></p></li></ul>
+<p><span class="font1">SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 只允许</span><span class="font1">Heroku</span><span class="font8">托管这个项目</span></p></li></ul>
+<p><span class="font0">❶</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">ALLOWED_HOSTS = ['learning-log.herokuapp.com']</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">DEBUG = False</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 静态资产配置</span></p></li>
+<li>
+<p><span class="font1">- -</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font9">我们只需做两方面的修改。在</span><span class="font6">❶</span><span class="font9">处，修改</span><span class="font4">ALLOWED_HOSTS</span><span class="font9">，只允许</span><span class="font10">Heroku</span><span class="font9">托管这个项目。你需 要使用应用程序的名称，可以是</span><span class="font10">Heroku</span><span class="font9">提供的名称(如</span><span class="font10">afternoon-meadow-2775.herokuapp.com</span><span class="font9">)， 也可以是你选择的名称。在</span><span class="font6">❷</span><span class="font9">处，我们将</span><span class="font4">DEBUG</span><span class="font9">设置为</span><span class="font4">False</span><span class="font9">，让</span><span class="font10">Django</span><span class="font9">不在错误发生时显示敏感 信息。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.2.16 </span><span class="font7">提交并推送修改</span></h5></li></ul>
+<p><span class="font9">现在需要将对</span><span class="font10">settings.py</span><span class="font9">所做的修改提交到</span><span class="font10">Git</span><span class="font9">仓库，再将修改推送到</span><span class="font10">Heroku</span><span class="font9">。下面的终端会 话演示了这个过程：</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">git commit -am &quot;Set DEBUG=False for Heroku.&quot;</span></p>
+<p><span class="font1">[master 081f635] Set DEBUG=False for Heroku.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1 file changed, 4 insertions(+), 2 deletions(-)</span></p></li></ul>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean</span></p>
+<p><span class="font1">(ll_env)learning_log$</span></p>
+<p><span class="font9">我们执行命令</span><span class="font4">git commit</span><span class="font9">，并指定了一条简短而具有描述性的提交消息(见</span><span class="font6">❶</span><span class="font9">)。别忘了，标 志</span><span class="font4">-am</span><span class="font9">让</span><span class="font10">Git</span><span class="font9">提交所有修改过的文件，并记录一条日志消息。</span><span class="font10">Git</span><span class="font9">找出唯一一个修改过的文件，并将 所做的修改提交到仓库。</span></p>
+<p><span class="font6">❷</span><span class="font9">处显示的状态表明我们在仓库的分支</span><span class="font10">master</span><span class="font9">上工作，当前没有任何未提交的修改。推送到</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

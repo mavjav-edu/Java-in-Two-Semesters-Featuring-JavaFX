@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:8pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:8pt Times New Roman, serif; }
+ .font9 { font:9pt Times New Roman, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">15.2 </span><span class="font7">绘制简单的折线图</span></p>
+<p><span class="font10">293</span></p>
+<p><span class="font7">中。然后，将输入列表和输出列表传递给</span><span class="font2">scatter</span><span class="font7">。(见</span><span class="font4">❷</span><span class="font7">)。</span></p>
+<p><span class="font7">由于这个数据集较大，我们将点设置得较小，并使用函数</span><span class="font2">axis()</span><span class="font7">指定了每个坐标轴的取值范 围(见</span><span class="font4">❸</span><span class="font7">)。函数</span><span class="font2">axis()</span><span class="font7">要求提供四个值：</span><span class="font10" style="font-style:italic;">x</span><span class="font7">和</span><span class="font10" style="font-style:italic;">^</span><span class="font7">坐标轴的最小值和最大值。在这里，我们将</span><span class="font10" style="font-style:italic;">x</span><span class="font7">坐标 轴的取值范围设置为</span><span class="font10">0~1100</span><span class="font7">，并将</span><span class="font10" style="font-style:italic;">y</span><span class="font7">坐标轴的取值范围设置为</span><span class="font10">0~1 100 000</span><span class="font7">。结果如图</span><span class="font10">15-6</span><span class="font7">所示。</span></p>
+<div><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>Numbers</span></h5>
+</div><br clear="all">
+<div>
+<p><span class="font8">100000C</span></p>
+<p><span class="font8">800000</span></p>
+<p><span class="font8">600000</span></p>
+<p><span class="font8">40000C</span></p>
+<p><span class="font8">200000</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0310_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200310-1.jpg" alt="" style="width:300pt;height:142pt;">
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0310_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200310-2.jpg" alt="" style="width:289pt;height:17pt;">
+<p><span class="font8">CQO* er </span><span class="font6">国</span></p>
+<p><span class="font3">图</span><span class="font9">15-6 Python</span><span class="font3">绘制</span><span class="font9">1000</span><span class="font3">个点与绘制</span><span class="font9">5</span><span class="font3">个点一样容易</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<p><span class="font1">15.2.6</span><span class="font5"> 删除数据点的轮廓</span></p></li></ul>
+<p><span class="font10">matplotlib</span><span class="font7">允许你给散点图中的各个点指定颜色。默认为蓝色点和黑色轮廓，在散点图包含的 数据点不多时效果很好。但绘制很多点时，黑色轮廓可能会粘连在一起。要删除数据点的轮廓， 可在调用</span><span class="font2">scatter</span><span class="font7">。时传递实参</span><span class="font2">edgecolor='none'</span><span class="font7">:</span></p>
+<p><span class="font0">plt.scatter(x_values, y_values, edgecolor='none', s=40)</span></p>
+<div>
+<p><span class="font1" style="font-weight:bold;">15</span></p>
+</div><br clear="all">
+<p><span class="font7">将相应调用修改为上述代码后，如果再运行</span><span class="font10">scatter_squajes.py</span><span class="font7">，在图表中看到的将是蓝色实 心点。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>15.2.7</span><span class="font5"> 自定义颜色</span></h5></li></ul>
+<p><span class="font7">要修改数据点的颜色，可向</span><span class="font2">scatter</span><span class="font7">。传递参数</span><span class="font2">c</span><span class="font7">，并将其设置为要使用的颜色的名称，如下 所示：</span></p>
+<p><span class="font0">plt.scatter(x_values, y_values, c='red', edgecolor='none', s=40)</span></p>
+<p><span class="font7">你还可以使用</span><span class="font10">RGB</span><span class="font7">颜色模式自定义颜色。要指定自定义颜色，可传递参数</span><span class="font2">c</span><span class="font7">，并将其设置为 </span></p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">2.2 </span><span class="font8">变量</span></p>
+<p><span class="font9">17</span></p>
+<p><span class="font2" style="font-weight:bold;">2</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">□</span><span class="font8"> 变量名应既简短又具有描述性。例如，</span><span class="font9">name</span><span class="font8">比</span><span class="font9">n</span><span class="font8">好，</span><span class="font9">student_name</span><span class="font8">比</span><span class="font9">s_n</span><span class="font8">好，</span><span class="font9">name_length </span><span class="font8">比 </span><span class="font9">length_of_persons_name </span><span class="font8">好。</span></p></li>
+<li>
+<p><span class="font1">□</span><span class="font8"> 慎用小写字母</span><span class="font9">l</span><span class="font8">和大写字母。，因为它们可能被人错看成数字</span><span class="font9">1</span><span class="font8">和</span><span class="font9">0</span><span class="font8">。</span></p></li></ul>
+<p><span class="font8">要创建良好的变量名，需要经过一定的实践，在程序复杂而有趣时尤其如此。随着你编写的 程序越来越多，并开始阅读别人编写的代码，将越来越善于创建有意义的变量名。</span></p>
+<p><span class="font8">注意 </span><span class="font7">就目前而言，应使用小写的</span><span class="font9">Python</span><span class="font7">变量名。在变量名中使用大写字母虽然不会导致错误， 但避免使用大写字母是个不错的主意。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2.2.2</span><span class="font6"> 使用变量时避免命名错误</span></p></li></ul>
+<p><span class="font8">程序员都会犯错，而且大多数程序员每天都会犯错。虽然优秀的程序员也会犯错，但他们也 知道如何高效地消除错误。下面来看一种你可能会犯的错误，并学习如何消除它。</span></p>
+<p><span class="font8">我们将有意地编写一些引发错误的代码。请输入下面的代码，包括其中以粗体显示但拼写不 正确的单词</span><span class="font9">mesage</span><span class="font8">:</span></p>
+<p><span class="font0">message = &quot;Hello Python Crash Course reader!&quot; print(</span><span class="font0" style="font-weight:bold;">mesage</span><span class="font0">)</span></p>
+<p><span class="font8">程序存在错误时，</span><span class="font9">Python</span><span class="font8">解释器将竭尽所能地帮助你找出问题所在。程序无法成功地运行时， 解释器会提供一个</span><span class="font9">traceback</span><span class="font8">。</span><span class="font9">traceback</span><span class="font8">是一条记录，指出了解释器尝试运行代码时，在什么地方 陷入了困境。下面是你不小心错误地拼写了变量名时，</span><span class="font9">Python</span><span class="font8">解释器提供的</span><span class="font9">traceback</span><span class="font8">：</span></p>
+<p><span class="font0">Traceback (most recent call last):</span></p>
+<p><span class="font4">❶ </span><span class="font0">File &quot;hello_world.py&quot;, line 2, in &lt;module&gt;</span></p>
+<p><span class="font4">❷ </span><span class="font0">print(mesage)</span></p>
+<p><span class="font4">❸ </span><span class="font0">NameError: name 'mesage' is not defined</span></p>
+<p><span class="font8">解释器指出，文件</span><span class="font9">hello_world.py</span><span class="font8">的第</span><span class="font9">2</span><span class="font8">行存在错误(见</span><span class="font5">❶</span><span class="font8">)；它列出了这行代码，旨在帮助你 快速找出错误(见</span><span class="font5">❷</span><span class="font8">)；它还指出了它发现的是什么样的错误(见</span><span class="font5">❸</span><span class="font8">)。在这里，解释器发现了一 个名称错误，并指出打印的变量</span><span class="font3">mesage</span><span class="font8">未定义：</span><span class="font9">Python</span><span class="font8">无法识别你提供的变量名。名称错误通常 意味着两种情况：要么是使用变量前忘记了给它赋值，要么是输入变量名时拼写不正确。</span></p>
+<p><span class="font8">在这个示例中，第</span><span class="font9">2</span><span class="font8">行的变量名</span><span class="font3">message</span><span class="font8">中遗漏了字母</span><span class="font9">s</span><span class="font8">°</span><span class="font9">Python</span><span class="font8">解释器不会对代码做拼写检查， 但要求变量名的拼写一致。例如，如果在代码的另一个地方也将</span><span class="font9">message</span><span class="font8">错误地拼写成了</span><span class="font9">mesage</span><span class="font8">， 结果将如何呢？</span></p>
+<p><span class="font0">mesage = &quot;Hello Python Crash Course reader! print(mesage)</span></p>
+<p><span class="font8">在这种情况下，程序将成功地运行：</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:14pt Arial, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<div>
+<p><span class="font3">9.5 Python</span><span class="font9">标准库</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font3">159</span></p>
+</div><br clear="all">
+<p><span class="font9">确运行后，再将类移到独立的模块中。如果你喜欢模块和文件的交互方式，可在项目开始时就尝 试将类存储到模块中。先找出让你能够编写出可行代码的方式，再尝试让代码更为组织有序。</span></p>
+<p><span class="font6">动手试一试</span></p>
+<p><span class="font2">9-10</span><span class="font9">导入</span><span class="font2">Restaurant</span><span class="font9">类：将最新的</span><span class="font10">Restaurant</span><span class="font9">类存储在一个模块中。在另一个文 件中，导入</span><span class="font10">Restaurant</span><span class="font9">类，创建一个</span><span class="font10">Restaurant</span><span class="font9">实例，并调用</span><span class="font10">Restaurant</span><span class="font9">的一个方法， 以确认</span><span class="font10">import</span><span class="font9">语句正确无误。</span></p>
+<p><span class="font2">9-11</span><span class="font9">导入</span><span class="font2">Admin</span><span class="font9">类：以为完成练习</span><span class="font10">9</span><span class="font9">・</span><span class="font10">8</span><span class="font9">而做的工作为基础，将</span><span class="font10">User</span><span class="font9">、</span><span class="font10">Privileges</span><span class="font9">和 </span><span class="font10">Admin</span><span class="font9">类存储在一个模块中，再创建一个文件，在其中创建一个</span><span class="font10">Admin</span><span class="font9">实例并对其调用 方法</span><span class="font10">show_privileges(),</span><span class="font9">以确认一切都能正确地运行。</span></p>
+<p><span class="font2">9-12</span><span class="font9">多个模块：将</span><span class="font10">User</span><span class="font9">类存储在一个模块中，并将</span><span class="font10">Privileges</span><span class="font9">和</span><span class="font10">Admin</span><span class="font9">类存储在 另一个模块中。再创建一个文件，在其中创建一个</span><span class="font10">Admin</span><span class="font9">实例，并对其调用方法 </span><span class="font10">show_privileges(),</span><span class="font9">以确认一切都依然能够正确地运行。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">9.5 Python</span><span class="font7">标准库</span></p></li></ul>
+<p><span class="font10">Python</span><span class="font9">标准库是一组模块，安装的</span><span class="font10">Python</span><span class="font9">都包含它。你现在对类的工作原理已有大致的了解， 可以开始使用其他程序员编写好的模块了。可使用标准库中的任何函数和类，为此只需在程序开 头包含一条简单的</span><span class="font10">import</span><span class="font9">语句。下面来看模块</span><span class="font10">collections</span><span class="font9">中的一个类---</span><span class="font10">0rderedDict<sub>o</sub></span></p>
+<p><span class="font9">字典让你能够将信息关联起来，但它们不记录你添加键</span><span class="font10">TS</span><span class="font9">对的顺序。要创建字典并记录其 中的键</span><span class="font10">Tt</span><span class="font9">对的添加顺序，可使用模块</span><span class="font10">collect ions</span><span class="font9">中的</span><span class="font10">OrderedDict</span><span class="font9">类。</span><span class="font10">OrderedDict</span><span class="font9">实例的行为 几乎与字典相同，区别只在于记录了键</span><span class="font10">-ft</span><span class="font9">对的添加顺序。</span></p>
+<p><span class="font9">我们再来看一看第</span><span class="font10">6</span><span class="font9">章的</span><span class="font10">favorite</span><span class="font9">」</span><span class="font10">anguages.py</span><span class="font9">示例，但这次将记录被调查者参与调查的</span></p>
+<p><span class="font9">顺序：</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>favoritelanguages.py</span></h5>
+<p><span class="font8" style="font-weight:bold;">❶</span><span class="font0" style="font-weight:bold;"> from collections import OrderedDict</span></p>
+<p><span class="font8" style="font-weight:bold;">❷</span><span class="font0" style="font-weight:bold;"> favoritelanguages = OrderedDict()</span></p>
+<p><span class="font8" style="font-weight:bold;">❸</span><span class="font0" style="font-weight:bold;"> favorite_languages['jen'] = 'python' favorite_languages['sarah'] = 'c' favorite_languages['edward'] = 'ruby' favorite_languages['phil'] = 'python'</span></p>
+<p><span class="font8" style="font-weight:bold;">❹</span><span class="font0" style="font-weight:bold;"> for name, language in favorite_languages.items():</span></p>
+<p><span class="font0" style="font-weight:bold;">print(name.title() + &quot;'s favorite language is &quot;&nbsp;+ language.title() + &quot;.&quot;)</span></p>
+<p><span class="font5">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font5">专享尊重版权</span></p>
+</body>
+</html>

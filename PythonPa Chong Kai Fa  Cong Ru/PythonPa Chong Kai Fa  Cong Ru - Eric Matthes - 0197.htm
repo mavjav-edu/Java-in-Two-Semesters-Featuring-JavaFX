@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:14pt Arial, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:14pt SimHei, sans-serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">180</span></p>
+<p><span class="font10">第</span><span class="font11">10</span><span class="font10">章 文件和异常</span></p>
+<p><span class="font9">方，并确认</span><span class="font5">except</span><span class="font9">代码块中的代码将正确地执行。</span></p>
+<p><span class="font1">10-9</span><span class="font6">沉默的猫和狗</span><span class="font9">：修改你在练习</span><span class="font11">10-8</span><span class="font9">中编写的</span><span class="font5">except</span><span class="font9">代码块，让程序在文件不 存在时一言不发。</span></p>
+<p><span class="font1">10-10</span><span class="font6">常见单词</span><span class="font9">：访问项目</span><span class="font11">Gutenberg</span><span class="font9">(</span><a href="http://gutenberg.org/)%ef%bc%8c%e5%b9%b6%e6%89%be%e4%b8%80%e4%ba%9b%e4%bd%a0%e6%83%b3%e5%88%86%e6%9e%90%e7%9a%84"><span class="font11">http://gutenberg.org/</span><span class="font9">)，并找一些你想分析的</span></a><span class="font9"> 图书。下载这些作品的文本文件或将浏览器中的原始文本复制到文本文件中。</span></p>
+<p><span class="font9">你可以使用方法</span><span class="font5">count()</span><span class="font9">来确定特定的单词或短语在字符串中出现了多少次。例如， 下面的代码计算</span><span class="font5">'row'</span><span class="font9">在一个字符串中出现了多少次：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">line = &quot;Row, </span><span class="font0" style="font-style:italic;">row,</span><span class="font0" style="font-weight:bold;"> row your boat&quot;</span></p></li>
+<li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">line.count('row')</span></p></li></ul>
+<p><span class="font0">2</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">line.lower().count('row')</span></p></li></ul>
+<p><span class="font0">3</span></p>
+<p><span class="font9">请注意，通过使用</span><span class="font5">lower()</span><span class="font9">将字符串转换为小写，可捕捉要查找的单词出现的所有 次数，而不管其大小写格式如何。</span></p>
+<p><span class="font9">编写一个程序，它读取你在项目</span><span class="font11">Gutenberg</span><span class="font9">中获取的文件，并计算单词</span><span class="font5">'the'</span><span class="font10">在</span><span class="font9">每 个文件中分别出现了多少次。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">10.4 </span><span class="font8">存储数据</span></p></li></ul>
+<p><span class="font10">很多程序都要求用户输入某种信息，如让用户存储游戏首选项或提供要可视化的数据。不管 专注的是什么，程序都把用户提供的信息存储在列表和字典等数据结构中。用户关闭程序时，你 几乎总是要保存他们提供的信息；一种简单的方式是使用模块</span><span class="font5">json</span><span class="font10">来存储数据。</span></p>
+<p><span class="font10">模块</span><span class="font5">json</span><span class="font10">让你能够将简单的</span><span class="font11">Python</span><span class="font10">数据结构转储到文件中，并在程序再次运行时加载该文件 中的数据。你还可以使用</span><span class="font5">json</span><span class="font10">在</span><span class="font11">Python</span><span class="font10">程序之间分享数据。更重要的是，</span><span class="font11">JSON</span><span class="font10">数据格式并非</span><span class="font11">Python </span><span class="font10">专用的，这让你能够将以</span><span class="font11">JSON</span><span class="font10">格式存储的数据与使用其他编程语言的人分享。这是一种轻便格 式，很有用，也易于学习。</span></p>
+<p><span class="font6">注意 </span><span class="font11">JSON</span><span class="font9">( </span><span class="font11">JavaScript Object Notation</span><span class="font9">)格式最初是为</span><span class="font11">JavaScript</span><span class="font9">开发的，但随后成了一种常见 格式，被包括</span><span class="font11">Python</span><span class="font9">在内的众多语言采用。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">10.4.1</span><span class="font7"> 使用 </span><span class="font2">json.dump()</span><span class="font7">和 </span><span class="font2">json.load()</span></p></li></ul>
+<p><span class="font10">我们来编写一个存储一组数字的简短程序，再编写一个将这些数字读取到内存中的程序。第 一个程序将使用</span><span class="font5">json.dump()</span><span class="font10">来存储这组数字，而第二个程序将使用</span><span class="font5">json.load()</span><span class="font10">。</span></p>
+<p><span class="font10">函数</span><span class="font5">json.dump</span><span class="font10">。接受两个实参：要存储的数据以及可用于存储数据的文件对象。下面演示 </span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

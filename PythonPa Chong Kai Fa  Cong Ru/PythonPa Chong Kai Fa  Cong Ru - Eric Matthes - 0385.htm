@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">368</span></p>
+<p><span class="font6">第</span><span class="font7">18</span><span class="font6">章</span><span class="font7">Django</span><span class="font6">入门</span></p>
+<p><span class="font6">列表，称为查询集(</span><span class="font7">queryset</span><span class="font6">)。</span></p>
+<p><span class="font6">我们可以像遍历列表一样遍历查询集。下面演示了如何查看分配给每个主题对象的</span><span class="font7">ID</span><span class="font6">:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">topics = Topic.objects.all()</span></p></li>
+<li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">for topic in topics:</span></p></li></ul>
+<p><span class="font1">... </span><span class="font1" style="font-weight:bold;">print(topic.id, topic)</span></p>
+<p><span class="font1">...</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1 Chess</span></p></li>
+<li>
+<p><span class="font1">2 Rock Climbing</span></p></li></ul>
+<p><span class="font6">我们将返回的查询集存储在</span><span class="font2">topics</span><span class="font6">中，然后打印每个主题的</span><span class="font2">id</span><span class="font6">属性和字符串表示。从输出可 知，主题</span><span class="font7">Chess </span><span class="font6">的 </span><span class="font7">ID </span><span class="font6">为 </span><span class="font7">1</span><span class="font6">，而</span><span class="font7">Rock Climbing</span><span class="font6">的 </span><span class="font7">ID</span><span class="font6">为</span><span class="font7">2</span><span class="font6">。</span></p>
+<p><span class="font6">知道对象的</span><span class="font7">ID</span><span class="font6">后，就可获取该对象并查看其任何属性。下面来看看主题</span><span class="font7">Chess</span><span class="font6">的属性</span><span class="font2">text</span><span class="font6">和 </span><span class="font2">date_added </span><span class="font6">的值：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">t = Topic.objects.get(id=1)</span></p></li>
+<li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">t.text</span></p></li></ul>
+<p><span class="font1">'Chess'</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">t.date_added</span></p></li></ul>
+<p><span class="font1">datetime.datetime(2015, 5, 28, 4, 39, 11, 989446, tzinfo=&lt;UTC&gt;)</span></p>
+<p><span class="font6">我们还可以查看与主题相关联的条目。前面我们给模型</span><span class="font2">Entry</span><span class="font6">定义了属性</span><span class="font2">topic</span><span class="font6">，这是一个 </span><span class="font2">ForeignKey</span><span class="font6">，将条目与主题关联起来。利用这种关联，</span><span class="font7">Django</span><span class="font6">能够获取与特定主题相关联的所有 条目，如下所示：</span></p>
+<p><span class="font0">❶</span><span class="font3"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">t.entry_set.all()</span></p>
+<p><span class="font1">[&lt;Entry: The opening is the first part of the game, roughly...&gt;, &lt;Entry: In the opening phase of the game, it's important t...&gt;]</span></p>
+<p><span class="font6">为通过外键关系获取数据，可使用相关模型的小写名称、下划线和单词</span><span class="font7">set </span><span class="font6">(见</span><span class="font4">❶</span><span class="font6">)。例如， 假设你有模型</span><span class="font2">Pizza</span><span class="font6">和</span><span class="font2">Topping</span><span class="font6">，而</span><span class="font7">Topping</span><span class="font6">通过一个外键关联到</span><span class="font2">Pizza</span><span class="font6">；如果你有一个名为</span><span class="font2">my_pizza </span><span class="font6">的对象，表示一张比萨，就可使用代码</span><span class="font2">my_pizza.topping_set.an()</span><span class="font6">来获取这张比萨的所有配料。</span></p>
+<p><span class="font6">编写用户可请求的网页时，我们将使用这种语法。确认代码能获取所需的数据时，</span><span class="font7">shell</span><span class="font6">很有 帮助。如果代码在</span><span class="font7">shell</span><span class="font6">中的行为符合预期，那么它们在项目文件中也能正确地工作。如果代码引 发了错误或获取的数据不符合预期，那么在简单的</span><span class="font7">shell</span><span class="font6">环境中排除故障要比在生成网页的文件中 排除故障容易得多。我们不会太多地使用</span><span class="font7">shell</span><span class="font6">，但应继续使用它来熟悉对存储在项目中的数据进 行访问的</span><span class="font7">Django</span><span class="font6">语法。</span></p>
+<p><span class="font4">注意 </span><span class="font5">每次修改模型后，你都需要重启</span><span class="font7">shell</span><span class="font5">,这样才能看到修改的效果。要退出</span><span class="font7">shell</span><span class="font5">会话，可 按</span><span class="font7">Ctr + D</span><span class="font5">;如果你使用的是</span><span class="font7">Windows</span><span class="font5">系统，应按</span><span class="font7">Ctr + Z</span><span class="font5">,再按回车键。</span></p>
+</body>
+</html>

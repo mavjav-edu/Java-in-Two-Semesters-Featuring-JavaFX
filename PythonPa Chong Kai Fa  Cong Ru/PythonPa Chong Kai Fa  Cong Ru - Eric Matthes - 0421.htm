@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Calibri, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">404</span></p>
+<p><span class="font7">第</span><span class="font8">19</span><span class="font7">章 用户账户</span></p>
+<p><span class="font0">❹</span><span class="font4"> </span><span class="font1">Select an option: </span><span class="font1" style="font-weight:bold;">1</span></p>
+<p><span class="font0">❺</span><span class="font4"> </span><span class="font1">Please enter the default value now, as valid Python</span></p>
+<p><span class="font1">The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now（）</span></p>
+<p><span class="font0">❻</span><span class="font4"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">1</span></p>
+<p><span class="font1">Migrations for 'learning_logs':</span></p>
+<p><span class="font1">0003_topic_owner.py:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">- Add field owner to topic</span></p></li></ul>
+<p><span class="font7">我们首先执行了命令</span><span class="font3">makemigrations </span><span class="font7">（见</span><span class="font2">O </span><span class="font7">）。在</span><span class="font2">❷</span><span class="font7">处的输出中，</span><span class="font8">Django</span><span class="font7">指出我们试图给既有 模型</span><span class="font3">Topic</span><span class="font7">添加一个必不可少（不可为空）的字段，而该字段没有默认值。在</span><span class="font2">❸</span><span class="font7">处，</span><span class="font8">Django</span><span class="font7">给我 们提供了两种选择：要么现在提供默认值，要么退出并在</span><span class="font8">models.py</span><span class="font7">中添加默认值。在</span><span class="font2">❹</span><span class="font7">处，我们 选择了第一个选项，因此</span><span class="font8">Django</span><span class="font7">让我们输入默认值（见</span><span class="font2">❺</span><span class="font7">）。</span></p>
+<p><span class="font7">为将所有既有主题都关联到管理用户</span><span class="font8">ll_admin</span><span class="font7">，我输入了用户</span><span class="font8">ID</span><span class="font7">值</span><span class="font8">1 </span><span class="font7">（见</span><span class="font2">❻</span><span class="font7">）。并非必须使用 超级用户，而可使用已创建的任何用户的</span><span class="font8">ID</span><span class="font7">。接下来，</span><span class="font8">Django</span><span class="font7">使用这个值来迁移数据库，并生成 了迁移文件</span><span class="font8">0003_topic_owner.py</span><span class="font7">，它在模型</span><span class="font3">Topic</span><span class="font7">中添加字段</span><span class="font3">owner</span><span class="font7">。</span></p>
+<p><span class="font7">现在可以执行迁移了。为此，在活动的虚拟环境中执行下面的命令：</span></p>
+<p><span class="font1">(venv)learning_log$ </span><span class="font1" style="font-weight:bold;">python manage.py migrate</span></p>
+<p><span class="font1">Operations to perform:</span></p>
+<p><span class="font1">Synchronize unmigrated apps: messages, staticfiles</span></p>
+<p><span class="font1">Apply all migrations: learning_logs, contenttypes, sessions, admin, auth</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">-</span></p>
+<p><span class="font1">Running migrations:</span></p>
+<p><span class="font1">Rendering model states... DONE</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">Applying learning_logs.0003_topic_owner… OK</span></p>
+<p><span class="font1">(venv)learning_log$</span></p>
+<p><span class="font8">Django</span><span class="font7">应用新的迁移，结果一切顺利(见</span><span class="font2">❶</span><span class="font7">)。</span></p>
+<p><span class="font7">为验证迁移符合预期，可在</span><span class="font8">shell</span><span class="font7">会话中像下面这样做：</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">from learning_logs.models import Topic</span></p>
+<p><span class="font0">❷</span><span class="font4"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">for topic in Topic.objects.all():</span></p>
+<p><span class="font1">... </span><span class="font1" style="font-weight:bold;">print(topic, topic.owner) </span><span class="font1">...</span></p>
+<p><span class="font1">Chess ll_admin</span></p>
+<p><span class="font1">Rock Climbing ll_admin</span></p>
+<p><span class="font1">&gt;&gt;&gt;</span></p>
+<p><span class="font7">我们从</span><span class="font3">learning_logs.models</span><span class="font7">中导入</span><span class="font3">Topic </span><span class="font7">（见</span><span class="font2">❶</span><span class="font7">），再遍历所有的既有主题，并打印每个主 题及其所属的用户（见</span><span class="font2">❷</span><span class="font7">）。正如你看到的，现在每个主题都属于用户</span><span class="font8">ll_admin</span><span class="font7">。</span></p>
+<p><span class="font5">注意 </span><span class="font6">你可以重置数据库而不是迁移它，但如果这样做，既有的数据都将丢失。一种不错的做 法是，学习如何在迁移数据库的同时确保用户数据的完整性。如果你确实想要一个全新 的数据库，可执行命令</span><span class="font3">python manage.py flush</span><span class="font6">,这将重建数据库的结构。如果你这样做， 就必须重新创建超级用户，且原来的所有数据都将丢失。</span></p>
+</body>
+</html>

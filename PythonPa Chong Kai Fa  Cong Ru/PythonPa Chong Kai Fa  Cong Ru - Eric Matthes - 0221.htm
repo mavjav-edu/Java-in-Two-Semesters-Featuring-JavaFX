@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:14pt Arial, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">204</span></p>
+<p><span class="font9">第</span><span class="font10">12</span><span class="font9">章 武装飞船</span></p>
+<p><span class="font9">让你清楚地知道该如何动手开发它。</span></p>
+<p><span class="font8">在游戏《外星人入侵》中，玩家控制着一艘最初出现在屏幕底部中央的飞船。玩家 可以使用箭头键左右移动飞船，还可使用空格键进行射击。游戏开始时，一群外星人出 现在天空中，他们在屏幕中向下移动。玩家的任务是射杀这些外星人。玩家将所有外星 人都消灭干净后，将出现一群新的外星人，他们移动的速度更快。只要有外星人撞到了 玩家的飞船或到达了屏幕底部，玩家就损失一艘飞船。玩家损失三艘飞船后，游戏结束。</span></p>
+<p><span class="font9">在第一个开发阶段，我们将创建一艘可左右移动的飞船，这艘飞船在用户按空格键时能够开 火。设置好这种行为后，我们就能够将注意力转向外星人，并提高这款游戏的可玩性。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">12.2</span><span class="font7"> 安装 </span><span class="font3">Pygame</span></p></li></ul>
+<p><span class="font9">开始编码前，先来安装</span><span class="font10">Pygame</span><span class="font9">。下面介绍如何在</span><span class="font10">Linux</span><span class="font9">、</span><span class="font10">OS X</span><span class="font9">和</span><span class="font10">Microsoft Windows</span><span class="font9">中安装 </span><span class="font10">Pygame</span><span class="font9">。</span></p>
+<p><span class="font9">如果你使用的是</span><span class="font10">Linux</span><span class="font9">系统和</span><span class="font10">Python 3</span><span class="font9">,或者是</span><span class="font10">OS X</span><span class="font9">系统，就需要使用</span><span class="font10">pip</span><span class="font9">来安装</span><span class="font10">Pygame</span><span class="font9">。</span><span class="font10">pip </span><span class="font9">是一个负责为你下载并安装</span><span class="font10">Python</span><span class="font9">包的程序。接下来的几小节介绍如何使用</span><span class="font10">pip</span><span class="font9">来安装</span><span class="font10">Python</span><span class="font9">包。</span></p>
+<p><span class="font9">如果你使用的是</span><span class="font10">Linux</span><span class="font9">系统和</span><span class="font10">Python 2.7</span><span class="font9">，或者是</span><span class="font10">Windows</span><span class="font9">，就无需使用</span><span class="font10">pip</span><span class="font9">来安装</span><span class="font10">Pygame</span><span class="font9">；在 这种情况下，请直接跳到</span><span class="font10">12.2.2</span><span class="font9">节或</span><span class="font10">12.2.4</span><span class="font9">节。</span></p>
+<p><span class="font5">注意 </span><span class="font8">接下来的部分包含在各种系统上安装</span><span class="font10">pip</span><span class="font8">的说明，因为数据可视化项目和</span><span class="font9">亚</span><span class="font10">©6</span><span class="font8">应用程序项 目都需要</span><span class="font10">pip</span><span class="font8">。这些说明也可在</span><span class="font10">https://www.nostarch.com/pythoncrashcourse/</span><span class="font8">在线资源中找 到。如果安装时遇到麻烦，看看在线说明是否管用。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>12.2.1</span><span class="font6"> 使用</span><span class="font2">pip</span><span class="font6">安装</span><span class="font2">Python</span><span class="font6">包</span></h5></li></ul>
+<p><span class="font9">大多数较新的</span><span class="font10">Python</span><span class="font9">版本都自带</span><span class="font10">pip</span><span class="font9">，因此首先可检查系统是否已经安装了</span><span class="font10">pip</span><span class="font9">。在</span><span class="font10">Python 3 </span><span class="font9">中，</span><span class="font10">pip</span><span class="font9">有时被称为</span><span class="font10">pip3</span><span class="font9">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1 .</span><span class="font5">在</span><span class="font1">Linux</span><span class="font5">和</span><span class="font1">OS X</span><span class="font5">系统中检查是否安装了 </span><span class="font1">pip</span></p></li></ul>
+<p><span class="font9">打开一个终端窗口，并执行如下命令：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">pip --version</span></p>
+<p><span class="font4">❶ </span><span class="font0">pip 7.0.3 from /usr/local/lib/python3.5/dist-packages (python 3.5)</span></p>
+<p><span class="font0">$</span></p>
+<p><span class="font9">如果你的系统只安装了一个版本的</span><span class="font10">Python</span><span class="font9">，并看到了类似于上面的输出，请跳到</span><span class="font10">12.2.2</span><span class="font9">节或 </span><span class="font10">12.2.3</span><span class="font9">节。如果出现了错误消息，请尝试将</span><span class="font10">pip</span><span class="font9">替换为</span><span class="font10">pip3</span><span class="font9">。如果这两个版本都没有安装到你的系 统中，请跳到“安装</span><span class="font10">pip</span><span class="font9">”。</span></p>
+<p><span class="font9">如果你的系统安装了多个版本的</span><span class="font10">Python</span><span class="font9">，请核实</span><span class="font10">pip</span><span class="font9">关联到了你使用的</span><span class="font10">Python</span><span class="font9">版本，如</span><span class="font10">python</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

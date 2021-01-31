@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">168 </span><span class="font6">第</span><span class="font7">10</span><span class="font6">章 文件和异常</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">10.1.6</span><span class="font4"> 包含一百万位的大型文件</span></p></li></ul>
+<p><span class="font6">前面我们分析的都是一个只有三行的文本文件，但这些代码示例也可处理大得多的文件。 如果我们有一个文本文件，其中包含精确到小数点后</span><span class="font7">1 000 000</span><span class="font6">位而不是</span><span class="font7">30</span><span class="font6">位的圆周率值，也可 创建一个包含所有这些数字的字符串。为此，我们无需对前面的程序做任何修改，只需将这个 文件传递给它即可。在这里，我们只打印到小数点后</span><span class="font7">50</span><span class="font6">位，以免终端为显示全部</span><span class="font7">1 000 000</span><span class="font6">位而 不断地翻滚：</span></p>
+<p><span class="font1">pi_string.py</span></p>
+<p><span class="font0">filename = 'pi_million_digits.txt'</span></p>
+<p><span class="font0">with open(filename) as file_object:</span></p>
+<p><span class="font0">lines = file_object.readlines()</span></p>
+<p><span class="font0">pi_string = ''</span></p>
+<p><span class="font0">for line in lines:</span></p>
+<p><span class="font0">pi_string += line.strip()</span></p>
+<p><span class="font0">print(pi_string[:52] + &quot;...&quot;)</span></p>
+<p><span class="font0">print(len(pi_string))</span></p>
+<p><span class="font6">输出表明，我们创建的字符串确实包含精确到小数点后</span><span class="font7">1 000 000</span><span class="font6">位的圆周率值：</span></p>
+<p><span class="font0">3.14159265358979323846264338327950288419716939937510...</span></p>
+<p><span class="font0">1000002</span></p>
+<p><span class="font6">对于你可处理的数据量，</span><span class="font7">Python</span><span class="font6">没有任何限制；只要系统的内存足够多，你想处理多少数据 都可以。</span></p>
+<p><span class="font6">注意 </span><span class="font5">要运行这个程序(以及后面的众多示例)，你需要从</span><span class="font7">https://www.nostarch.com/pythoncra-shcourse/</span><span class="font5">下载相关的资源。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">10.1.7</span><span class="font4"> 圆周率值中包含你的生日吗</span></p></li></ul>
+<p><span class="font6">我一直想知道自己的生日是否包含在圆周率值中。下面来扩展刚才编写的程序，以确定某个 人的生日是否包含在圆周率值的前</span><span class="font7">1 000 000</span><span class="font6">位中。为此，可将生日表示为一个由数字组成的字符 串，再检查这个字符串是否包含在</span><span class="font3">pi_string</span><span class="font6">中：</span></p>
+<p><span class="font0">filename = 'pi_million_digits.txt'</span></p>
+<p><span class="font0">with open(filename) as file_object: lines = file_object.readlines()</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

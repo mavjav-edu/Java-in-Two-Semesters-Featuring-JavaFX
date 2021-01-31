@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">102 </span><span class="font8">第</span><span class="font9">7</span><span class="font8">章 用户输入和</span><span class="font9">while</span><span class="font8">循环</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">7.1.2</span><span class="font7"> 使用</span><span class="font2">int()</span><span class="font7">来获取数值输入</span></p></li></ul>
+<p><span class="font8">使用函数</span><span class="font4">input()</span><span class="font8">时，</span><span class="font9">Python</span><span class="font8">将用户输入解读为字符串。请看下面让用户输入其年龄的解释器 会话：</span></p>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age = input(&quot;How old are you? &quot;)</span></p>
+<p><span class="font0">How old are you? </span><span class="font0" style="font-weight:bold;">21</span></p>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age</span></p>
+<p><span class="font0">'21'</span></p>
+<p><span class="font8">用户输入的是数字</span><span class="font9">21</span><span class="font8">，但我们请求</span><span class="font9">Python</span><span class="font8">提供变量</span><span class="font4">age</span><span class="font8">的值时，它返回的是</span><span class="font4">‘21'——</span><span class="font8">用户输入 的数值的字符串表示。我们怎么知道</span><span class="font9">Python</span><span class="font8">将输入解读成了字符串呢？因为这个数字用引号括起 了。如果我们只想打印输入，这一点问题都没有；但如果你试图将输入作为数字使用，就会引发 错误：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age = input(&quot;How old are you? &quot;)</span></p></li></ul>
+<p><span class="font0">How old are you? </span><span class="font0" style="font-weight:bold;">21</span></p>
+<p><span class="font5">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age &gt;= 18</span></p>
+<p><span class="font0">Traceback (most recent call last):</span></p>
+<p><span class="font0">File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span></p>
+<p><span class="font5">❷ </span><span class="font0">TypeError: unorderable types: str() &gt;= int()</span></p>
+<p><span class="font8">你试图将输入用于数值比较时(见</span><span class="font6">❶</span><span class="font8">)，</span><span class="font9">Python</span><span class="font8">会引发错误，因为它无法将字符串和整数进 行比较：不能将存储在</span><span class="font4">age</span><span class="font8">中的字符串</span><span class="font4">‘21'</span><span class="font8">与数值</span><span class="font4">18</span><span class="font8">进行比较(见</span><span class="font6">❷</span><span class="font8">)。</span></p>
+<p><span class="font8">为解决这个问题，可使用函数</span><span class="font4">int()</span><span class="font8">，它让</span><span class="font9">Python</span><span class="font8">将输入视为数值。函数</span><span class="font4">int()</span><span class="font8">将数字的字符 串表示转换为数值表示，如下所示：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age = input(&quot;How old are you? &quot;)</span></p></li></ul>
+<p><span class="font0">How old are you? </span><span class="font0" style="font-weight:bold;">21</span></p>
+<p><span class="font5">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age = int(age)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age &gt;= 18</span></p></li></ul>
+<p><span class="font0">True</span></p>
+<p><span class="font8">在这个示例中，我们在提示时输入</span><span class="font4">21</span><span class="font8">后，</span><span class="font9">Python</span><span class="font8">将这个数字解读为字符串，但随后</span><span class="font4">int()</span><span class="font8">将这 个字符串转换成了数值表示(见</span><span class="font6">❶</span><span class="font8">)。这样</span><span class="font9">Python</span><span class="font8">就能运行条件测试了：将变量</span><span class="font4">age </span><span class="font8">(它现在包含 数值</span><span class="font9">21</span><span class="font8">)同</span><span class="font4">18</span><span class="font8">进行比较，看它是否大于或等于</span><span class="font9">18</span><span class="font8">。测试结果为</span><span class="font4">True</span><span class="font8">。</span></p>
+<p><span class="font8">如何在实际程序中使用函数</span><span class="font4">int()</span><span class="font8">呢？请看下面的程序，它判断一个人是否满足坐过山车的 身高要求：</span></p>
+<p><span class="font1">rollercoaster.py</span></p>
+<p><span class="font0">height = input(&quot;How tall are you, in inches? &quot;)</span></p>
+<p><span class="font0">height = int(height)</span></p>
+<p><span class="font0">if height &gt;= 36:</span></p>
+<p><span class="font0">print(&quot;\nYou're tall enough to ride!&quot;)</span></p>
+<p><span class="font0">else:</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

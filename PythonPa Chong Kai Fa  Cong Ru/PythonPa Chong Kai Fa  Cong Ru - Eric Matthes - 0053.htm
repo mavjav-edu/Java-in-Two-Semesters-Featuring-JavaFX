@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Calibri, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">36</span></p>
+<p><span class="font5">第</span><span class="font6">3</span><span class="font5">章 列表简介</span></p>
+<p><span class="font1">O</span><span class="font5">处的代码使用</span><span class="font2">del</span><span class="font5">删除了列表</span><span class="font2">motorcycles</span><span class="font5">中的第一个元素——</span><span class="font2">'honda'</span><span class="font5">：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">['yamaha', 'suzuki']</span></p>
+<p><span class="font5">使用</span><span class="font2">del</span><span class="font5">可删除任何位置处的列表元素，条件是知道其索引。下例演示了如何删除前述列表</span></p>
+<p><span class="font5">中的第二个元素---</span><span class="font2">'yamaha'</span><span class="font5">:</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font0">del motorcycles[1]</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font5">下面的输出表明，已经将第二款摩托车从列表中删除了：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">['honda', 'suzuki']</span></p>
+<p><span class="font5">在这两个示例中，使用</span><span class="font2">del</span><span class="font5">语句将值从列表中删除后，你就无法再访问它了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font6">2 .</span><span class="font5">使用方法</span><span class="font2">pop()</span><span class="font5">删除元素</span></p></li></ul>
+<p><span class="font5">有时候，你要将元素从列表中删除，并接着使用它的值。例如，你可能需要获取刚被射杀的 外星人的</span><span class="font6" style="font-style:italic;">x</span><span class="font5">和</span><span class="font6" style="font-style:italic;">^</span><span class="font5">坐标，以便在相应的位置显示爆炸效果；在</span><span class="font6">Web</span><span class="font5">应用程序中，你可能要将用户从活 跃成员列表中删除，并将其加入到非活跃成员列表中。</span></p>
+<p><span class="font5">方法</span><span class="font2">pop()</span><span class="font5">可删除列表末尾的元素，并让你能够接着使用它。术语</span><span class="font4">弹出</span><span class="font5">(</span><span class="font6">pop</span><span class="font5">)源自这样的类 比：列表就像一个栈，而删除列表末尾的元素相当于弹出栈顶元素。</span></p>
+<p><span class="font5">下面从列表</span><span class="font2">motorcycles</span><span class="font5">中弹出一款摩托车：</span></p>
+<p><span class="font3">❶ </span><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font3">❷ </span><span class="font0">popped_motorcycle = motorcycles.pop()</span></p>
+<p><span class="font3">❸ </span><span class="font0">print(motorcycles)</span></p>
+<p><span class="font3">❹ </span><span class="font0">print(popped_motorcycle)</span></p>
+<p><span class="font5">我们首先定义并打印了列表</span><span class="font2">motorcycles </span><span class="font5">(见</span><span class="font1">❶</span><span class="font5">)。接下来，我们从这个列表中弹出一个值， 并将其存储到变量</span><span class="font2">popped_motorcycle</span><span class="font5">中(见</span><span class="font1">❷</span><span class="font5">)。然后我们打印这个列表，以核实从其中删除了 一个值(见</span><span class="font1">❸</span><span class="font5">)。最后，我们打印弹出的值，以证明我们依然能够访问被删除的值(见</span><span class="font1">❹</span><span class="font5">)。</span></p>
+<p><span class="font5">输出表明，列表末尾的值</span><span class="font2">'suzuki'</span><span class="font5">已删除，它现在存储在变量</span><span class="font2">popped_motorcycle</span><span class="font5">中：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">['honda', 'yamaha']</span></p>
+<p><span class="font0">suzuki</span></p>
+<p><span class="font5">方法</span><span class="font2">pop()</span><span class="font5">是怎么起作用的呢？假设列表中的摩托车是按购买时间存储的，就可使用方法 </span><span class="font2">pop()</span><span class="font5">打印一条消息，指出最后购买的是哪款摩托车：</span></p>
+</body>
+</html>

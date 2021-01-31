@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">98 </span><span class="font5">第</span><span class="font6">6</span><span class="font5">章 字典</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>many_users.py</span></h6>
+<p><span class="font0">users = {</span></p>
+<p><span class="font0">'aeinstein': {</span></p>
+<p><span class="font0">'first': 'albert',</span></p>
+<p><span class="font0">'last': 'einstein',</span></p>
+<p><span class="font0">'location': 'princeton', },</span></p>
+<p><span class="font0">'mcurie': {</span></p>
+<p><span class="font0">'first': 'marie',</span></p>
+<p><span class="font0">'last': 'curie',</span></p>
+<p><span class="font0">'location': 'paris', },</span></p>
+<p><span class="font0">}</span></p>
+<p><span class="font3">❶</span><span class="font0">for username, user_info in users.items():</span></p>
+<p><span class="font3">❷ </span><span class="font0">print(&quot;\nUsername: &quot;&nbsp;+ username)</span></p>
+<p><span class="font3">❸ </span><span class="font0">full_name = user_info['first'] + &quot;&nbsp;&quot;&nbsp;+ user_info['last'] location = user_info['location']</span></p>
+<p><span class="font3">❹ </span><span class="font0">print(&quot;\tFull name: &quot;&nbsp;+ full_name.title()) print(&quot;\tLocation: &quot;&nbsp;+ location.title())</span></p>
+<p><span class="font5">我们首先定义了一个名为</span><span class="font2">users</span><span class="font5">的字典，其中包含两个键：用户名</span><span class="font2">'aeinstein'</span><span class="font5">和</span><span class="font2">'mcurie'</span><span class="font5">； 与每个键相关联的值都是一个字典，其中包含用户的名、姓和居住地。在</span><span class="font4">❶</span><span class="font5">处，我们遍历字典 </span><span class="font2">users</span><span class="font5">，让</span><span class="font6">Python</span><span class="font5">依次将每个键存储在变量</span><span class="font2">username</span><span class="font5">中，并依次将与当前键相关联的字典存储在变 量</span><span class="font2">user_info</span><span class="font5">中。在主循环内部的</span><span class="font4">❷</span><span class="font5">处，我们将用户名打印出来。</span></p>
+<p><span class="font5">在</span><span class="font4">❸</span><span class="font5">处，我们开始访问内部的字典。变量</span><span class="font2">user_info</span><span class="font5">包含用户信息字典，而该字典包含三个键: </span><span class="font2">'first'</span><span class="font5">、</span><span class="font2">'last'</span><span class="font5">和</span><span class="font2">'location'</span><span class="font5">；对于每位用户，我们都使用这些键来生成整洁的姓名和居住地， 然后打印有关用户的简要信息(见</span><span class="font4">❹</span><span class="font5">)：</span></p>
+<p><span class="font0">Username: aeinstein</span></p>
+<p><span class="font0">Full name: Albert Einstein</span></p>
+<p><span class="font0">Location: Princeton</span></p>
+<p><span class="font0">Username: mcurie</span></p>
+<p><span class="font0">Full name: Marie Curie</span></p>
+<p><span class="font0">Location: Paris</span></p>
+<p><span class="font5">请注意，表示每位用户的字典的结构都相同，虽然</span><span class="font6">Python</span><span class="font5">并没有这样的要求，但这使得嵌 套的字典处理起来更容易。倘若表示每位用户的字典都包含不同的键，</span><span class="font2">for</span><span class="font5">循环内部的代码将 更复杂。</span></p>
+</body>
+</html>

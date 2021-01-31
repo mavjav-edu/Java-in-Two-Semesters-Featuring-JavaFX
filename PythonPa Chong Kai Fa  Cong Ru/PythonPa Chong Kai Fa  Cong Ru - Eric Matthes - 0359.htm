@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">342</span></p>
+<p><span class="font9">第</span><span class="font10">17</span><span class="font9">章使用</span><span class="font10">API</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>python_repos.py</span></h6>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 研究有关仓库的信息</span></p></li></ul>
+<p><span class="font0">repo_dicts = response_dict['items']</span></p>
+<p><span class="font0">print(&quot;Repositories returned:&quot;, len(repo_dicts))</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 研究第一个仓库</span></p></li></ul>
+<p><span class="font0">repo_dict = repo_dicts[0]</span></p>
+<p><span class="font0">print(&quot;\nSelected information about first repository:&quot;)</span></p>
+<p><span class="font4">❶ </span><span class="font0">print('Name:', repo_dict['name'])</span></p>
+<p><span class="font4">❷ </span><span class="font0">print('Owner:', repo_dict['owner']['login'])</span></p>
+<p><span class="font4">❸ </span><span class="font0">print('Stars:', repo_dict['stargazers_count'])</span></p>
+<p><span class="font0">print('Repository:', repo_dict['html_url'])</span></p>
+<p><span class="font4">❹ </span><span class="font0">print('Created:', repo_dict['created_at'])</span></p>
+<p><span class="font4">❺ </span><span class="font0">print('Updated:', repo_dict['updated_at'])</span></p>
+<p><span class="font0">print('Description:', repo_dict['description'])</span></p>
+<p><span class="font9">在这里，我们打印了表示第一个仓库的字典中与很多键相关联的值。在</span><span class="font5">❶</span><span class="font9">处，我们打印了项 目的名称。项目所有者是用一个字典表示的，因此在</span><span class="font5">❷</span><span class="font9">处，我们使用键</span><span class="font3">owner</span><span class="font9">来访问表示所有者 的字典，再使用键</span><span class="font3">key</span><span class="font9">来获取所有者的登录名。在</span><span class="font5">❸</span><span class="font9">处，我们打印项目获得了多少个星的评级， 以及项目在</span><span class="font10">GitHub</span><span class="font9">仓库的</span><span class="font10">URL</span><span class="font9">。接下来，我们显示项目的创建时间(见</span><span class="font5">❹</span><span class="font9">)和最后一次更新的时 间(见</span><span class="font5">❺</span><span class="font9">)。最后，我们打印仓库的描述。输出类似于下面这样：</span></p>
+<p><span class="font0">Status code: 200</span></p>
+<p><span class="font0">Total repositories: 713065</span></p>
+<p><span class="font0">Repositories returned: 30</span></p>
+<p><span class="font0">Selected information about first repository:</span></p>
+<p><span class="font0">Name: httpie</span></p>
+<p><span class="font0">Owner: jkbrzt</span></p>
+<p><span class="font0">Stars: 16101</span></p>
+<p><span class="font0">Repository: </span><a href="https://github.com/jkbrzt/httpie"><span class="font0">https://github.com/jkbrzt/httpie</span></a></p>
+<p><span class="font0">Created: 2012-02-25T12:39:13Z</span></p>
+<p><span class="font0">Updated: 2015-07-13T14:56:41Z</span></p>
+<p><span class="font0">Description: CLI HTTP client; user-friendly cURL replacement featuring intuitive UI, JSON support, syntax highlighting, wget-like downloads, extensions, etc.</span></p>
+<p><span class="font9">从上述输出可知，编写本书时，</span><span class="font10">GitHub</span><span class="font9">上星级最高的</span><span class="font10">Python</span><span class="font9">项目为</span><span class="font10">HTTPie</span><span class="font9">，其所有者为用户 </span><span class="font10">jkbrzt</span><span class="font9">，有</span><span class="font10">16 000</span><span class="font9">多个</span><span class="font10">GitHub</span><span class="font9">用户给这个项目加星。我们可以看到这个项目的仓库的</span><span class="font10">URL</span><span class="font9">，其创建 时间为</span><span class="font10">2012</span><span class="font9">年</span><span class="font10">2</span><span class="font9">月，且最近更新了。最后，描述指出</span><span class="font10">HTTPie</span><span class="font9">用于帮助从终端执行</span><span class="font10">HTTP</span><span class="font9">调用(</span><span class="font10">CLI </span><span class="font9">是</span><span class="font8">命令行界面</span><span class="font9">的缩写)。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">17.1.6</span><span class="font6"> 概述最受欢迎的仓库</span></p></li></ul>
+<p><span class="font9">对这些数据进行可视化时，我们需要涵盖多个仓库。下面就来编写一个循环，打印</span><span class="font10">API</span><span class="font9">调用 返回的每个仓库的特定信息，以便能够在可视化中包含所有这些信息：</span></p>
+</body>
+</html>

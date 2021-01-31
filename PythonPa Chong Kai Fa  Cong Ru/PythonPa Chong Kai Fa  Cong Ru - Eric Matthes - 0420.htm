@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">19.3 </span><span class="font8">让用户拥有自己的数据</span></p>
+<p><span class="font9">403</span></p>
+<p><span class="font1">class Topic(models.Model):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">用户要学习的主题</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">text = models.CharField(max_length=200)</span></p>
+<p><span class="font1">date_added = models.DateTimeField(auto_now_add=True) owner = models.ForeignKey(User)</span></p>
+<p><span class="font1">def __str__(self):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">返回模型的字符串表示</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">return self.text</span></p>
+<p><span class="font1">class Entry(models.Model):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font8">我们首先导入了 </span><span class="font4">django.contrib.auth</span><span class="font8">中的模型</span><span class="font4">User</span><span class="font8">,然后在</span><span class="font4">Topic</span><span class="font8">中添加了字段</span><span class="font4">owner</span><span class="font8">,它建 立到模型</span><span class="font4">User</span><span class="font8">的外键关系。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2.</span><span class="font6"> 确定当前有哪些用户</span></p></li></ul>
+<p><span class="font8">我们迁移数据库时，</span><span class="font9">Django</span><span class="font8">将对数据库进行修改，使其能够存储主题和用户之间的关联。为 执行迁移，</span><span class="font9">Django</span><span class="font8">需要知道该将各个既有主题关联到哪个用户。最简单的办法是，将既有主题都 关联到同一个用户，如超级用户。为此，我们需要知道该用户的</span><span class="font9">ID</span><span class="font8">。</span></p>
+<p><span class="font8">下面来查看已创建的所有用户的</span><span class="font9">ID</span><span class="font8">。为此，启动一个</span><span class="font9">Django shell</span><span class="font8">会话，并执行如下命令：</span></p>
+<p><span class="font1">(venv)learning_log$ </span><span class="font1" style="font-weight:bold;">python manage.py shell</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">from django.contrib.auth.models import User</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">User.objects.all()</span></p>
+<p><span class="font1">[&lt;User: ll_admin&gt;, &lt;User: eric&gt;, &lt;User: willie&gt;]</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">&gt;&gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">for user in User.objects.all():</span></p>
+<p><span class="font1">... </span><span class="font1" style="font-weight:bold;">print(user.username, user.id)</span></p>
+<p><span class="font1">...</span></p>
+<p><span class="font1">ll_admin 1</span></p>
+<p><span class="font1">eric 2</span></p>
+<p><span class="font1">willie 3</span></p>
+<p><span class="font1">&gt;&gt;&gt;</span></p>
+<p><span class="font8">在</span><span class="font6">❶</span><span class="font8">处，我们在</span><span class="font9">shell</span><span class="font8">会话中导入了模型</span><span class="font4">User</span><span class="font8">。然后，我们查看到目前为止都创建了哪些用户 (见</span><span class="font6">❷</span><span class="font8">)。输出中列出了三个用户：</span><span class="font9">ll_admin</span><span class="font8">、</span><span class="font9">eric</span><span class="font8">和</span><span class="font9">willie</span><span class="font8">。</span></p>
+<p><span class="font8">在</span><span class="font6">❸</span><span class="font8">处，我们遍历用户列表，并打印每位用户的用户名和</span><span class="font9">ID</span><span class="font8">。</span><span class="font9">Django</span><span class="font8">询问要将既有主题关联 到哪个用户时，我们将指定其中的一个</span><span class="font9">ID</span><span class="font8">值。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3.</span><span class="font6"> 迁移数据库</span></p></li></ul>
+<p><span class="font8">知道用户</span><span class="font9">ID</span><span class="font8">后，就可以迁移数据库了。</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">(venv)learning_log$ </span><span class="font1" style="font-weight:bold;">python manage.py makemigrations learning_logs</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">You are trying to add a non-nullable field 'owner' to topic without a default;</span></p>
+<p><span class="font1">we can't do that (the database needs something to populate existing rows).</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">Please select a fix:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1) Provide a one-off default now (will be set on all existing rows)</span></p></li>
+<li>
+<p><span class="font1">2) Quit, and let me add a default in models.py</span></p></li></ul>
+<p><span class="font3" style="font-weight:bold;">19</span></p>
+</body>
+</html>

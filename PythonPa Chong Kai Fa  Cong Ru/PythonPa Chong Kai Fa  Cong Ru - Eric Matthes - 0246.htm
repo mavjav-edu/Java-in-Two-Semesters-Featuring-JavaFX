@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Calibri, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">12.8 </span><span class="font8">射击</span></p>
+<p><span class="font9">229</span></p>
+<p><span class="font8">在</span><span class="font5">for</span><span class="font8">循环中，不应从列表或编组中删除条目，因此必须遍历编组的副本。我们使用了方法 </span><span class="font5">copy()</span><span class="font8">来设置</span><span class="font5">for</span><span class="font8">循环(见</span><span class="font4">O</span><span class="font8">),这让我们能够在循环中修改</span><span class="font5">bullets</span><span class="font8">。我们检查每颗子弹，看看它 是否已从屏幕顶端消失(见</span><span class="font4">❷</span><span class="font8">)。如果是这样，就将其从</span><span class="font5">bullets</span><span class="font8">中删除(见</span><span class="font4">❸</span><span class="font8">)。在</span><span class="font4">❹</span><span class="font8">处，我们使 用了一条</span><span class="font5">print</span><span class="font8">语句，以显示当前还有多少颗子弹，从而核实已消失的子弹确实删除了。</span></p>
+<p><span class="font8">如果这些代码没有问题，我们发射子弹后查看终端窗口时，将发现随着子弹一颗颗地在屏幕 顶端消失，子弹数将逐渐降为零。运行这个游戏并确认子弹已被删除后，将这条</span><span class="font5">print</span><span class="font8">语句删除。 如果你留下这条语句，游戏的速度将大大降低，因为将输出写入到终端而花费的时间比将图形绘 制到游戏窗口花费的时间还多。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">12.8.6 </span><span class="font6">限制子弹数量</span></p></li></ul>
+<p><span class="font8">很多射击游戏都对可同时出现在屏幕上的子弹数量进行限制，以鼓励玩家有目标地射击。下 面在游戏《外星人入侵》中作这样的限制。</span></p>
+<p><span class="font8">首先，在</span><span class="font9">settings.py</span><span class="font8">中存储所允许的最大子弹数：</span></p>
+<p><span class="font1">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">子弹设置</span></p></li></ul>
+<p><span class="font0">self.bullet_width = 3</span></p>
+<p><span class="font0">self.bullet_height = 15</span></p>
+<p><span class="font0">self.bullet_color = 60, 60, 60</span></p>
+<p><span class="font0">self.bullets_allowed = 3</span></p>
+<p><span class="font8">这将未消失的子弹数限制为</span><span class="font9">3</span><span class="font8">颗。在</span><span class="font9">game_functions.py</span><span class="font8">的</span><span class="font5">check_keydown_events()</span><span class="font8">中，我们在 创建新子弹前检查未消失的子弹数是否小于该设置：</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">def check_keydown_events(event, ai_settings, screen, ship, bullets):</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">elif event.key == pygame.K_SPACE:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7">创建新子弹并将其加入到编组</span><span class="font0">bullets</span><span class="font7">中</span></p></li></ul>
+<p><span class="font0">if len(bullets) &lt;&nbsp;ai_settings.bullets_allowed:</span></p>
+<p><span class="font0">new_bullet = Bullet(ai_settings, screen, ship)</span></p>
+<p><span class="font0">bullets.add(new_bullet)</span></p>
+<p><span class="font8">玩家按空格键时，我们检查</span><span class="font5">bullets</span><span class="font8">的长度。如果</span><span class="font5">len(bullets)</span><span class="font8">小于</span><span class="font9">3</span><span class="font8">,我们就创建一个新子 弹；但如果已有</span><span class="font9">3</span><span class="font8">颗未消失的子弹，则玩家按空格键时什么都不会发生。如果你现在运行这个游 戏,屏幕上最多只能有</span><span class="font9">3</span><span class="font8">颗子弹。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">12.8.7</span><span class="font6"> 创建函数 </span><span class="font2">update_bullets()</span></p></li></ul>
+<p><span class="font8">编写并检查子弹管理代码后，可将其移到模块</span><span class="font5">game_functions</span><span class="font8">中，以让主程序文件 </span><span class="font9">alien_invasion.py</span><span class="font8">尽可能简单。我们创建一个名为</span><span class="font5">update_bullets()</span><span class="font8">的新函数，并将其添加到 </span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

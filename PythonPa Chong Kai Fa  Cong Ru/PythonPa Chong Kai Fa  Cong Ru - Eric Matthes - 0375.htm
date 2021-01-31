@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:25pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">358</span></p>
+<p><span class="font8">第</span><span class="font9">18</span><span class="font8">章</span><span class="font9">Django</span><span class="font8">入门</span></p>
+<p><span class="font6">。</span><span class="font8">处的命令让</span><span class="font9">Django</span><span class="font8">新建一个名为</span><span class="font9">learning_log</span><span class="font8">的项目。这个命令末尾的句点让新项目使用合 适的目录结构，这样开发完成后可轻松地将应用程序部署到服务器。</span></p>
+<p><span class="font4">注意 </span><span class="font7">千万别忘了这个句点，否则部署应用程序时将遭遇一些配置问题。如果忘记了这个句点， 就将创建的文件和文件夹删除（</span><span class="font9">ll_env</span><span class="font7">除外），再重新运行这个命令。</span></p>
+<p><span class="font8">在</span><span class="font4">❷</span><span class="font8">处，运行了命令</span><span class="font2">ls </span><span class="font8">（在</span><span class="font9">Windows</span><span class="font8">系统上应为</span><span class="font2">dir </span><span class="font8">）,结果表明</span><span class="font9">Django</span><span class="font8">新建了一个名为 </span><span class="font9">learning_log</span><span class="font8">的目录。它还创建了一个名为</span><span class="font9">manage.py</span><span class="font8">的文件，这是一个简单的程序，它接受命令 并将其交给</span><span class="font9">Django</span><span class="font8">的相关部分去运行。我们将使用这些命令来管理诸如使用数据库和运行服务器 等任务。</span></p>
+<p><span class="font8">目录</span><span class="font9">learning_log</span><span class="font8">包含</span><span class="font9">4</span><span class="font8">个文件（见</span><span class="font4">❸</span><span class="font8">），其中最重要的是</span><span class="font9">settings.py</span><span class="font8">、</span><span class="font9">urls.py</span><span class="font8">和</span><span class="font9">wsgi.py</span><span class="font8">。文件 </span><span class="font9">settings.py</span><span class="font8">指定</span><span class="font9">Django</span><span class="font8">如何与你的系统交互以及如何管理项目。在开发项目的过程中，我们将修 改其中一些设置，并添加一些设置。文件</span><span class="font9">urls.py</span><span class="font8">告诉</span><span class="font9">Django</span><span class="font8">应创建哪些网页来响应浏览器请求。 文件</span><span class="font9">wsgi.py</span><span class="font8">帮助</span><span class="font9">Django</span><span class="font8">提供它创建的文件，这个文件名是</span><span class="font9">web server gateway interface</span><span class="font8">（</span><span class="font9">Web</span><span class="font7">服务 器网关接口</span><span class="font8">）的首字母缩写。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>18.1.7</span><span class="font5"> 创建数据库</span></h5></li></ul>
+<p><span class="font9">Django</span><span class="font8">将大部分与项目相关的信息都存储在数据库中，因此我们需要创建一个供</span><span class="font9">Django</span><span class="font8">使 用的数据库。为给项目“学习笔记”创建数据库，请在处于活动虚拟环境中的情况下执行下面 的命令：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py migrate</span></p>
+<p><span class="font3">❶ </span><span class="font0">Operations to perform:</span></p>
+<p><span class="font0">Synchronize unmigrated apps: messages, staticfiles</span></p>
+<p><span class="font0">Apply all migrations: contenttypes, sessions, auth, admin</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">Applying sessions.0001_initial... OK</span></p>
+<p><span class="font3">❷</span><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">ls</span></p>
+<p><span class="font0">db.sqlite3 learning_log ll_env manage.py</span></p>
+<p><span class="font8">我们将修改数据库称为</span><span class="font7">迁移</span><span class="font8">数据库。首次执行命令</span><span class="font2">migrate</span><span class="font8">时，将让</span><span class="font9">Django</span><span class="font8">确保数据库与项 目的当前状态匹配。在使用</span><span class="font9">SQLite </span><span class="font8">（后面将更详细地介绍）的新项目中首次执行这个命令时， </span><span class="font9">Django</span><span class="font8">将新建一个数据库。在</span><span class="font4">❶</span><span class="font8">处，</span><span class="font9">Django</span><span class="font8">指出它将创建必要的数据库表，用于存储我们将在这 个项目（</span><span class="font9">Synchronize unmigrated apps</span><span class="font8">，</span><span class="font7">同步未迁移的应用程序</span><span class="font8">）中使用的信息，再确保数据库结 构与当前代码（</span><span class="font9">Apply all migrations</span><span class="font8">，</span><span class="font7">应用所有的迁移</span><span class="font8">）匹配。</span></p>
+<p><span class="font8">在</span><span class="font4">❷</span><span class="font8">处，我们运行了命令</span><span class="font2">ls</span><span class="font8">，其输出表明</span><span class="font9">Djang</span><span class="font8">。又创建了一个文件一</span><span class="font9">db.sqlite3</span><span class="font8">。</span><span class="font9">SQLite</span><span class="font8">是 一种使用单个文件的数据库，是编写简单应用程序的理想选择，因为它让你不用太关注数据库管 理的问题。</span></p>
+</body>
+</html>

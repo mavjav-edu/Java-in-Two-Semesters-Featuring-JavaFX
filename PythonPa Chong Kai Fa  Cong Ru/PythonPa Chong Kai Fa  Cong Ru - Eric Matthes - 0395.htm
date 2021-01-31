@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:11pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">378</span></p>
+<p><span class="font9">第</span><span class="font11">18</span><span class="font9">章</span><span class="font11">Django</span><span class="font9">入门</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">18.4.3</span><span class="font7"> 显示特定主题的页面</span></p></li></ul>
+<p><span class="font9">接下来，我们需要创建一个专注于特定主题的页面</span><span class="font11">——</span><span class="font9">显示该主题的名称及该主题的所有条 目。同样，我们将定义一个新的</span><span class="font11">URL</span><span class="font9">模式，编写一个视图并创建一个模板。我们还将修改显示所 有主题的网页，让每个项目列表项都是一个链接，单击它将显示相应主题的所有条目。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">1. URL</span><span class="font6">模式</span></p></li></ul>
+<p><span class="font9">显示特定主题的页面的</span><span class="font11">URL</span><span class="font9">模式与前面的所有</span><span class="font11">URL</span><span class="font9">模式都稍有不同，因为它将使用主题的</span><span class="font4">id </span><span class="font9">属性来指出请求的是哪个主题。例如，如果用户要查看主题</span><span class="font11">Chess </span><span class="font9">(其</span><span class="font4">id</span><span class="font9">为</span><span class="font11">1</span><span class="font9">)的详细页面，</span><span class="font11">URL </span><span class="font9">将为</span><span class="font11">http://localhost:8000/topics/1/</span><span class="font9">。下面是与这个</span><span class="font11">URL</span><span class="font9">匹配的模式，它包含在</span><span class="font11">learning_logs/urls.py </span><span class="font9">中：</span></p>
+<p><span class="font2">urls.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">urlpatterns = [</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<p><span class="font1"># </span><span class="font8">特定主题的详细页面</span></p>
+<p><span class="font1">url(r'<sup>A</sup>topics/(?P&lt;topic_id&gt;\d+)/$', views.topic, name='topic'),</span></p>
+<p><span class="font9">我们来详细研究这个</span><span class="font11">URL</span><span class="font9">模式中的正则表达式——</span><span class="font4">r'Atopics/(?P&lt;topic_id&gt;\d+)/$'</span><span class="font9">。</span><span class="font4">r</span><span class="font9">让 </span><span class="font11">Django</span><span class="font9">将这个字符串视为原始字符串，并指出正则表达式包含在引号内。这个表达式的第二部分 (</span><span class="font4">/(?P&lt;topic_id&gt;\d+)/</span><span class="font9">)与包含在两个斜杠内的整数匹配，并将这个整数存储在一个名为</span><span class="font4">topic_id </span><span class="font9">的实参中。这部分表达式两边的括号捕获</span><span class="font11">URL</span><span class="font9">中的值；</span><span class="font10">？</span><span class="font4">P&lt;topic_id&gt;</span><span class="font9">将匹配的值存储到</span><span class="font4">topic_id </span><span class="font9">中；而表达式</span><span class="font4">\d+</span><span class="font9">与包含在两个斜杆内的任何数字都匹配，不管这个数字为多少位。</span></p>
+<p><span class="font9">发现</span><span class="font11">URL</span><span class="font9">与这个模式匹配时，</span><span class="font11">Django</span><span class="font9">将调用视图函数</span><span class="font4">topic()</span><span class="font9">，并将存储在</span><span class="font4">topic_id</span><span class="font9">中的值作 为实参传递给它。在这个函数中，我们将使用</span><span class="font4">topic_id</span><span class="font9">的值来获取相应的主题。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2.</span><span class="font6"> 视图</span></p></li></ul>
+<p><span class="font9">函数</span><span class="font4">topic()</span><span class="font9">需要从数据库中获取指定的主题以及与之相关联的所有条目，如下所示：</span></p>
+<p><span class="font2">views.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">def topic(request, topic_id):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font8">显示单个主题及其所有的条目</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">topic = Topic.objects.get(id=topic_id)</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">entries = topic.entry_set.order_by('-date_added')</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">context = {'topic': topic, 'entries': entries}</span></p>
+<p><span class="font0">❺</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">return render(request, 'learning_logs/topic.html', context)</span></p>
+<p><span class="font9">这是第一个除</span><span class="font4">request</span><span class="font9">对象外还包含另一个形参的视图函数。这个函数接受正则表达式 </span><span class="font4">(?P&lt;topic_id&gt;\d+)</span><span class="font9">捕获的值，并将其存储到</span><span class="font4">topic_id</span><span class="font9">中(见</span><span class="font6">❶</span><span class="font9">)。在</span><span class="font6">❷</span><span class="font9">处，我们使用</span><span class="font4">get()</span><span class="font9">来获取 指定的主题，就像前面在</span><span class="font11">Django shell</span><span class="font9">中所做的那样。在</span><span class="font6">❸</span><span class="font9">处，我们获取与该主题相关联的条目， 并将它们按</span><span class="font4">date_added</span><span class="font9">排序：</span><span class="font4">date_added</span><span class="font9">前面的减号指定按降序排列，即先显示最近的条目。我</span></p>
+</body>
+</html>

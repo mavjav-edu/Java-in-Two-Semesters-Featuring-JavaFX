@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">18.2 </span><span class="font8">创建应用程序</span></p>
+<p><span class="font9">363</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py migrate</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-style:italic;">--snip-</span></p></li></ul>
+<p><span class="font0">Running migrations:</span></p>
+<p><span class="font0">Rendering model states... DONE</span></p>
+<p><span class="font4">❶ </span><span class="font0">Applying learning_logs.OOO1_initial... OK</span></p>
+<p><span class="font8">这个命令的大部分输出都与我们首次执行命令</span><span class="font9">migrate</span><span class="font8">的输出相同。我们需要检查的是</span><span class="font5">❶</span><span class="font8">处的 输出行，在这里，</span><span class="font9">Django</span><span class="font8">确认为</span><span class="font3">learning_logs</span><span class="font8">应用迁移时一切正常(</span><span class="font3">OK</span><span class="font8">)。</span></p>
+<p><span class="font8">每当需要修改“学习笔记”管理的数据时，都采取如下三个步骤：修改</span><span class="font9">models.py</span><span class="font8">；对 </span><span class="font3">learning_logs </span><span class="font8">调用</span><span class="font3">makemigrations </span><span class="font8">；让</span><span class="font9">Django </span><span class="font8">迁移项目。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>18.2.3 Django</span><span class="font6">管理网站</span></h5></li></ul>
+<p><span class="font8">为应用程序定义模型时，</span><span class="font9">Django</span><span class="font8">提供的管理网站(</span><span class="font9">admin site</span><span class="font8">)让你能够轻松地处理模型。网 站的管理员可使用管理网站，但普通用户不能使用。在本节中，我们将建立管理网站，并通过它 使用模型</span><span class="font3">Topic</span><span class="font8">来添加一些主题。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1.</span><span class="font5"> 创建超级用户</span></p></li></ul>
+<p><span class="font9">Django</span><span class="font8">允许你创建具备所有权限的用户——超级用户。权限决定了用户可执行的操作。最严 格的权限设置只允许用户阅读网站的公开信息；注册了的用户通常可阅读自己的私有数据，还可 查看一些只有会员才能查看的信息。为有效地管理</span><span class="font9">Web</span><span class="font8">应用程序，网站所有者通常需要访问网站 存储的所有信息。优秀的管理员会小心对待用户的敏感信息，因为用户对其访问的应用程序有极 大的信任。</span></p>
+<p><span class="font8">为在</span><span class="font9">Django</span><span class="font8">中创建超级用户，请执行下面的命令并按提示做：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py createsuperuser</span></p>
+<p><span class="font4">❶ </span><span class="font0">Username (leave blank to use 'ehmatthes'): </span><span class="font0" style="font-weight:bold;">ll_admin</span></p>
+<p><span class="font4">❷ </span><span class="font0">Email address:</span></p>
+<p><span class="font4">❸ </span><span class="font0">Password:</span></p>
+<p><span class="font0">Password (again):</span></p>
+<p><span class="font0">Superuser created successfully.</span></p>
+<p><span class="font0">(ll_env)learning_log$</span></p>
+<p><span class="font8">你执行命令</span><span class="font3">createsuperuser</span><span class="font8">时，</span><span class="font9">Django</span><span class="font8">提示你输入超级用户的用户名(见</span><span class="font5">❶</span><span class="font8">)。这里我们输 入的是</span><span class="font9">ll_admin</span><span class="font8">，但你可以输入任何用户名，比如电子邮件地址，也可让这个字段为空(见</span><span class="font5">❷</span><span class="font8">)。 你需要输入密码两次(见</span><span class="font5">❸</span><span class="font8">)。</span></p>
+<p><span class="font5">注意 </span><span class="font7">可能会对网站管理员隐藏有些敏感信息。例如，</span><span class="font9">Django</span><span class="font7">并不存储你输入的密码，而存储 从该密码派生出来的一个字符串——散列值。每当你输入密码时，</span><span class="font9">Django</span><span class="font7">都计算其散列 值，并将结果与存储的散列值进行比较。如果这两个散列值相同，就通过了身份验证。 通过存储散列值，即便黑客获得了网站数据库的访问权，也只能获取其中存储的散列值， 而无法获得密码。在网站配置正确的情况下，几乎无法根据散列值推导出原始密码。</span></p>
+<p><span class="font2" style="font-weight:bold;">18</span></p>
+</body>
+</html>

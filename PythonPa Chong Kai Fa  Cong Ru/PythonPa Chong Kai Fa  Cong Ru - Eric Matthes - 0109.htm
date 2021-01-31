@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">92 </span><span class="font7">第</span><span class="font8">6</span><span class="font7">章 字典</span></p>
+<p><span class="font0">print(&quot;The following languages have been mentioned:&quot;) for language in favorite_languages.values():</span></p>
+<p><span class="font0">print(language.title())</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font7"><a name="bookmark1"></a>这条</span><span class="font2">for</span><span class="font7">语句提取字典中的每个值，并将它们依次存储到变量</span><span class="font2">language</span><span class="font7">中。通过打印这些值， 就获得了一个列表，其中包含被调查者选择的各种语言：</span></h6>
+<p><span class="font0">The following languages have been mentioned:</span></p>
+<p><span class="font0">Python</span></p>
+<p><span class="font0">C</span></p>
+<p><span class="font0">Python</span></p>
+<p><span class="font0">Ruby</span></p>
+<p><span class="font7">这种做法提取字典中所有的值，而没有考虑是否重复。涉及的值很少时，这也许不是问题， 但如果被调查者很多，最终的列表可能包含大量的重复项。为剔除重复项，可使用</span><span class="font6">集合</span><span class="font7">(</span><span class="font8">set</span><span class="font7">)。 集合类似于列表，但每个元素都必须是独一无二的：</span></p>
+<p><span class="font0">favorite_languages = { 'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', }</span></p>
+<p><span class="font0">print(&quot;The following languages have been mentioned:&quot;) </span><span class="font3">❶ </span><span class="font0">for language in set(favorite_languages.values()):</span></p>
+<p><span class="font0">print(language.title())</span></p>
+<p><span class="font7">通过对包含重复元素的列表调用</span><span class="font2">set()</span><span class="font7">，可让</span><span class="font8">Python</span><span class="font7">找出列表中独一无二的元素，并使用这 些元素来创建一个集合。在</span><span class="font4">❶</span><span class="font7">处，我们使用了</span><span class="font4">$已出)</span><span class="font7">来提取</span><span class="font2">favorite_languages.values()</span><span class="font7">中不同的 语言。</span></p>
+<p><span class="font7">结果是一个不重复的列表，其中列出了被调查者提及的所有语言：</span></p>
+<p><span class="font0">The following languages have been mentioned: Python</span></p>
+<p><span class="font0">C</span></p>
+<p><span class="font0">Ruby</span></p>
+<p><span class="font7">随着你更深入地学习</span><span class="font8">Python</span><span class="font7">，经常会发现它内置的功能可帮助你以希望的方式处理数据。</span></p>
+<p><span class="font5">动手试一试</span></p>
+<p><span class="font1">6-4</span><span class="font7">词汇表</span><span class="font1">2</span><span class="font6">：既然你知道了如何遍历字典，现在请整理你为完成练习</span><span class="font8">6-3</span><span class="font6">而编写 的代码，将其中的一系列</span><span class="font2">print</span><span class="font6">语句替换为一个遍历字典中的键和值的循环。确定该循 </span></p>
+</body>
+</html>

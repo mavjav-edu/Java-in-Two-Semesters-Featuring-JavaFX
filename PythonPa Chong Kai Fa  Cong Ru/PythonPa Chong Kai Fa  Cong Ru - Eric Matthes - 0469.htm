@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:14pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">452 </span><span class="font9">附录</span><span class="font10">D </span><span class="font9">使用</span><span class="font10">Git</span><span class="font9">进行版本控制</span></p>
+<p><span class="font9">你也可以访问</span><span class="font10">https://git-scm.com/</span><span class="font9">,单击链接</span><span class="font10">Downloads</span><span class="font9">,再单击适合你所用系统的安装程序。</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>D.1.3 </span><span class="font6">在</span><span class="font2">Windows</span><span class="font6">系统中安装</span><span class="font2">Git</span></h5>
+<p><span class="font9">要在 </span><span class="font10">Windows </span><span class="font9">系统中安装 </span><span class="font10">Git</span><span class="font9">，请访问</span><a href="http://msysgit.github.io/%ef%bc%8c%e5%b9%b6%e5%8d%95%e5%87%bb"><span class="font10">http://msysgit.github.io/</span><span class="font9">，并单击</span></a><span class="font9"> </span><span class="font10">Download</span><span class="font9">。</span></p>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>D.1.4 </span><span class="font6">配置 </span><span class="font2">Git</span></h5>
+<p><span class="font10">Git</span><span class="font9">跟踪谁修改了项目，哪怕参与项目开发的人只有一个。为此，</span><span class="font10">Git</span><span class="font9">需要知道你的用户名和 电子邮件地址。你必须提供用户名，但可以使用虚构的电子邮件地址：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">git config --global user.name &quot;</span><span class="font0" style="font-style:italic;">username</span><span class="font0" style="font-weight:bold;">&quot;</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">git config --global user.email &quot;</span><a href="mailto:username@example.com"><span class="font0" style="font-style:italic;">username@example.com</span></a><span class="font0" style="font-weight:bold;">&quot;</span></p>
+<p><span class="font9">如果你忘记了这一步，在你首次提交时，</span><span class="font10">Git</span><span class="font9">将提示你提供这些信息。</span></p>
+<p><span class="font3">D.2 </span><span class="font7">创建项目</span></p>
+<p><span class="font9">我们来创建一个要进行版本控制的项目。在你的系统中创建一个文件夹，并将其命名为 </span><span class="font10">git_practice</span><span class="font9">。在这个文件夹中，创建一个简单的</span><span class="font10">Python</span><span class="font9">程序：</span></p>
+<p><span class="font1">hello_world.py</span></p>
+<p><span class="font0">print(&quot;Hello Git world!&quot;)</span></p>
+<p><span class="font9">我们将使用这个程序来探索</span><span class="font10">Git</span><span class="font9">的基本功能。</span></p>
+<p><span class="font3">D.3 </span><span class="font7">忽略文件</span></p>
+<p><span class="font9">扩展名为</span><span class="font10">.pyc</span><span class="font9">的文件是根据</span><span class="font10">.py</span><span class="font9">文件自动生成的，因此我们无需让</span><span class="font10">Git</span><span class="font9">跟踪它们。这些文件存 储在目录</span><span class="font10">__pycache—</span><span class="font9">中。为让</span><span class="font10">Git</span><span class="font9">忽略这个目录，创建一个名为</span><span class="font10">.gitignore</span><span class="font9">的特殊文件(这个文件 名以句点打头，且没有扩展名)，并在其中添加下面一行内容：</span></p>
+<p><span class="font1">.gitignore</span></p>
+<p><span class="font0">__pycache__/</span></p>
+<p><span class="font9">这让</span><span class="font10">Git</span><span class="font9">忽略目录</span><span class="font10">__pycache__</span><span class="font9">中的所有文件。使用文件</span><span class="font10">.gitignore</span><span class="font9">可避免项目混乱，开发起来 更容易。</span></p>
+<p><span class="font5">注意 </span><span class="font8">如果你使用的是</span><span class="font10">Python 2.7 </span><span class="font8">,请将这行内容改为</span><span class="font4">*.pyc</span><span class="font8">。</span><span class="font10">Python 2.7</span><span class="font8">不会创建目录 </span><span class="font10">__pycache―</span><span class="font8">，它将每个</span><span class="font10">.pyc</span><span class="font8">文件都存储在相应</span><span class="font10">.py</span><span class="font8">文件所在的目录中。其中的星号让</span><span class="font10">Git </span><span class="font8">忽略所有扩展名为</span><span class="font10">.pyc</span><span class="font8">的文件。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

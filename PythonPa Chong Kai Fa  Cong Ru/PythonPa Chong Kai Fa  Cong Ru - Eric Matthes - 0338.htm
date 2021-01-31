@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:9pt SimSun, serif; }
+ .font11 { font:10pt SimSun, serif; }
+ .font12 { font:9pt Times New Roman, serif; }
+ .font13 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font13">16.1 CSV</span><span class="font11">文件格式</span></p>
+<p><span class="font13">321</span></p>
+<p><span class="font2">highs_lows.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font9"> 根据数据绘制图形</span></p></li></ul>
+<p><span class="font0">fig = plt.figure(dpi=128, figsize=(10, 6))</span></p>
+<p><span class="font5">❶ </span><span class="font0">plt.plot(dates, highs, c='red', alpha=0.5</span><span class="font10">)</span></p>
+<p><span class="font0">plt.plot(dates, lows, c='blue', alpha=0.5)</span></p>
+<p><span class="font5">❷ </span><span class="font0">plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font7">❶</span><span class="font11">处的实参</span><span class="font4">alpha</span><span class="font11">指定颜色的透明度。</span><span class="font4">Alpha</span><span class="font11">值为</span><span class="font13">0</span><span class="font11">表示完全透明，</span><span class="font13">1 </span><span class="font11">(默认设置)表示完全不 透明。通过将</span><span class="font4">alpha</span><span class="font11">设置为</span><span class="font13">0.5</span><span class="font11">,可让红色和蓝色折线的颜色看起来更浅。</span></p>
+<p><span class="font11">在</span><span class="font7">❷</span><span class="font11">处，我们向</span><span class="font4">fill_between()</span><span class="font11">传递了一个</span><span class="font13" style="font-style:italic;">x</span><span class="font11">值系歹</span><span class="font4">I</span><span class="font11">」：列表</span><span class="font4">dates</span><span class="font11">，还传递了两个</span><span class="font13" style="font-style:italic;">y</span><span class="font11">值系列：</span><span class="font4">highs </span><span class="font11">和</span><span class="font4">lows</span><span class="font11">。实参</span><span class="font4">facecolor</span><span class="font11">指定了填充区域的颜色，我们还将</span><span class="font4">alpha</span><span class="font11">设置成了较小的值</span><span class="font13">0.1</span><span class="font11">,让填充区 域将两个数据系列连接起来的同时不分散观察者的注意力。图</span><span class="font13">16-5</span><span class="font11">显示了最高气温和最低气温之 间的区域被填充的图表。</span></p>
+<p><span class="font1">and low</span></p>
+<p><span class="font1">-2014</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0338_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200338-1.jpg" alt="" style="width:265pt;height:117pt;"><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0338_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200338-2.jpg" alt="" style="width:319pt;height:34pt;">
+<p><span class="font6">图</span><span class="font12">16-5 </span><span class="font6">给两个数据集之间的区域着色</span></p>
+<p><span class="font11">通过着色，让两个数据集之间的区域显而易见。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>16.1.10</span><span class="font8"> 错误检查</span></h5></li></ul>
+<p><span class="font11">我们应该能够使用有关任何地方的天气数据来运行</span><span class="font13">highs</span><span class="font11">」</span><span class="font13">ows.py</span><span class="font11">中的代码，但有些气象站会 偶尔出现故障，未能收集部分或全部其应该收集的数据。缺失数据可能会引发异常，如果不妥善 地处理，还可能导致程序崩溃。</span></p>
+<p><span class="font11">例如，我们来看看生成加利福尼亚死亡谷的气温图时出现的情况。将文件</span><span class="font13">death_valley_ 2014.csv</span><span class="font11">复制到本章程序所在的文件夹，再修改</span><span class="font13">highs lows.py</span><span class="font11">,使其生成死亡谷的气温图：</span></p>
+<p><span class="font3" style="font-weight:bold;">16</span></p>
+</body>
+</html>

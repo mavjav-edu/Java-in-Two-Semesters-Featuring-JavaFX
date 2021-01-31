@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">3.2 </span><span class="font6">修改、添加和删除元素</span></p>
+<p><span class="font7">35</span></p>
+<p><span class="font6">方法</span><span class="font2">append</span><span class="font6">。让动态地创建列表易如反掌，例如，你可以先创建一个空列表，再使用一系列的 </span><span class="font2">append</span><span class="font6">。语句添加元素。下面来创建一个空列表，再在其中添加元素</span><span class="font2">'honda'</span><span class="font6">、</span><span class="font2">'yamaha'</span><span class="font6">和</span><span class="font2">'suzuki'</span><span class="font6">：</span></p>
+<p><span class="font0">motorcycles = []</span></p>
+<p><span class="font0">motorcycles.append('honda')</span></p>
+<p><span class="font0">motorcycles.append('yamaha')</span></p>
+<p><span class="font0">motorcycles.append('suzuki')</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font6">最终的列表与前述示例中的列表完全相同：</span></p>
+<p><span class="font0">['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font6">这种创建列表的方式极其常见，因为经常要等程序运行后，你才知道用户要在程序中存储哪 些数据。为控制用户，可首先创建一个空列表，用于存储用户将要输入的值，然后将用户提供的 每个新值附加到列表中。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font7">2.</span><span class="font6"> 在列表中插入元素</span></p></li></ul>
+<p><span class="font6" style="text-decoration:underline;">使用方法</span><span class="font2" style="text-decoration:underline;">insert()</span><span class="font6" style="text-decoration:underline;">可在列表的任何位置添加新元素。为此，你需要指定新元素的索引和值。</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font3">❶ </span><span class="font0">motorcycles.insert(O, 'ducati')</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font6">在这个示例中，值</span><span class="font2">'ducati’</span><span class="font6">被插入到了列表开头(见</span><span class="font4">❶</span><span class="font6">)；方法</span><span class="font2">insert()</span><span class="font6">在索弓</span><span class="font2">|0</span><span class="font6">处添加空间， 并将值</span><span class="font2">'ducati'</span><span class="font6">存储到这个地方。这种操作将列表中既有的每个元素都右移一个位置：</span></p>
+<p><span class="font0">['ducati', 'honda', 'yamaha', 'suzuki']</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">3.2.3</span><span class="font5"> 从列表中删除元素</span></p></li></ul>
+<p><span class="font6">你经常需要从列表中删除一个或多个元素。例如，玩家将空中的一个外星人射杀后，你很可 能要将其从存活的外星人列表中删除；当用户在你创建的</span><span class="font7">Web</span><span class="font6">应用中注销其账户时，你需要将该 用户从活跃用户列表中删除。你可以根据位置或值来删除列表中的元素。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font7">1 .</span><span class="font6">使用</span><span class="font2">del</span><span class="font6">语句删除元素</span></p></li></ul>
+<p><span class="font6">如果知道要删除的元素在列表中的位置，可使用</span><span class="font2">del</span><span class="font6">语句。</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+<p><span class="font3">❶ </span><span class="font0">del motorcycles[0]</span></p>
+<p><span class="font0">print(motorcycles)</span></p>
+</body>
+</html>

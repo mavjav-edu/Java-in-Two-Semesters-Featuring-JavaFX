@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:14pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:14pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">42</span></p>
+<p><span class="font5">第</span><span class="font6">3</span><span class="font5">章 列表简介</span></p>
+<p><span class="font4">口再次打印该列表，核实排列顺序未变。</span></p>
+<p><span class="font4">口使用</span><span class="font2">reverse</span><span class="font4">。修改列表元素的排列顺序。打印该列表，核实排列顺序确实变了。</span></p>
+<p><span class="font4">口使用</span><span class="font2">reverse</span><span class="font4">。再次修改列表元素的排列顺序。打印该列表，核实已恢复到原来 的排列顺序。</span></p>
+<p><span class="font4">口使用</span><span class="font2">sort()</span><span class="font4">修改该列表，使其元素按字母顺序排列。打印该列表，核实排列顺 序确实变了。</span></p>
+<p><span class="font4">口使用</span><span class="font2">sort()</span><span class="font4">修改该列表，使其元素按与字母顺序相反的顺序排列。打印该列表， 核实排列顺序确实变了。</span></p>
+<p><span class="font6">3-9</span><span class="font5">晚餐嘉宾</span><span class="font4">：在完成练习</span><span class="font6">3-4</span><span class="font5">〜</span><span class="font4">练习</span><span class="font6">3-7</span><span class="font4">时编写的程序之一中，使用</span><span class="font2">len()</span><span class="font4">打印一 条消息，指出你邀请了多少位嘉宾来与你共进晚餐。</span></p>
+<p><span class="font6">3-10</span><span class="font5">尝试使用各个函数</span><span class="font4">：想想可存储到列表中的东西，如山岳、河流、国家、城 市、语言或你喜欢的任何东西。编写一个程序，在其中创建一个包含这些元素的列表， 然后，对于本章介绍的每个函数，都至少使用一次来处理这个列表。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>3.4</span><span class="font3"> 使用列表时避免索引错误</span></h5></li></ul>
+<p><span class="font5">刚开始使用列表时，经常会遇到一种错误。假设你有一个包含三个元素的列表，却要求获取 第四个元素：</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki']</span></p>
+<p><span class="font0">print(motorcycles[3])</span></p>
+<p><span class="font5">这将导致</span><span class="font4">索引错误</span><span class="font5">：</span></p>
+<p><span class="font0">Traceback (most recent call last):</span></p>
+<p><span class="font0">File &quot;motorcycles.py&quot;, line 3, in &lt;module&gt;</span></p>
+<p><span class="font0">print(motorcycles[3])</span></p>
+<p><span class="font0">IndexError: list index out of range</span></p>
+<p><span class="font6">Python</span><span class="font5">试图向你提供位于索引</span><span class="font6">3</span><span class="font5">处的元素，但它搜索列表</span><span class="font2">motorcycles</span><span class="font5">时，却发现索引</span><span class="font6">3</span><span class="font5">处没有 元素。鉴于列表索引差一的特征，这种错误很常见。有些人从</span><span class="font6">1</span><span class="font5">开始数，因此以为第三个元素的 索引为</span><span class="font6">3</span><span class="font5">；但在</span><span class="font6">Python</span><span class="font5">中，第三个元素的索引为</span><span class="font6">2</span><span class="font5">,因为索引是从</span><span class="font6">0</span><span class="font5">开始的。</span></p>
+<p><span class="font5">索引错误意味着</span><span class="font6">Python</span><span class="font5">无法理解你指定的索引。程序发生索引错误时，请尝试将你指定的索 引减</span><span class="font6">1</span><span class="font5">，然后再次运行程序，看看结果是否正确。</span></p>
+<p><span class="font5">别忘了，每当需要访问最后一个列表元素时，都可使用索引</span><span class="font2">-1</span><span class="font5">。这在任何情况下都行之有效， 即便你最后一次访问列表后，其长度发生了变化：</span></p>
+<p><span class="font0">motorcycles = ['honda', 'yamaha', 'suzuki'] print(motorcycles[-1])</span></p>
+</body>
+</html>

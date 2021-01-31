@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Calibri, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimSun, serif; }
+ .font4 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">附录</span><span class="font4">D</span><span class="font3">使用</span><span class="font4">Git</span><span class="font3">进行版本控制 &nbsp;</span><span class="font4">459</span></p>
+<p><span class="font3">为此，可打开一个文件浏览器，并将目录</span><span class="font4">.git</span><span class="font3">删除，也可通过命令行完成这个任务。这样做 后，你需要重新创建一个仓库，以重新对修改进行跟踪。下面演示了如何在终端会话中完成这个 过程：</span></p>
+<p><span class="font0" style="font-weight:bold;">❶ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># On branch master</span></p></li></ul>
+<p><span class="font0">nothing to commit, working directory clean</span></p>
+<p><span class="font0" style="font-weight:bold;">❷ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">rm -rf .git</span></p>
+<p><span class="font0" style="font-weight:bold;">❸ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git status</span></p>
+<p><span class="font0">fatal: Not a git repository （or any of the parent directories）: .git</span></p>
+<p><span class="font0" style="font-weight:bold;">❹ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git init</span></p>
+<p><span class="font0">Initialized empty Git repository in git_practice/.git/</span></p>
+<p><span class="font0" style="font-weight:bold;">❺ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># On branch master</span></p></li>
+<li>
+<p><span class="font0">#</span></p></li>
+<li>
+<p><span class="font0"># Initial commit</span></p></li>
+<li>
+<p><span class="font0">#</span></p></li>
+<li>
+<p><span class="font0"># Untracked files:</span></p></li>
+<li>
+<p><span class="font0"># （use &quot;git add &lt;file&gt;...&quot; to include in what will be committed）</span></p></li>
+<li>
+<p><span class="font0">#</span></p></li>
+<li>
+<p><span class="font0"># .gitignore</span></p></li>
+<li>
+<p><span class="font0"># hello_world.py</span></p></li>
+<li>
+<p><span class="font0">#</span></p></li></ul>
+<p><span class="font0">nothing added to commit but untracked files present （use &quot;git add&quot; to track） </span><span class="font0" style="font-weight:bold;">❻ </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git add .</span></p>
+<p><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git commit -m &quot;Starting over.&quot;</span></p>
+<p><span class="font0">[master （root-commit） 05f5e01] Starting over.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">2 files changed, 2 insertions（+）</span></p></li></ul>
+<p><span class="font0">create mode 100644 .gitignore</span></p>
+<p><span class="font0">create mode 100644 hello_world.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-weight:bold;">6 </span><span class="font0">git_practice$ </span><span class="font0" style="font-weight:bold;">git status</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># On branch master</span></p></li></ul>
+<p><span class="font0">nothing to commit, working directory clean git_practice$</span></p>
+<p><span class="font3">我们首先查看了状态，发现工作目录是干净的（见</span><span class="font1">❶</span><span class="font3">）。接下来，我们使用命令</span><span class="font2">rm -rf .git </span><span class="font3">（在</span><span class="font4">Windows</span><span class="font3">系统中，应使用命令</span><span class="font4">r</span><span class="font2">mdir /s .git</span><span class="font3">）删除了目录</span><span class="font4">.git </span><span class="font3">（见</span><span class="font1">❷</span><span class="font3">）。删除文件夹</span><span class="font4">.git</span><span class="font3">后，当 我们再次查看状态时，被告知这不是一个</span><span class="font4">Git</span><span class="font3">仓库（见</span><span class="font1">❸</span><span class="font3">）。</span><span class="font4">Git</span><span class="font3">用来跟踪仓库的信息都存储在文件 夹</span><span class="font4">.git</span><span class="font3">中，因此删除该文件夹也将删除整个仓库。</span></p>
+<p><span class="font3">接下来，我们使用命令</span><span class="font2">git init</span><span class="font3">新建一个全新的仓库（见</span><span class="font1">❹</span><span class="font3">）。然后，我们查看状态，发现 又回到了初始状态，等待着第一次提交（见</span><span class="font1">❺</span><span class="font3">）。我们将所有文件都加入仓库，并执行第一次提 交（见</span><span class="font1">❻</span><span class="font3">）。然后，我们再次查看状态，发现我们在分支</span><span class="font2">master</span><span class="font3">上，且没有任何未提交的修改（见 </span><span class="font1">6</span><span class="font3">）。</span></p>
+<p><span class="font3">需要经过一定的练习才能学会使用版本控制，但一旦开始使用，你就再也离不开它。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

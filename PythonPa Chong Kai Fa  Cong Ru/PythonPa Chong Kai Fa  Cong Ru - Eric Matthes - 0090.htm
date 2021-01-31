@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:11pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">5.3 if</span><span class="font7">语句</span></p>
+<p><span class="font8">73</span></p>
+<p><span class="font7">只要年龄超过</span><span class="font8">17</span><span class="font7">岁，前两个测试就都不能通过。在这种情况下，将执行</span><span class="font3">else</span><span class="font7">代码块，指出门 票价格为</span><span class="font8">10</span><span class="font7">美元。</span></p>
+<p><span class="font7">为让代码更简洁，可不在</span><span class="font3">f-elf-else</span><span class="font7">代码块中打印门票价格，而只在其中设置门票价格， 并在它后面添加一条简单的</span><span class="font3">print</span><span class="font7">语句：</span></p>
+<p><span class="font0">age = 12</span></p>
+<p><span class="font0">if age &lt;&nbsp;4:</span></p>
+<p><span class="font4">❶ </span><span class="font0">price = 0</span></p>
+<p><span class="font0">elif age &lt;&nbsp;18:</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">price = 5</span></p>
+<p><span class="font0">else:</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">price = 10</span></p>
+<p><span class="font4">❹ </span><span class="font0">print(&quot;Your admission cost</span></p>
+<div>
+<p><span class="font0">is $&quot; + str(price) + &quot;.&quot;)</span></p>
+</div><br clear="all">
+<p><span class="font5">❶</span><span class="font7">处、</span><span class="font5">❷</span><span class="font7">处和</span><span class="font5">❸</span><span class="font7">处的代码行像前一个示例那样，根据人的年龄设置变量</span><span class="font3">price</span><span class="font7">的值。在 </span><span class="font3">if-elif-else</span><span class="font7">结构中设置</span><span class="font3">price</span><span class="font7">的值后，一条未缩进的</span><span class="font3">print</span><span class="font7">语句</span><span class="font5">❹</span><span class="font7">会根据这个变量的值打印一条 消息，指出门票的价格。</span></p>
+<p><span class="font7">这些代码的输出与前一个示例相同，但</span><span class="font3">if-elif-else</span><span class="font7">结构的作用更小，它只确定门票价格， 而不是在确定门票价格的同时打印一条消息。除效率更高外，这些修订后的代码还更容易修改： 要调整输出消息的内容，只需修改一条而不是三条</span><span class="font3">print</span><span class="font7">语句。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">5.3.4</span><span class="font6"> 使用多个</span><span class="font1">elif</span><span class="font6">代码块</span></p></li></ul>
+<p><span class="font7">可根据需要使用任意数量的</span><span class="font3">elif</span><span class="font7">代码块，例如，假设前述游乐场要给老年人打折，可再添加 一个条件测试，判断顾客是否符合打折条件。下面假设对于</span><span class="font8">65</span><span class="font7">岁（含）以上的老人，可以半价（即 </span><span class="font8">5</span><span class="font7">美元）购买门票：</span></p>
+<p><span class="font0">age = 12</span></p>
+<p><span class="font0">if age &lt;&nbsp;4:</span></p>
+<p><span class="font0">price = 0</span></p>
+<p><span class="font0">elif age &lt;&nbsp;18:</span></p>
+<p><span class="font0">price = 5</span></p>
+<p><span class="font4">❶ </span><span class="font0">elif age &lt;&nbsp;65:</span></p>
+<p><span class="font0">price = 10</span></p>
+<p><span class="font4">❷ </span><span class="font0">else:</span></p>
+<p><span class="font0">price = 5</span></p>
+<p><span class="font0">print（&quot;Your admission cost is $&quot; + str（price） + &quot;.&quot;）</span></p>
+<p><span class="font7">这些代码大都未变。第二个</span><span class="font3">elif</span><span class="font7">代码块（见</span><span class="font5">❶</span><span class="font7">）通过检查确定年龄不到</span><span class="font8">65</span><span class="font7">岁后，才将门票价 格设置为全票价格一</span><span class="font8">10</span><span class="font7">美元。请注意，在</span><span class="font3">else</span><span class="font7">代码块（见</span><span class="font5">❷</span><span class="font7">）中，必须将所赋的值改为</span><span class="font8">5</span><span class="font7">,因 为仅当年龄超过</span><span class="font8">65</span><span class="font7">（含）时，才会执行这个代码块。</span></p>
+</body>
+</html>

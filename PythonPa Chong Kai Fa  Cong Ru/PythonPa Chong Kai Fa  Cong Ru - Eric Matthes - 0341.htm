@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:10pt SimSun, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">324</span></p>
+<p><span class="font7">第</span><span class="font3">16</span><span class="font7">章下载数据</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>动手试一试</span></h6>
+<p><span class="font2">16-1</span><span class="font7">旧金山：旧金山的气温更接近于锡特卡还是死亡谷呢？请绘制一个显示旧金 山最高气温和最低气温的图表，并进行比较。可从</span><a href="http://www.wimdergroimd.com/liistory/"><span class="font1">http://www.wimdergroimd.com/liistory/</span></a><span class="font1"> </span><span class="font7">下载几乎任何地方的天气数据。为此，请输入相应的地方和日期范围，滚动到页面底部， 找到名为</span><span class="font1">Coinma</span><span class="font10">・</span><span class="font1">Delimited File</span><span class="font7">的链接，再单击该链接，将数据存储为</span><span class="font1">CSV</span><span class="font7">文件。</span></p>
+<p><span class="font2">16-2</span><span class="font7">比较锡特卡和死亡谷的气温：在有关锡特卡和死亡谷的图表中，气温刻度反 映了数据范围的不同。为准确地比较锡特卡和死亡谷的气温范围，需要在</span><span class="font1">.v</span><span class="font7">,轴上使用相 同的刻度。为此，请修改图</span><span class="font1">16</span><span class="font10">・</span><span class="font1">5</span><span class="font7">和图</span><span class="font1">16</span><span class="font10">・</span><span class="font1">6</span><span class="font7">所示图表的</span><span class="font1">y</span><span class="font7">轴设置，对锡特卡和死亡谷的 气温范围进行直接比较(你也可以对任何两个地方的气温范围进行比较)。你还可以尝 试在一个图表中呈现这两个数据集。</span></p>
+<p><span class="font2">16-3</span><span class="font7">降雨量：选择你感兴趣的任何地方，通过可视化将其降雨量呈现出来。为此， 可先只涵盖一个月的数据，确定代码正确无误后，再使用一整年的数据来运行它。</span></p>
+<p><span class="font2">16-4</span><span class="font7">探索：生成一些图表，对你好奇的任何地方的其他天气数据进行研究。</span></p>
+<ul style="list-style:none;"><li><a name="caption2"></a>
+<h5><a name="bookmark2"></a><span class="font5"><a name="bookmark3"></a>16.2</span><span class="font9">制作世界人口地图：</span><span class="font5">JS0N</span><span class="font9">格式</span></h5></li></ul>
+<p><span class="font7">在本节中，你将下载</span><span class="font1">JSON</span><span class="font7">格式的人口数据，并使用</span><span class="font1">json</span><span class="font7">模块来处理它们。</span><span class="font1">Pygal</span><span class="font7">提供了一个 适合初学者使用的地图创建工具，你将使用它来对人口数据进行可视化，以探索全球人口的分布 情况。</span></p>
+<ul style="list-style:none;"><li>
+<h6><a name="bookmark4"></a><span class="font4"><a name="bookmark5"></a>16.2.1</span><span class="font8"> 下载世界人口数据</span></h6></li></ul>
+<p><span class="font7">将文件</span><span class="font1">population_data.json</span><span class="font7">复制到本章程序所在的文件夹中，这个文件包含全球大部分国家 </span><span class="font1">1960</span><span class="font10">〜</span><span class="font1">2010</span><span class="font7">年的人口 数据。</span><span class="font1">Open Knowledge Foimdation ( </span><a href="http://data.okfii.org/)%e6%8f%90%e4%be%9b%e4%ba%86"><span class="font1">http://data.okfii.org/)</span><span class="font7">提供了</span></a><span class="font7"> 大量可以免 费使用的数据集，这些数据就来自其中一个数据集。</span></p>
+<ul style="list-style:none;"><li>
+<h6><a name="bookmark6"></a><span class="font4"><a name="bookmark7"></a>16.2.2</span><span class="font8"> 提取相关的数据</span></h6></li></ul>
+<p><span class="font7">我们来研究一下</span><span class="font1">population_data.json,</span><span class="font7">看看如何着手处理这个文件中的数据：</span></p>
+<h6><a name="bookmark8"></a><span class="font3"><a name="bookmark9"></a>population-data.json</span></h6>
+<p><span class="font0" style="font-weight:bold;">&quot;Country Name&quot;: &quot;Arab World&quot;,</span></p>
+<p><span class="font0" style="font-weight:bold;">&quot;Country Code&quot;: &quot;ARB&quot;,</span></p>
+<p><span class="font0" style="font-weight:bold;">&quot;Year&quot;: &quot;I960&quot;,</span></p>
+<p><span class="font0" style="font-weight:bold;">&quot;Value&quot;: &quot;96388069&quot;</span></p>
+<p><span class="font0" style="font-weight:bold;">},</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

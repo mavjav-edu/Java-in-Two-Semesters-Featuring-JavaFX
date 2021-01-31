@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">8.2 </span><span class="font5">传递实参</span></p>
+<p><span class="font6">119</span></p>
+<p><span class="font0">describe_pet(pet_name='willie')</span></p>
+<p><span class="font5">这里修改了函数</span><span class="font2">describe_pet()</span><span class="font5">的定义，在其中给形参</span><span class="font2">animal_type</span><span class="font5">指定了默认值</span><span class="font2">'dog'</span><span class="font5">。这 样，调用这个函数时，如果没有给</span><span class="font2">animal_type</span><span class="font5">指定值，</span><span class="font6">Python</span><span class="font5">将把这个形参设置为</span><span class="font2">‘dog'</span><span class="font5">：</span></p>
+<p><span class="font0">I have a dog.</span></p>
+<p><span class="font0">My dog's name is Willie.</span></p>
+<p><span class="font5">请注意，在这个函数的定义中，修改了形参的排列顺序。由于给</span><span class="font2">animal_type</span><span class="font5">指定了默认值， 无需通过实参来指定动物类型，因此在函数调用中只包含一个实参一宠物的名字。然而，</span><span class="font6">Python </span><span class="font5">依然将这个实参视为位置实参，因此如果函数调用中只包含宠物的名字，这个实参将关联到函数 定义中的第一个形参。这就是需要将</span><span class="font2">pet_name</span><span class="font5">放在形参列表开头的原因所在。</span></p>
+<p><span class="font5">现在，使用这个函数的最简单的方式是，在函数调用中只提供小狗的名字：</span></p>
+<p><span class="font0">describe_pet('willie')</span></p>
+<p><span class="font5">这个函数调用的输出与前一个示例相同。只提供了一个实参一一</span><span class="font2">'willie'</span><span class="font5">，这个实参将关联 到函数定义中的第一个形参 </span><span class="font2">pet_name</span><span class="font5">。由于没有给</span><span class="font2">animal_type</span><span class="font5">提供实参，因此</span><span class="font6">Python</span><span class="font5">使用其 默认值</span><span class="font2">'dog'</span><span class="font5">。</span></p>
+<p><span class="font5">如果要描述的动物不是小狗，可使用类似于下面的函数调用：</span></p>
+<p><span class="font0">describe_pet(pet_name='harry', animal_type='hamster')</span></p>
+<p><span class="font5">由于显式地给</span><span class="font2">animal_type</span><span class="font5">提供了实参，因此</span><span class="font6">Python</span><span class="font5">将忽略这个形参的默认值。</span></p>
+<p><span class="font5">注意 </span><span class="font4">使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。</span></p>
+<p><span class="font4">这让</span><span class="font6">Python</span><span class="font4">依然能够正确地解读位置实参。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">8.2.4</span><span class="font3"> 等效的函数调用</span></p></li></ul>
+<p><span class="font5">鉴于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式。请看下 面的函数</span><span class="font2">describe_pets()</span><span class="font5">的定义，其中给一个形参提供了默认值：</span></p>
+<p><span class="font0">def describe_pet(pet_name, animal_type='dog'):</span></p>
+<p><span class="font5">基于这种定义，在任何情况下都必须给</span><span class="font2">pet_name</span><span class="font5">提供实参；指定该实参时可以使用位置方式， 也可以使用关键字方式。如果要描述的动物不是小狗，还必须在函数调用中给</span><span class="font2">animal_type</span><span class="font5">提供 实参；同样，指定该实参时可以使用位置方式，也可以使用关键字方式。</span></p>
+<p><span class="font5">下面对这个函数的所有调用都可行：</span></p>
+</body>
+</html>

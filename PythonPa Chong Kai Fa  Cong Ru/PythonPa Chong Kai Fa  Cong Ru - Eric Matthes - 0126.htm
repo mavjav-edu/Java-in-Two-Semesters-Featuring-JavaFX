@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">7.2 while</span><span class="font7">循环简介</span></p>
+<p><span class="font8">109</span></p>
+<p><span class="font0">1</span></p>
+<p><span class="font0">3</span></p>
+<p><span class="font0">5</span></p>
+<p><span class="font0">7</span></p>
+<p><span class="font0">9</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>7.2.6</span><span class="font4"> 避免无限循环</span></h5></li></ul>
+<p><span class="font7">每个</span><span class="font3">while</span><span class="font7">循环都必须有停止运行的途径，这样才不会没完没了地执行下去。例如，下面的 循环从</span><span class="font8">1</span><span class="font7">数到</span><span class="font8">5</span><span class="font7">：</span></p>
+<p><span class="font1">counting.py</span></p>
+<p><span class="font0">x = 1</span></p>
+<p><span class="font0">while x &lt;= 5: print(x) x += 1</span></p>
+<p><span class="font7">但如果你像下面这样不小心遗漏了代码行</span><span class="font3">x += 1</span><span class="font7">,这个循环将没完没了地运行:</span></p>
+<p><span class="font0"># </span><span class="font5">这个循环将没完没了地运行！</span></p>
+<p><span class="font0">x = 1</span></p>
+<p><span class="font0">while x &lt;= 5: print(x)</span></p>
+<p><span class="font7">在这里，</span><span class="font3">x</span><span class="font7">的初始值为</span><span class="font3">1</span><span class="font7">,但根本不会变，因此条件测试</span><span class="font3">x &lt;= 5</span><span class="font7">始终为</span><span class="font3">True</span><span class="font7">，导致</span><span class="font3">while</span><span class="font7">循环没 完没了地打印</span><span class="font3">1</span><span class="font7">，如下所示：</span></p>
+<p><span class="font0">1</span></p>
+<p><span class="font0">1</span></p>
+<p><span class="font0">1</span></p>
+<p><span class="font0">1</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font7">每个程序员都会偶尔因不小心而编写出无限循环，在循环的退出条件比较微妙时尤其如此。 如果程序陷入无限循环，可按</span><span class="font8">Ctrl + C</span><span class="font7">，也可关闭显示程序输出的终端窗口。</span></p>
+<p><span class="font7">要避免编写无限循环，务必对每个</span><span class="font3">while</span><span class="font7">循环进行测试，确保它按预期那样结束。如果你希 望程序在用户输入特定值时结束,可运行程序并输入这样的值；如果在这种情况下程序没有结束, 请检查程序处理这个值的方式，确认程序至少有一个这样的地方能让循环条件为</span><span class="font3">False</span><span class="font7">或让</span><span class="font3">break </span><span class="font7">语句得以执行。</span></p>
+<p><span class="font7">注意 </span><span class="font6">有些编辑器(如</span><span class="font8">Sublime Text</span><span class="font6">)内嵌了输出窗口，这可能导致难以结束无限循环，因此不 得不关闭编辑器来结束无限循环。</span></p>
+</body>
+</html>

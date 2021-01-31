@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">164</span></p>
+<p><span class="font5">第</span><span class="font6">10</span><span class="font5">章 文件和异常</span></p>
+<p><span class="font0">with open('pi_digits.txt') as file_object:</span></p>
+<p><span class="font0">contents = file_object.read()</span></p>
+<p><span class="font0">print(contents.rstrip())</span></p>
+<p><span class="font5">本书前面说过，</span><span class="font6">Python</span><span class="font5">方法</span><span class="font2">rstrip()</span><span class="font5">删除(剥除)字符串末尾的空白。现在，输出与原始文 件的内容完全相同：</span></p>
+<p><span class="font0">3.1415926535</span></p>
+<p><span class="font0">8979323846</span></p>
+<p><span class="font0">2643383279</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>10.1.2</span><span class="font3"> 文件路径</span></h5></li></ul>
+<p><span class="font5">当你将类似</span><span class="font6">pi_digits.txt</span><span class="font5">这样的简单文件名传递给函数</span><span class="font2">open()</span><span class="font5">时，</span><span class="font6">Python</span><span class="font5">将在当前执行的文件 (即</span><span class="font6">.py</span><span class="font5">程序文件)所在的目录中查找文件。</span></p>
+<p><span class="font5">根据你组织文件的方式，有时可能要打开不在程序文件所属目录中的文件。例如，你可能将 程序文件存储在了文件夹</span><span class="font6">python_work</span><span class="font5">中，而在文件夹</span><span class="font6">python_work</span><span class="font5">中，有一个名为</span><span class="font6">text_files</span><span class="font5">的文 件夹，用于存储程序文件操作的文本文件。虽然文件夹</span><span class="font6">text_files</span><span class="font5">包含在文件夹</span><span class="font6">python_work</span><span class="font5">中，但 仅向</span><span class="font2">open()</span><span class="font5">传递位于该文件夹中的文件的名称也不可行，因为</span><span class="font6">Python</span><span class="font5">只在文件夹</span><span class="font6">python_work</span><span class="font5">中查 找，而不会在其子文件夹</span><span class="font6">text_files</span><span class="font5">中查找。要让</span><span class="font6">Python</span><span class="font5">打开不与程序文件位于同一个目录中的文 件，需要提供</span><span class="font4">文件路径</span><span class="font5">，它让</span><span class="font6">Python</span><span class="font5">到系统的特定位置去查找。</span></p>
+<p><span class="font5">由于文件夹</span><span class="font6">text_files</span><span class="font5">位于文件夹</span><span class="font6">python_work</span><span class="font5">中，因此可使用</span><span class="font4">相对文件路径</span><span class="font5">来打开该文件夹中 的文件。相对文件路径让</span><span class="font6">Python</span><span class="font5">到指定的位置去查找，而该位置是相对于当前运行的程序所在目 录的。在</span><span class="font6">Linux</span><span class="font5">和</span><span class="font6">OS X</span><span class="font5">中，你可以这样编写代码：</span></p>
+<p><span class="font0">with open('text_files/</span><span class="font0" style="font-style:italic;">filename</span><span class="font0">.txt') as file_object:</span></p>
+<p><span class="font5">这行代码让</span><span class="font6">Python</span><span class="font5">到文件夹</span><span class="font6">python_work</span><span class="font5">下的文件夹</span><span class="font6">text_files</span><span class="font5">中去查找指定的</span><span class="font6">.txt</span><span class="font5">文件。在 </span><span class="font6">Windows</span><span class="font5">系统中，在文件路径中使用反斜杠(</span><span class="font2">\</span><span class="font5">)而不是斜杠(</span><span class="font2">/</span><span class="font5">)：</span></p>
+<p><span class="font0">with open('text_files\</span><span class="font0" style="font-style:italic;">filename</span><span class="font0">.txt') as file_object:</span></p>
+<p><span class="font5">你还可以将文件在计算机中的准确位置告诉</span><span class="font6">Python</span><span class="font5">，这样就不用关心当前运行的程序存储在 什么地方了。这称为</span><span class="font4">绝对文件路径</span><span class="font5">。在相对路径行不通时，可使用绝对路径。例如，如果</span><span class="font6">text_files </span><span class="font5">并不在文件夹</span><span class="font6">python_work</span><span class="font5">中，而在文件夹</span><span class="font6">other_files</span><span class="font5">中，则向</span><span class="font2">open()</span><span class="font5">传递路径</span><span class="font2">'text_files/ filename.txt'</span><span class="font5">行不通，因为</span><span class="font6">Python</span><span class="font5">只在文件夹</span><span class="font6">python_work</span><span class="font5">中查找该位置。为明确地指出你希望 </span><span class="font6">Python</span><span class="font5">到哪里去查找，你需要提供完整的路径。</span></p>
+<p><span class="font5">绝对路径通常比相对路径更长，因此将其存储在一个变量中，再将该变量传递给</span><span class="font2">open()</span><span class="font5">会有 所帮助。在</span><span class="font6">Linux</span><span class="font5">和</span><span class="font6">OS X</span><span class="font5">中，绝对路径类似于下面这样：</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

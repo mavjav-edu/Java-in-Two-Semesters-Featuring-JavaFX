@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">334</span></p>
+<p><span class="font7">第</span><span class="font9">16</span><span class="font7">章 下载数据</span></p>
+<p><span class="font7">还有两个国家比较特殊，其人口都超过了</span><span class="font9">10</span><span class="font7">亿。这样的分组看起来足够了，让地图包含丰富的信 息。图</span><span class="font9">16-10</span><span class="font7">显示了生成的地图。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0351_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200351-1.jpg" alt="" style="width:354pt;height:232pt;">
+<p><span class="font4">图</span><span class="font8">16-10 </span><span class="font4">分三组显示的世界各国人口</span></p>
+<p><span class="font7">现在使用了三种不同的颜色，让我们能够看出人口数量上的差别。在每组中，各个国家都按 人口从少到多着以从浅到深的颜色。</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>16.2.9</span><span class="font5">使用</span><span class="font2">Pygal</span><span class="font5">设置世界地图的样式</span></h5>
+<p><span class="font7">在这个地图中，根据人口将国家分组虽然很有效，但默认的颜色设置很难看。例如，在这里， </span><span class="font9">Pygal</span><span class="font7">选择了鲜艳的粉色和绿色基色。下面使用</span><span class="font9">Pygal</span><span class="font7">样式设置指令来调整颜色。</span></p>
+<p><span class="font7">我们也让</span><span class="font9">Pygal</span><span class="font7">使用一种基色，但将指定该基色，并让三个分组的颜色差别更大：</span></p>
+<p><span class="font1">world_population.py</span></p>
+<p><span class="font0">import json</span></p>
+<p><span class="font0">import pygal</span></p>
+<p><span class="font3">❶ </span><span class="font0">from pygal.style import RotateStyle</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0"># </span><span class="font6">根据人口数量将所有的国家分成三组</span></p></li></ul>
+<p><span class="font0">cc_pops_1, cc_pops_2, cc_pops_3 = {}, {}, {}</span></p>
+<p><span class="font0">for cc, pop in cc_populations.items():</span></p>
+<p><span class="font0">if pop &lt;&nbsp;10000000:</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

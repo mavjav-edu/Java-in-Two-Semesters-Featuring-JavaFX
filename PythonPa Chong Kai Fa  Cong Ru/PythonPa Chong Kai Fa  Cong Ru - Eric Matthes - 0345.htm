@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">328</span></p>
+<p><span class="font7">第</span><span class="font8">16</span><span class="font7">章 下载数据</span></p>
+<p><span class="font0">print(get_country_code('Andorra'))</span></p>
+<p><span class="font0">print(get_country_code('United Arab Emirates'))</span></p>
+<p><span class="font0">print(get_country_code('Afghanistan'))</span></p>
+<p><span class="font3">get_country_code()</span><span class="font7">接受国家名，并将其存储在形参</span><span class="font3">country_name</span><span class="font7">中(见</span><span class="font5">。</span><span class="font7">)。接下来，我们 遍历</span><span class="font3">COUNTRIES</span><span class="font7">中的国家名</span><span class="font1">-</span><span class="font7">国别码对(见</span><span class="font5">❷</span><span class="font7">)；如果找到指定的国家名，就返回相应的国别码(见 </span><span class="font5">❸</span><span class="font7">)。在循环后面，我们在没有找到指定的国家名时返回</span><span class="font3">None </span><span class="font7">(见</span><span class="font5">❹</span><span class="font7">)。最后，我们使用了三个国 家名来调用这个函数，以核实它能否正确地工作。与预期的一样，这个程序输出了三个由两个字 母组成的国别码：</span></p>
+<p><span class="font0">ad</span></p>
+<p><span class="font0">ae af</span></p>
+<p><span class="font7">使用这个函数前，先将</span><span class="font8">country_codes.py</span><span class="font7">中的</span><span class="font3">print</span><span class="font7">语句删除。</span></p>
+<p><span class="font7">接下来，在</span><span class="font8">world_population.py</span><span class="font7">中导入</span><span class="font3">get_country_code</span><span class="font7">:</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>world_population.py</span></h6>
+<p><span class="font0">import json</span></p>
+<p><span class="font0">from country_codes import get_country_code</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font6">打印每个国家</span><span class="font0">2010</span><span class="font6">年的人口数量</span></p></li></ul>
+<p><span class="font0">for pop_dict in pop_data:</span></p>
+<p><span class="font0">if pop_dict['Year'] == '2010':</span></p>
+<p><span class="font0">country_name = pop_dict['Country Name']</span></p>
+<p><span class="font0">population = int(float(pop_dict['Value']))</span></p>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">code = get_country_code(country_name)</span></p>
+<p><span class="font0">if code:</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">print(code + &quot;: &quot;+ str(population))</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">else:</span></p>
+<p><span class="font0">print('ERROR - ' + country_name)</span></p>
+<p><span class="font7">提取国家名和人口数量后，我们将国别码存储在</span><span class="font3">code</span><span class="font7">中，如果没有国别码，就在其中存储</span><span class="font3">None </span><span class="font7">（见</span><span class="font5">❶</span><span class="font7">）。如果返回了国别码，就打印国别码和相应国家的人口数量（见</span><span class="font5">❷</span><span class="font7">）。如果没有找到国别 码，就显示一条错误消息，其中包含无法找到国别码的国家的名称（见</span><span class="font5">❸</span><span class="font7">）。如果你运行这个程 序，将看到一些国别码和相应国家的人口数量，还有一些错误消息：</span></p>
+<p><span class="font0">ERROR - Arab World</span></p>
+<p><span class="font0">ERROR - Caribbean small states</span></p>
+<p><span class="font0">ERROR - East Asia &amp;&nbsp;Pacific (all income levels)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">af: 34385000</span></p>
+<p><span class="font0">al: 3205000</span></p>
+<p><span class="font0">dz: 35468000</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all"></li></ul>
+</body>
+</html>

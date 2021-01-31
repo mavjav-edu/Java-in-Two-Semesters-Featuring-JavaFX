@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:6pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:14pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">附录</span><span class="font8">A </span><span class="font7">安装</span><span class="font8">Python 439</span></p>
+<p><span class="font3">python</span><span class="font7">时也无需指定其完整路径。安装</span><span class="font8">Python</span><span class="font7">后，打开一个新的终端窗口，并在其中执行命令 </span><span class="font3">python --version</span><span class="font7">。如果没有报错，就说明</span><span class="font8">Python</span><span class="font7">安装好了。</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>A.3.2</span><span class="font5">查找</span><span class="font1">Python</span><span class="font5">解释器</span></h5>
+<p><span class="font7">如果不能执行简单命令</span><span class="font3">python</span><span class="font7">，你就需要告诉</span><span class="font8">Windows</span><span class="font7">去哪里查找</span><span class="font8">Python</span><span class="font7">解释器。要确定 </span><span class="font8">Python</span><span class="font7">解释器的位置，请打开</span><span class="font8">C</span><span class="font7">盘，并在其中查找名称以</span><span class="font8">Python</span><span class="font7">打头的文件夹（要找到这样的文 件夹，你可能需要在</span><span class="font8">Windows</span><span class="font7">资源管理器中的搜索栏中输入单词</span><span class="font8">python</span><span class="font7">）。打开这个文件夹，并查 找名称为</span><span class="font8">python </span><span class="font7">（全部小写）的文件。右击这个文件并选择“属性”，你将在“位置:&quot;右边看到 它的路径。</span></p>
+<p><span class="font7">在终端窗口中，使用该路径来确定刚安装的</span><span class="font8">Python</span><span class="font7">版本：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">C:\\Python35\python --version</span></p>
+<p><span class="font0">Python 3.5.0</span></p>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>A.3.3 </span><span class="font5">将</span><span class="font1">Python</span><span class="font5">添加到环境变量</span><span class="font1">Path</span><span class="font5">中</span></h5>
+<p><span class="font7">如果每次启动</span><span class="font8">Python</span><span class="font7">终端时都需要输入完整的路径，那就太讨厌了；有鉴于此，我们将在系 统中添加这个路径，让你只需使用命令</span><span class="font3">python</span><span class="font7">即可。如果你在安装</span><span class="font8">Python</span><span class="font7">时选择了复选框</span><span class="font8">Add Python to PATH</span><span class="font7">，可跳过这一步。打开控制面板并单击“系统和安全”，再单击“系统”。单击“高 级系统设置”，在打开的窗口中单击按钮“环境变量”。</span></p>
+<p><span class="font7">在“系统变量”部分，找到并单击变量</span><span class="font3">Path</span><span class="font7">，再单击按钮“编辑”。在出现的对话框中，单 击“变量值”，并使用右箭头键滚到最右边。千万不要覆盖变量原来的值，如果你不小心这样做 了，单击“取消”按钮，再重复前面的步骤。在变量值的末尾添加一个分号，再添加文件</span><span class="font8">python.exe </span><span class="font7">的路径:</span></p>
+<p><span class="font4">%</span><span class="font0">SystemRoot</span><span class="font4">%</span><span class="font0">\system32\...\System32\WindowsPowerShell\v1.0\;C:\Python34</span></p>
+<p><span class="font7">关闭终端窗口，再打开一个新的终端窗口。这将在终端会话中加载变量</span><span class="font3">Path</span><span class="font7">的新值。现在当 你执行命令</span><span class="font3">python --version</span><span class="font7">时，将看到刚才在变量</span><span class="font3">Path</span><span class="font7">中设置的</span><span class="font8">Python</span><span class="font7">版本。现在，你只需在 命令提示符下输入</span><span class="font3">python</span><span class="font7">并按回车，就可启动</span><span class="font8">Python</span><span class="font7">终端会话了。</span></p>
+<p><span class="font2">A.4 Python</span><span class="font6">关键字和内置函数</span></p>
+<p><span class="font8">Python</span><span class="font7">包含一系列关键字和内置函数，给变量命名时，知道这些关键字和内置函数很重要。 编程中面临的一个挑战是给变量指定合适的名称，变量名可以是任何东西，只要它长短合适并描 述了变量的作用。同时，不能将</span><span class="font8">Python</span><span class="font7">关键字用作变量名；也不应将</span><span class="font8">Python</span><span class="font7">内置函数的名称用作 变量名，否则将覆盖相应的内置函数。</span></p>
+<p><span class="font7">本节将列出</span><span class="font8">Python</span><span class="font7">关键字和内置函数的名称，让你知道应避免使用哪些变量名。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">8.3 </span><span class="font8">返回值</span></p>
+<p><span class="font9">123</span></p>
+<p><span class="font8">在这个示例中，姓名是根据三个可能提供的部分创建的。由于人都有名和姓，因此在函数定 义中首先列出了这两个形参。中间名是可选的，因此在函数定义中最后列出该形参，并将其默认 值设置为空字符串（见</span><span class="font10" style="font-weight:bold;">o</span><span class="font8">）。</span></p>
+<p><span class="font8">在函数体中，我们检查是否提供了中间名。</span><span class="font9">Python</span><span class="font8">将非空字符串解读为</span><span class="font3">True</span><span class="font8">,因此如果函数 调用中提供了中间名，</span><span class="font3">if middle_name</span><span class="font8">将为</span><span class="font3">True </span><span class="font8">（见</span><span class="font5">❷</span><span class="font8">）。如果提供了中间名，就将名、中间名和 姓合并为姓名,然后将其修改为首字母大写格式,并返回到函数调用行。在函数调用行,将返回 的值存储在变量</span><span class="font3">musician</span><span class="font8">中；然后将这个变量的值打印出来。如果没有提供中间名，</span><span class="font3">middle_name </span><span class="font8">将为空字符串，导致</span><span class="font3">if</span><span class="font8">测试未通过，进而执行</span><span class="font3">else</span><span class="font8">代码块（见</span><span class="font5">❸</span><span class="font8">）：只使用名和姓来生成姓名， 并将设置好格式的姓名返回给函数调用行。在函数调用行，将返回的值存储在变量</span><span class="font3">musician</span><span class="font8">中； 然后将这个变量的值打印出来。</span></p>
+<p><span class="font8">调用这个函数时,如果只想指定名和姓,调用起来将非常简单。如果还要指定中间名,就必 须确保它是最后一个实参，这样</span><span class="font9">Python</span><span class="font8">才能正确地将位置实参关联到形参（见</span><span class="font5">❹</span><span class="font8">）。</span></p>
+<p><span class="font8">这个修改后的版本适用于只有名和姓的人,也适用于还有中间名的人：</span></p>
+<p><span class="font0">Jimi Hendrix</span></p>
+<p><span class="font0">John Lee Hooker</span></p>
+<p><span class="font8">可选值让函数能够处理各种不同情形的同时,确保函数调用尽可能简单。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>8.3.3</span><span class="font6"> 返回字典</span></h5></li></ul>
+<p><span class="font8">函数可返回任何类型的值,包括列表和字典等较复杂的数据结构。例如,下面的函数接受姓 名的组成部分,并返回一个表示人的字典：</span></p>
+<p><span class="font1">person.py</span></p>
+<p><span class="font0">def build_person（first_name, last_name）:</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">返回一个字典，其中包含有关一个人的信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font4">❶ </span><span class="font0">person = {'first': first_name, 'last': last_name}</span></p>
+<p><span class="font4">❷ </span><span class="font0">return person</span></p>
+<p><span class="font0">musician = build_person（'jimi', 'hendrix'）</span></p>
+<p><span class="font4">❸ </span><span class="font0">print（musician）</span></p>
+<p><span class="font8">函数</span><span class="font3">build_person（）</span><span class="font8">接受名和姓，并将这些值封装到字典中（见</span><span class="font10" style="font-weight:bold;">O</span><span class="font8">）。存储</span><span class="font3">first_name</span><span class="font8">的值时， 使用的键为</span><span class="font3">‘first'</span><span class="font8">，而存储</span><span class="font3">last_name</span><span class="font8">的值时，使用的键为</span><span class="font3">‘last'</span><span class="font8">。最后，返回表示人的整个字 典（见</span><span class="font5">❷</span><span class="font8">）。在</span><span class="font5">❸</span><span class="font8">处，打印这个返回的值，此时原来的两项文本信息存储在一个字典中：</span></p>
+<p><span class="font0">{'first': 'jimi', 'last': 'hendrix'}</span></p>
+<p><span class="font8">这个函数接受简单的文本信息，将其放在一个更合适的数据结构中，让你不仅能打印这些信 息，还能以其他方式处理它们。当前，字符串</span><span class="font3">jimi'</span><span class="font8">和</span><span class="font3">'hendrix'</span><span class="font8">被标记为名和姓。你可以轻松地 扩展这个函数，使其接受可选值，如中间名、年龄、职业或你要存储的其他任何信息。例如，下</span></p>
+</body>
+</html>

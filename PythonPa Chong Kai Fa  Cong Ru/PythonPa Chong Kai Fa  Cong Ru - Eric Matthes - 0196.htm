@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+ .font9 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">10.3 </span><span class="font7">异常</span></p>
+<p><span class="font8">179</span></p>
+<p><span class="font7">相比于前一个程序，这个程序唯一不同的地方是</span><span class="font9" style="font-weight:bold;">❶</span><span class="font7">处的</span><span class="font3">pass</span><span class="font7">语句。现在，出现 </span><span class="font3">FileNotFoundError</span><span class="font7">异常时，将执行</span><span class="font3">except</span><span class="font7">代码块中的代码，但什么都不会发生。这种错误发生时， 不会出现</span><span class="font8">traceback</span><span class="font7">,也没有任何输出。用户将看到存在的每个文件包含多少个单词，但没有任何 迹象表明有一个文件未找到：</span></p>
+<p><span class="font0">The file alice.txt has about 29461 words.</span></p>
+<p><span class="font0">The file moby_dick.txt has about 215136 words.</span></p>
+<p><span class="font0">The file little_women.txt has about 189079 words.</span></p>
+<p><span class="font3">pass</span><span class="font7">语句还充当了占位符，它提醒你在程序的某个地方什么都没有做，并且以后也许要在这 里做些什么。例如，在这个程序中，我们可能决定将找不到的文件的名称写入到文件 </span><span class="font8">missing_files.txt</span><span class="font7">中。用户看不到这个文件，但我们可以读取这个文件，进而处理所有文件找不到 的问题。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">10.3.9</span><span class="font5"> 决定报告哪些错误</span></p></li></ul>
+<p><span class="font7">在什么情况下该向用户报告错误？在什么情况下又应该在失败时一声不吭呢？如果用户知 道要分析哪些文件，他们可能希望在有文件没有分析时出现一条消息，将其中的原因告诉他们。 如果用户只想看到结果，而并不知道要分析哪些文件，可能就无需在有些文件不存在时告知他们。 向用户显示他不想看到的信息可能会降低程序的可用性。</span><span class="font8">Python</span><span class="font7">的错误处理结构让你能够细致地 控制与用户分享错误信息的程度，要分享多少信息由你决定。</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">10</span></p>
+</div><br clear="all">
+<p><span class="font7">编写得很好且经过详尽测试的代码不容易出现内部错误，如语法或逻辑错误，但只要程序依 赖于外部因素，如用户输入、存在指定的文件、有网络链接，就有可能出现异常。凭借经验可判 断该在程序的什么地方包含异常处理块，以及出现错误时该向用户提供多少相关的信息。</span></p>
+<p><span class="font5">动手试一试</span></p>
+<p><span class="font1">10-6</span><span class="font4">加法运算</span><span class="font6">：提示用户提供数值输入时，常出现的一个问题是，用户提供的是 文本而不是数字。在这种情况下，当你尝试将输入转换为整数时，将引发</span><span class="font3">TypeError</span><span class="font6">异 常。编写一个程序，提示用户输入两个数字，再将它们相加并打印结果。在用户输入的 任何一个值不是数字时都捕获</span><span class="font3">TypeError</span><span class="font6">异常，并打印一条友好的错误消息。对你编写 的程序进行测试：先输入两个数字，再输入一些文本而不是数字。</span></p>
+<p><span class="font1">10-7</span><span class="font4">加法计算器</span><span class="font6">：将你为完成练习</span><span class="font8">10-6</span><span class="font6">而编写的代码放在一个</span><span class="font3">while</span><span class="font6">循环中，让 用户犯错（输入的是文本而不是数字）后能够继续输入数字。</span></p>
+<p><span class="font1">10-8</span><span class="font4">猫和狗</span><span class="font6">：创建两个文件</span><span class="font8">cats.txt</span><span class="font6">和</span><span class="font8">dogs.txt</span><span class="font6">，在第一个文件中至少存储三只猫的 名字，在第二个文件中至少存储三条狗的名字。编写一个程序，尝试读取这些文件，并 将其内容打印到屏幕上。将这些代码放在一个</span><span class="font3">try-except</span><span class="font6">代码块中，以便在文件不存 在时捕获</span><span class="font3">FileNotFound</span><span class="font6">错误，并打印一条友好的消息。将其中一个文件移到另一个地</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

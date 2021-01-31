@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">418</span></p>
+<p><span class="font5">第</span><span class="font6">20</span><span class="font5">章 设置应用程序的样式并对其进行部署</span></p>
+<p><span class="font0">❶</span><span class="font1">{% block header %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;h2&gt;{{ topic }}&lt;/h2&gt;</span></p></li></ul>
+<p><span class="font1">{% endblock header %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font1">&lt;p&gt;</span></p>
+<p><span class="font1">&lt;a href=&quot;{% url 'learning_logs:new_entry' topic.id %}&quot;&gt;add new entry&lt;/a&gt;</span></p>
+<p><span class="font1">&lt;/p&gt;</span></p>
+<p><span class="font1">{% for entry in entries %}</span></p>
+<p><span class="font0">❷</span><span class="font3"> </span><span class="font1">&lt;div class=&quot;panel panel-default&quot;&gt;</span></p>
+<p><span class="font0">❸</span><span class="font3"> </span><span class="font1">&lt;div class=&quot;panel-heading&quot;&gt;</span></p>
+<p><span class="font0">❹</span><span class="font3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;h3&gt;</span></p>
+<p><span class="font1">{{ entry.date_added|date:'M d, Y H:i' }}</span></p>
+<p><span class="font0">❺</span><span class="font3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;small&gt;</span></p>
+<p><span class="font1">&lt;a href=&quot;{% url 'learning_logs:edit_entry' entry.id %}&quot;&gt; edit entry&lt;/a&gt;</span></p>
+<p><span class="font1">&lt;/small&gt;</span></p>
+<p><span class="font1">&lt;/h3&gt;</span></p>
+<p><span class="font1">&lt;/div&gt;</span></p>
+<p><span class="font0">❻</span><span class="font3"> </span><span class="font1">&lt;div class=&quot;panel-body&quot;&gt;</span></p>
+<p><span class="font1">{{ entry.text|linebreaks }}</span></p>
+<p><span class="font1">&lt;/div&gt;</span></p>
+<p><span class="font1">&lt;/div&gt; &lt;!-- panel --&gt;</span></p>
+<p><span class="font1">{% empty %}</span></p>
+<p><span class="font1">There are no entries for this topic yet.</span></p>
+<p><span class="font1">{% endfor %}</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font5">我们首先将主题放在了</span><span class="font2">header</span><span class="font5">块中（见</span><span class="font4">❶</span><span class="font5">）。然后，我们删除了这个模板中以前使用的无序 列表结构。在</span><span class="font4">❷</span><span class="font5">处，我们创建了一个面板式</span><span class="font6">div</span><span class="font5">元素（而不是将每个条目作为一个列表项），其中 包含两个嵌套的</span><span class="font6">div</span><span class="font5">： —个面板标题（</span><span class="font2">panel-heading</span><span class="font5">）</span><span class="font6">div </span><span class="font5">（见</span><span class="font4">❸</span><span class="font5">）和一个面板主体（</span><span class="font2">panel-body</span><span class="font5">） </span><span class="font6">div</span><span class="font5">（见</span><span class="font4">❹）。</span><span class="font5">其中面板标题</span><span class="font6">div</span><span class="font5">包含条目的创建日期以及用于编辑条目的链接，它们都被设置为</span><span class="font4">&lt;卜</span><span class="font2">3&gt; </span><span class="font5">元素，而对于编辑条目的链接，还使用了标签</span><span class="font2">&lt;small&gt;</span><span class="font5">，使其比时间戳小些（见</span><span class="font4">❺</span><span class="font5">）。</span></p>
+<p><span class="font4">❻</span><span class="font5">处是面板主体</span><span class="font6">div</span><span class="font5">，其中包含条目的实际文本。注意，只修改了影响页面外观的元素，对在 页面中包含信息的</span><span class="font6">Django</span><span class="font5">代码未做任何修改。</span></p>
+<p><span class="font5">图</span><span class="font6">20-3</span><span class="font5">显示了修改后的</span><span class="font6">topic</span><span class="font5">页面。“学习笔记”的功能没有任何变化，但显得更专业了，对 用户会更有吸引力。</span></p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">5.3 &nbsp;if</span><span class="font6">语句</span></p>
+<p><span class="font7">75</span></p>
+<p><span class="font6">我们首先创建了一个列表，其中包含顾客点的配料(见</span><span class="font3">❶</span><span class="font6">)。</span><span class="font3">❷</span><span class="font6">处的</span><span class="font2">if</span><span class="font6">语句检查顾客是否点 了配料蘑菇(</span><span class="font2">’mushrooms'</span><span class="font6">)，如果点了，就打印一条确认消息。</span><span class="font3">❸</span><span class="font6">处检查配料辣香肠(</span><span class="font2">'pepperoni'</span><span class="font6">) 的代码也是一个简单的</span><span class="font2">if</span><span class="font6">语句，而不是</span><span class="font2">elif</span><span class="font6">或</span><span class="font2">else</span><span class="font6">语句；因此不管前一个测试是否通过，都将进 行这个测试。</span><span class="font3">❹</span><span class="font6">处的代码检查顾客是否要求多加芝士(</span><span class="font2">'extra cheese'</span><span class="font1">)</span><span class="font6">；不管前两个测试的结果 如何，都会执行这些代码。每当这个程序运行时，都会进行这三个独立的测试。</span></p>
+<p><span class="font6">在这个示例中，会检查每个条件，因此将在比萨中添加蘑菇并多加芝士：</span></p>
+<p><span class="font0">Adding mushrooms.</span></p>
+<p><span class="font0">Adding extra cheese.</span></p>
+<p><span class="font0">Finished making your pizza!</span></p>
+<p><span class="font6">如果像下面这样转而使用</span><span class="font2">if-elif-else</span><span class="font6">结构，代码将不能正确地运行，因为有一个测试通过 后，就会跳过余下的测试：</span></p>
+<p><span class="font0">requested_toppings = ['mushrooms', 'extra cheese']</span></p>
+<p><span class="font0">if 'mushrooms' in requested_toppings:</span></p>
+<p><span class="font0">print(&quot;Adding mushrooms.&quot;)</span></p>
+<p><span class="font0">elif 'pepperoni' in requested_toppings:</span></p>
+<p><span class="font0">print(&quot;Adding pepperoni.&quot;)</span></p>
+<p><span class="font0">elif 'extra cheese' in requested_toppings:</span></p>
+<p><span class="font0">print(&quot;Adding extra cheese.&quot;)</span></p>
+<p><span class="font0">print(&quot;\nFinished making your pizza!&quot;)</span></p>
+<p><span class="font6">第一个测试检查列表中是否包含</span><span class="font2">‘mushrooms'</span><span class="font6">，它通过了，因此将在比萨中添加蘑菇。然而， </span><span class="font7">Python</span><span class="font6">将跳过</span><span class="font2">if-elif-else</span><span class="font6">结构中余下的测试，不再检查列表中是否包含</span><span class="font2">‘extra cheese'</span><span class="font6">和 </span><span class="font2">'pepperoni'</span><span class="font6">。其结果是，将添加顾客点的第一种配料，但不会添加其他的配料：</span></p>
+<p><span class="font0">Adding mushrooms.</span></p>
+<p><span class="font0">Finished making your pizza!</span></p>
+<p><span class="font6">总之，如果你只想执行一个代码块，就使用</span><span class="font2">if-elif-else</span><span class="font6">结构；如果要运行多个代码块，就 使用一系列独立的</span><span class="font2">if</span><span class="font6">语句。</span></p>
+<p><span class="font4">动手试一试</span></p>
+<p><span class="font1">5-3</span><span class="font6">外星人颜色</span><span class="font1">#1</span><span class="font5">:假设在游戏中刚射杀了一个外星人，请创建一个名为 </span><span class="font2">alien_c010r </span><span class="font5">的变量，并将其设置为</span><span class="font2">‘green'</span><span class="font5">、</span><span class="font2">'yellow'</span><span class="font5">或</span><span class="font2">‘red'</span><span class="font5">。</span></p>
+<p><span class="font5">口编写一条</span><span class="font2">if</span><span class="font5">语句，检查外星人是否是绿色的；如果是，就打印一条消息，指出 玩家获得了 </span><span class="font7">5</span><span class="font5">个点。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

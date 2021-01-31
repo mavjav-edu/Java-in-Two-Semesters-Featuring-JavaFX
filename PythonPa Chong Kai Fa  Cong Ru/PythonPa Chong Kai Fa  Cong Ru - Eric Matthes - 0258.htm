@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+ .font9 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">13.3 </span><span class="font7">创建一群外星人 </span><span class="font8">241</span></p>
+<p><span class="font0">return number_rows</span></p>
+<p><span class="font0">def create_alien(ai_settings, screen, aliens, alien_number, row_number):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">alien.x = alien_width + 2 * alien_width * alien_number</span></p>
+<p><span class="font0">alien.rect.x = alien.x</span></p>
+<p><span class="font4">❸ </span><span class="font0">alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number aliens.add(alien)</span></p>
+<p><span class="font0">def create_fleet(ai_settings, screen, ship, aliens):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)</span></p>
+<p><span class="font0">number_rows = get_number_rows(ai_settings, ship.rect.height, alien.rect.height)</span></p>
+<p><span class="font0"># </span><span class="font6">创建外星人群</span></p>
+<p><span class="font4">❹ </span><span class="font0">for row_number in range(number_rows):</span></p>
+<p><span class="font0">for alien_number in range(number_aliens_x):</span></p>
+<p><span class="font0">create_alien(ai_settings, screen, aliens, alien_number, row_number)</span></p>
+<p><span class="font7">为计算屏幕可容纳多少行外星人，我们在函数</span><span class="font3">get_number_rows()</span><span class="font7">中实现了前面计算 </span><span class="font3">available_space_y</span><span class="font7">和</span><span class="font3">number_rows</span><span class="font7">的公式(见</span><span class="font9" style="font-weight:bold;">O</span><span class="font7">)，这个函数与</span><span class="font3">get_number_aliens_x()</span><span class="font7">类似。计算 公式用括号括起来了，这样可将代码分成两行，以遵循每行不超过</span><span class="font8">79</span><span class="font7">字符的建议(见</span><span class="font5">❷</span><span class="font7">)。这里 使用了 </span><span class="font3">int()</span><span class="font7">，因为我们不想创建不完整的外星人行。</span></p>
+<p><span class="font7">为创建多行，我们使用两个嵌套在一起的循环：一个外部循环和一个内部循环(见</span><span class="font5">❹</span><span class="font7">)。其 中的内部循环创建一行外星人，而外部循环从零数到要创建的外星人行数。</span><span class="font8">Python</span><span class="font7">将重复执行创 建单行外星人的代码，重复次数为</span><span class="font3">number_rows</span><span class="font7">。</span></p>
+<p><span class="font7">为嵌套循环，我们编写了一个新的</span><span class="font3">for</span><span class="font7">循环，并缩进了要重复执行的代码。(在大多数文本编 辑器中，缩进代码块和取消缩进都很容易，详情请参阅附录</span><span class="font8">B</span><span class="font7">。)我们调用</span><span class="font3">create_alien</span><span class="font7">。时，传 递了一个表示行号的实参，将每行都沿屏幕依次向下放置。</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">13</span></p>
+</div><br clear="all">
+<p><span class="font3">create_alien()</span><span class="font7">的定义需要一个用于存储行号的形参。在</span><span class="font3">create_alien()</span><span class="font7">中，我们修改外星 人的</span><span class="font8" style="font-style:italic;">^</span><span class="font7">坐标(见</span><span class="font5">❸</span><span class="font7">)，并在第一行外星人上方留出与外星人等高的空白区域。相邻外星人行的</span><span class="font8" style="font-style:italic;">^</span><span class="font7">坐 标相差外星人高度的两倍，因此我们将外星人高度乘以</span><span class="font8">2</span><span class="font7">，再乘以行号。第一行的行号为</span><span class="font8">0</span><span class="font7">，因此 第一行的垂直位置不变，而其他行都沿屏幕依次向下放置。</span></p>
+<p><span class="font7">在</span><span class="font3">create_fleet()</span><span class="font7">的定义中，还新增了一个用于存储</span><span class="font3">ship</span><span class="font7">对象的形参，因此在 </span><span class="font8">alien_invasion.py </span><span class="font7">中调用 </span><span class="font3">create_fleet()</span><span class="font7">时，需要传递实参 </span><span class="font3">ship</span><span class="font7">:</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<p><span class="font0"># </span><span class="font6">创建外星人群</span></p>
+<p><span class="font0">gf.create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font7">如果你现在运行这个游戏，将看到一群外星人，如图</span><span class="font8">13-4</span><span class="font7">所示。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

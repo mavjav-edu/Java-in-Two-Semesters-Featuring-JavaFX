@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">442</span></p>
+<p><span class="font4">附录</span><span class="font5">B</span><span class="font4">文本编辑器</span></p>
+<p><span class="font4">选择菜单</span><span class="font5">Build </span><span class="font5" style="font-weight:bold;">► </span><span class="font5">Set Build Commands</span><span class="font4">,你将看到文字</span><span class="font5">Compile</span><span class="font4">和</span><span class="font5">Execute</span><span class="font4">,它们旁边都有一个 命令。默认情况下，这两个命令都是</span><span class="font2">python</span><span class="font4">,要让</span><span class="font5">Geany</span><span class="font4">使用命令</span><span class="font2">python3</span><span class="font4">,必须做相应的修改。 将编译命令修改成下面这样：</span></p>
+<p><span class="font0">python3 -m py_compile &quot;%f&quot;</span></p>
+<p><span class="font4">你必须完全按这里显示的这样输出这个命令,确保空格和大小写都完全相同。</span></p>
+<p><span class="font4">将执行命令修改成下面这样：</span></p>
+<p><span class="font0">python3 &quot;%f&quot;</span></p>
+<p><span class="font4">同样,务必确保空格和大小写都完全与显示的相同。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>B.1.2</span><span class="font3"> 在 </span><span class="font1">Windows</span><span class="font3">系统中安装</span><span class="font1">Geany</span></h5></li></ul>
+<p><span class="font4">要下载</span><span class="font5">Windows Greany</span><span class="font4">安装程序，可访问</span><span class="font5">http://geany.org/</span><span class="font4">，单击</span><span class="font5">Download</span><span class="font4">下的</span><span class="font5">Releases</span><span class="font4">，找 到安装程序</span><span class="font5">geany-1.25_setup.exe</span><span class="font4">或类似的文件。下载安装程序后，运行它并接受所有的默认设置。</span></p>
+<p><span class="font4">启动</span><span class="font5">Geany</span><span class="font4">，选择菜单</span><span class="font5">File </span><span class="font5" style="font-weight:bold;">b </span><span class="font5">Save As</span><span class="font4">，将当前的空文件保存为</span><span class="font5">hello_world.py</span><span class="font4">，再在编辑窗口 中输入下面一行代码：</span></p>
+<p><span class="font0">print（&quot;Hello Python world!&quot;）</span></p>
+<p><span class="font4">现在选择菜单</span><span class="font5">Build </span><span class="font5" style="font-weight:bold;">► </span><span class="font5">Set Build Commands</span><span class="font4">，你将看到文字</span><span class="font5">Compile</span><span class="font4">和</span><span class="font5">Execute</span><span class="font4">，它们旁边都有 一个命令。默认情况下，这两个命令都是</span><span class="font2">python </span><span class="font4">（全部小写），但</span><span class="font5">Geany</span><span class="font4">不知道这个命令位于系统 的什么地方。你需要添加启动终端会话时使用的路径（如果你按附录</span><span class="font5">A</span><span class="font4">描述的那样设置了变量 </span><span class="font2">Path</span><span class="font4">，可跳过这些步骤）。在编译命令和执行命令中，添加命令</span><span class="font2">python</span><span class="font4">所在的驱动器和文件夹。 编译命令应类似于下面这样：</span></p>
+<p><span class="font0">C:\Python35\python -m py_compile &quot;%f&quot;</span></p>
+<p><span class="font4">在你的系统上，路径可能稍有不同，但你必须确保空格和大小写都与这里显示的完全相同。 执行命令应类似于下面这样：</span></p>
+<p><span class="font0">C:\Python35\python &quot;%f&quot;</span></p>
+<p><span class="font4">同样，务必确保空格和大小写都与这里显示的完全相同。正确地设置这些命令后，单击</span><span class="font5">OK </span><span class="font4">按钮。现在，你应该能够成功地运行程序了。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>B.1.3</span><span class="font3"> 在</span><span class="font1">Geany</span><span class="font3">中运行</span><span class="font1">Python</span><span class="font3">程序</span></h5></li></ul>
+<p><span class="font4">在</span><span class="font5">Geany</span><span class="font4">中运行程序的方式有三种。为运行程序</span><span class="font5">hello_world.py</span><span class="font4">，可选择菜单</span><span class="font5">Build </span><span class="font5" style="font-weight:bold;">b </span><span class="font5">Execute</span><span class="font4">、 单击由两个齿轮组成的图标或按</span><span class="font5">F5</span><span class="font4">。运行</span><span class="font5">hello_world.py</span><span class="font4">时，将弹出一个终端窗口，其中包含如下</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:8pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">58</span></p>
+<p><span class="font6">第</span><span class="font7">4</span><span class="font6">章操作列表</span></p>
+<p><span class="font6">这里将</span><span class="font7">my_foods</span><span class="font6">赋给</span><span class="font7">friend_foods,</span><span class="font6">而不是将</span><span class="font7">my_foods</span><span class="font6">的副本存储到</span><span class="font7">friend_foods </span><span class="font6">(见❶)<sub>o </sub>这种语法实际上是让</span><span class="font7">Python</span><span class="font6">将新变量</span><span class="font7">friend foods</span><span class="font6">关联到包含在</span><span class="font7">my foods</span><span class="font6">中的列表，因此这两个 变量都指向同一个列表。鉴于此，当我们将</span><span class="font7">'cannoli/</span><span class="font6">添加到</span><span class="font7">my foods</span><span class="font6">中时，它也将出现在 </span><span class="font7">friend foods</span><span class="font6">中；同样，虽然'</span><span class="font7">ice cream'</span><span class="font6">好像只被加入到了</span><span class="font7">friend foods</span><span class="font6">中，但它也将出现在这 两个列表中。</span></p>
+<p><span class="font6">输出表明，两个列表是相同的，这并非我们想要的结果：</span></p>
+<p><span class="font0" style="font-weight:bold;">My favorite foods are:</span></p>
+<p><span class="font0" style="font-weight:bold;">['pizza</span><span class="font5" style="font-weight:bold;">，</span><span class="font0" style="font-weight:bold;"> 'falafel', 'carrot cake', 'cannoli', 'ice cream*]</span></p>
+<p><span class="font0" style="font-weight:bold;">My friend's favorite foods are:</span></p>
+<p><span class="font0" style="font-weight:bold;">[<sup>1</sup> pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream*]</span></p>
+<p><span class="font6">注意现在暂时不要考虑这个示例中的细节。基本上，当你试图使用列表的副本时，如果结果 出乎意料，请确认你像第一个示例那样使用切片复制了列表。</span></p>
+<p><span class="font4">动手试一试</span></p>
+<p><span class="font6">本</span><span class="font2">10</span><span class="font6">切片：选择你在本章编写的一个程序，在末尾添加几行代码，以完成如下任务。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font6">□ 打印消息</span><span class="font7">“The first tliree items ill tlie list are:“</span><span class="font6">，再使用切片来打印列表的前三个 谏^ </span><span class="font7">O</span></p></li>
+<li>
+<p><span class="font6">□ 打印消息</span><span class="font7">“Three items from the middle of the list are: “</span><span class="font6">，再使用切片来打印列表中 间的三个元素。</span></p></li>
+<li>
+<p><span class="font6">□ 打印消息</span><span class="font7">“The last tliree items in the list are:“</span><span class="font6">，再使用切片来打印列表末尾的三 个元素。</span></p></li></ul>
+<p><span class="font2">4-11</span><span class="font6">你的比萨和我的比萨：在你为完成练习</span><span class="font7">4</span><span class="font6">・</span><span class="font7">1</span><span class="font6">而编写的程序中，创建比萨列表的 副本，并将其存储到变量</span><span class="font7">friend_pizzas</span><span class="font6">中，再完成如下任务。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font6">□ 在原来的比萨列表中添加一种比萨。</span></p></li></ul>
+<p><span class="font6">口在列表</span><span class="font7">friend_pizzas</span><span class="font6">中添加另一种比萨。</span></p>
+<p><span class="font6">口核实你有两个不同的列表。为此，打印消息</span><span class="font7">“My fhvoritepizzas are:“</span><span class="font6">，再使用一 个</span><span class="font7">for</span><span class="font6">循环来打印第一个列表；打印消息</span><span class="font7">“My friend's favorite pizzas are: “</span><span class="font6">，再使 用一个</span><span class="font7">for</span><span class="font6">循环来打印第二个列表。核实新增的比萨被添加到了正确的列表中。</span></p>
+<p><span class="font2">4-12</span><span class="font6">使用多个循环：在本节中，为节省篇幅，程序</span><span class="font7">fbods.py</span><span class="font6">的每个版本都没有使用 </span><span class="font7">for</span><span class="font6">循环来打印列表。请选择一个版本的</span><span class="font7">foods.py,</span><span class="font6">在其中编写两个</span><span class="font7">for</span><span class="font6">循环，将各个 食品列表都打印出来。</span></p>
+<p><span class="font3">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font3">专享尊重版权</span></p>
+</body>
+</html>

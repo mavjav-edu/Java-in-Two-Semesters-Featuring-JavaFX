@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt Calibri, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">376</span></p>
+<p><span class="font8">第</span><span class="font9">18</span><span class="font8">章</span><span class="font9">Django</span><span class="font8">入门</span></p>
+<p><span class="font1">def index(request):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--snip--</span></p></li></ul>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">def topics(request):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font7">显示所有的主题</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;</span><span class="font1">topics = Topic.objects.order_by('date_added')</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">context = {'topics': topics}</span></p>
+<p><span class="font0">❺</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">return render(request, 'learning_logs/topics.html', context)</span></p>
+<p><span class="font8">我们首先导入了与所需数据相关联的模型(见</span><span class="font3">O</span><span class="font8">)。函数</span><span class="font4">topics</span><span class="font8">。包含一个形参：</span><span class="font9">Django</span><span class="font8">从服 务器那里收到的</span><span class="font4">request</span><span class="font8">对象(见</span><span class="font3">❷</span><span class="font8">)。在</span><span class="font3">❸</span><span class="font8">处，我们查询数据库——请求提供</span><span class="font4">Topic</span><span class="font8">对象，并按属 性</span><span class="font4">date_added</span><span class="font8">对它们进行排序。我们将返回的查询集存储在</span><span class="font4">topics</span><span class="font8">中。</span></p>
+<p><span class="font8">在</span><span class="font3">❹</span><span class="font8">处，我们定义了一个将要发送给模板的上下文。上下文是一个字典，其中的键是我们将 在模板中用来访问数据的名称，而值是我们要发送给模板的数据。在这里，只有一个键</span><span class="font6">—</span><span class="font8">值对， 它包含我们将在网页中显示的一组主题。创建使用数据的网页时，除对象</span><span class="font4">request</span><span class="font8">和模板的路径 外，我们还将变量</span><span class="font4">context</span><span class="font8">传递给</span><span class="font4">render</span><span class="font8">。(见</span><span class="font3">❺</span><span class="font8">)。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3.</span><span class="font6"> 模板</span></p></li></ul>
+<p><span class="font8">显示所有主题的页面的模板接受字典</span><span class="font4">context</span><span class="font8">，以便能够使用</span><span class="font4">topics</span><span class="font8">。提供的数据。请创建一 个文件，将其命名为</span><span class="font9">topics.html</span><span class="font8">，并存储到</span><span class="font9">indexhtml</span><span class="font8">所在的目录中。下面演示了如何在这个模板 中显示主题：</span></p>
+<p><span class="font2">topics.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font1">&lt;p&gt;Topics&lt;/p&gt;</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">&lt;ul&gt;</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% for topic in topics %}</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;li&gt;{{ topic }}&lt;/li&gt;</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% empty %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;li&gt;No topics have been added yet.&lt;/li&gt;</span></p></li></ul>
+<p><span class="font0">❺</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% endfor %}</span></p>
+<p><span class="font0">❻</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">&lt;/ul&gt;</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font8">就像模板</span><span class="font9">index.html</span><span class="font8">一样，我们首先使用标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">extends </span><span class="font6">%</span><span class="font4">}</span><span class="font8">来继承</span><span class="font9">base.html</span><span class="font8">，再开始定义 </span><span class="font4">content</span><span class="font8">块。这个网页的主体是一个项目列表，其中列出了用户输入的主题。在标准</span><span class="font9">HTML</span><span class="font8">中，项 目列表被称为无序列表，用标签</span><span class="font4">&lt;ul&gt;&lt;/ul&gt;</span><span class="font8">表示。包含所有主题的项目列表始于</span><span class="font3">❶</span><span class="font8">处。</span></p>
+<p><span class="font8">在</span><span class="font3">❷</span><span class="font8">处，我们使用了一个相当于</span><span class="font4">for</span><span class="font8">循环的模板标签，它遍历字典</span><span class="font4">context</span><span class="font8">中的列表</span><span class="font4">topics</span><span class="font8">。 模板中使用的代码与</span><span class="font9">Python</span><span class="font8">代码存在一些重要差别:</span><span class="font9">Python</span><span class="font8">使用缩进来指出哪些代码行是</span><span class="font4">for</span><span class="font8">循环 的组成部分，而在模板中，每个</span><span class="font4">for</span><span class="font8">循环都必须使用</span><span class="font4">{</span><span class="font6">% </span><span class="font4">endfor </span><span class="font6">%</span><span class="font4">}</span><span class="font8">标签来显式地指出其结束位置。</span></p>
+</body>
+</html>

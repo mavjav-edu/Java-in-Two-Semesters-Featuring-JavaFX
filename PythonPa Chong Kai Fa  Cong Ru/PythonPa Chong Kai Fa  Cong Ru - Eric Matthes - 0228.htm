@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:12pt Arial, sans-serif; }
+ .font1 { font:14pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:8pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:9pt Times New Roman, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">12.4 </span><span class="font6">添加飞船图像 </span><span class="font8">211</span></p>
+<p><span class="font6">在主程序文件中，我们导入</span><span class="font2">56</span><span class="font6">置行</span><span class="font2">8$</span><span class="font6">类，调用</span><span class="font2">pygame.init（）</span><span class="font6">,再创建一个</span><span class="font2">Settings</span><span class="font6">实例，并 将其存储在变量</span><span class="font2">ai_settings</span><span class="font6">中（见</span><span class="font4">❶</span><span class="font6">）。创建屏幕时（见</span><span class="font4">❷</span><span class="font6">）,使用了</span><span class="font2">ai_settings</span><span class="font6">的属性 </span><span class="font2">screen_width</span><span class="font6">和</span><span class="font2">screen_height</span><span class="font6">；接下来填充屏幕时，也使用了</span><span class="font2">8</span><span class="font6">匚$</span><span class="font2">6</span><span class="font6">近行</span><span class="font2">8$</span><span class="font6">来访问背景色（见</span><span class="font4">❸</span><span class="font6">）。</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>12.4 </span><span class="font5">添加飞船图像</span></h5>
+<p><span class="font6">下面将飞船加入到游戏中。为了在屏幕上绘制玩家的飞船，我们将加载一幅图像，再使用 </span><span class="font8">Pygame</span><span class="font6">方法</span><span class="font2">blit（）</span><span class="font6">绘制它。</span></p>
+<p><span class="font6">为游戏选择素材时，务必要注意许可。最安全、最不费钱的方式是使用</span><a href="http://pixabay.com/%e7%ad%89"><span class="font8">http://pixabay.com/</span><span class="font6">等</span></a><span class="font6"> 网站提供的图形，这些图形无需许可，你可以对其进行修改。</span></p>
+<p><span class="font6">在游戏中几乎可以使用任何类型的图像文件，但使用位图（</span><span class="font8">.bmp</span><span class="font6">）文件最为简单，因为</span><span class="font8">Pygame </span><span class="font6">默认加载位图。虽然可配置</span><span class="font8">Pygame</span><span class="font6">以使用其他文件类型，但有些文件类型要求你在计算机上安 装相应的图像库。大多数图像都为</span><span class="font8">jpg</span><span class="font6">、</span><span class="font8">.png</span><span class="font6">或</span><span class="font8">.gif</span><span class="font6">格式，但可使用</span><span class="font8">Photoshop</span><span class="font6">、</span><span class="font8">GIMP</span><span class="font6">和</span><span class="font8">Paint</span><span class="font6">等工 具将其转换为位图。</span></p>
+<p><span class="font6">选择图像时，要特别注意其背景色。请尽可能选择背景透明的图像，这样可使用图像编辑器 将其背景设置为任何颜色。图像的背景色与游戏的背景色相同时，游戏看起来最漂亮；你也可以 将游戏的背景色设置成与图像的背景色相同。</span></p>
+<p><span class="font6">就游戏《外星人入侵》而言，你可以使用文件</span><span class="font8">ship.bmp </span><span class="font6">（如图</span><span class="font8">12-1</span><span class="font6">所示），这个文件可在本书 的配套资源（</span><span class="font8">https://www.nostarch.com/pythoncrashcourse/</span><span class="font6">）中找到。这个文件的背景色与这个项 目使用的设置相同。请在主项目文件夹（</span><span class="font8">alien_invasion</span><span class="font6">）中新建一个文件夹，将其命名为</span><span class="font8">images</span><span class="font6">， 并将文件</span><span class="font8">ship.bmp</span><span class="font6">保存到这个文件夹中。</span></p>
+<div>
+<p><span class="font0" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0228_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200228-1.jpg" alt="" style="width:205pt;height:166pt;">
+<p><span class="font3">图</span><span class="font7">12-1 </span><span class="font3">游戏《外星人入侵》中的飞船</span></p>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:9pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:14pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">12.7 </span><span class="font8">简单回顾</span></p>
+<p><span class="font9">223</span></p>
+<p><span class="font8">我们创建了两个新函数：</span><span class="font3">check_keydown_events()</span><span class="font8">和</span><span class="font3">check_keyup_events()</span><span class="font8">,它们都包含形参 </span><span class="font3">event</span><span class="font8">和</span><span class="font3">ship</span><span class="font8">。这两个函数的代码是从</span><span class="font3">check_events()</span><span class="font8">中复制而来的，因此我们将函数</span><span class="font3">check_events </span><span class="font8">中相应的代码替换成了对这两个函数的调用。现在，函数</span><span class="font3">check_events()</span><span class="font8">更简单，代码结构更清 晰。这样，在其中响应其他玩家输入时将更容易。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">12.7</span><span class="font6"> 简单回顾</span></p></li></ul>
+<p><span class="font8">下一节将添加射击功能，这需要新增一个名为</span><span class="font9">bullet.py</span><span class="font8">的文件，并对一些既有文件进行修改。 当前，我们有四个文件，其中包含很多类、函数和方法。添加其他功能之前，为让你清楚这个项 目的组织结构，先来回顾一下这些文件。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>12.7.1 alien_invasion.py</span></h5></li></ul>
+<p><span class="font8">主文件</span><span class="font9">alien_invasion.py</span><span class="font8">创建一系列整个游戏都要用到的对象：存储在</span><span class="font3">ai_settings</span><span class="font8">中的设置、 存储在</span><span class="font3">screen</span><span class="font8">中的主显示</span><span class="font9">surface</span><span class="font8">以及一个飞船实例。文件</span><span class="font9">alien_invasion.py</span><span class="font8">还包含游戏的主循环， 这是一个调用</span><span class="font3">check_events()</span><span class="font8">、</span><span class="font3">ship.update()</span><span class="font8">和</span><span class="font3">update_screen()</span><span class="font8">的</span><span class="font3">while</span><span class="font8">循环。</span></p>
+<p><span class="font8">要玩游戏《外星人入侵》，只需运行文件</span><span class="font9">alien_invasion.py</span><span class="font8">。其他文件(</span><span class="font9">settings.py</span><span class="font8">、 </span><span class="font9">game_functions.py</span><span class="font8">、</span><span class="font9">ship.py</span><span class="font8">)包含的代码被直接或间接地导入到这个文件中。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>12.7.2 settings.py</span></h5></li></ul>
+<p><span class="font8">文件</span><span class="font9">settings.py</span><span class="font8">包含</span><span class="font3">Settings</span><span class="font8">类，这个类只包含方法</span><span class="font3">_init__()</span><span class="font8">，它初始化控制游戏外观和飞 船速度的属性。</span></p>
+<div>
+<p><span class="font1" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>12.7.3 game_functions.py</span></h5></li></ul>
+<p><span class="font8">文件</span><span class="font9">game_functions.py</span><span class="font8">包含一系列函数，游戏的大部分工作都是由它们完成的。函数 </span><span class="font3">check_events()</span><span class="font8">检测相关的事件，如按键和松开，并使用辅助函数</span><span class="font3">check_keydown_events()</span><span class="font8">和 </span><span class="font3">check_keyup_events()</span><span class="font8">来处理这些事件。就目前而言，这些函数管理飞船的移动。模块 </span><span class="font3">game_functions</span><span class="font8">还包含函数</span><span class="font3">update_screen()</span><span class="font8">，它用于在每次执行主循环时都重绘屏幕。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark6"></a><span class="font1"><a name="bookmark7"></a>12.7.4 ship.py</span></h5></li></ul>
+<p><span class="font8">文件</span><span class="font9">ship.py</span><span class="font8">包含</span><span class="font3">Ship</span><span class="font8">类，这个类包含方法</span><span class="font3">_init_()</span><span class="font8">、管理飞船位置的方法</span><span class="font3">update</span><span class="font8">。以及在 屏幕上绘制飞船的方法</span><span class="font3">blitme()</span><span class="font8">。表示飞船的图像存储在文件夹</span><span class="font9">images</span><span class="font8">下的文件</span><span class="font9">ship.bmp</span><span class="font8">中。</span></p>
+<p><span class="font5">动手试一试</span></p>
+<p><span class="font0">12-3</span><span class="font4">火箭</span><span class="font7">：编写一个游戏，开始时屏幕中央有一个火箭，而玩家可使用四个方向 键上下左右移动火箭。请务必确保火箭不会移到屏幕外面。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

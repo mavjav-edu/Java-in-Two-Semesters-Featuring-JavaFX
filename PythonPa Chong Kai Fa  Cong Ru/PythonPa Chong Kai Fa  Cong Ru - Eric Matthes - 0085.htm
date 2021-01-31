@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">68 </span><span class="font7">第</span><span class="font8">5</span><span class="font7">章</span><span class="font8">if</span><span class="font7">语句</span></p>
+<p><span class="font7">都通过了，整个表达式就为</span><span class="font3">True</span><span class="font7">；如果至少有一个测试没有通过，整个表达式就为</span><span class="font3">False</span><span class="font7">。</span></p>
+<p><span class="font7">例如，要检查是否两个人都不小于</span><span class="font8">21</span><span class="font7">岁，可使用下面的测试：</span></p>
+<p><span class="font4">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_0 = 22</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age_1 = 18</span></p></li></ul>
+<p><span class="font4">❷ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_0 &gt;= 21 and age_1 &gt;= 21</span></p>
+<p><span class="font0">False</span></p>
+<p><span class="font4">❸ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_1 = 22</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age_0 &gt;= 21 and age_1 &gt;= 21</span></p></li></ul>
+<p><span class="font0">True</span></p>
+<p><span class="font7">在</span><span class="font5">❶</span><span class="font7">处，我们定义了两个用于存储年龄的变量：</span><span class="font3">age_0</span><span class="font7">和</span><span class="font3">age_1</span><span class="font7">。在</span><span class="font5">❷</span><span class="font7">处，我们检查这两个变 量是否都大于或等于</span><span class="font8">21</span><span class="font7">；左边的测试通过了，但右边的测试没有通过，因此整个条件表达式的结 果为</span><span class="font3">False</span><span class="font7">。在</span><span class="font5">❸</span><span class="font7">处，我们将</span><span class="font3">age_1</span><span class="font7">改为</span><span class="font8">22</span><span class="font7">,这样</span><span class="font3">age_1</span><span class="font7">的值大于</span><span class="font8">21</span><span class="font7">,因此两个测试都通过了，导致 整个条件表达式的结果为</span><span class="font3">True</span><span class="font7">。</span></p>
+<p><span class="font7">为改善可读性，可将每个测试都分别放在一对括号内，但并非必须这样做。如果你使用括号， 测试将类似于下面这样：</span></p>
+<p><span class="font0">(age_0 &gt;= 21) and (age_1 &gt;= 21)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2 .</span><span class="font7">使用</span><span class="font3">or</span><span class="font7">检查多个条件</span></p></li></ul>
+<p><span class="font7">关键字</span><span class="font3">or</span><span class="font7">也能够让你检查多个条件，但只要至少有一个条件满足，就能通过整个测试。仅当 两个测试都没有通过时，使用</span><span class="font3">or</span><span class="font7">的表达式才为</span><span class="font3">False</span><span class="font7">。</span></p>
+<p><span class="font7">下面再次检查两个人的年龄,但检查的条件是至少有一个人的年龄不小于</span><span class="font8">21</span><span class="font7">岁：</span></p>
+<p><span class="font4">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_0 = 22</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age_1 = 18</span></p></li></ul>
+<p><span class="font4">❷ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_0 &gt;= 21 or age_1 &gt;= 21</span></p>
+<p><span class="font0">True</span></p>
+<p><span class="font4">❸ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">age_0 = 18</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">age_0 &gt;= 21 or age_1 &gt;= 21</span></p></li></ul>
+<p><span class="font0">False</span></p>
+<p><span class="font7">同样，我们首先定义了两个用于存储年龄的变量（见</span><span class="font5">❶</span><span class="font7">）。由于</span><span class="font5">❷</span><span class="font7">处对</span><span class="font3">age_0</span><span class="font7">的测试通过了， 因此整个表达式的结果为</span><span class="font3">True</span><span class="font7">。接下来，我们将</span><span class="font3">age_0</span><span class="font7">减小为</span><span class="font8">18</span><span class="font7">；在</span><span class="font5">❸</span><span class="font7">处的测试中，两个测试都没 有通过，因此整个表达式的结果为</span><span class="font3">False</span><span class="font7">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">5.2.6</span><span class="font6"> 检查特定值是否包含在列表中</span></p></li></ul>
+<p><span class="font7">有时候,执行操作前必须检查列表是否包含特定的值。例如,结束用户的注册过程前,可能 需要检查他提供的用户名是否已包含在用户名列表中。在地图程序中,可能需要检查用户提交的 位置是否包含在已知位置列表中。</span></p>
+<p><span class="font7">要判断特定的值是否已包含在列表中，可使用关键字</span><span class="font3">in</span><span class="font7">。来看你可能为比萨店编写的一些代 码；这些代码首先创建一个列表,其中包含用户点的比萨配料,然后检查特定的配料是否包含在 </span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

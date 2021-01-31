@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">6.2 </span><span class="font7">使用字典 </span><span class="font8">83</span></p>
+<p><span class="font7">出玩家获得了多少个点(见</span><span class="font5">❷</span><span class="font7">):</span></p>
+<p><span class="font0">You just earned 5 points!</span></p>
+<p><span class="font7">如果你在有外星人被射杀时都运行这段代码，就会获取该外星人的点数。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>6.2.2</span><span class="font6"> 添加键</span><span class="font5">—</span><span class="font6">值对</span></h5></li></ul>
+<p><span class="font7">字典是一种动态结构，可随时在其中添加键</span><span class="font1">—</span><span class="font7">值对。要添加键</span><span class="font1">—</span><span class="font7">值对，可依次指定字典名、用 方括号括起的键和相关联的值。</span></p>
+<p><span class="font7">下面在字典</span><span class="font3">alien_0</span><span class="font7">中添加两项信息：外星人的</span><span class="font8" style="font-style:italic;">x</span><span class="font7">坐标和</span><span class="font8" style="font-style:italic;">y</span><span class="font7">坐标，让我们能够在屏幕的特定位 置显示该外星人。我们将这个外星人放在屏幕左边缘，且离屏幕上边缘</span><span class="font8">25</span><span class="font7">像素的地方。由于屏幕 坐标系的原点通常为左上角，因此要将该外星人放在屏幕左边缘，可将</span><span class="font8" style="font-style:italic;">x</span><span class="font7">坐标设置为</span><span class="font8">0</span><span class="font7">；要将该外 星人放在离屏幕顶部</span><span class="font8">25</span><span class="font7">像素的地方，可将</span><span class="font8" style="font-style:italic;">y</span><span class="font7">坐标设置为</span><span class="font8">25</span><span class="font7">,如下所示：</span></p>
+<p><span class="font0">alien_0 = {'color': 'green', 'points': 5}</span></p>
+<p><span class="font0">print(alien_0)</span></p>
+<p><span class="font4">❶ </span><span class="font0">alien_0['x_position'] = 0</span></p>
+<p><span class="font4">❷ </span><span class="font0">alien_0['y_position'] = 25</span></p>
+<p><span class="font0">print(alien_0)</span></p>
+<p><span class="font7">我们首先定义了前面一直在使用的字典，然后打印这个字典，以显示其信息快照。在</span><span class="font5">❶</span><span class="font7">处， 我们在这个字典中新增了一个键</span><span class="font1">-</span><span class="font7">值对，其中的键为</span><span class="font3">'x_position'</span><span class="font7">，而值为</span><span class="font3">0</span><span class="font7">。在</span><span class="font5">❷</span><span class="font7">处，我们重 复这样的操作，但使用的键为</span><span class="font3">‘y_position'</span><span class="font7">。打印修改后的字典时，将看到这两个新增的键</span><span class="font1">-</span><span class="font7">值对：</span></p>
+<p><span class="font0">{'color': 'green', 'points': 5}</span></p>
+<p><span class="font0">{'color': 'green', 'points': 5, 'y_position': 25, 'x_position': 0}</span></p>
+<p><span class="font7">这个字典的最终版本包含四个键</span><span class="font1">—</span><span class="font7">值对,其中原来的两个指定外星人的颜色和点数,而新增 的两个指定位置。注意，键</span><span class="font1">-</span><span class="font7">值对的排列顺序与添加顺序不同。</span><span class="font8">Python</span><span class="font7">不关心键</span><span class="font1">-</span><span class="font7">值对的添加顺序， 而只关心键和值之间的关联关系。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">6.2.3</span><span class="font6"> 先创建一个空字典</span></p></li></ul>
+<p><span class="font7">有时候,在空字典中添加键</span><span class="font1">—</span><span class="font7">值对是为了方便,而有时候必须这样做。为此,可先使用一对 空的花括号定义一个字典,再分行添加各个键</span><span class="font1">—</span><span class="font7">值对。例如,下例演示了如何以这种方式创建字 典</span><span class="font3">alien_0</span><span class="font7">：</span></p>
+<p><span class="font0">alien_0 = {}</span></p>
+<p><span class="font0">alien_0['color'] = 'green alien_0['points'] = 5</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+ .font12 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">304</span></p>
+<p><span class="font10">第</span><span class="font11">15</span><span class="font10">章 生成数据</span></p>
+<p><span class="font10">实际应用，在游戏《大富翁》以及众多角色扮演游戏中亦如此。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>15.4.1</span><span class="font7"> 安装 </span><span class="font3">Pygal</span></h5></li></ul>
+<p><span class="font10">请使用</span><span class="font4">pip</span><span class="font10">来安装</span><span class="font11">Pygal </span><span class="font10">(如果还未使用过</span><span class="font4">pip</span><span class="font10">,请参阅</span><span class="font11">12.2.1</span><span class="font10">节)。</span></p>
+<p><span class="font10">在</span><span class="font11">Linux</span><span class="font10">和</span><span class="font11">OS X</span><span class="font10">系统中，应执行的命令类似于下面这样：</span></p>
+<p><span class="font0">pip install --user pygal</span></p>
+<p><span class="font10">在</span><span class="font11">Windows</span><span class="font10">系统中，命令类似于下面这样：</span></p>
+<p><span class="font0">python -m pip install --user pygal</span></p>
+<p><span class="font6">注意</span><span class="font9">你可能需要使用命令</span><span class="font4">pip3</span><span class="font9">而不是</span><span class="font4">pip</span><span class="font9">,如果这还是不管用，你可能需要删除标志</span><span class="font4">--user</span><span class="font9">。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>15.4.2 Pygal </span><span class="font7">画廊</span></h5></li></ul>
+<p><span class="font10">要了解使用</span><span class="font11">Pygal</span><span class="font10">可创建什么样的图表，请查看图表类型画廊：访问</span><a href="http://www.pygal.org/%ef%bc%8c%e5%8d%95"><span class="font11">http://www.pygal.org/</span><span class="font10">，单</span></a><span class="font10"> 击</span><span class="font11">Documentation</span><span class="font10">，再单击</span><span class="font11">Chart types</span><span class="font10">。每个示例都包含源代码，让你知道这些图表是如何生成的。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font3"><a name="bookmark5"></a>15.4.3</span><span class="font7"> 创建</span><span class="font2">Die</span><span class="font7">类</span></h5></li></ul>
+<p><span class="font10">下面的类模拟掷一个骰子：</span></p>
+<p><span class="font1">die.py</span></p>
+<p><span class="font0">from random import randint</span></p>
+<p><span class="font0">class Die():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">表示一个骰子的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❶ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">def ―init—(self, num_sides=6):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">骰子默认为</span><span class="font0">6</span><span class="font8">面</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.num_sides = num_sides</span></p>
+<p><span class="font0">def roll(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;&quot;</span><span class="font8">返回一个位于</span><span class="font0">1</span><span class="font8">和骰子面数之间的随机值</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">return randint(1, self.num_sides)</span></p>
+<p><span class="font10">方法</span><span class="font4">__init__()</span><span class="font10">接受一个可选参数。创建这个类的实例时，如果没有指定任何实参，面数默 认为</span><span class="font11">6</span><span class="font10">；如果指定了实参，这个值将用于设置骰子的面数(见</span><span class="font12" style="font-weight:bold;">O</span><span class="font10">)。骰子是根据面数命名的，</span><span class="font11">6</span><span class="font10">面 的骰子名为</span><span class="font11">D6</span><span class="font10">, </span><span class="font11">8</span><span class="font10">面的骰子名为</span><span class="font11">D8</span><span class="font10">,以此类推。</span></p>
+<p><span class="font10">方法</span><span class="font4">roll()</span><span class="font10">使用函数</span><span class="font4">randint</span><span class="font10">。来返回一个</span><span class="font11">1</span><span class="font10">和面数之间的随机数(见</span><span class="font6">❷</span><span class="font10">)。这个函数可能返回 </span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">20.2 </span><span class="font7">部署“学习笔记”</span></p>
+<p><span class="font8">425</span></p>
+<p><span class="font4">注意</span><span class="font8">gunicorn</span><span class="font6">不能在</span><span class="font8">Windows</span><span class="font6">系统上运行，因此如果你使用的是</span><span class="font8">Windows</span><span class="font6">系统，请跳过这一步。 但这不会影响你将项目部署到</span><span class="font8">Heroku</span><span class="font6">。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>20.2.11</span><span class="font5"> 使用</span><span class="font2">Git</span><span class="font5">跟踪项目文件</span></h5></li></ul>
+<p><span class="font7">如果你阅读完了第</span><span class="font8">17</span><span class="font7">章，就知道</span><span class="font8">Git</span><span class="font7">是一个版本控制程序，让你能够在每次成功实现新功能 后都拍摄项目代码的快照。无论出现什么问题(如实现新功能时不小心引入了</span><span class="font8">bug</span><span class="font7">)，你都可以轻 松地恢复到最后一个可行的快照。每个快照都被称为</span><span class="font6">提交</span><span class="font7">。</span></p>
+<p><span class="font7">使用</span><span class="font8">Git</span><span class="font7">意味着你在试着实现新功能时无需担心破坏项目。将项目部署到服务器时，需要确 保部署的是可行版本。如果你想更详细地了解</span><span class="font8">Git</span><span class="font7">和版本控制，请参阅附录</span><span class="font8">D</span><span class="font7">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1 .</span><span class="font4">安装</span><span class="font1">Git</span></p></li></ul>
+<p><span class="font8">Heroku Toolbelt</span><span class="font7">包含</span><span class="font8">Git</span><span class="font7">，因此它应该已经安装到了你的系统中。然而，在安装</span><span class="font8">Heroku Toolbelt</span><span class="font7">之 前打开的终端窗口中无法访问</span><span class="font8">Git</span><span class="font7">，因此请打开一个新的终端窗口，并在其中执行命令</span><span class="font3">git --version</span><span class="font7">：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">git --version</span></p>
+<p><span class="font0">git version 2.5.0</span></p>
+<p><span class="font7">如果由于某种原因出现了错误消息，请参阅附录</span><span class="font8">D</span><span class="font7">中的</span><span class="font8">Git</span><span class="font7">安装说明。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2 .</span><span class="font4">配置</span><span class="font1">Git</span></p></li></ul>
+<p><span class="font8">Git</span><span class="font7">跟踪谁修改了项目，即便项目由一个人开发时亦如此。为进行跟踪，</span><span class="font8">Git</span><span class="font7">需要知道你的用 户名和</span><span class="font8">email</span><span class="font7">。因此，你必须提供用户名，但对于练习项目，可随便伪造一个</span><span class="font8">email</span><span class="font7">：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">git config --global user.name &quot;ehmatthes&quot;</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">git config --global user.email &quot;</span><a href="mailto:eric@example.com"><span class="font0" style="font-weight:bold;">eric@example.com</span></a><span class="font0" style="font-weight:bold;">&quot;</span></p>
+<p><span class="font7">如果你忘记了这一步，当你首次提交时，</span><span class="font8">Git</span><span class="font7">将提示你提供这些信息。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">3 . </span><span class="font4">忽略文件</span></p></li></ul>
+<p><span class="font7">我们无需让</span><span class="font8">Git</span><span class="font7">跟踪项目中的每个文件，因此将让</span><span class="font8">Git</span><span class="font7">忽略一些文件。为此，在</span><span class="font8">manage.py</span><span class="font7">所在 的文件夹中创建一个名为</span><span class="font8">.gitignore</span><span class="font7">的文件。注意，这个文件名以句点打头，且不包含扩展名。在 这个文件中输入如下内容：</span></p>
+<p><span class="font1">.gitignore</span></p>
+<p><span class="font0">ll_env/</span></p>
+<p><span class="font0">—pycache—/</span></p>
+<p><span class="font0">*.sqlite3</span></p>
+<p><span class="font7">我们让</span><span class="font8">Git</span><span class="font7">忽略目录</span><span class="font8">ll_env</span><span class="font7">，因为我们随时都可以自动重新创建它。我们还指定不跟踪目录 </span><span class="font8">__pycache―</span><span class="font7">，这个目录包含</span><span class="font8">Django</span><span class="font7">运行</span><span class="font8">.py</span><span class="font7">文件时自动创建的</span><span class="font8">.pyc</span><span class="font7">文件。我们没有跟踪对本地数 据库的修改，因为这是一个糟糕的做法：如果你在服务器上使用的是</span><span class="font8">SQLite</span><span class="font7">，当你将项目推送到 </span></p>
+<div>
+</div><br clear="all">
+<p><span class="font2" style="font-weight:bold;">20</span></p>
+</body>
+</html>

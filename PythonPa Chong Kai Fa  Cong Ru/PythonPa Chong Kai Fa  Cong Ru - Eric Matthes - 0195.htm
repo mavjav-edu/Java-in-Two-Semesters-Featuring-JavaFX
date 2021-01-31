@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:12pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+ .font9 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">178</span></p>
+<p><span class="font6">第</span><span class="font8">10</span><span class="font6">章 文件和异常</span></p>
+<p><span class="font6">下措辞(见</span><span class="font9" style="font-weight:bold;">o</span><span class="font6">)。</span></p>
+<p><span class="font6">现在可以编写一个简单的循环，计算要分析的任何文本包含多少个单词了。为此，我们将要 分析的文件的名称存储在一个列表中，然后对列表中的每个文件都调用</span><span class="font2">count_words()</span><span class="font6">。我们将 尝试计算</span><span class="font8" style="font-style:italic;">Alice in Wonderland</span><span class="font6">、</span><span class="font8" style="font-style:italic;">Siddhartha</span><span class="font7" style="font-style:italic;">、</span><span class="font8" style="font-style:italic;">Moby Dick</span><span class="font6" style="font-style:italic;">人</span><span class="font6">和</span><span class="font8" style="font-style:italic;">Little Women</span><span class="font6">分别包含多少个单词，它们 都不受版权限制。我故意没有将</span><span class="font8">siddhartha.txt</span><span class="font6">放到</span><span class="font8">word_count.py</span><span class="font6">所在的目录中，让你能够看到这 个程序在文件不存在时处理得有多出色：</span></p>
+<p><span class="font0">def count_words(filename):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']</span></p>
+<p><span class="font0">for filename in filenames: count_words(filename)</span></p>
+<p><span class="font6">文件</span><span class="font8">siddhartha.txt</span><span class="font6">不存在，但这丝毫不影响这个程序处理其他文件:</span></p>
+<p><span class="font0">The file alice.txt has about 29461 words.</span></p>
+<p><span class="font0">Sorry, the file siddhartha.txt does not exist.</span></p>
+<p><span class="font0">The file moby_dick.txt has about 215136 words.</span></p>
+<p><span class="font0">The file little_women.txt has about 189079 words.</span></p>
+<p><span class="font6">在这个示例中，使用</span><span class="font2">try-except</span><span class="font6">代码块提供了两个重要的优点：避免让用户看到</span><span class="font8">traceback</span><span class="font6">； 让程序能够继续分析能够找到的其他文件。如果不捕获因找不到</span><span class="font8">siddhartha.txt</span><span class="font6">而引发的 </span><span class="font2">FileNotFoundError</span><span class="font6">异常，用户将看到完整的</span><span class="font8">traceback</span><span class="font6">，而程序将在尝试分析</span><span class="font8" style="font-style:italic;">Siddhartha</span><span class="font6">后停止运 行---根本不分析</span><span class="font8" style="font-style:italic;">Moby Dick</span><span class="font6">和</span><span class="font8" style="font-style:italic;">Little Women</span><span class="font6">。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>10.3.8</span><span class="font4"> 失败时一声不吭</span></h5></li></ul>
+<p><span class="font6">在前一个示例中，我们告诉用户有一个文件找不到。但并非每次捕获到异常时都需要告诉用 户，有时候你希望程序在发生异常时一声不吭，就像什么都没有发生一样继续运行。要让程序在 失败时一声不吭，可像通常那样编写</span><span class="font2">try</span><span class="font6">代码块，但在</span><span class="font2">except</span><span class="font6">代码块中明确地告诉</span><span class="font8">Python</span><span class="font6">什么都不 要做。</span><span class="font8">Python</span><span class="font6">有一个</span><span class="font2">pass</span><span class="font6">语句，可在代码块中使用它来让</span><span class="font8">Python</span><span class="font6">什么都不要做：</span></p>
+<p><span class="font0">def count_words(filename):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">计算一个文件大致包含多少个单词</span><span class="font0">&quot;&quot;&quot; try:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--snip--</span></p></li></ul>
+<p><span class="font0">except FileNotFoundError:</span></p>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">pass</span></p>
+<p><span class="font0">else:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--snip-</span></p></li></ul>
+<p><span class="font0">filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']</span></p>
+<p><span class="font0">for filename in filenames:</span></p>
+<p><span class="font0">count_words(filename)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

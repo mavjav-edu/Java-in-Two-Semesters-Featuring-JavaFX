@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:9pt SimSun, serif; }
+ .font5 { font:10pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">2.3 </span><span class="font5">字符串</span></p>
+<p><span class="font6">19</span></p>
+<p><span class="font1" style="font-weight:bold;">2</span></p>
+<p><span class="font5">下面来看一些使用字符串的方式。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2.3.1</span><span class="font3"> 使用方法修改字符串的大小写</span></p></li></ul>
+<p><span class="font5">对于字符串，可执行的最简单的操作之一是修改其中的单词的大小写。请看下面的代码，并 尝试判断其作用：</span></p>
+<p><span class="font6">name.py</span></p>
+<p><span class="font0">name = &quot;ada lovelace&quot;</span></p>
+<p><span class="font0">print(name.title())</span></p>
+<p><span class="font5">将这个文件保存为</span><span class="font6">name.py</span><span class="font5">,再运行它。你将看到如下输出:</span></p>
+<p><span class="font0">Ada Lovelace</span></p>
+<p><span class="font5">在这个示例中，小写的字符串</span><span class="font2">“ada lovelace&quot;</span><span class="font5">存储到了变量</span><span class="font2">name</span><span class="font5">中。在</span><span class="font2">print()</span><span class="font5">语句中，方法 </span><span class="font2">title()</span><span class="font5">出现在这个变量的后面。</span><span class="font4">方法</span><span class="font5">是</span><span class="font6">Python</span><span class="font5">可对数据执行的操作。在</span><span class="font2">name.title()</span><span class="font5">中，</span><span class="font2">name</span><span class="font5">后 面的句点(</span><span class="font6">.</span><span class="font5">)让</span><span class="font6">Python</span><span class="font5">对变量</span><span class="font2">name</span><span class="font5">执行方法</span><span class="font2">title()</span><span class="font5">指定的操作。每个方法后面都跟着一对括号， 这是因为方法通常需要额外的信息来完成其工作。这种信息是在括号内提供的。函数</span><span class="font2">title()</span><span class="font5">不 需要额外的信息，因此它后面的括号是空的。</span></p>
+<p><span class="font2">title()</span><span class="font5">以首字母大写的方式显示每个单词，即将每个单词的首字母都改为大写。这很有用， 因为你经常需要将名字视为信息。例如，你可能希望程序将值</span><span class="font2">Ada</span><span class="font5">、</span><span class="font2">ADA</span><span class="font5">和</span><span class="font2">ada</span><span class="font5">视为同一个名字， 并将它们都显示为</span><span class="font2">Ada</span><span class="font5">。</span></p>
+<p><span class="font5">还有其他几个很有用的大小写处理方法。例如，要将字符串改为全部大写或全部小写，可以 像下面这样做：</span></p>
+<p><span class="font0">name = &quot;Ada Lovelace&quot; print(name.upper()) print(name.lower())</span></p>
+<p><span class="font5">这些代码的输出如下：</span></p>
+<p><span class="font0">ADA LOVELACE ada lovelace</span></p>
+<p><span class="font5">存储数据时，方法</span><span class="font2">lower()</span><span class="font5">很有用。很多时候，你无法依靠用户来提供正确的大小写，因此 需要将字符串先转换为小写，再存储它们。以后需要显示这些信息时，再将其转换为最合适的大 小写方式。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2.3.2</span><span class="font3"> 合并(拼接)字符串</span></p></li></ul>
+<p><span class="font5">在很多情况下，都需要合并字符串。例如，你可能想将姓和名存储在不同的变量中，等要显</span></p>
+</body>
+</html>

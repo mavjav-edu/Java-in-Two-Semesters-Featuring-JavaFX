@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">258</span></p>
+<p><span class="font10">第</span><span class="font11">14</span><span class="font10">章 记分</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">14.1.1</span><span class="font8"> 创建 </span><span class="font2">Button </span><span class="font8">类</span></p></li></ul>
+<p><span class="font10">由于</span><span class="font11">Pygame</span><span class="font10">没有内置创建按钮的方法，我们创建一个</span><span class="font4">Button</span><span class="font10">类，用于创建带标签的实心矩形。 你可以在游戏中使用这些代码来创建任何按钮。下面是</span><span class="font4">Button</span><span class="font10">类的第一部分，请将这个类保存为 文件 </span><span class="font11">button.py </span><span class="font10">：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>button.py</span></h6>
+<p><span class="font0">import pygame.font</span></p>
+<p><span class="font0">class Button():</span></p>
+<p><span class="font5">❶ </span><span class="font0">def ―init—(self, ai_settings, screen, msg):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">初始化按钮的属性</span><span class="font0">&quot;&quot;&quot; self.screen = screen self.screen_rect = screen.get_rect()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9"> 设置按钮的尺寸和其他属性</span></p></li></ul>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.width, self.height = 200, 50</span></p>
+<p><span class="font0">self.button_color = (0, 255, 0)</span></p>
+<p><span class="font0">self.text_color = (255, 255, 255)</span></p>
+<p><span class="font5">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.font = pygame.font.SysFont(None, 48)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9"> 创建按钮的隹^对象，并使其居中</span></p></li></ul>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect = pygame.Rect(0, 0, self.width, self.height)</span></p>
+<p><span class="font0">self.rect.center = self.screen_rect.center</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9"> 按钮的标签只需创建一次</span></p></li></ul>
+<p><span class="font5">❺ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.prep_msg(msg)</span></p>
+<p><span class="font10">首先，我们导入了模块</span><span class="font4">pygame.font</span><span class="font10">，它让</span><span class="font11">Pygame</span><span class="font10">能够将文本渲染到屏幕上。方法</span><span class="font4">_init__() </span><span class="font10">接受参数</span><span class="font4">self</span><span class="font10">，对象</span><span class="font4">ai_settings</span><span class="font10">和</span><span class="font4">screen</span><span class="font10">，以及</span><span class="font4">msg</span><span class="font10">，其中</span><span class="font4">msg</span><span class="font10">是要在按钮中显示的文本(见</span><span class="font7">❶</span><span class="font10">)。 我们设置按钮的尺寸(见</span><span class="font7">❷</span><span class="font10">)，然后通过设置</span><span class="font4">button_color</span><span class="font10">让按钮的</span><span class="font4">rect</span><span class="font10">对象为亮绿色，并通过设 置</span><span class="font4">text_c010r</span><span class="font10">让文本为白色。</span></p>
+<p><span class="font10">在(见</span><span class="font7">❸</span><span class="font10">)处，我们指定使用什么字体来渲染文本。实参</span><span class="font4">None</span><span class="font10">让</span><span class="font4">Pygame</span><span class="font10">使用默认字体，而</span><span class="font4">48 </span><span class="font10">指定了文本的字号。为让按钮在屏幕上居中，我们创建一个表示按钮的</span><span class="font4">rect</span><span class="font10">对象(见</span><span class="font7">❹</span><span class="font10">)，并将 其</span><span class="font4">center</span><span class="font10">属性设置为屏幕的</span><span class="font4">center</span><span class="font10">属性。</span></p>
+<p><span class="font11">Pygame</span><span class="font10">通过将你要显示的字符串渲染为图像来处理文本。在</span><span class="font7">❺</span><span class="font10">处，我们调用</span><span class="font4">prep_msg()</span><span class="font10">来处 理这样的渲染。</span></p>
+<p><span class="font4">prep_msg()</span><span class="font10">的代码如下：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>button.py</span></h6>
+<p><span class="font0">def prep_msg(self, msg):</span></p>
+<p><span class="font6">&quot;&quot;&quot;</span><span class="font9">将</span><span class="font6">巾$且</span><span class="font9">渲染为图像，并使其在按钮上居中</span><span class="font6">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.msg_image = self.font.render(msg, True, self.text_color,</span></p>
+<p><span class="font0">self.button_color)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

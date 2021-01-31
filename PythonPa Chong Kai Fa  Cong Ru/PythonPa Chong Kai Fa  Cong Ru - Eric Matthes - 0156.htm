@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">9.1 </span><span class="font10">创建和使用类 </span><span class="font11">139</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">9.1.1</span><span class="font7"> 创建</span><span class="font2">Dog</span><span class="font7">类</span></p></li></ul>
+<p><span class="font10">根据</span><span class="font4">Dog</span><span class="font10">类创建的每个实例都将存储名字和年龄。我们赋予了每条小狗蹲下(</span><span class="font4">sit()</span><span class="font10">)和打滚 (</span><span class="font4">roll_over()</span><span class="font10">)的能力:</span></p>
+<p><span class="font1">dog.py</span></p>
+<p><span class="font5">❶ </span><span class="font0">class Dog():</span></p>
+<p><span class="font5">❷ &nbsp;&nbsp;</span><span class="font0">&quot;&quot;&quot;</span><span class="font8">一次模拟小狗的简单尝试</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">def ―init—(self, name, age):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">初始化属性</span><span class="font0">name</span><span class="font8">和</span><span class="font0">age&quot;&quot;&quot;</span></p>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.name = name</span></p>
+<p><span class="font0">self.age = age</span></p>
+<p><span class="font5">❺ </span><span class="font0">def sit(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">模拟小狗被命令时蹲下</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(self.name.title() + &quot;&nbsp;is now sitting.&quot;)</span></p>
+<p><span class="font0">def roll_over(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font8">模拟小狗被命令时打滚</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(self.name.title() + &quot;&nbsp;rolled over!&quot;)</span></p>
+<p><span class="font10">这里需要注意的地方很多，但你也不用担心，本章充斥着这样的结构，你有大把的机会熟悉 它。在</span><span class="font6">❶</span><span class="font10">处，我们定义了一个名为</span><span class="font4">Dog</span><span class="font10">的类。根据约定，在</span><span class="font11">Python</span><span class="font10">中，首字母大写的名称指的是类。 这个类定义中的括号是空的，因为我们要从空白创建这个类。在</span><span class="font6">❷</span><span class="font10">处，我们编写了一个文档字符 串，对这个类的功能作了描述。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1 . </span><span class="font10">方法</span><span class="font4">__init__()</span></p></li></ul>
+<p><span class="font10">类中的函数称为</span><span class="font9">方法</span><span class="font10">；你前面学到的有关函数的一切都适用于方法，就目前而言，唯一重要 的差别是调用方法的方式。</span><span class="font6">❸</span><span class="font10">处的方法</span><span class="font4">_init__()</span><span class="font10">是一个特殊的方法，每当你根据</span><span class="font4">Dog</span><span class="font10">类创建新实 例时，</span><span class="font11">Python</span><span class="font10">都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约 定，旨在避免</span><span class="font11">Python</span><span class="font10">默认方法与普通方法发生名称冲突。</span></p>
+<p><span class="font10">我们将方法</span><span class="font4">_init__()</span><span class="font10">定义成了包含三个形参：</span><span class="font4">self</span><span class="font10">、</span><span class="font4">name</span><span class="font10">和</span><span class="font4">age</span><span class="font10">。在这个方法的定义中，形 参</span><span class="font4">self</span><span class="font10">必不可少，还必须位于其他形参的前面。为何必须在方法定义中包含形参</span><span class="font4">self</span><span class="font10">呢？因为 </span><span class="font11">Python</span><span class="font10">调用这个</span><span class="font4">_init_()</span><span class="font10">方法来创建</span><span class="font4">Dog</span><span class="font10">实例时，将自动传入实参</span><span class="font4">self</span><span class="font10">。每个与类相关联的方法 调用都自动传递实参</span><span class="font4">self</span><span class="font10">，它是一个指向实例本身的引用，让实例能够访问类中的属性和方法。 我们创建</span><span class="font4">Dog</span><span class="font10">实例时，</span><span class="font11">Python</span><span class="font10">将调用</span><span class="font4">Dog</span><span class="font10">类的方法</span><span class="font4">_init_()</span><span class="font10">。我们将通过实参向</span><span class="font4">Dog()</span><span class="font10">传递名字和 年龄；</span><span class="font4">self</span><span class="font10">会自动传递，因此我们不需要传递它。每当我们根据</span><span class="font4">Dog</span><span class="font10">类创建实例时，都只需给最 后两个形参(</span><span class="font4">name</span><span class="font10">和</span><span class="font4">age</span><span class="font10">)提供值。</span></p>
+<p><span class="font6">❹</span><span class="font10">处定义的两个变量都有前缀</span><span class="font4">self</span><span class="font10">。以</span><span class="font4">self</span><span class="font10">为前缀的变量都可供类中的所有方法使用，我们 还可以通过类的任何实例来访问这些变量。</span><span class="font4">self.name = name</span><span class="font10">获取存储在形参</span><span class="font4">name</span><span class="font10">中的值，并将 其存储到变量</span><span class="font4">name</span><span class="font10">中，然后该变量被关联到当前创建的实例。</span><span class="font4">self.age = age</span><span class="font10">的作用与此类似。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

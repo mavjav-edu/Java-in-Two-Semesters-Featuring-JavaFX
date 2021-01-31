@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:14pt Arial, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:6pt SimSun, serif; }
+ .font11 { font:8pt SimSun, serif; }
+ .font12 { font:9pt SimSun, serif; }
+ .font13 { font:10pt SimSun, serif; }
+ .font14 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font14">11.2 </span><span class="font13">测试类 </span><span class="font14">193</span></p>
+<p><span class="font12">使用类似于</span><span class="font5">‘Santiago'</span><span class="font12">和</span><span class="font5">'chile’</span><span class="font12">这样的值来调用前述函数时，得至|的字符串是正确的。 运行 </span><span class="font5">test_cities.py</span><span class="font12">, 确认测试 </span><span class="font5">test_city_country()</span><span class="font12">通过了。</span></p>
+<p><span class="font2">11-2</span><span class="font7">人口数量</span><span class="font12">：修改前面的函数，使其包含第三个必不可少的形参</span><span class="font5">population</span><span class="font12">,并 返回一个格式为 </span><span class="font5">City, Country - population xxx </span><span class="font12">的字符串，如 </span><span class="font5">Santiago, Chile -population 5000000</span><span class="font12">。运行 </span><span class="font14">test_cities.py</span><span class="font12">，确认测试 </span><span class="font5">test_city_country()</span><span class="font12">未通过。</span></p>
+<p><span class="font12">修改上述函数，将形参</span><span class="font5">population</span><span class="font12">设置为可选的。再次运行</span><span class="font14">test_cities.py</span><span class="font12">，确认测 试 </span><span class="font5">test_city_country()</span><span class="font12">又通过了。</span></p>
+<p><span class="font12">再编写一个名为</span><span class="font5">test_city_country_population()</span><span class="font12">的测试，核实可以使用类似于 </span><span class="font5">'Santiago'</span><span class="font12">、</span><span class="font5">'chile'</span><span class="font12">和</span><span class="font5">'population=5000000'</span><span class="font12">这样的值来调用这个函数。再次运行 </span><span class="font14">test_cities.py</span><span class="font12">，确认测试 </span><span class="font5">test_city_country_population()</span><span class="font12">通过了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">11.2</span><span class="font9"> 测试类</span></p></li></ul>
+<p><span class="font13">在本章前半部分，你编写了针对单个函数的测试，下面来编写针对类的测试。很多程序中都 会用到类，因此能够证明你的类能够正确地工作会大有裨益。如果针对类的测试通过了，你就能 确信对类所做的改进没有意外地破坏其原有的行为。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>11.2.1</span><span class="font8"> 各种断言方法</span></h5>
+<div>
+<p><span class="font3" style="font-weight:bold;">11</span></p>
+</div><br clear="all"></li></ul>
+<p><span class="font14">Python</span><span class="font13">在</span><span class="font5">unittest.TestCase</span><span class="font13">类中提供了很多断言方法。前面说过，断言方法检查你认为应 该满足的条件是否确实满足。如果该条件确实满足，你对程序行为的假设就得到了确认，你就可 以确信其中没有错误。如果你认为应该满足的条件实际上并不满足，</span><span class="font14">Python</span><span class="font13">将引发异常。</span></p>
+<p><span class="font13">表</span><span class="font14">11-1</span><span class="font13">描述了</span><span class="font14">6</span><span class="font13">个常用的断言方法。使用这些方法可核实返回的值等于或不等于预期的值、 返回的值为</span><span class="font5">True</span><span class="font13">或</span><span class="font5">False</span><span class="font13">、返回的值在列表中或不在列表中。你只能在继承</span><span class="font5">unittest.TestCase</span><span class="font13">的 类中使用这些方法，下面来看看如何在测试类时使用其中的一个。</span></p>
+<p><span class="font6">表</span><span class="font1">11-1 unittest Module</span><span class="font6">中的断言方法</span></p>
+<table border="1">
+<tr><td style="vertical-align:bottom;">
+<p><span class="font6">方 法</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font6">用 途</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">assertEqual(a, b)</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font11">核实</span><span class="font0">a == b</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">assertNotEqual(a, b)</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font11">核实</span><span class="font0">a != b</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">assertTrue(x)</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font11">核实</span><span class="font0">x</span><span class="font11">为</span><span class="font0">True</span></p></td></tr>
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0">assertFalse(x)</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font11">核实</span><span class="font0">x</span><span class="font11">为</span><span class="font0">False</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">assertIn(</span><span class="font0" style="font-style:italic;">item</span><span class="font0">, </span><span class="font0" style="font-style:italic;">list</span><span class="font0">)</span></p></td><td style="vertical-align:top;">
+<p><span class="font11" style="font-style:italic;">核实</span><span class="font0" style="font-style:italic;">item</span><span class="font11" style="font-style:italic;">在</span><span class="font0" style="font-style:italic;">list</span><span class="font11" style="font-style:italic;">中</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">assertNotIn(</span><span class="font0" style="font-style:italic;">item</span><span class="font0">, </span><span class="font0" style="font-style:italic;">list</span><span class="font0">)</span></p></td><td style="vertical-align:top;">
+<p><span class="font11">核实</span><span class="font10" style="font-style:italic;">了加力</span><span class="font11">不在</span><span class="font0" style="font-style:italic;">lis t</span><span class="font11">中</span></p></td></tr>
+</table>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

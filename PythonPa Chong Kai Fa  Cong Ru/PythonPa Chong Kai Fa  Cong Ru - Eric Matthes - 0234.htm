@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">12.6 </span><span class="font8">驾驶飞船</span></p>
+<p><span class="font9">217</span></p>
+<p><span class="font0">for event in pygame.event.get():</span></p>
+<p><span class="font0">if event.type == pygame.QUIT: sys.exit()</span></p>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">elif event.type == pygame.KEYDOWN:</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">if event.key == pygame.K_RIGHT:</span></p>
+<p><span class="font0">#</span><span class="font7">向右移动飞船</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">ship.rect.centerx += 1</span></p>
+<p><span class="font8">我们在函数</span><span class="font3">check_events()</span><span class="font8">中包含形参</span><span class="font3">ship</span><span class="font8">,因为玩家按右箭头键时，需要将飞船向右移动。 在函数</span><span class="font3">check_events()</span><span class="font8">内部，我们在事件循环中添加了一个</span><span class="font3">elif</span><span class="font8">代码块，以便在</span><span class="font9">Pygame</span><span class="font8">检测到 </span><span class="font3">KEYDOWN</span><span class="font8">事件时作出响应(见</span><span class="font5">❶</span><span class="font8">)。我们读取属性</span><span class="font3">event.key</span><span class="font8">，以检查按下的是否是右箭头键 (</span><span class="font3">pygame.K_RIGHT</span><span class="font8">)(见</span><span class="font5">❷</span><span class="font8">)。如果按下的是右箭头键，就将</span><span class="font3">ship.rect.centerx</span><span class="font8">的值加</span><span class="font9">1</span><span class="font8">，从而将飞 船向右移动(见</span><span class="font5">❸</span><span class="font8">)。</span></p>
+<p><span class="font8">在</span><span class="font9">alien_invasion.py</span><span class="font8">中，我们需要更新调用的</span><span class="font3">check_events()</span><span class="font8">代码，将</span><span class="font3">ship</span><span class="font8">作为实参传递给它：</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">开始游戏主循环 </span><span class="font0">while True:</span></p></li></ul>
+<p><span class="font0">gf.check_events(ship)</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship)</span></p>
+<p><span class="font8">如果现在运行</span><span class="font9">alien_invasion.py</span><span class="font8">，贝悔按右箭头键一次，飞船都将向右移动</span><span class="font9">1</span><span class="font8">像素。这是一个 开端，但并非控制飞船的高效方式。下面来改进控制方式，允许持续移动。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>12.6.2 </span><span class="font6">允许不断移动</span></h5>
+<div>
+<p><span class="font2" style="font-weight:bold;">12</span></p>
+</div><br clear="all"></li></ul>
+<p><span class="font8">玩家按住右箭头键不放时，我们希望飞船不断地向右移动，直到玩家松开为止。我们将让游 戏检测</span><span class="font3">pygame.KEYUP</span><span class="font8">事件，以便玩家松开右箭头键时我们能够知道这一点；然后，我们将结合使 用</span><span class="font3">KEYDOWN</span><span class="font8">和</span><span class="font3">KEYUP</span><span class="font8">事件，以及一个名为</span><span class="font3">moving_right</span><span class="font8">的标志来实现持续移动。</span></p>
+<p><span class="font8">飞船不动时，标志</span><span class="font3">moving_right</span><span class="font8">将为</span><span class="font3">False</span><span class="font8">。玩家按下右箭头键时，我们将这个标志设置为 </span><span class="font3">True</span><span class="font8">；而玩家松开时，我们将这个标志重新设置为</span><span class="font3">False</span><span class="font8">。</span></p>
+<p><span class="font8">飞船的属性都由</span><span class="font3">Ship</span><span class="font8">类控制，因此我们将给这个类添加一个名为</span><span class="font3">moving_right</span><span class="font8">的属性和一个 名为</span><span class="font3">update()</span><span class="font8">的方法。方法</span><span class="font3">update</span><span class="font8">。检查标志</span><span class="font3">moving_right</span><span class="font8">的状态，如果这个标志为</span><span class="font3">True</span><span class="font8">,就调 整飞船的位置。每当需要调整飞船的位置时，我们都调用这个方法。</span></p>
+<p><span class="font8">下面是对</span><span class="font3">Ship</span><span class="font8">类所做的修改：</span></p>
+<p><span class="font1">ship.py</span></p>
+<p><span class="font0">class Ship():</span></p>
+<p><span class="font0">def __init__(self, screen):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 将每艘新飞船放在屏幕底部中央</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all"></li></ul>
+</body>
+</html>

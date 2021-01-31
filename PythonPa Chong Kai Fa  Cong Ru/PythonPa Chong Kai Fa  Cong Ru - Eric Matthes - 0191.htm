@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:11pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+ .font9 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">174 </span><span class="font7">第</span><span class="font8">10</span><span class="font7">章 文件和异常</span></p>
+<p><span class="font7">在。处，这个程序提示用户输入一个数字，并将其存储到变量</span><span class="font3">first_number</span><span class="font7">中；如果用户输 人的不是表示退出的</span><span class="font8">q</span><span class="font7">,就再提示用户输入一个数字，并将其存储到变量</span><span class="font3">second_number</span><span class="font7">中(见</span><span class="font5">❷</span><span class="font7">)。 接下来，我们计算这两个数字的商(即</span><span class="font3">answer</span><span class="font7">，见</span><span class="font5">❸)。</span><span class="font7">这个程序没有采取任何处理错误的措施， 因此让它执行除数为</span><span class="font8">0</span><span class="font7">的除法运算时,它将崩溃：</span></p>
+<p><span class="font0">Give me two numbers, and I'll divide them.</span></p>
+<p><span class="font0">Enter 'q' to quit.</span></p>
+<p><span class="font0">First number: </span><span class="font0" style="font-weight:bold;">5</span></p>
+<p><span class="font0">Second number: </span><span class="font0" style="font-weight:bold;">0</span></p>
+<p><span class="font0">Traceback (most recent call last):</span></p>
+<p><span class="font0">File &quot;division.py&quot;, line 9, in &lt;module&gt;</span></p>
+<p><span class="font0">answer = int(first_number) / int(second_number)</span></p>
+<p><span class="font0">ZeroDivisionError: division by zero</span></p>
+<p><span class="font7">程序崩溃可不好，但让用户看到</span><span class="font8">traceback</span><span class="font7">也不是好主意。不懂技术的用户会被它们搞糊涂， 而且如果用户怀有恶意，他会通过</span><span class="font8">traceback</span><span class="font7">获悉你不希望他知道的信息。例如，他将知道你的程 序文件的名称，还将看到部分不能正确运行的代码。有时候，训练有素的攻击者可根据这些信息 判断出可对你的代码发起什么样的攻击。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">10.3.4</span><span class="font1"> else </span><span class="font6">代码块</span></p></li></ul>
+<p><span class="font7">通过将可能引发错误的代码放在</span><span class="font3">try-excep</span><span class="font8">t</span><span class="font7">代码块中，可提高这个程序抵御错误的能力。错 误是执行除法运算的代码行导致的，因此我们需要将它放到</span><span class="font3">try-except</span><span class="font7">代码块中。这个示例还包 含一个</span><span class="font3">else</span><span class="font7">代码块；依赖于</span><span class="font3">try</span><span class="font7">代码块成功执行的代码都应放到</span><span class="font3">else</span><span class="font7">代码块中：</span></p>
+<p><span class="font0">print(&quot;Give me two numbers, and I'll divide them.&quot;)</span></p>
+<p><span class="font0">print(&quot;Enter 'q' to quit.&quot;)</span></p>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">first_number = input(&quot;\nFirst number: &quot;)</span></p>
+<p><span class="font0">if first_number == 'q':</span></p>
+<p><span class="font0">break</span></p>
+<p><span class="font0">second_number = input(&quot;Second number: &quot;)</span></p>
+<p><span class="font4">❶ </span><span class="font0">try:</span></p>
+<p><span class="font0">answer = int(first_number) / int(second_number)</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">except ZeroDivisionError:</span></p>
+<p><span class="font0">print(&quot;You can't divide by 0!&quot;)</span></p>
+<p><span class="font4">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">else:</span></p>
+<p><span class="font0">print(answer)</span></p>
+<p><span class="font7">我们让</span><span class="font8">Python</span><span class="font7">尝试执行</span><span class="font3">try</span><span class="font7">代码块中的除法运算(见</span><span class="font9" style="font-weight:bold;">O</span><span class="font7">)，这个代码块只包含可能导致错误的 代码。依赖于</span><span class="font3">try</span><span class="font7">代码块成功执行的代码都放在</span><span class="font3">else</span><span class="font7">代码块中；在这个示例中，如果除法运算成 功，我们就使用</span><span class="font3">else</span><span class="font7">代码块来打印结果(见</span><span class="font5">❸</span><span class="font7">)。</span></p>
+<p><span class="font3">except</span><span class="font7">代码块告诉</span><span class="font8">Python</span><span class="font7">，出现</span><span class="font3">ZeroDivisionError</span><span class="font7">异常时该怎么办(见</span><span class="font5">❷</span><span class="font7">)。如果</span><span class="font3">try</span><span class="font7">代码块 </span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

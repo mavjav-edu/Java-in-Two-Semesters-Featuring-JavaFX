@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:9pt Times New Roman, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">318</span></p>
+<p><span class="font9">第</span><span class="font11">16</span><span class="font9">章 下载数据</span></p>
+<p><span class="font0">high = int(row[1]) highs.append(high)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 根据数据绘制图形</span></p></li></ul>
+<p><span class="font0">fig = plt.figure(dpi=128, figsize=(10, 6))</span></p>
+<p><span class="font4">❸ </span><span class="font0">plt.plot(dates, highs, c='red')</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 设置图形的格式</span></p></li></ul>
+<p><span class="font0">plt.title(&quot;Daily high temperatures, July 2014&quot;, fontsize=24)</span></p>
+<p><span class="font0">plt.xlabel('', fontsize=16)</span></p>
+<p><span class="font4">❹ </span><span class="font0">fig.autofmt_xdate()</span></p>
+<p><span class="font0">plt.ylabel(&quot;Temperature (F)&quot;, fontsize=16)</span></p>
+<p><span class="font0">plt.tick_params(axis='both', which='major', labelsize=16)</span></p>
+<p><span class="font0">plt.show()</span></p>
+<p><span class="font9">我们创建了两个空列表，用于存储从文件中提取的日期和最高气温(见</span><span class="font6">❶</span><span class="font9">)。然后，我们将 包含日期信息的数据(</span><span class="font3">row[0]</span><span class="font9">)转换为</span><span class="font3">datetime</span><span class="font9">对象(见</span><span class="font6">❷</span><span class="font9">)，并将其附加到列表</span><span class="font3">dates</span><span class="font9">末尾。在 </span><span class="font6">❸</span><span class="font9">处，我们将日期和最高气温值传递给</span><span class="font3">plot()</span><span class="font9">。在</span><span class="font6">❹</span><span class="font9">处，我们调用了</span><span class="font3">fig.autofmt_xdate()</span><span class="font9">来绘制 斜的日期标签，以免它们彼此重叠。图</span><span class="font11">16-2</span><span class="font9">显示了改进后的图表。</span></p>
+<p><span class="font1">Daily high temperatures, July 2014</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0335_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200335-1.jpg" alt="" style="width:330pt;height:157pt;">
+<p><span class="font5">图</span><span class="font10">16-2</span><span class="font5">现在图表的</span><span class="font0" style="font-style:italic;">x</span><span class="font5">轴上有日期，含义更丰富</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>16.1.7 </span><span class="font7">涵盖更长的时间</span></h5></li></ul>
+<p><span class="font9">设置好图表后，我们来添加更多的数据，以成一幅更复杂的锡特卡天气图。请将文件 </span><span class="font11">sitka_weather_2014.csv</span><span class="font9">复制到存储本章程序的文件夹中，该文件包含</span><span class="font11">Weather Underground</span><span class="font9">提供的 整年的锡特卡天气数据。</span></p>
+<p><span class="font9">现在可以创建覆盖整年的天气图了：</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

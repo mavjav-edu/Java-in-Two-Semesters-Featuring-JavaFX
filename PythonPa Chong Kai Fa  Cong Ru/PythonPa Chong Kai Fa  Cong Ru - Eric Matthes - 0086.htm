@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">5.2 </span><span class="font8">条件测试</span></p>
+<p><span class="font9">69</span></p>
+<p><span class="font8">该列表中。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; requested_toppings = ['mushrooms', 'onions', 'pineapple']</span></p></li></ul>
+<p><span class="font4">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">'mushrooms' in requested_toppings</span></p>
+<p><span class="font0">True</span></p>
+<p><span class="font4">❷ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">'pepperoni' in requested_toppings</span></p>
+<p><span class="font0">False</span></p>
+<p><span class="font8">在</span><span class="font5">❶</span><span class="font8">处和</span><span class="font5">❷</span><span class="font8">处，关键字</span><span class="font3">in</span><span class="font8">让</span><span class="font9">Python</span><span class="font8">检查列表</span><span class="font3">requested_toppings</span><span class="font8">是否包含</span><span class="font3">'mushrooms'</span><span class="font8">和 </span><span class="font3">'pepperoni'</span><span class="font8">。这种技术很有用，它让你能够在创建一个列表后，轻松地检查其中是否包含特定 的值。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">5.2.7</span><span class="font6"> 检查特定值是否不包含在列表中</span></p></li></ul>
+<p><span class="font8">还有些时候，确定特定的值未包含在列表中很重要；在这种情况下，可使用关键字</span><span class="font3">not in</span><span class="font8">。 例如，如果有一个列表，其中包含被禁止在论坛上发表评论的用户，就可在允许用户提交评论前 检查他是否被禁言：</span></p>
+<p><span class="font1">banned_users.py</span></p>
+<p><span class="font0">banned_users = ['andrew', 'carolina', 'david']</span></p>
+<p><span class="font0">user = 'marie'</span></p>
+<p><span class="font4">❶ </span><span class="font0">if user not in banned_users:</span></p>
+<p><span class="font0">print(user.title() + &quot;, you can post a response if you wish.&quot;)</span></p>
+<p><span class="font5">。</span><span class="font8">处的代码行明白易懂：如果</span><span class="font3">user</span><span class="font8">的值未包含在列表</span><span class="font3">banned_users</span><span class="font8">中，</span><span class="font9">Python</span><span class="font8">将返回</span><span class="font3">True</span><span class="font8">， 进而执行缩进的代码行。</span></p>
+<p><span class="font8">用户</span><span class="font3">'marie’</span><span class="font8">未包含在列表</span><span class="font3">banned_users</span><span class="font8">中，因此她将看到一条邀请她发表评论的消息：</span></p>
+<p><span class="font0">Marie, you can post a response if you wish.</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>5.2.8</span><span class="font6"> 布尔表达式</span></h5></li></ul>
+<p><span class="font8">随着你对编程的了解越来越深入，将遇到术语</span><span class="font7">布尔表达式</span><span class="font8">，它不过是条件测试的别名。与条 件表达式一样，布尔表达式的结果要么为</span><span class="font3">True</span><span class="font8">，要么为</span><span class="font3">False</span><span class="font8">。</span></p>
+<p><span class="font8">布尔值通常用于记录条件，如游戏是否正在运行，或用户是否可以编辑网站的特定内容：</span></p>
+<p><span class="font0">game_active = True</span></p>
+<p><span class="font0">can edit = False</span></p>
+<p><span class="font8">在跟踪程序状态或程序中重要的条件方面，布尔值提供了一种高效的方式。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">19.3 </span><span class="font7">让用户拥有自己的数据</span></p>
+<p><span class="font8">401</span></p>
+<p><span class="font7">行前，根据它来修改函数代码的行为。下面来看一个示例。</span></p>
+<p><span class="font1">1.</span><span class="font5">限制对</span><span class="font3">topics</span><span class="font5">页面的访问</span></p>
+<p><span class="font7">每个主题都归特定用户所有，因此应只允许已登录的用户请求</span><span class="font3">topics</span><span class="font7">页面。为此，在 </span><span class="font8">learning_logs/views.py </span><span class="font7">中添加如下代码：</span></p>
+<p><span class="font1">views.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">from django.core.urlresolvers import reverse</span></p>
+<p><span class="font0">from django.contrib.auth.decorators import login_required</span></p>
+<p><span class="font0">from .models import Topic, Entry</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">@login_required</span></p>
+<p><span class="font0">def topics(request):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">显示所有的主题</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font7">我们首先导入了函数</span><span class="font3">login_required()</span><span class="font7">。我们将</span><span class="font3">login_required()</span><span class="font7">作为装饰器用于视图函数 </span><span class="font3">topics()---</span><span class="font7">在它前面加上符号</span><span class="font3">@</span><span class="font7">和</span><span class="font3">login_required</span><span class="font7">，让</span><span class="font8">Python</span><span class="font7">在运行</span><span class="font3">topics()</span><span class="font7">的代码前先运行</span></p>
+<p><span class="font3">login_required()</span><span class="font7">的代码。</span></p>
+<p><span class="font3">login_required()</span><span class="font7">的代码检查用户是否已登录，仅当用户已登录时，</span><span class="font8">Django</span><span class="font7">才运行</span><span class="font3">topics() </span><span class="font7">的代码。如果用户未登录，就重定向到登录页面。</span></p>
+<p><span class="font7">为实现这种重定向，我们需要修改</span><span class="font8">settings.py</span><span class="font7">，让</span><span class="font8">Django</span><span class="font7">知道到哪里去查找登录页面。请在 </span><span class="font8">settings.py</span><span class="font7">末尾添加如下代码：</span></p>
+<p><span class="font1">settings.py</span></p>
+<p><span class="font6">项目</span><span class="font0">learning_log</span><span class="font6">的</span><span class="font4">口)己口</span><span class="font0">80</span><span class="font6">设置</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0"># </span><span class="font6">我的设置</span></p></li></ul>
+<p><span class="font0">LOGIN_URL = '/users/login/'</span></p>
+<p><span class="font7">现在，如果未登录的用户请求装饰器</span><span class="font3">@login_required</span><span class="font7">的保护页面，</span><span class="font8">Django</span><span class="font7">将重定向到 </span><span class="font8">settings.py </span><span class="font7">中的 </span><span class="font3">LOGIN_URL </span><span class="font7">指定的 </span><span class="font8">URL</span><span class="font7">。</span></p>
+<p><span class="font7">要测试这个设置，可注销并进入主页。然后，单击链接</span><span class="font8">Topics</span><span class="font7">，这将重定向到登录页面。接 下来，使用你的账户登录，并再次单击主页中的</span><span class="font8">Topics</span><span class="font7">链接，你将看到</span><span class="font8">topics</span><span class="font7">页面。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2. </span><span class="font5">全面限制对项目“学习笔记”的访问</span></p></li></ul>
+<p><span class="font8">Django</span><span class="font7">让你能够轻松地限制对页面的访问，但你必须针对要保护哪些页面做出决定。最好先 确定项目的哪些页面不需要保护，再限制对其他所有页面的访问。你可以轻松地修改过于严格的 访问限制，其风险比不限制对敏感页面的访问更低。</span></p>
+<p><span class="font2" style="font-weight:bold;">19</span></p>
+</body>
+</html>

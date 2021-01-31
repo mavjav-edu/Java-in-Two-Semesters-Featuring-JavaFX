@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">66</span></p>
+<p><span class="font8">第</span><span class="font9">5</span><span class="font8">章</span><span class="font9">if</span><span class="font8">语句</span></p>
+<p><span class="font8">如果大小写很重要，这种行为有其优点。但如果大小写无关紧要，而只想检查变量的值，可 将变量的值转换为小写，再进行比较：</span></p>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">car = 'Audi'</span></p>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">car.lower() == 'audi'</span></p>
+<p><span class="font0">True</span></p>
+<p><span class="font8">无论值</span><span class="font3">'Audi’</span><span class="font8">的大小写如何，上述测试都将返回</span><span class="font3">True</span><span class="font8">，因为该测试不区分大小写。函数</span><span class="font3">lower() </span><span class="font8">不会修改存储在变量</span><span class="font3">car</span><span class="font8">中的值，因此进行这样的比较时不会影响原来的变量：</span></p>
+<p><span class="font4">❶ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">car = 'Audi'</span></p>
+<p><span class="font4">❷ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">car.lower() == 'audi'</span></p>
+<p><span class="font0">True</span></p>
+<p><span class="font4">❸ </span><span class="font0">&gt;&gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">car</span></p>
+<p><span class="font0">'Audi'</span></p>
+<p><span class="font8">在</span><span class="font5">❶</span><span class="font8">处，我们将首字母大写的字符串</span><span class="font3">'Audi'</span><span class="font8">存储在变量</span><span class="font3">car</span><span class="font8">中；在</span><span class="font5">❷</span><span class="font8">处，我们获取变量</span><span class="font3">car</span><span class="font8">的 值并将其转换为小写，再将结果与字符串</span><span class="font3">‘audi'</span><span class="font8">进行比较。这两个字符串相同，因此</span><span class="font9">Python</span><span class="font8">返回 </span><span class="font3">True</span><span class="font8">。从</span><span class="font5">❸</span><span class="font8">处的输出可知，这个条件测试并没有影响存储在变量</span><span class="font3">car</span><span class="font8">中的值。</span></p>
+<p><span class="font8">网站采用类似的方式让用户输入的数据符合特定的格式。例如，网站可能使用类似的测试来 确保用户名是独一无二的，而并非只是与另一个用户名的大小写不同。用户提交新的用户名时， 将把它转换为小写，并与所有既有用户名的小写版本进行比较。执行这种检查时，如果已经有用 户名</span><span class="font3">john’</span><span class="font8">(不管大小写如何)，则用户提交用户名</span><span class="font3">‘John’</span><span class="font8">时将遭到拒绝。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">5.2.3</span><span class="font6"> 检查是否不相等</span></p></li></ul>
+<p><span class="font8">要判断两个值是否不等，可结合使用惊叹号和等号(</span><span class="font3">!=</span><span class="font8">)，其中的惊叹号表示</span><span class="font7">不</span><span class="font8">，在很多编 程语言中都如此。</span></p>
+<p><span class="font8">下面再使用一条</span><span class="font3">if</span><span class="font8">语句来演示如何使用不等运算符。我们将把要求的比萨配料存储在一个变 量中，再打印一条消息，指出顾客要求的配料是否是意式小银鱼(</span><span class="font9">anchovies</span><span class="font8">)：</span></p>
+<p><span class="font1">toppings.py</span></p>
+<p><span class="font0">requested_topping = 'mushrooms'</span></p>
+<p><span class="font4">❶ </span><span class="font0">if requested_topping != 'anchovies': print(&quot;Hold the anchovies!&quot;)</span></p>
+<p><span class="font5">❶</span><span class="font8">处的代码行将</span><span class="font3">requested_topping</span><span class="font8">的值与</span><span class="font3">'anchovies'</span><span class="font8">进行比较，如果它们不相等，</span><span class="font9">Python </span><span class="font8">将返回</span><span class="font3">True</span><span class="font8">，进而执行紧跟在</span><span class="font5">讦</span><span class="font8">语句后面的代码；如果这两个值相等，</span><span class="font9">Python</span><span class="font8">将返回</span><span class="font3">False</span><span class="font8">，因此 不执行紧跟在</span><span class="font5">讦</span><span class="font8">语句后面的代码。</span></p>
+<p><span class="font8">由于</span><span class="font3">requested_topping</span><span class="font8">的值不是</span><span class="font3">'anchovies'</span><span class="font8">，因此执行</span><span class="font3">print</span><span class="font8">语句：</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

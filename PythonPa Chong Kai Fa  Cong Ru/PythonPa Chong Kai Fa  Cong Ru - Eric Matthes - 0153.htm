@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:14pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:14pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">136</span></p>
+<p><span class="font4">第</span><span class="font5">8</span><span class="font4">章 函数</span></p>
+<p><span class="font4">不是分别导入所有的函数。</span></p>
+<p><span class="font4">最佳的做法是，要么只导入你需要使用的函数，要么导入整个模块并使用句点表示法。这能 让代码更清晰，更容易阅读和理解。这里之所以介绍这种导入方法，只是想让你在阅读别人编写 的代码时，如果遇到类似于下面的</span><span class="font2">import</span><span class="font4">语句，能够理解它们：</span></p>
+<p><span class="font0">from </span><span class="font0" style="font-style:italic;">modul</span><span class="font0" style="font-style:italic;text-decoration:underline;">en</span><span class="font0" style="font-style:italic;">ame</span><span class="font0"> import *</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>8.7</span><span class="font3"> 函数编写指南</span></h5></li></ul>
+<p><span class="font4">编写函数时，需要牢记几个细节。应给函数指定描述性名称，且只在其中使用小写字母和下 划线。描述性名称可帮助你和别人明白代码想要做什么。给模块命名时也应遵循上述约定。</span></p>
+<p><span class="font4">每个函数都应包含简要地阐述其功能的注释，该注释应紧跟在函数定义后面，并采用文档字 符串格式。文档良好的函数让其他程序员只需阅读文档字符串中的描述就能够使用它：他们完全 可以相信代码如描述的那样运行；只要知道函数的名称、需要的实参以及返回值的类型，就能在 自己的程序中使用它。</span></p>
+<p><span class="font4">给形参指定默认值时，等号两边不要有空格：</span></p>
+<p><span class="font0">def </span><span class="font0" style="font-style:italic;">functionname</span><span class="font0">(</span><span class="font0" style="font-style:italic;">parameter0</span><span class="font0">, </span><span class="font0" style="font-style:italic;">parameter1</span><span class="font0">='</span><span class="font0" style="font-style:italic;">default value</span><span class="font0">')</span></p>
+<p><span class="font4">对于函数调用中的关键字实参，也应遵循这种约定：</span></p>
+<p><span class="font0" style="font-style:italic;">functionname</span><span class="font0">(</span><span class="font0" style="font-style:italic;">value 0</span><span class="font0">, </span><span class="font0" style="font-style:italic;">parameter1</span><span class="font0">='</span><span class="font0" style="font-style:italic;">value</span><span class="font0">')</span></p>
+<p><span class="font5">PEP 8 </span><span class="font4">(</span><a href="https://www.python.org/dev/peps/pep-0008/)%e5%bb%ba%e8%ae%ae%e4%bb%a3%e7%a0%81%e8%a1%8c%e7%9a%84%e9%95%bf%e5%ba%a6%e4%b8%8d%e8%a6%81%e8%b6%85%e8%bf%8779%e5%ad%97%e7%ac%a6%ef%bc%8c%e8%bf%99%e6%a0%b7"><span class="font5">https://www.python.org/dev/peps/pep-0008/</span><span class="font4">)建议代码行的长度不要超过</span><span class="font5">79</span><span class="font4">字符，这样</span></a><span class="font4"> 只要编辑器窗口适中，就能看到整行代码。如果形参很多，导致函数定义的长度超过了</span><span class="font5">79</span><span class="font4">字符， 可在函数定义中输入左括号后按回车键，并在下一行按两次</span><span class="font5">Tab</span><span class="font4">键，从而将形参列表和只缩进一 层的函数体区分开来。</span></p>
+<p><span class="font4">大多数编辑器都会自动对齐后续参数列表行，使其缩进程度与你给第一个参数列表行指定的 缩进程度相同：</span></p>
+<p><span class="font0">def </span><span class="font0" style="font-style:italic;">functio</span><span class="font0" style="font-style:italic;text-decoration:underline;">nn</span><span class="font0" style="font-style:italic;">ame</span><span class="font0">(</span></p>
+<p><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r0</span><span class="font0">, </span><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r1</span><span class="font0">, </span><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r2</span><span class="font0">,</span></p>
+<p><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r3</span><span class="font0">, </span><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r4</span><span class="font0">, </span><span class="font0" style="font-style:italic;">paramete</span><span class="font0" style="font-style:italic;text-decoration:underline;">r5</span><span class="font0">): </span><span class="font0" style="font-style:italic;">function body...</span></p>
+<p><span class="font4">如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开，这样将更容易知道前一 个函数在什么地方结束，下一个函数从什么地方开始。</span></p>
+<p><span class="font4">所有的</span><span class="font2">import</span><span class="font4">语句都应放在文件开头，唯一例外的情形是，在文件开头使用了注释来描述整 个程序。</span></p>
+</body>
+</html>

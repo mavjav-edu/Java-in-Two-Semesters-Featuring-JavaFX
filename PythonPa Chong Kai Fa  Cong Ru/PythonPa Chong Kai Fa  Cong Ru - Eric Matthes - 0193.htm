@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">176</span></p>
+<p><span class="font4">第</span><span class="font5">10</span><span class="font4">章 文件和异常</span></p>
+<p><span class="font4">件时创建的异常。在这个示例中，这个错误是函数</span><span class="font2">open()</span><span class="font4">导致的，因此要处理这个错误，必须将 </span><span class="font2">try</span><span class="font4">语句放在包含</span><span class="font2">open()</span><span class="font4">的代码行之前：</span></p>
+<p><span class="font0">filename = 'alice.txt'</span></p>
+<p><span class="font0">try:</span></p>
+<p><span class="font0">with open(filename) as f_obj:</span></p>
+<p><span class="font0">contents = f_obj.read()</span></p>
+<p><span class="font0">except FileNotFoundError:</span></p>
+<p><span class="font0">msg = &quot;Sorry, the file &quot;&nbsp;+ filename + &quot;&nbsp;does not exist.&quot; print(msg)</span></p>
+<p><span class="font4">在这个示例中，</span><span class="font2">try</span><span class="font4">代码块引发</span><span class="font2">FileNotFoundError</span><span class="font4">异常，因此</span><span class="font5">Python</span><span class="font4">找出与该错误匹配的 </span><span class="font2">except</span><span class="font4">代码块，并运行其中的代码。最终的结果是显示一条友好的错误消息，而不是</span><span class="font5">traceback</span><span class="font4">：</span></p>
+<p><span class="font0">Sorry, the file alice.txt does not exist.</span></p>
+<p><span class="font4">如果文件不存在，这个程序什么都不做，因此错误处理代码的意义不大。下面来扩展这个示 例，看看在你使用多个文件时，异常处理可提供什么样的帮助。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>10.3.6</span><span class="font3"> 分析文本</span></h5></li></ul>
+<p><span class="font4">你可以分析包含整本书的文本文件。很多经典文学作品都是以简单文本文件的方式提供的， 因为它们不受版权限制。本节使用的文本来自项目</span><span class="font5">Gutenberg</span><span class="font4">( </span><a href="http://gutenberg.org/)%ef%bc%8c%e8%bf%99%e4%b8%aa%e9%a1%b9%e7%9b%ae%e6%8f%90"><span class="font5">http://gutenberg.org/</span><span class="font4">)，这个项目提</span></a><span class="font4"> 供了一系列不受版权限制的文学作品，如果你要在编程项目中使用文学文本，这是一个很不错的 资源。</span></p>
+<p><span class="font4">下面来提取童话</span><span class="font5" style="font-style:italic;">Alice in Wonderland</span><span class="font4">的文本，并尝试计算它包含多少个单词。我们将使用方 法</span><span class="font2">split()</span><span class="font4">，它根据一个字符串创建一个单词列表。下面是对只包含童话名</span><span class="font2">&quot;Alice in Wonderland&quot; </span><span class="font4">的字符串调用方法</span><span class="font2">split()</span><span class="font4">的结果：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">title = &quot;Alice in Wonderland&quot;</span></p></li>
+<li>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">title.split()</span></p></li></ul>
+<p><span class="font0">['Alice', 'in', 'Wonderland']</span></p>
+<p><span class="font4">方法</span><span class="font2">split()</span><span class="font4">以空格为分隔符将字符串分拆成多个部分，并将这些部分都存储到一个列表中。 结果是一个包含字符串中所有单词的列表，虽然有些单词可能包含标点。为计算</span><span class="font5" style="font-style:italic;">Alice in Wonderland</span><span class="font4">包含多少个单词，我们将对整篇小说调用</span><span class="font2">split()</span><span class="font4">，再计算得到的列表包含多少个元 素，从而确定整篇童话大致包含多少个单词：</span></p>
+<p><span class="font0">filename = 'alice.txt'</span></p>
+<p><span class="font0">try:</span></p>
+<p><span class="font0">with open(filename) as f_obj:</span></p>
+<p><span class="font0">contents = f_obj.read()</span></p>
+<p><span class="font0">except FileNotFoundError:</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

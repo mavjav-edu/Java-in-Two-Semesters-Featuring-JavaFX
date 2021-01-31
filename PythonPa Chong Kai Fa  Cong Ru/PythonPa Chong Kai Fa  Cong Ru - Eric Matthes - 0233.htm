@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:10pt SimSun, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">216 </span><span class="font7">第</span><span class="font3">12</span><span class="font7">章武装飞船</span></p>
+<p><span class="font3">alienjnvasion.py</span></p>
+<p><span class="font1" style="font-style:italic;">--snip--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font10">#开始游戏主循环</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">while True:</span></p>
+<p><span class="font0" style="font-weight:bold;">gf.check_events()</span></p>
+<p><span class="font0" style="font-weight:bold;">gf.update_screen(ai_settings, screen, ship)</span></p>
+<p><span class="font0" style="font-weight:bold;">run_game()</span></p>
+<p><span class="font11">这两个函数让</span><span class="font12">while</span><span class="font11">循环更简单，并让后续开发更容易：在模块</span><span class="font12">gdme_functions</span><span class="font11">而不是 </span><span class="font12">run_game()</span><span class="font11">中完成大部分工作。</span></p>
+<p><span class="font11">鉴于我们一开始只想使用一个文件，因此没有立刻引入模块</span><span class="font12">game_functions</span><span class="font11">。这让你能够了 解实际的开发过程：一开始将代码编写得尽可能简单，并在项目越来港复杂时进行重构。</span></p>
+<p><span class="font11">对代码进行重构使其更容易扩展后，可以开始处理游戏的动态方面了！</span></p>
+<p><span class="font8">动手试一试</span></p>
+<p><span class="font2">12-1</span><span class="font7">蓝色天空：创建一个背景为蓝色的</span><span class="font1">Pygame</span><span class="font7">窗口。</span></p>
+<p><span class="font2">12-2</span><span class="font7">游戏角色：找一幅你喜欢的游戏角色位图图像或将一幅图像转换为位图。创 建一个类，将该角色绘制到屏幕中央，并将该图像的背景色设置为屏幕背景色，或将屏 幕背景色设置为该图像的背景色。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">12.6</span><span class="font9">驾驶飞船</span></p></li></ul>
+<p><span class="font11">下面来让玩家能够左右移动飞船。为此，我们将编写代码，在用户按左或右箭头键时作出响 应。我们将首先专注于向右移动，再使用同样的原理来控制向左移动。通过这样做，你将学会如 何控制屏幕图像的移动。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font4"><a name="bookmark1"></a>12.6.1</span><span class="font8"> 响应按键</span></h5></li></ul>
+<p><span class="font11">每当用户按键时，都将在</span><span class="font12">Pygame</span><span class="font11">中注册一个事件。事件都是通过方法</span><span class="font12">pygame.event.get</span><span class="font11">。获 取的，因此在函数</span><span class="font12">check_events()</span><span class="font11">中，我们需要指定要检查哪些类型的事件。每次按键都被注册 为一个</span><span class="font12">KEYDOWN</span><span class="font11">事件。</span></p>
+<p><span class="font11">检测到</span><span class="font12">KEYDOWN</span><span class="font11">事件时，我们需要检查按下的是否是特定的键。例如，如果按下的是右箭头 键，我们就增大飞船的</span><span class="font12">rect.centerx</span><span class="font11">值，将飞船向右移动：</span></p>
+<p><span class="font3">game_ functions.py</span></p>
+<p><span class="font0" style="font-weight:bold;">def check_events(ship):</span></p>
+<p><span class="font10">响应按键和鼠标事件一’</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

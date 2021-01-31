@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">8.5 </span><span class="font8">传递任意数量的实参 </span><span class="font9">131</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">8.5.1</span><span class="font6"> 结合使用位置实参和任意数量实参</span></p></li></ul>
+<p><span class="font8">如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最 后。</span><span class="font9">Python</span><span class="font8">先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。</span></p>
+<p><span class="font8">例如，如果前面的函数还需要一个表示比萨尺寸的实参，必须将该形参放在形参</span><span class="font4">*toppings </span><span class="font8">的前面：</span></p>
+<p><span class="font0">def make_pizza(size, *toppings):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">概述要制作的比萨</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nMaking a &quot;&nbsp;+ str(size) +</span></p>
+<p><span class="font0">&quot;-inch pizza with the following toppings:&quot;)</span></p>
+<p><span class="font0">for topping in toppings:</span></p>
+<p><span class="font0">print(&quot;- &quot;&nbsp;+ topping)</span></p>
+<p><span class="font0">make_pizza(16, 'pepperoni')</span></p>
+<p><span class="font0">make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')</span></p>
+<p><span class="font8">基于上述函数定义，</span><span class="font9">Python</span><span class="font8">将收到的第一个值存储在形参</span><span class="font4">size</span><span class="font8">中，并将其他的所有值都存储 在元组</span><span class="font4">toppings</span><span class="font8">中。在函数调用中，首先指定表示比萨尺寸的实参，然后根据需要指定任意数量 的配料。</span></p>
+<p><span class="font8">现在，每个比萨都有了尺寸和一系列配料，这些信息按正确的顺序打印出来了</span><span class="font9">——</span><span class="font8">首先是尺 寸，然后是配料：</span></p>
+<p><span class="font0">Making a 16-inch pizza with the following toppings: - pepperoni</span></p>
+<p><span class="font0">Making a 12-inch pizza with the following toppings: - mushrooms</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- green peppers</span></p></li>
+<li>
+<p><span class="font0">- extra cheese</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font3">8.5.2</span><span class="font6"> 使用任意数量的关键字实参</span></p></li></ul>
+<p><span class="font8">有时候，需要接受任意数量的实参，但预先不知道传递给函数的会是什么样的信息。在这种 情况下，可将函数编写成能够接受任意数量的键</span><span class="font1">—</span><span class="font8">值对</span><span class="font9">——</span><span class="font8">调用语句提供了多少就接受多少。一 个这样的示例是创建用户简介：你知道你将收到有关用户的信息，但不确定会是什么样的信息。 在下面的示例中，函数</span><span class="font4">build_profile()</span><span class="font8">接受名和姓，同时还接受任意数量的关键字实参：</span></p>
+<p><span class="font2">user_profile.py</span></p>
+<p><span class="font0">def build_profile(first, last, **user_info):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">创建一个字典，其中包含我们知道的有关用户的一切</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">profile = {}</span></p>
+<p><span class="font5">❶ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">profile['first_name'] = first</span></p>
+<p><span class="font0">profile['last_name'] = last</span></p>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">for key, value in user_info.items():</span></p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">19.1 </span><span class="font8">让用户能够输入数据 </span><span class="font9">383</span></p>
+<p><span class="font8">在</span><span class="font9">Django</span><span class="font8">中，创建表单的最简单方式是使用</span><span class="font9">ModelForm</span><span class="font8">,它根据我们在第</span><span class="font9">18</span><span class="font8">章定义的模型中 的信息自动创建表单。创建一个名为</span><span class="font9">forms.py</span><span class="font8">的文件，将其存储到</span><span class="font9">models.py</span><span class="font8">所在的目录中，并在 其中编写你的第一个表单：</span></p>
+<p><span class="font2">forms.py</span></p>
+<p><span class="font1">from django import forms</span></p>
+<p><span class="font1">from .models import Topic</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">class TopicForm(forms.ModelForm): class Meta:</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">model = Topic</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">fields = ['text']</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">labels = {'text': ''}</span></p>
+<p><span class="font8">我们首先导入了模块</span><span class="font4">forms</span><span class="font8">以及要使用的模型工邛北。在</span><span class="font6">❶</span><span class="font8">处，我们定义了一个名为</span><span class="font4">TopicForm </span><span class="font8">的类，它继承了</span><span class="font4">forms.ModelForm</span><span class="font8">。</span></p>
+<p><span class="font8">最简单的</span><span class="font4">ModelForm</span><span class="font8">版本只包含一个内嵌的</span><span class="font4">Meta</span><span class="font8">类，它告诉</span><span class="font9">Django</span><span class="font8">根据哪个模型创建表单，以 及在表单中包含哪些字段。在</span><span class="font6">❷</span><span class="font8">处，我们根据模型工印立创建一个表单，该表单只包含字段</span><span class="font4">text </span><span class="font8">(见</span><span class="font6">❸</span><span class="font8">)。</span><span class="font6">❹</span><span class="font8">处的代码让</span><span class="font9">Djang</span><span class="font8">。不要为字段</span><span class="font4">text</span><span class="font8">生成标签。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2. URL </span><span class="font6">模式 </span><span class="font4">new_topic</span></p></li></ul>
+<p><span class="font8">这个新网页的</span><span class="font9">URL</span><span class="font8">应简短而具有描述性，因此当用户要添加新主题时，我们将切换到 </span><span class="font9">http://localhost:8000/new_topic/</span><span class="font8">。下面是网页</span><span class="font4">new_topic</span><span class="font8">的</span><span class="font9">URL</span><span class="font8">模式，我们将其添加至肛</span><span class="font9">earning_logs/ urls.py </span><span class="font8">中：</span></p>
+<p><span class="font2">urls.py</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<p><span class="font1">urlpatterns = [</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font7">用于添加新主题的网页</span></p></li></ul>
+<p><span class="font1">url(r'<sup>A</sup>new_topic/$', views.new_topic, name='new_topic'),</span></p>
+<p><span class="font1">] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font5">一 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一</span></p>
+<p><span class="font8">这个</span><span class="font9">URL</span><span class="font8">模式将请求交给视图函数</span><span class="font4">new_topic()</span><span class="font8">,接下来我们将编写这个函数。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3.</span><span class="font6">视图函数 </span><span class="font4">new_topic()</span></p></li></ul>
+<p><span class="font8">函数</span><span class="font4">new_topicd</span><span class="font8">需要处理两种情形：刚进入。已凶丁邛立网页(在这种情况下，它应显示一个 空表单)；对提交的表单数据进行处理，并将用户重定向到网页</span><span class="font4">topics</span><span class="font8">：</span></p>
+<p><span class="font2">views.py</span></p>
+<p><span class="font1">from django.shortcuts import render</span></p>
+<p><span class="font1">from django.http import HttpResponseRedirect</span></p>
+<p><span class="font1">from django.core.urlresolvers import reverse</span></p>
+<p><span class="font3" style="font-weight:bold;">19</span></p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:11pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:10pt Calibri, sans-serif; }
+ .font6 { font:10pt Segoe UI, sans-serif; }
+ .font7 { font:8pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">222</span></p>
+<p><span class="font10">第</span><span class="font11">12</span><span class="font10">章 武装飞船</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>ship.py</span></h6>
+<p><span class="font0">def update(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">根据移动标志调整飞船的位置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9">更新飞船的</span><span class="font0">center</span><span class="font9">值，而不是</span><span class="font0">rect</span></p></li></ul>
+<p><span class="font1">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">if self.moving_right and self.rect.right &lt;&nbsp;self.screen_rect.right:</span></p>
+<p><span class="font0">self.center += self.ai_settings.ship_speed_factor</span></p>
+<p><span class="font1">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">if self.moving_left and self.rect.left &gt;&nbsp;0:</span></p>
+<p><span class="font0">self.center -= self.ai_settings.ship_speed_factor</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9">根据</span><span class="font0">501</span><span class="font9">千工</span><span class="font0">0</span><span class="font7">门</span><span class="font0">t01</span><span class="font9">更新</span><span class="font0">10</span><span class="font9">日对象</span></p></li></ul>
+<p><span class="font0">self.rect.centerx = self.center</span></p>
+<p><span class="font10">上述代码在修改</span><span class="font6">self.center</span><span class="font10">的值之前检查飞船的位置。</span><span class="font6">self.rect.right</span><span class="font10">返回飞船外接矩形 的右边缘的</span><span class="font11" style="font-style:italic;">x</span><span class="font10">坐标，如果这个值小于</span><span class="font6">self.screen_rect.righ</span><span class="font11">t</span><span class="font10">的值，就说明飞船未触及屏幕右边缘 (见</span><span class="font5">O</span><span class="font10">)。左边缘的情况与此类似：如果</span><span class="font6">rect</span><span class="font10">的左边缘的</span><span class="font11" style="font-style:italic;">x</span><span class="font10">坐标大于零，就说明飞船未触及屏幕左 边缘(见</span><span class="font5">❷</span><span class="font10">)。这确保仅当飞船在屏幕内时，才调整</span><span class="font6">self.center</span><span class="font10">的值。</span></p>
+<p><span class="font10">如果此时运行</span><span class="font11">alien_invasion.py</span><span class="font10">，飞船将在触及屏幕左边缘或右边缘后停止移动。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">12.6.6 </span><span class="font8">重构 </span><span class="font3">check_events()</span></p></li></ul>
+<p><span class="font10">随着游戏开发的进行，函数</span><span class="font6">check_events()</span><span class="font10">将越来越长，我们将其部分代码放在两个函数中: 一个处理</span><span class="font6">KEYDOWN</span><span class="font10">事件，另一个处理</span><span class="font6">KEYUP</span><span class="font10">事件：</span></p>
+<h6><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>game_functions.py</span></h6>
+<p><span class="font0">def check_keydown_events(event, ship):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">响应按键</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if event.key == pygame.K_RIGHT: ship.moving_right = True</span></p>
+<p><span class="font0">elif event.key == pygame.K_LEFT: ship.moving_left = True</span></p>
+<p><span class="font0">def check_keyup_events(event, ship):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">响应松开</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if event.key == pygame.K_RIGHT: ship.moving_right = False</span></p>
+<p><span class="font0">elif event.key == pygame.K_LEFT: ship.moving_left = False</span></p>
+<div>
+<p><span class="font0">def</span></p>
+</div><br clear="all">
+<p><span class="font0">check_events(ship):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">响应按键和鼠标事件</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">for event in pygame.event.get():</span></p>
+<p><span class="font0">if event.type == pygame.QUIT: sys.exit()</span></p>
+<p><span class="font0">elif event.type == pygame.KEYDOWN: check_keydown_events(event, ship)</span></p>
+<p><span class="font0">elif event.type == pygame.KEYUP: check_keyup_events(event, ship)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

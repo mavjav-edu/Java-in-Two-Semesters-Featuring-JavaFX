@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<div>
+<p><span class="font9">15.4</span><span class="font7">使用</span><span class="font9">Pygal</span><span class="font7">模拟掷骰子</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font9">307</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font7">要给添加的值指定的标签，还有一个列表，其中包含将出现在图表中的值）。最后，我们将这个 图表渲染为一个</span><span class="font9">SVG</span><span class="font7">文件，这种文件的扩展名必须为</span><span class="font9">.svg</span><span class="font7">。</span></p>
+<p><span class="font7">要查看生成的直方图，最简单的方式是使用</span><span class="font9">Web</span><span class="font7">浏览器。为此，在任何</span><span class="font9">Web</span><span class="font7">浏览器中新建一 个标签页，再在其中打开文件</span><span class="font9">die_visual.svg </span><span class="font7">（它位于</span><span class="font9">die_visual.py</span><span class="font7">所在的文件夹中）。你将看到一 个类似于图</span><span class="font9">15-11</span><span class="font7">所示的图表（为方便印刷，我稍微修改了这个图表；默认情况下，</span><span class="font9">Pygal</span><span class="font7">生成的 图表的背景比你在图</span><span class="font9">15-11</span><span class="font7">中看到的要暗）。</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font4">图</span><span class="font8">15-11</span><span class="font4">使用</span><span class="font8">Pygal</span><span class="font4">创建的简单条形图</span></p>
+<p><span class="font7">注意，</span><span class="font9">Pygal</span><span class="font7">让这个图表具有交互性：如果你将鼠标指向该图表中的任何条形，将看到与之 相关联的数据。在同一个图表中绘制多个数据集时，这项功能显得特别有用。</span></p>
+</div><br clear="all">
+<div>
+<ul style="list-style:none;"><li>
+<p><span class="font2">15.4.7</span><span class="font5"> 同时掷两个骰子</span></p></li></ul>
+</div><br clear="all">
+<div>
+<p><span class="font7">同时掷两个骰子时，得到的点数更多，结果分布情况也不同。下面来修改前面的代码，创建 两个</span><span class="font9">D6</span><span class="font7">骰子，以模拟同时掷两个骰子的情况。每次掷两个骰子时，我们都将两个骰子的点数相 加，并将结果存储在</span><span class="font3">results</span><span class="font7">中。请复制</span><span class="font9">die_visual.py</span><span class="font7">并将其保存为</span><span class="font9">dice_visual.py</span><span class="font7">，再做如下修改:</span></p>
+<p><span class="font1">dice_visual.py</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font2" style="font-weight:bold;">15</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font0">import pygal</span></p>
+<p><span class="font0">from die import Die</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">#</span><span class="font6">创建两个</span><span class="font4">口</span><span class="font0">6</span><span class="font6">骰子</span></p></li></ul>
+<p><span class="font0">die_1 = Die()</span></p>
+<p><span class="font0">die_2 = Die()</span></p>
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0324_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200324-1.jpg" alt="" style="width:331pt;height:210pt;">
+</div><br clear="all">
+</body>
+</html>

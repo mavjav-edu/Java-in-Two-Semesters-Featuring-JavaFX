@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:11pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:10pt Consolas, monospace; }
+ .font6 { font:10pt Segoe UI, sans-serif; }
+ .font7 { font:7pt SimHei, sans-serif; }
+ .font8 { font:10pt SimHei, sans-serif; }
+ .font9 { font:12pt SimHei, sans-serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">366</span></p>
+<p><span class="font10">第</span><span class="font11">18</span><span class="font10">章</span><span class="font11">Django</span><span class="font10">入门</span></p>
+<p><span class="font10">在</span><span class="font8">❹</span><span class="font10">处，我们在</span><span class="font6">Entry</span><span class="font10">类中嵌套了</span><span class="font6">Meta</span><span class="font10">类。</span><span class="font6">Meta</span><span class="font10">存储用于管理模型的额外信息，在这里，它让 我们能够设置一个特殊属性，让</span><span class="font11">Django</span><span class="font10">在需要时使用</span><span class="font6">Entries</span><span class="font10">来表示多个条目。如果没有这个类， </span><span class="font11">Django</span><span class="font10">将使用</span><span class="font11">Entrys</span><span class="font10">来表示多个条目。最后，方法</span><span class="font6">_str__()</span><span class="font10">告诉</span><span class="font11">Django</span><span class="font10">,呈现条目时应显示哪些 信息。由于条目包含的文本可能很长，我们让</span><span class="font11">Django</span><span class="font10">只显示</span><span class="font6">text</span><span class="font10">的前</span><span class="font11">50</span><span class="font10">个字符(见</span><span class="font8">❺</span><span class="font10">)。我们还 添加了一个省略号,指出显示的并非整个条目。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">18.2.5</span><span class="font9"> 迁移模型</span><span class="font3">Entry</span></p></li></ul>
+<p><span class="font10">由于我们添加了一个新模型,因此需要再次迁移数据库。你将慢慢地对这个过程了如指掌： 修改</span><span class="font11">models.py</span><span class="font10">，执行命令</span><span class="font6">python manage.py makemigrations </span><span class="font5" style="font-style:italic;">appname</span><span class="font10">，再执行命令</span><span class="font6">python manage.py migrate</span><span class="font10">。</span></p>
+<p><span class="font10">下面来迁移数据库并查看输出：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py makemigrations learning_logs</span></p>
+<p><span class="font0">Migrations for 'learning_logs':</span></p>
+<p><span class="font7">❶ </span><span class="font0">0OO2_entry.py:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- Create model Entry</span></p></li></ul>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py migrate</span></p>
+<p><span class="font0">Operations to perform:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-style:italic;">--snip--</span></p></li></ul>
+<p><span class="font7">❷ </span><span class="font0">Applying learning_logs.0002_entry… OK</span></p>
+<p><span class="font10">生成了一个新的迁移文件一</span><span class="font11">0002_entry.py</span><span class="font10">，它告诉</span><span class="font11">Django</span><span class="font10">如何修改数据库，使其能够存储 与模型</span><span class="font6">Entry</span><span class="font10">相关的信息(见</span><span class="font8">❶</span><span class="font10">)。执行命令</span><span class="font6">migrate</span><span class="font10">，我们发现</span><span class="font11">Django</span><span class="font10">应用了这种迁移且一切顺利 (见</span><span class="font8">❷</span><span class="font10">)。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">18.2.6</span><span class="font9"> 向管理网站注册</span><span class="font3">Entry</span></p></li></ul>
+<p><span class="font10">我们还需要注册模型</span><span class="font6">Entry</span><span class="font10">。为此，需要将</span><span class="font11">admin.py</span><span class="font10">修改成类似于下面这样：</span></p>
+<p><span class="font2">admin.py</span></p>
+<p><span class="font0">from django.contrib import admin</span></p>
+<p><span class="font0">from learning_logs.models import Topic, Entry</span></p>
+<p><span class="font0">admin.site.register(Topic)</span></p>
+<p><span class="font0">admin.site.register(Entry)</span></p>
+<p><span class="font10">返回到</span><span class="font11">http://localhost/admin/</span><span class="font10">，你将看到</span><span class="font11">learning_logs</span><span class="font10">下列出了 </span><span class="font11">Entries </span><span class="font1"><sub>o</sub> </span><span class="font10">单击 </span><span class="font11">Entries </span><span class="font10">的 </span><span class="font11">Add</span><span class="font10">链接， 或者单击</span><span class="font11">Entries</span><span class="font10">再选择</span><span class="font11">Add entry</span><span class="font10">。你将看到一个下拉列表，让你能够选择要为哪个主题创建条目， 还有一个用于输入条目的文本框。从下拉列表中选择</span><span class="font11">Chess</span><span class="font10">，并添加一个条目。下面是我添加的 第一个条目。</span></p>
+</body>
+</html>

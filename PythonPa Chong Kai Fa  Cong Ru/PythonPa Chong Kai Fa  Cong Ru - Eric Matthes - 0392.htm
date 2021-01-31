@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">18.4 </span><span class="font10">创建其他网页</span></p>
+<p><span class="font11">375</span></p>
+<p><span class="font10">中，这种结构使得网站改进起来容易而且快捷得多。</span></p>
+<p><span class="font6">注意 </span><span class="font9">在大型项目中，通常有一个用于整个网站的父模板——</span><span class="font11">base.html</span><span class="font9">,且网站的每个主要部 分都有一个父模板。每个部分的父模板都继承</span><span class="font11">base.html</span><span class="font9">,而网站的每个网页都继承相应 部分的父模板。这让你能够轻松地修改整个网站的外观、网站任何一部分的外观以及任 何一个网页的外观。这种配置提供了一种效率极高的工作方式,让你乐意不断地去改进 网站。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">18.4.2</span><span class="font7"> 显示所有主题的页面</span></p></li></ul>
+<p><span class="font10">有了高效的网页创建方法，就能专注于另外两个网页了：显示全部主题的网页以及显示特定 主题中条目的网页。所有主题页面显示用户创建的所有主题，它是第一个需要使用数据的网页。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">1. URL</span><span class="font6">模式</span></p></li></ul>
+<p><span class="font10">首先，我们来定义显示所有主题的页面的</span><span class="font11">URL</span><span class="font10">。通常，使用一个简单的</span><span class="font11">URL</span><span class="font10">片段来指出网页 显示的信息；我们将使用单词</span><span class="font11">topics</span><span class="font10">，因此</span><span class="font11">URL </span><a href="http://localhost:8000/topics/%e5%b0%86%e8%bf%94%e5%9b%9e%e6%98%be%e7%a4%ba%e6%89%80%e6%9c%89%e4%b8%bb%e9%a2%98%e7%9a%84"><span class="font11">http://localhost:8000/topics/</span><span class="font10">将返回显示所有主题的</span></a><span class="font10"> 页面。下面演示了该如何修改</span><span class="font11">learning_logs/urls.py </span><span class="font10">：</span></p>
+<p><span class="font2">urls.py</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font8">为 </span><span class="font1">learning_logs </span><span class="font8">定义 </span><span class="font1">URL </span><span class="font8">模式</span><span class="font1">&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1" style="font-style:italic;">- -snip--</span></p></li></ul>
+<p><span class="font1">urlpatterns = [</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 主页</span></p></li></ul>
+<p><span class="font1">url(r'<sup>A</sup>$', views.index, name='index'),</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 显示所有的主题</span></p></li></ul>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">url(r'<sup>A</sup>topics/$', views.topics, name='topics'), ]</span></p>
+<p><span class="font10">我们只是在用于主页</span><span class="font11">URL</span><span class="font10">的正则表达式中添加了</span><span class="font4">topics/ </span><span class="font10">(见</span><span class="font6">❶</span><span class="font10">)。</span><span class="font11">Django</span><span class="font10">检查请求的</span><span class="font11">URL</span><span class="font10">时， 这个模式与这样的</span><span class="font11">URL</span><span class="font10">匹配：基础</span><span class="font11">URL</span><span class="font10">后面跟着</span><span class="font4">topics</span><span class="font10">。可以在末尾包含斜杠，也可以省略它， 但单词</span><span class="font4">topics</span><span class="font10">后面不能有任何东西，否则就与该模式不匹配。其</span><span class="font11">URL</span><span class="font10">与该模式匹配的请求都将交 给</span><span class="font11">views.py</span><span class="font10">中的函数</span><span class="font4">topics()</span><span class="font10">进行处理。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2.</span><span class="font6"> 视图</span></p></li></ul>
+<p><span class="font10">函数</span><span class="font4">topics()</span><span class="font10">需要从数据库中获取一些数据，并将其发送给模板。我们需要在</span><span class="font11">views.py</span><span class="font10">中添 加的代码如下：</span></p>
+<p><span class="font2">views.py</span></p>
+<p><span class="font1">from django.shortcuts import render</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">from .models import Topic</span></p>
+<p><span class="font3" style="font-weight:bold;">18</span></p>
+</body>
+</html>

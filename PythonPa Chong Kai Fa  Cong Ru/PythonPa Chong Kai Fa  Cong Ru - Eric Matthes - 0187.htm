@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">170 </span><span class="font8">第</span><span class="font9">10</span><span class="font8">章 文件和异常</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>10.2.1</span><span class="font6"> 写入空文件</span></h5></li></ul>
+<p><span class="font8">要将文本写入文件，你在调用</span><span class="font3">open()</span><span class="font8">时需要提供另一个实参，告诉</span><span class="font9">Python</span><span class="font8">你要写入打开的文 件。为明白其中的工作原理，我们来将一条简单的消息存储到文件中，而不是将其打印到屏幕上：</span></p>
+<p><span class="font1">write_message.py</span></p>
+<p><span class="font0">filename = 'programming.txt'</span></p>
+<p><span class="font4">❶ </span><span class="font0">with open(filename, 'w') as file_object:</span></p>
+<p><span class="font4">❷ </span><span class="font0">file_object.write(&quot;I love programming.&quot;)</span></p>
+<p><span class="font8">在这个示例中，调用</span><span class="font3">open()</span><span class="font8">时提供了两个实参(见</span><span class="font10" style="font-weight:bold;">O</span><span class="font8">)。第一个实参也是要打开的文件的名称; 第二个实参(</span><span class="font3">'w'</span><span class="font8">)告诉</span><span class="font9">Python</span><span class="font8">，我们要以</span><span class="font7">写入模式</span><span class="font8">打开这个文件。打开文件时，可指定</span><span class="font7">读取模 式</span><span class="font8">(</span><span class="font3">'r'</span><span class="font8">)、</span><span class="font7">写入模式</span><span class="font8">(</span><span class="font3">‘w'</span><span class="font8">)、</span><span class="font7">附加模式</span><span class="font8">(</span><span class="font3">'a'</span><span class="font8">)或让你能够读取和写入文件的模式(</span><span class="font3">‘r+'</span><span class="font8">)。如果 你省略了模式实参，</span><span class="font9">Python</span><span class="font8">将以默认的只读模式打开文件。</span></p>
+<p><span class="font8">如果你要写入的文件不存在，函数</span><span class="font3">open()</span><span class="font8">将自动创建它。然而，以写入(</span><span class="font3">'w'</span><span class="font8">)模式打开文 件时千万要小心，因为如果指定的文件已经存在，</span><span class="font9">Python</span><span class="font8">将在返回文件对象前清空该文件。</span></p>
+<p><span class="font8">在</span><span class="font5">❷</span><span class="font8">处，我们使用文件对象的方法</span><span class="font3">write()</span><span class="font8">将一个字符串写入文件。这个程序没有终端输出， 但如果你打开文件</span><span class="font9">programming.txt</span><span class="font8">，将看到其中包含如下一行内容：</span></p>
+<p><span class="font1">programming.txt</span></p>
+<p><span class="font0">I love programming.</span></p>
+<p><span class="font8">相比于你的计算机中的其他文件，这个文件没有什么不同。你可以打开它、在其中输入新文 本、复制其内容、将内容粘贴到其中等。</span></p>
+<p><span class="font8">注意</span><span class="font9">Python</span><span class="font7">只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数 </span><span class="font3">str()</span><span class="font7">将其转换为字符串格式。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>10.2.2</span><span class="font6"> 写入多行</span></h5></li></ul>
+<p><span class="font8">函数</span><span class="font3">write()</span><span class="font8">不会在你写入的文本末尾添加换行符，因此如果你写入多行时没有指定换行符， 文件看起来可能不是你希望的那样：</span></p>
+<p><span class="font0">filename = 'programming.txt'</span></p>
+<p><span class="font0">with open(filename, 'w') as file_object:</span></p>
+<p><span class="font0">file_object.write(&quot;I love programming.&quot;)</span></p>
+<p><span class="font0">file_object.write(&quot;I love creating new games.&quot;)</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

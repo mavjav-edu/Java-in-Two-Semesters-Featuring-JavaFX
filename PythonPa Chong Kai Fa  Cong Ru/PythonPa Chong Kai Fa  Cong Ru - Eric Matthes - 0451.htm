@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:11pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Consolas, monospace; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">434</span></p>
+<p><span class="font6">第</span><span class="font7">20</span><span class="font6">章 设置应用程序的样式并对其进行部署</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>20.2.18</span><span class="font5"> 继续开发</span></h5></li></ul>
+<p><span class="font6">将项目“学习笔记”推送到服务器后，你可能想进一步开发它或开发要部署的其他项目。更 新项目的过程几乎完全相同。</span></p>
+<p><span class="font6">首先，你对本地项目做必要的修改。如果在修改过程中创建了新文件，使用命令</span><span class="font4">git add </span><span class="font7">. </span><span class="font6">(千万别忘记这个命令末尾的句点)将它们加入到</span><span class="font7">Git</span><span class="font6">仓库中。如果有修改要求迁移数据库，也需 要执行这个命令，因为每个迁移都将生成新的迁移文件。</span></p>
+<p><span class="font6">然后，使用命令</span><span class="font4">git commit -am </span><span class="font3" style="font-style:italic;">&quot;commit message</span><span class="font4">&quot;</span><span class="font6">将修改提交到仓库，再使用命令</span><span class="font4">git push heroku master</span><span class="font6">将修改推送到</span><span class="font7">Heroku</span><span class="font6">。如果你在本地迁移了数据库，也需要迁移在线数据库。为 此，你可以使用一次性命令 </span><span class="font4">heroku run python manage.py migrate</span><span class="font6">，也可使用</span><span class="font4">heroku run bash </span><span class="font6">打 开一个远程终端会话，并在其中执行命令</span><span class="font4">python manage.py migrate</span><span class="font6">。然后访问在线项目，确认 你期望看到的修改已生效。</span></p>
+<p><span class="font6">在这个过程中很容易犯错，因此看到错误时不要大惊小怪。如果代码不能正确地工作，请重 新审视所做的工作，尝试找出其中的错误。如果找不出错误，或者不知道如何撤销错误，请参阅 附录</span><span class="font7">C</span><span class="font6">中有关如何寻求帮助的建议。不要羞于去寻求帮助：每个学习开发项目的人都可能遇到过 你面临的问题，因此总有人乐意伸出援手。通过解决遇到的每个问题，可让你的技能稳步提高， 最终能够开发可靠而有意义的项目，还能解决别人遇到的问题。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">20.2.19</span><span class="font5"> 设置 </span><span class="font1">SECRET_KEY</span></p></li></ul>
+<p><span class="font7">Django</span><span class="font6">根据</span><span class="font7">settings.py</span><span class="font6">中设置</span><span class="font4">SECRET_KEY</span><span class="font6">的值来实现大量的安全协议。在这个项目中，我们提 交到仓库的设置文件包含设置</span><span class="font4">SECRET_KEY</span><span class="font6">。对于一个练习项目而言，这足够了，但对于生产网站， 应更细致地处理设置</span><span class="font4">SECRET_KEY</span><span class="font6">。如果你创建的项目的用途很重要，务必研究如何更安全地处理 设置 </span><span class="font4">SECRET_KEY</span><span class="font6">。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>20.2.20</span><span class="font5"> 将项目从</span><span class="font2">Heroku</span><span class="font5">删除</span></h5></li></ul>
+<p><span class="font6">一个不错的练习是，使用同一个项目或一系列小项目执行部署过程多次，直到对部署过程了 如指掌。然而，你需要知道如何删除部署的项目。</span><span class="font7">Heroku</span><span class="font6">可能还限制了你可免费托管的项目数， 另外，你也不希望让自己的账户中塞满大量的练习项目。</span></p>
+<p><span class="font6">在</span><span class="font7">Heroku</span><span class="font6">网站(</span><a href="https://heroku.com/)%e7%99%bb%e5%bd%95%e5%90%8e%ef%bc%8c%e4%bd%a0%e5%b0%86%e8%a2%ab%e9%87%8d%e5%ae%9a%e5%90%91%e5%88%b0%e4%b8%80%e4%b8%aa%e9%a1%b5%e9%9d%a2%ef%bc%8c%e5%85%b6%e4%b8%ad%e5%88%97%e5%87%ba%e4%ba%86%e4%bd%a0%e6%89%98%e7%ae%a1"><span class="font7">https://heroku.com/</span><span class="font6">)登录后，你将被重定向到一个页面，其中列出了你托管</span></a><span class="font6"> 的所有项目。单击要删除的项目，你将看到另一个页面，其中显示了有关这个项目的信息。单击 链接</span><span class="font7">Settings</span><span class="font6">，再向下滚动，找到用于删除项目的链接并单击它。这种操作是不可撤销的，因此 </span><span class="font7">Heroku</span><span class="font6">让你手工输入要删除的项目的名称，以确认你确实要删除它。</span></p>
+<p><span class="font6">如果你喜欢在终端中工作，也可使用命令</span><span class="font4">destroy</span><span class="font6">来删除项目：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">heroku apps:destroy --app </span><span class="font0" style="font-style:italic;">appname</span></p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">12.3 </span><span class="font6">开始游戏项目</span></p>
+<p><span class="font7">207</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>12.2.3</span><span class="font4"> 在</span><span class="font1">OS X</span><span class="font4">系统中安装</span><span class="font1">Pygame</span></h5></li></ul>
+<p><span class="font6">要安装</span><span class="font7">Pygame</span><span class="font6">依赖的有些包，需要</span><span class="font7">Homebrew</span><span class="font6">。如果你没有安装</span><span class="font7">Homebrew</span><span class="font6">,请参阅附录</span><span class="font7">A</span><span class="font6">的 说明。</span></p>
+<p><span class="font6">为安装</span><span class="font7">Pygame</span><span class="font6">依赖的库，请执行下面的命令：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> brew install hg sdl sdl_image sdl_ttf</span></p></li></ul>
+<p><span class="font6">这将安装运行游戏《外星人入侵》所需的库。每安装一个库后，输出都会向上滚动。 如果你还想启用较高级的功能，如在游戏中包含声音，可安装下面两个额外的库：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> brew install sdl_mixer portmidi</span></p></li></ul>
+<p><span class="font6">使用下面的命令来安装</span><span class="font7">Pygame </span><span class="font6">（如果你运行的是</span><span class="font7">Python 2.7</span><span class="font6">,请将</span><span class="font3">pip3</span><span class="font6">替换为</span><span class="font3">pip</span><span class="font6">）：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> pip3 install --user hg+</span><a href="http://bitbucket.org/pygame/pygame"><span class="font0" style="font-weight:bold;">http://bitbucket.org/pygame/pygame</span></a></p></li></ul>
+<p><span class="font6">启动一个</span><span class="font7">Python</span><span class="font6">终端会话，并导入</span><span class="font7">Pygame</span><span class="font6">以检查安装是否成功（如果你运行的是</span><span class="font7">Python 2.7</span><span class="font6">, 请将</span><span class="font3">python3</span><span class="font6">替换为</span><span class="font3">python</span><span class="font6">）：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> python3</span></p></li>
+<li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">import pygame</span></p></li></ul>
+<p><span class="font0">&gt;&gt;&gt;</span></p>
+<p><span class="font6">如果导入成功,请跳到</span><span class="font7">12.3</span><span class="font6">节。</span></p>
+<div>
+<p><span class="font1" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>12.2.4</span><span class="font4"> 在 </span><span class="font1">Windows </span><span class="font4">系统中安装 </span><span class="font1">Pygame</span></h5></li></ul>
+<p><span class="font7">Pygame</span><span class="font6">项目托管在代码分享网站</span><span class="font7">Bitbucket</span><span class="font6">中。要在</span><span class="font7">Windows</span><span class="font6">系统中安装</span><span class="font7">Pygame</span><span class="font6">，请访问 </span><span class="font7">https://bitbucket.org/pygame/pygame/downloads/</span><span class="font6">，查找与你运行的</span><span class="font7">Python</span><span class="font6">版本匹配的</span><span class="font7">Windows</span><span class="font6">安装 程序。如果在</span><span class="font7">Bitbucket</span><span class="font6">上找不到合适的安装程序，请去</span><a href="http://www.fd.uci.edu/~gohlke/pythonlibs/"><span class="font7">http://www.fd.uci.edu/~gohlke/pythonlibs/</span></a><span class="font7"> #pygame </span><span class="font6">看看。</span></p>
+<p><span class="font6">下载合适的文件后，如果它是</span><span class="font7">.exe</span><span class="font6">文件，就运行它。</span></p>
+<p><span class="font6">如果该文件的扩展名为</span><span class="font7">.whl</span><span class="font6">，就将它复制到你的项目文件夹中。再打开一个命令窗口，切换 到该文件所在的文件夹，并使用</span><span class="font7">pip</span><span class="font6">来运行它：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">&gt; </span><span class="font0" style="font-weight:bold;">python -m pip install --user pygame-1.9.2a0-cp35-none-win32.whl</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font2"><a name="bookmark5"></a>12.3</span><span class="font5"> 开始游戏项目</span></h5></li></ul>
+<p><span class="font6">现在来开始开发游戏《外星人入侵》。首先创建一个空的</span><span class="font7">Pygame</span><span class="font6">窗口，供后面用来绘制游戏 元素,如飞船和外星人。我们还将让这个游戏响应用户输入、设置背景色以及加载飞船图像。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

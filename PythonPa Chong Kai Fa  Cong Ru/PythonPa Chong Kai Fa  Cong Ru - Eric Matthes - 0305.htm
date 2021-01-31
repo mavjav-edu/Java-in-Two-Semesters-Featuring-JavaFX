@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:9pt Times New Roman, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">288</span></p>
+<p><span class="font9">第</span><span class="font11">15</span><span class="font9">章 生成数据</span></p>
+<p><span class="font0">plt.plot(squares) plt.show()</span></p>
+<p><span class="font9">我们首先导入了模块</span><span class="font3">pyplot</span><span class="font9">,并给它指定了别名</span><span class="font3">pit</span><span class="font9">,以免反复输入</span><span class="font3">pyplot</span><span class="font9">。在线示例大都这 样做，因此这里也这样做。模块</span><span class="font3">pyplot</span><span class="font9">包含很多用于生成图表的函数。</span></p>
+<p><span class="font9">我们创建了一个列表，在其中存储了前述平方数，再将这个列表传递给函数</span><span class="font3">plot()</span><span class="font9">，这个函 数尝试根据这些数字绘制出有意义的图形。</span><span class="font3">plt.show</span><span class="font9">。打开</span><span class="font11">matplotlib</span><span class="font9">查看器，并显示绘制的图形， 如图</span><span class="font11">15-1</span><span class="font9">所示。查看器让你能够缩放和导航图形,另外,单击磁盘图标可将图形保存起来。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0305_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200305-1.jpg" alt="" style="width:312pt;height:170pt;">
+<p><span class="font5">图</span><span class="font10">15-1</span><span class="font5">使用</span><span class="font10">matplotlib</span><span class="font5">可制作的最简单的图表</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">15.2.1</span><span class="font6"> 修改标签文字和线条粗细</span></p></li></ul>
+<p><span class="font9">图</span><span class="font11">15-1</span><span class="font9">所示的图形表明数字是越来越大的，但标签文字太小，线条太细。所幸</span><span class="font11">matplotlib</span><span class="font9">让你 能够调整可视化的各个方面。</span></p>
+<p><span class="font9">下面通过一些定制来改善这个图形的可读性,如下所示：</span></p>
+<p><span class="font1">mpl_squares.py</span></p>
+<p><span class="font0">import matplotlib.pyplot as plt</span></p>
+<p><span class="font0">squares = [1, 4, 9, 16, 25]</span></p>
+<p><span class="font4">❶ </span><span class="font0">plt.plot(squares, linewidth=5</span><span class="font8">)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 设置图表标题，并给坐标轴加上标签</span></p></li></ul>
+<p><span class="font4">❷ </span><span class="font0">plt.title(&quot;Square Numbers&quot;, fontsize=24</span><span class="font8">)</span></p>
+<p><span class="font4">❸ </span><span class="font0">plt.xlabel(&quot;Value&quot;, fontsize=14</span><span class="font8">)</span></p>
+<p><span class="font0">plt.ylabel(&quot;Square of Value&quot;, fontsize=14)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 设置刻度标记的大小</span></p></li></ul>
+<p><span class="font4">❹ </span><span class="font0">plt.tick_params(axis='both', labelsize=14</span><span class="font8">)</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

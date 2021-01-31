@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:9pt Times New Roman, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font12">19.2 </span><span class="font10">创建用户账户</span></p>
+<p><span class="font12">397</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">from django.contrib.auth import logout</span></p>
+<p><span class="font1">def logout_view(request):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font9">注销用户</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">logout(request)</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">return HttpResponseRedirect(reverse('learning_logs:index'))</span></p>
+<p><span class="font10">我们从</span><span class="font12">django.contrib.auth</span><span class="font10">中导入了函数</span><span class="font4">logout（）</span><span class="font10">（见</span><span class="font7">❶）。</span><span class="font10">在</span><span class="font7">❷</span><span class="font10">处，我们调用了函数</span><span class="font4">logout</span><span class="font10">。, 它要求将</span><span class="font4">request</span><span class="font10">对象作为实参。然后，我们重定向到主页（见</span><span class="font7">❸</span><span class="font10">）。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3 . </span><span class="font7">链接到注销视图</span></p></li></ul>
+<p><span class="font10">现在我们需要添加一个注销链接。我们在</span><span class="font12">base html</span><span class="font10">中添加这种链接，让每个页面都包含它； 我们将它放在标签</span><span class="font4">｛</span><span class="font7">% </span><span class="font4">if user.is_authenticated </span><span class="font7">%</span><span class="font4">｝</span><span class="font10">中，使得仅当用户登录后才能看到它：</span></p>
+<p><span class="font2">base.html</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">—</span></p></li></ul>
+<p><span class="font1">{% if user.is_authenticated %}</span></p>
+<p><span class="font1">Hello, {{ user.username }}.</span></p>
+<p><span class="font1">&lt;a href=&quot;{% url 'users:logout' %}&quot;&gt;log out&lt;/a&gt;</span></p>
+<p><span class="font1">{% else %}</span></p>
+<p><span class="font1">&lt;a href=&quot;{% url 'users:login' %}&quot;&gt;log in&lt;/a&gt;</span></p>
+<p><span class="font1">{% endif %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font10">图</span><span class="font12">19-5</span><span class="font10">显示了用户登录后看到的主页。这里的重点是创建能够正确工作的网站，因此几乎没 有设置任何样式。确定所需的功能都能正确运行后，我们将设置这个网站的样式，使其看起来更 专业。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0414_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200414-1.jpg" alt="" style="width:287pt;height:123pt;">
+<p><span class="font6">图</span><span class="font11">19-5 </span><span class="font6">包含个性化问候语和注销链接的主页</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>19.2.4 </span><span class="font8">注册页面</span></h5></li></ul>
+<p><span class="font10">下面来创建一个让新用户能够注册的页面。我们将使用</span><span class="font12">Django</span><span class="font10">提供的表单</span><span class="font4">UserCreationForm</span><span class="font10">， 但编写自己的视图函数和模板。</span></p>
+<p><span class="font3" style="font-weight:bold;">19</span></p>
+</body>
+</html>

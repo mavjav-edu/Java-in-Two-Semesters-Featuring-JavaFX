@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">356</span></p>
+<p><span class="font6">第</span><span class="font7">18</span><span class="font6">章</span><span class="font7">Django</span><span class="font6">入门</span></p>
+<p><span class="font6">学习新的主题时，记录学到的知识可帮助跟踪和复习这些知识。优秀的应用程序让这个记录 过程简单易行。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>18.1.2</span><span class="font4"> 建立虚拟环境</span></h5></li></ul>
+<p><span class="font6">要使用</span><span class="font7">Django</span><span class="font6">,首先需要建立一个虚拟工作环境。</span><span class="font5">虚拟环境</span><span class="font6">是系统的一个位置，你可以在其 中安装包，并将其与其他</span><span class="font7">Python</span><span class="font6">包隔离。将项目的库与其他项目分离是有益的，且为了在第</span><span class="font7">20</span><span class="font6">章 将“学习笔记”部署到服务器,这也是必须的。</span></p>
+<p><span class="font6">为项目新建一个目录，将其命名为</span><span class="font7">learning</span><span class="font6">」</span><span class="font7">og</span><span class="font6">，再在终端中切换到这个目录，并创建一个虚 拟环境。如果你使用的是</span><span class="font7">Python 3</span><span class="font6">,可使用如下命令来创建虚拟环境：</span></p>
+<p><span class="font0">learning_log$ </span><span class="font0" style="font-weight:bold;">python -m venv ll_env</span></p>
+<p><span class="font0">learning_log$</span></p>
+<p><span class="font6">这里运行了模块</span><span class="font2">venv</span><span class="font6">，并使用它来创建一个名为</span><span class="font7">ll_env</span><span class="font6">的虚拟环境。如果这样做管用，请跳 到后面的</span><span class="font7">18.1.4</span><span class="font6">节；如果不管用,请阅读</span><span class="font7">18.1.3</span><span class="font6">节。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>18.1.3</span><span class="font4"> 安装 </span><span class="font1">virtualenv</span></h5></li></ul>
+<p><span class="font6">如果你使用的是较早的</span><span class="font7">Python</span><span class="font6">版本，或者系统没有正确地设置，不能使用模块</span><span class="font2">venv</span><span class="font6">，可安装 </span><span class="font7">virtualenv</span><span class="font6">包。为此，可执行如下命令：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">pip install --user virtualenv</span></p>
+<p><span class="font6">别忘了，对于这个命令，你可能需要使用稍微不同的版本（如果你没有使用过</span><span class="font7">pip</span><span class="font6">，请参阅 </span><span class="font7">12.2.1</span><span class="font6">节）。</span></p>
+<p><span class="font3">注意</span><span class="font5">如果你使用的是</span><span class="font7">Linux</span><span class="font5">系统，且上面的做法不管用，可使用系统的包管理器来安装 </span><span class="font7">virtualenv</span><span class="font5">。例如，要在</span><span class="font7">Ubuntu</span><span class="font5">系统中安装</span><span class="font7">virtualenv</span><span class="font5">，可使用命令</span><span class="font2">sudo apt-get install python-virtualenv</span><span class="font5">。</span></p>
+<p><span class="font6">在终端中切换到目录</span><span class="font7">learning_log</span><span class="font6">，并像下面这样创建一个虚拟环境:</span></p>
+<p><span class="font0">learning_log$ </span><span class="font0" style="font-weight:bold;">virtualenv ll_env</span></p>
+<p><span class="font0">New python executable in ll_env/bin/python</span></p>
+<p><span class="font0">Installing setuptools, pip...done.</span></p>
+<p><span class="font0">learning_log$</span></p>
+<p><span class="font3">注意 </span><span class="font5">如果你的系统安装了多个</span><span class="font7">Python</span><span class="font5">版本，需要指定</span><span class="font7">virtualenv</span><span class="font5">使用的版本。例如，命令 </span><span class="font2">virtualenv ll_env --python=python3 </span><span class="font5">创建一个使用</span><span class="font7">Python 3 </span><span class="font5">的虚拟环境。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

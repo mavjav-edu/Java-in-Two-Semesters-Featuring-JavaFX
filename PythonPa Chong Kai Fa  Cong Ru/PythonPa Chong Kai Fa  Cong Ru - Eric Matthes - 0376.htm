@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:9pt Times New Roman, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">18.1 </span><span class="font8">建立项目</span></p>
+<p><span class="font10">359</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>18.1.8</span><span class="font6"> 查看项目</span></h5></li></ul>
+<p><span class="font8">下面来核实</span><span class="font10">Django</span><span class="font8">是否正确地创建了项目。为此，可执行命令</span><span class="font2">runserver</span><span class="font8">,如下所示:</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">python manage.py runserver</span></p>
+<p><span class="font0">Performing system checks...</span></p>
+<p><span class="font3">❶ </span><span class="font0">System check identified no issues </span><span class="font7">(</span><span class="font0">0 silenced).</span></p>
+<p><span class="font0">July 15, 2015 - 06:23:51</span></p>
+<p><span class="font3">❷ </span><span class="font0">Django version 1.8.4, using settings 'learning_log.settings</span></p>
+<p><span class="font3">❸ </span><span class="font0">Starting development server at </span><a href="http://127.0.0.1:8000/"><span class="font0">http://127.0.0.1:8000/</span></a></p>
+<p><span class="font0">Quit the server with CONTROL-C.</span></p>
+<p><span class="font10">Django</span><span class="font8">启动一个服务器，让你能够查看系统中的项目，了解它们的工作情况。当你在浏览器 中输入</span><span class="font10">URL</span><span class="font8">以请求网页时，该</span><span class="font10">Django</span><span class="font8">服务器将进行响应：生成合适的网页，并将其发送给浏览器。</span></p>
+<p><span class="font8">在</span><span class="font5">❶</span><span class="font8">处，</span><span class="font10">Django</span><span class="font8">通过检查确认正确地创建了项目；在</span><span class="font5">❷</span><span class="font8">处，它指出了使用的</span><span class="font10">Djang</span><span class="font8">。版本以及 当前使用的设置文件的名称；在</span><span class="font5">❸</span><span class="font8">处，它指出了项目的</span><span class="font10">URL</span><span class="font8">。</span><span class="font10">URL </span><a href="http://127.0.0.1:8000/%e8%a1%a8%e6%98%8e%e9%a1%b9%e7%9b%ae"><span class="font10">http://127.0.0.1:8000/</span><span class="font8">表明项目</span></a><span class="font8"> 将在你的计算机（即</span><span class="font10">loc^host</span><span class="font8">）的端口</span><span class="font10">8000</span><span class="font8">上侦听请求。</span><span class="font10">loc^host</span><span class="font8">是一种只处理当前系统发出的 请求,而不允许其他任何人查看你正在开发的网页的服务器。</span></p>
+<p><span class="font8">现在打开一款</span><span class="font10">Web</span><span class="font8">浏览器，并输入</span><span class="font10">URL </span><span class="font8">: </span><a href="http://localhost:8000/"><span class="font10">http://localhost:8000/</span></a><span class="font10"> </span><span class="font8">；如果这不管用，请输入 </span><span class="font10">http://127.0Q1:8000/</span><span class="font8">。你将看到类似于图</span><span class="font10">18-1</span><span class="font8">所示的页面，这个页面是</span><span class="font10">Django</span><span class="font8">创建的，让你知道 到目前为止一切正常。现在暂时不要关闭这个服务器。若要关闭这个服务器，按</span><span class="font10">Ctrl + C</span><span class="font8">即可。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0376_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200376-1.jpg" alt="" style="width:387pt;height:161pt;">
+<p><span class="font4">图</span><span class="font9">18-1 </span><span class="font4">到目前为止一切正常</span></p>
+<p><span class="font5">注意 </span><span class="font7">如果出现错误消息“</span><span class="font10">That port is already in use</span><span class="font7">&quot;（指定端口已被占用），请执行命令</span><span class="font2">python manage.py runserver 8001</span><span class="font7">,让</span><span class="font10">Diango</span><span class="font7">使用另一个端口；如果这个端口也不可用，请不断 执行上述命令，并逐渐增大其中的端口号，直到找到可用的端口。</span></p>
+<p><span class="font1" style="font-weight:bold;">18</span></p>
+</body>
+</html>

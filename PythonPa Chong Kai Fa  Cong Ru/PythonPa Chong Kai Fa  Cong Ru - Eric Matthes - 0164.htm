@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:9pt SimSun, serif; }
+ .font12 { font:10pt SimSun, serif; }
+ .font13 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">9.3</span><span class="font12">继承</span></p>
+<p><span class="font3">147</span></p>
+<p><span class="font8">动手试一试</span></p>
+<p><span class="font2">9-4</span><span class="font7">就餐</span><span class="font12">人数：在为完成练习</span><span class="font13">9-1</span><span class="font12">而编写的程序中，添加一个名为</span><span class="font13">number_served </span><span class="font12">的属性，并将其默认值设置为</span><span class="font13">0</span><span class="font12">。根据这个类创建一个名为</span><span class="font13">restaurant</span><span class="font12">的实例；打印有 多少人在这家餐馆就餐过，然后修改这个值并再次打印它。</span></p>
+<p><span class="font12">添加一个名为</span><span class="font13">set_number_served()</span><span class="font12">的方法，它让你能够设置就餐人数。调用这个 方法并向它传递一个值，然后再次打印这个值。</span></p>
+<p><span class="font12">添加一个名为</span><span class="font13">increment_number_served()</span><span class="font12">的方法，它让你能够将就餐人数递增。 调用这个方法并向它传递一个这样的值：你认为这家餐馆每天可能接待的就餐人数。</span></p>
+<p><span class="font2">9-5</span><span class="font12">尝试登录次数：在为完成练习</span><span class="font13">9-3</span><span class="font12">而编写的</span><span class="font13">User</span><span class="font12">类中，添加一个名为 </span><span class="font13">login_attempts</span><span class="font12">的属性。编写一个名为</span><span class="font13">increment_login_attempts()</span><span class="font12">的方法，它将属性 </span><span class="font13">login_attempts</span><span class="font12">的值加</span><span class="font13">l<sub>o</sub></span><span class="font12">再编写一个名为</span><span class="font13">reset_login_attempts()</span><span class="font12">的方法，它将属性 </span><span class="font13">login_attempts </span><span class="font12">的值重置为 </span><span class="font13">0<sub>o</sub></span></p>
+<p><span class="font12">根据</span><span class="font13">User</span><span class="font12">类创建一个实例，再调用方法</span><span class="font13">increment_login_attempts()</span><span class="font12">多次。打印属 性</span><span class="font13">login_attempts</span><span class="font12">的值，确认它被正确地递增；然后，调用方法</span><span class="font13">reset_login_attempts(), </span><span class="font12">并再次打印属性</span><span class="font13">login_attempts</span><span class="font12">的值，确认它被重置为</span><span class="font13">0</span><span class="font12">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">9.3</span><span class="font9">继承</span></p></li></ul>
+<p><span class="font12">编写类时，并非总是要从空白开始。如果你要编写的类是另一个现成类的特殊版本，可使用 继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法；原有的类称为父类， 而新类称为子类。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font4"><a name="bookmark1"></a>9.3.1</span><span class="font8"> 子类的方法</span></h5></li></ul>
+<p><span class="font12">创建子类的实例时，</span><span class="font13">Python</span><span class="font12">首先需要完成的任务是给父类的所有属性赋值。为此，子类的方 法</span><span class="font13">_init_()</span><span class="font12">需要父类施以援手。</span></p>
+<p><span class="font12">例如，下面来模拟电动汽车。电动汽车是一种特殊的汽车，因此我们可以在前面创建的</span><span class="font13">Car </span><span class="font12">类的基础上创建新类</span><span class="font13">ElectricC”</span><span class="font12">，这样我们就只需为电动汽车特有的属性和行为编写代码。</span></p>
+<p><span class="font12">下面来创建一个简单的</span><span class="font13">ElectricCar</span><span class="font12">类版本，它具备</span><span class="font13">Car</span><span class="font12">类的所有功能：</span></p>
+<p><span class="font3">electric_car.py</span></p>
+<p><span class="font11" style="font-weight:bold;">❶</span><span class="font0" style="font-weight:bold;"> class Car():</span></p>
+<p><span class="font10">&quot;&quot;&quot;一次模拟汽车的简单尝试&quot;&quot;&quot;</span></p>
+<p><span class="font0" style="font-weight:bold;">def ―init—(self, make, model, year): self.make = make</span></p>
+<p><span class="font0" style="font-weight:bold;">self.model = model</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

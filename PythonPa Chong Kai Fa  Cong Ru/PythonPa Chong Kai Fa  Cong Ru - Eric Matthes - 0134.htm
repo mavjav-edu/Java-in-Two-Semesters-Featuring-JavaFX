@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">8.2 </span><span class="font6">传递实参</span></p>
+<p><span class="font7">117</span></p>
+<p><span class="font0">I have a hamster.</span></p>
+<p><span class="font0">My hamster's name is Harry.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1.</span><span class="font6"> 调用函数多次</span></p></li></ul>
+<p><span class="font6" style="text-decoration:underline;">你可以根据需要调用函数任意次。要再描述一个宠物，只需再次调用</span><span class="font3" style="text-decoration:underline;">describe_pet()</span><span class="font6" style="text-decoration:underline;">即可：</span></p>
+<p><span class="font0">def describe_pet(animal_type, pet_name):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">显示宠物的信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nI have a &quot;&nbsp;+ animal_type + &quot;.&quot;)</span></p>
+<p><span class="font0">print(&quot;My &quot;&nbsp;+ animal_type + &quot;'s name is &quot;&nbsp;+ pet_name.title() + &quot;.&quot;)</span></p>
+<p><span class="font0">describe_pet('hamster', 'harry')</span></p>
+<p><span class="font0">describe_pet('dog', 'willie')</span></p>
+<p><span class="font6">第二次调用</span><span class="font3">describe_pet()</span><span class="font6">函数时，我们向它传递了实参</span><span class="font3">‘dog'</span><span class="font6">和</span><span class="font3">'willie'</span><span class="font6">。与第一次调用时 一样，</span><span class="font7">Python</span><span class="font6">将实参</span><span class="font3">‘dog'</span><span class="font6">关联到形参</span><span class="font3">animal_type</span><span class="font6">，并将实参</span><span class="font3">‘willie’</span><span class="font6">关联到形参</span><span class="font3">pet_name</span><span class="font6">。与前 面一样，这个函数完成其任务，但打印的是一条名为</span><span class="font7">WiUie</span><span class="font6">的小狗的信息。至此，我们有一只名 为</span><span class="font7">Harry</span><span class="font6">的仓鼠，还有一条名为</span><span class="font7">Willie</span><span class="font6">的小狗：</span></p>
+<p><span class="font0">I have a hamster.</span></p>
+<p><span class="font0">My hamster's name is Harry.</span></p>
+<p><span class="font0">I have a dog.</span></p>
+<p><span class="font0">My dog's name is Willie.</span></p>
+<p><span class="font6">调用函数多次是一种效率极高的工作方式。我们只需在函数中编写描述宠物的代码一次，然 后每当需要描述新宠物时，都可调用这个函数，并向它提供新宠物的信息。即便描述宠物的代码 增加到了</span><span class="font7">10</span><span class="font6">行，你依然只需使用一行调用函数的代码，就可描述一个新宠物。</span></p>
+<p><span class="font6">在函数中，可根据需要使用任意数量的位置实参，</span><span class="font7">Python</span><span class="font6">将按顺序将函数调用中的实参关联 到函数定义中相应的形参。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2.</span><span class="font6"> 位置实参的顺序很重要</span></p></li></ul>
+<p><span class="font6">使用位置实参来调用函数时，如果实参的顺序不正确，结果可能出乎意料：</span></p>
+<p><span class="font0">def describe_pet(animal_type, pet_name):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">显示宠物的信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;\nI have a &quot;&nbsp;+ animal_type + &quot;.&quot;)</span></p>
+<p><span class="font0">print(&quot;My &quot;&nbsp;+ animal_type + &quot;'s name is &quot;&nbsp;+ pet_name.title() + &quot;.&quot;)</span></p>
+<p><span class="font0">describe_pet('harry', 'hamster')</span></p>
+<p><span class="font6">在这个函数调用中，我们先指定名字，再指定动物类型。由于实参</span><span class="font3">'harry'</span><span class="font6">在前，这个值将 存储到形参</span><span class="font3">animal_type</span><span class="font6">中；同理，</span><span class="font4">十</span><span class="font3">8</span><span class="font4">田$七已工'</span><span class="font6">将存储到形参</span><span class="font3">pet_name</span><span class="font6">中。结果是我们得到了一个 名为</span><span class="font3">Hamster </span><span class="font6">的 </span><span class="font3">harry </span><span class="font6">：</span></p>
+</body>
+</html>

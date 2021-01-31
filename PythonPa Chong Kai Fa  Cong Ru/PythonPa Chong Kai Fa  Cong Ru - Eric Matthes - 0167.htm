@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">150</span></p>
+<p><span class="font6">第</span><span class="font7">9</span><span class="font6">章 类</span></p>
+<p><span class="font0">2016 Tesla Model S</span></p>
+<p><span class="font0">This car has a 70-kWh battery.</span></p>
+<p><span class="font6">对于</span><span class="font2">ElectricCar</span><span class="font6">类的特殊化程度没有任何限制。模拟电动汽车时，你可以根据所需的准确 程度添加任意数量的属性和方法。如果一个属性或方法是任何汽车都有的，而不是电动汽车特有 的，就应将其加入到</span><span class="font2">Car</span><span class="font6">类而不是</span><span class="font2">ElectricCar</span><span class="font6">类中。这样，使用</span><span class="font2">Car</span><span class="font6">类的人将获得相应的功能，而 </span><span class="font2">ElectricCar</span><span class="font6">类只包含处理电动汽车特有属性和行为的代码。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">9.3.4</span><span class="font4"> 重写父类的方法</span></p></li></ul>
+<p><span class="font6">对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子 类中定义一个这样的方法，即它与要重写的父类方法同名。这样，</span><span class="font7">Python</span><span class="font6">将不会考虑这个父类方 法，而只关注你在子类中定义的相应方法。</span></p>
+<p><span class="font6">假设</span><span class="font2">Car</span><span class="font6">类有一个名为</span><span class="font2">fin_gas_tank()</span><span class="font6">的方法，它对全电动汽车来说毫无意义，因此你可能 想重写它。下面演示了一种重写方式：</span></p>
+<p><span class="font0">def ElectricCar(Car):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">def fill_gas_tank():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">电动汽车没有油箱</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;This car doesn't need a gas tank!&quot;)</span></p>
+<p><span class="font6">现在，如果有人对电动汽车调用方法</span><span class="font2">fill_gas_tank()</span><span class="font6">，</span><span class="font7">Python</span><span class="font6">将忽略</span><span class="font2">Car</span><span class="font6">类中的方法 </span><span class="font2">fill_gas_tank()</span><span class="font6">，转而运行上述代码。使用继承时，可让子类保留从父类那里继承而来的精华， 并剔除不需要的糟粕。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">9.3.5</span><span class="font4"> 将实例用作属性</span></p></li></ul>
+<p><span class="font6">使用代码模拟实物时，你可能会发现自己给类添加的细节越来越多：属性和方法清单以及文 件都越来越长。在这种情况下，可能需要将类的一部分作为一个独立的类提取出来。你可以将大 型类拆分成多个协同工作的小类。</span></p>
+<p><span class="font6">例如，不断给</span><span class="font2">ElectricCar</span><span class="font6">类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶 的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为</span><span class="font2">Battery</span><span class="font6">的 类中，并将一个</span><span class="font2">Battery</span><span class="font6">实例用作</span><span class="font2">ElectricCar</span><span class="font6">类的一个属性：</span></p>
+<p><span class="font0">class Car():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font3">❶ </span><span class="font0">class Battery():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">一次模拟电动汽车电瓶的简单尝试</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, battery_size=70):</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

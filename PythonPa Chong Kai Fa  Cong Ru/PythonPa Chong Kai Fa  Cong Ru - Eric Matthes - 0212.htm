@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">11.2 </span><span class="font8">测试类</span></p>
+<p><span class="font9">195</span></p>
+<p><span class="font0">break</span></p>
+<p><span class="font0">my_survey.store_response(response)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 显示调查结果</span></p></li></ul>
+<p><span class="font0">print(&quot;\nThank you to everyone who participated in the survey!&quot;)</span></p>
+<p><span class="font0">my_survey.show_results()</span></p>
+<p><span class="font8">这个程序定义了一个问题(</span><span class="font9">&quot;</span><span class="font4">What language did you first learn to speak?</span><span class="font9">&quot;</span><span class="font8">),并使用这个 问题创建了一个</span><span class="font4">AnonymousSurvey</span><span class="font8">对象。接下来，这个程序调用</span><span class="font4">show_question()</span><span class="font8">来显示问题，并 提示用户输入答案。收到每个答案的同时将其存储起来。用户输入所有答案(输入</span><span class="font4">4</span><span class="font8">要求退出) 后，调用</span><span class="font4">show_results()</span><span class="font8">来打印调查结果：</span></p>
+<p><span class="font0">What language did you first learn to speak?</span></p>
+<p><span class="font0">Enter 'q' at any time to quit.</span></p>
+<p><span class="font0">Language: </span><span class="font0" style="font-weight:bold;">English</span></p>
+<p><span class="font0">Language: </span><span class="font0" style="font-weight:bold;">Spanish</span></p>
+<p><span class="font0">Language: </span><span class="font0" style="font-weight:bold;">English</span></p>
+<p><span class="font0">Language: </span><span class="font0" style="font-weight:bold;">Mandarin</span></p>
+<p><span class="font0">Language: </span><span class="font0" style="font-weight:bold;">q</span></p>
+<p><span class="font0">Thank you to everyone who participated in the survey!</span></p>
+<p><span class="font0">Survey results:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- English</span></p></li>
+<li>
+<p><span class="font0">- Spanish</span></p></li>
+<li>
+<p><span class="font0">- English</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">11</span></p>
+</div><br clear="all"></li>
+<li>
+<p><span class="font0">- Mandarin</span></p></li></ul>
+<p><span class="font4">AnonymousSurvey</span><span class="font8">类可用于进行简单的匿名调查。假设我们将它放在了模块</span><span class="font4">survey</span><span class="font8">中，并想进 行改进：让每位用户都可输入多个答案；编写一个方法，它只列出不同的答案，并指出每个答案 出现了多少次；再编写一个类，用于管理非匿名调查。</span></p>
+<p><span class="font8">进行上述修改存在风险，可能会影响</span><span class="font4">AnonymousSurvey</span><span class="font8">类的当前行为。例如，允许每位用户输 入多个答案时，可能不小心修改了处理单个答案的方式。要确认在开发这个模块时没有破坏既有 行为，可以编写针对这个类的测试。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">11.2.3</span><span class="font6"> 测试 </span><span class="font2">AnonymousSurvey </span><span class="font6">类</span></p></li></ul>
+<p><span class="font8">下面来编写一个测试，对</span><span class="font4">AnonymousSurvey</span><span class="font8">类的行为的一个方面进行验证：如果用户面对调查 问题时只提供了一个答案，这个答案也能被妥善地存储。为此，我们将在这个答案被存储后，使 用方法</span><span class="font4">assertIn</span><span class="font8">。来核实它包含在答案列表中：</span></p>
+<p><span class="font1">test_survey.py</span></p>
+<p><span class="font0">import unittest</span></p>
+<p><span class="font0">from survey import AnonymousSurvey</span></p>
+<p><span class="font5">❶ </span><span class="font0">class TestAnonmyousSurvey(unittest.TestCase):</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">20.1 </span><span class="font9">设置项目“学习笔记”的样式</span></p>
+<p><span class="font10">417</span></p>
+<p><span class="font9">在其中包含合适的消息；接下来，我们在标签</span><span class="font4">form&gt;</span><span class="font9">中添加属性</span><span class="font4">class=form”</span><span class="font9">（见</span><span class="font6">❷</span><span class="font9">），使用模板 标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">bootstrap_form </span><span class="font6">%</span><span class="font4">}</span><span class="font9">代替</span><span class="font4">{{ form.as_p }}</span><span class="font9">（见</span><span class="font6">❸</span><span class="font9">），并使用</span><span class="font10">bootstrap3</span><span class="font9">结构来定义提交按钮 （见</span><span class="font6">❹</span><span class="font9">）。如果你现在登录并导航到</span><span class="font4">new_topic</span><span class="font9">页面，将发现其外观类似于登录页面。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.1.7</span><span class="font7"> 设置</span><span class="font3">topics</span><span class="font7">页面的样式</span></h5></li></ul>
+<p><span class="font9">下面来确保用于查看信息的页面的样式也是合适的，首先来设置</span><span class="font10">topics</span><span class="font9">页面的样式：</span></p>
+<p><span class="font2">topics.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font0">❶</span><span class="font1">{% block header %}</span></p>
+<p><span class="font1">&lt;h1&gt;Topics&lt;/h1&gt;</span></p>
+<p><span class="font1">{% endblock header %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font1">&lt;ul&gt;</span></p>
+<p><span class="font1">{% for topic in topics %}</span></p>
+<p><span class="font1">&lt;li&gt;</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;h3&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;a href=&quot;{% url 'learning_logs:topic' topic.id %}&quot;&gt;{{ topic }}&lt;/a&gt;</span></p></li></ul>
+<p><span class="font1">&lt;/h3&gt;</span></p>
+<p><span class="font1">&lt;/li&gt;</span></p>
+<p><span class="font1">{% empty %}</span></p>
+<p><span class="font1">&lt;li&gt;No topics have been added yet.&lt;/li&gt;</span></p>
+<p><span class="font1">{% endfor %}</span></p>
+<p><span class="font1">&lt;/ul&gt;</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">&lt;h3&gt;&lt;a href=&quot;{% url 'learning_logs:new_topic' %}&quot;&gt;Add new topic&lt;/h3&gt;</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font9">我们不需要标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">load bootstraps </span><span class="font6">%</span><span class="font4">}</span><span class="font9">，因为我们在这个文件中没有使用任何</span><span class="font10">bootstrap3</span><span class="font9">自 定义标签。我们在</span><span class="font4">header</span><span class="font9">块中添加了标题</span><span class="font10">Topics </span><span class="font9">（见</span><span class="font6">❶）。</span><span class="font9">为设置每个主题的样式，我们将它们都 设置为</span><span class="font4">&lt;h3&gt;</span><span class="font9">元素，让它们在页面上显得大些（见</span><span class="font6">❷</span><span class="font9">）；对于添加新主题的链接，也做了同样的处 理（见</span><span class="font6">❸</span><span class="font9">）。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>20.1.8</span><span class="font7"> 设置</span><span class="font3">topic</span><span class="font7">页面中条目的样式</span></h5></li></ul>
+<p><span class="font10">topic</span><span class="font9">页面包含的内容比其他大部分页面都多，因此需要做的样式设置工作要多些。我们将使 用</span><span class="font10">Bootstrap</span><span class="font8">面板</span><span class="font9">（</span><span class="font10">panel</span><span class="font9">）来突出每个条目。面板是一个带预定义样式的</span><span class="font10">div</span><span class="font9">，非常适合用于显示 主题的条目：</span></p>
+<p><span class="font2">topic.html</span></p>
+<p><span class="font1">{% extends 'learning_logs/base.html' %}</span></p>
+<p><span class="font3" style="font-weight:bold;">20</span></p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">414</span></p>
+<p><span class="font9">第</span><span class="font10">20</span><span class="font9">章 设置应用程序的样式并对其进行部署</span></p>
+<p><span class="font1">&lt;/body&gt;</span></p>
+<p><span class="font1">&lt;/html&gt;</span></p>
+<p><span class="font6">。</span><span class="font9">处是一个</span><span class="font4">＜div＞</span><span class="font9">起始标签，其</span><span class="font10">class</span><span class="font9">属性为</span><span class="font4">container</span><span class="font9">。</span><span class="font10">div</span><span class="font9">是网页的一部分，可用于任何目的， 并可通过边框、元素周围的空间（外边距）、内容和边框之间的间距（内边距）、背景色和其他样 式规则来设置其样式。这个</span><span class="font10">div</span><span class="font9">是一个容器，其中包含两个元素：一个新增的名为</span><span class="font4">header</span><span class="font9">的块（见 </span><span class="font6">❷</span><span class="font9">）以及我们在第</span><span class="font10">18</span><span class="font9">章使用的</span><span class="font4">content</span><span class="font9">块（见</span><span class="font6">❸</span><span class="font9">）。</span><span class="font4">header</span><span class="font9">块的内容告诉用户页面包含哪些信息以 及用户可在页面上执行哪些操作;其</span><span class="font10">class</span><span class="font9">属性值</span><span class="font4">page-header</span><span class="font9">将一系列样式应用于这个块。</span><span class="font4">content </span><span class="font9">块是一个独立的</span><span class="font10">div</span><span class="font9">，未使用</span><span class="font10">class</span><span class="font9">属性指定样式。</span></p>
+<p><span class="font9">如果你在浏览器中加载“学习笔记”的主页，将看到一个类似于图</span><span class="font10">20-1</span><span class="font9">所示的专业级导航栏。 请尝试调整窗口的大小，使其非常窄；此时导航栏将变成一个按钮，如果你单击这个按钮，将打 开一个下拉列表，其中包含所有的导航链接。</span></p>
+<p><span class="font6">注意</span><span class="font8">这个简化的</span><span class="font10">Bootstrap</span><span class="font8">模板适用于最新的浏览器，而较早的浏览器可能不能正确地渲染某 些样式。完整的模板可在</span><span class="font10">http://getbootstrap.eom/getting-started/#examples/</span><span class="font8">找至</span><span class="font10">I</span><span class="font8">，它几乎在 所有浏览器中都管用。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.1.4</span><span class="font7"> 使用</span><span class="font3">jumbotron</span><span class="font7">设置主页的样式</span></h5></li></ul>
+<p><span class="font9">下面来使用新定义的</span><span class="font4">header</span><span class="font9">块及另一个名为</span><span class="font10">jumbotron</span><span class="font9">的</span><span class="font10">Bootstrap</span><span class="font9">元素修改主页。</span><span class="font10">jumbotron </span><span class="font9">元素是一个大框，相比于页面的其他部分显得鹤立鸡群，你想在其中包含什么东西都可以；它通 常用于在主页中呈现项目的简要描述。我们还可以修改主页显示的消息。</span><span class="font10">index html</span><span class="font9">的代码如下：</span></p>
+<p><span class="font2">index.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font0">❶</span><span class="font1">{% block header %}</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">&lt;div class='jumbotron'&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;h1&gt;Track your learning.&lt;/h1&gt;</span></p></li></ul>
+<p><span class="font1">&lt;/div&gt;</span></p>
+<p><span class="font1">{% endblock header %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">&lt;h2&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;a href=&quot;{% url 'users:register' %}&quot;&gt;Register an account&lt;/a&gt; to make your own Learning Log, and list the topics you're learning about.</span></p></li></ul>
+<p><span class="font1">&lt;/h2&gt;</span></p>
+<p><span class="font1">&lt;h2&gt;</span></p>
+<p><span class="font1">Whenever you learn something new about a topic, make an entry summarizing what you've learned.</span></p>
+<p><span class="font1">&lt;/h2&gt;</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+</body>
+</html>

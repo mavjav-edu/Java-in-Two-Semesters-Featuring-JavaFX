@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">206</span></p>
+<p><span class="font4">第</span><span class="font5">12</span><span class="font4">章 武装飞船</span></p>
+<p><span class="font4">如果你在终端中运行</span><span class="font5">Python</span><span class="font4">时使用的是另一个命令，也请使用这个命令来运行</span><span class="font5">get-pip.py</span><span class="font4">。例 如，你可能需要使用命令 </span><span class="font2">python3 get-pip.py </span><span class="font4">或 </span><span class="font2">C:\Python35\python get-pip.py</span><span class="font4">。</span></p>
+<p><span class="font4">这个程序运行后，执行命令</span><span class="font2">python -m pip --version</span><span class="font4">以确认成功地安装了</span><span class="font5">pip</span><span class="font4">。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>12.2.2</span><span class="font3"> 在</span><span class="font1">Linux</span><span class="font3">系统中安装</span><span class="font1">Pygame</span></h5></li></ul>
+<p><span class="font4">如果你使用的是</span><span class="font5">Python 2.7</span><span class="font4">,请使用包管理器来安装</span><span class="font5">Pygame</span><span class="font4">。为此，打开一个终端窗口，并 执行下面的命令，这将下载</span><span class="font5">Pygame</span><span class="font4">，并将其安装到你的系统中：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python-pygame</span></p></li></ul>
+<p><span class="font4">执行如下命令，在终端会话中检查安装情况：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">python</span></p>
+<p><span class="font0">&gt;&gt;&gt; </span><span class="font0" style="font-weight:bold;">import pygame</span></p>
+<p><span class="font0">&gt;&gt;&gt;</span></p>
+<p><span class="font4">如果没有任何输出，就说明</span><span class="font5">Python</span><span class="font4">导入了 </span><span class="font5">Pygame</span><span class="font4">，你可以跳到</span><span class="font5">12.3</span><span class="font4">节。</span></p>
+<p><span class="font4">如果你使用的是</span><span class="font5">Python 3</span><span class="font4">,就需要执行两个步骤：安装</span><span class="font5">Pygame</span><span class="font4">依赖的库；下载并安装</span><span class="font5">Pygame</span><span class="font4">。</span></p>
+<p><span class="font4">执行下面的命令来安装</span><span class="font5">Pygame</span><span class="font4">依赖的库（如果你开始终端会话时使用的是命令</span><span class="font2">python3.5</span><span class="font4">， 请将 </span><span class="font2">python3-dev </span><span class="font4">替换为 </span><span class="font2">python3.5-dev</span><span class="font4">）：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python3-dev mercurial</span></p></li>
+<li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install libsdl-image1.2-dev libsdl2-dev libsdl-ttf2.0-dev</span></p></li></ul>
+<p><span class="font4">这将安装运行《外星人入侵》时需要的库。如果你要启用</span><span class="font5">Pygame</span><span class="font4">的一些高级功能，如添加 声音的功能，可安装下面这些额外的库：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install libsdl-mixer1.2-dev libportmidi-dev</span></p></li>
+<li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install libswscale-dev libsmpeg-dev libavformat-dev libavcode-dev</span></p></li>
+<li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> sudo apt-get install python-numpy</span></p></li></ul>
+<p><span class="font4">接下来，执行下面的命令来安装</span><span class="font5">Pygame </span><span class="font4">（如有必要，将</span><span class="font2">pip</span><span class="font4">替换为</span><span class="font2">pip3</span><span class="font4">）：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> pip install --user hg+</span><a href="http://bitbucket.org/pygame/pygame"><span class="font0" style="font-weight:bold;">http://bitbucket.org/pygame/pygame</span></a></p></li></ul>
+<p><span class="font4">告知你</span><span class="font5">Pygame</span><span class="font4">找到了哪些库后，输出将暂停一段时间。请按回车键，即便有一些库没有找 到。你将看到一条消息，说明成功地安装了 </span><span class="font5">Pygame</span><span class="font4">。</span></p>
+<p><span class="font4">要确认安装成功，请启动一个</span><span class="font5">Python</span><span class="font4">终端会话，并尝试执行下面的命令来导入</span><span class="font5">Pygame</span><span class="font4">：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">$</span><span class="font0" style="font-weight:bold;"> python3</span></p></li>
+<li>
+<p><span class="font0">&gt; &gt;&gt;&nbsp;</span><span class="font0" style="font-weight:bold;">import pygame</span></p></li></ul>
+<p><span class="font0">&gt;&gt;&gt;</span></p>
+<p><span class="font4">如果导入成功，请跳到</span><span class="font5">12.3</span><span class="font4">节。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">380 </span><span class="font5">第</span><span class="font3">18</span><span class="font5">章 </span><span class="font3">Django</span><span class="font5">入门</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">4</span><span class="font5">.将显示所有主题的页面中的每个主题都设置为链接</span></p></li></ul>
+<p><span class="font5">在浏览器中查看显示特定主题的页面前，我们需要修改模板</span><span class="font1">topicshml,</span><span class="font5">让每个主题都链接 到相应的网页，如下所示：</span></p>
+<p><span class="font3">topics.html</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1" style="font-style:italic;">--snip--</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">{% for topic in topics %)</span></p>
+<p><span class="font0" style="font-weight:bold;">&lt;li&gt;</span></p>
+<p><span class="font0" style="font-weight:bold;">&lt;a href=&quot;{% url 'learning_logs:topic' topic.id %]&quot;&gt;{{ topic }}&lt;/a&gt;</span></p>
+<p><span class="font0" style="font-weight:bold;">&lt;/li&gt; (% empty %)</span></p>
+<p><span class="font1" style="font-style:italic;">--snip--</span></p>
+<p><span class="font5">我们使用模板标签</span><span class="font1">url</span><span class="font5">根据</span><span class="font1">leaming_logs</span><span class="font5">中名为</span><span class="font1">topic</span><span class="font5">的</span><span class="font1">URL</span><span class="font5">模式来生成合适的链接。这个 </span><span class="font1">URL</span><span class="font5">模式要求提供实参</span><span class="font1">topijid,</span><span class="font5">因此我们在模板标签叮</span><span class="font1">1</span><span class="font5">中添加了属性</span><span class="font1">topic.id</span><span class="font5">。现在，主题列 表中的每个主题都是一个链接，链接到显示相应主题的页面，</span><span class="font1">$n</span><a href="http://localliost:8000/topics/l/o"><span class="font1">http://localliost:8000/topics/l/o</span></a></p>
+<p><span class="font5">如果你刷新显示所有主题的页面，再单击其中的一个主题，将看到类似于图</span><span class="font1">18</span><span class="font8">・</span><span class="font1">5</span><span class="font5">所示的页面。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0397_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200397-1.jpg" alt="" style="width:335pt;height:165pt;">
+<p><span class="font5">图</span><span class="font1">18</span><span class="font8">・</span><span class="font1">5</span><span class="font5">特定主题的详细页面，其中显示了该主题的所有条目</span></p>
+<p><span class="font6">动手试一试</span></p>
+<p><span class="font2">18-7 </span><span class="font7">模板</span><span class="font5">文档：请浏览 </span><span class="font9">Django </span><span class="font5">模板文档，</span><span class="font9">https://docs.djangoproject.com/ en/1.8/ref/templates/o</span><span class="font5">自己开发项目时，可再回过头来参考该文档。</span></p>
+<p><span class="font2">18-8</span><span class="font7">比萨店页面：</span><span class="font5">在练习</span><span class="font9">18</span><span class="font8">・</span><span class="font9">6</span><span class="font5">中开发的项目</span><span class="font9">Pizzeria</span><span class="font5">中添加一个页面，它显示供应 的比萨的名称。然后，将每个比萨名称都设置成一个链接，单击这种链接将显示一个页 面，其中列出了相应比萨的配料。请务必使用模板继承来高效地创建页面。</span></p>
+<p><span class="font4">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font4">专享尊重版权</span></p>
+</body>
+</html>

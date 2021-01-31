@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">18.4 </span><span class="font8">创建其他网页 </span><span class="font9">379</span></p>
+<p><span class="font8" style="text-decoration:underline;">们将主题和条目都存储在字典</span><span class="font4" style="text-decoration:underline;">context</span><span class="font8" style="text-decoration:underline;">中（见</span><span class="font6" style="text-decoration:underline;">❹</span><span class="font8" style="text-decoration:underline;">），再将这个字典发送给模板</span><span class="font9" style="text-decoration:underline;">topic.html </span><span class="font8" style="text-decoration:underline;">（见</span><span class="font6" style="text-decoration:underline;">❺</span><span class="font8" style="text-decoration:underline;">）。</span></p>
+<p><span class="font6">注意❷</span><span class="font7">处和</span><span class="font6">❸</span><span class="font7">处的代码被称为查询，因为它们向数据库查询特定的信息。在自己的项目中编 写这样的查询时，先在</span><span class="font9">Django shell</span><span class="font7">中进行尝试大有裨益。相比于编写视图和模板，再在 浏览器中检查结果，在</span><span class="font9">shell</span><span class="font7">中执行代码可更快地获得反馈。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">3.</span><span class="font6"> 模板</span></p></li></ul>
+<p><span class="font8">这个模板需要显示主题的名称和条目的内容；如果当前主题不包含任何条目，我们还需向用 户指出这一点：</span></p>
+<p><span class="font2">topic.html</span></p>
+<p><span class="font1">{% extends 'learning_logs/base.html' %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">&lt;p&gt;Topic: {{ topic }}&lt;/p&gt;</span></p>
+<p><span class="font1">&lt;p&gt;Entries:&lt;/p&gt;</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">&lt;ul&gt;</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">{% for entry in entries %}</span></p>
+<p><span class="font1">&lt;li&gt;</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;p&gt;{{ entry.date_added|date:'M d, Y H:i' }}&lt;/p&gt;</span></p>
+<p><span class="font0">©</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">&lt;p&gt;{{ entry.text|linebreaks }}&lt;/p&gt;</span></p>
+<p><span class="font1">&lt;/li&gt;</span></p>
+<p><span class="font0">❻</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">{% eimpty %}</span></p>
+<p><span class="font1">&lt;li&gt;</span></p>
+<p><span class="font1">There are no entries for this topic yet.</span></p>
+<p><span class="font1">&lt;/li&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">{% endfor %} &lt;/ul&gt;</span></p></li></ul>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font8">像这个项目的其他页面一样，这里也继承了</span><span class="font9">base.html</span><span class="font8">。接下来，我们显示当前的主题（见</span><span class="font6">❶</span><span class="font8">）， 它存储在模板变量</span><span class="font4">{{ topic }}</span><span class="font8">中。为什么可以使用变量</span><span class="font4">topic</span><span class="font8">呢？因为它包含在字典</span><span class="font4">context</span><span class="font8">中。 接下来，我们开始定义一个显示每个条目的项目列表（见</span><span class="font6">❷</span><span class="font8">），并像前面显示所有主题一样遍历 条目（见</span><span class="font6">❸）。</span></p>
+<p><span class="font8">每个项目列表项都将列出两项信息：条目的时间戳和完整的文本。为列出时间戳（见</span><span class="font6">❹</span><span class="font8">）， 我们显示属性</span><span class="font4">date_added</span><span class="font8">的值。在</span><span class="font9">Django</span><span class="font8">模板中，竖线（</span><span class="font4">|</span><span class="font8">）表示模板过滤器一对模板变量的值 进行修改的函数。过滤器</span><span class="font4">date: 'M d, Y H:i'</span><span class="font8">以这样的格式显示时间戳：</span><span class="font9">January 1, 2015 23:00</span><span class="font8">。 接下来的一行显示</span><span class="font4">text</span><span class="font8">的完整值，而不仅仅是</span><span class="font4">entry</span><span class="font8">的前</span><span class="font9">50</span><span class="font8">个字符。过滤器</span><span class="font4">linebreaks </span><span class="font8">（见</span><span class="font6">❺</span><span class="font8">）将 包含换行符的长条目转换为浏览器能够理解的格式，以免显示为一个不间断的文本块。在</span><span class="font6">❻</span><span class="font8">处， 我们使用模板标签</span><span class="font4">{</span><span class="font6">% </span><span class="font4">empty </span><span class="font6">%</span><span class="font4">}</span><span class="font8">打印一条消息，告诉用户当前主题还没有条目。</span></p>
+<p><span class="font3" style="font-weight:bold;">18</span></p>
+</body>
+</html>

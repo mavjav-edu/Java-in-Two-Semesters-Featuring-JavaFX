@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">194</span></p>
+<p><span class="font8">第</span><span class="font9">11</span><span class="font8">章 测试代码</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>11.2.2</span><span class="font6"> 一个要测试的类</span></h5></li></ul>
+<p><span class="font8">类的测试与函数的测试相似</span><span class="font9">——</span><span class="font8">你所做的大部分工作都是测试类中方法的行为，但存在一些 不同之处，下面来编写一个类进行测试。来看一个帮助管理匿名调查的类：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>survey.py</span></h6>
+<p><span class="font0">class AnonymousSurvey():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">收集匿名调查问卷的答案</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font4">❶ </span><span class="font0">def ―init—(self, question):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">存储一个问题，并为存储答案做准备</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.question = question</span></p>
+<p><span class="font0">self.responses = []</span></p>
+<p><span class="font4">❷ </span><span class="font0">def show_question(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">显示调查问卷</span><span class="font0">&quot;&quot;&quot; print(question)</span></p>
+<p><span class="font4">❸ </span><span class="font0">def store_response(self, new_response):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">存储单份调查答卷</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.responses.append(new_response)</span></p>
+<p><span class="font4">❹ </span><span class="font0">def show_results(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">显示收集到的所有答卷</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;Survey results:&quot;)</span></p>
+<p><span class="font0">for response in responses:</span></p>
+<p><span class="font0">print('- ' + response)</span></p>
+<p><span class="font8">这个类首先存储了一个你指定的调查问题(见</span><span class="font10" style="font-weight:bold;">0</span><span class="font8">),并创建了一个空列表，用于存储答案。 这个类包含打印调查问题的方法(见</span><span class="font5">❷</span><span class="font8">)、在答案列表中添加新答案的方法(见</span><span class="font5">❸</span><span class="font8">)以及将存储 在列表中的答案都打印出来的方法(见</span><span class="font5">❹</span><span class="font8">)。要创建这个类的实例，只需提供一个问题即可。有 了表示调查的实例后，就可使用</span><span class="font3">show_question()</span><span class="font8">来显示其中的问题，可使用</span><span class="font3">store_response()</span><span class="font8">来 存储答案，并使用</span><span class="font3">show_results()</span><span class="font8">来显示调查结果。</span></p>
+<p><span class="font8">为证明</span><span class="font3">AnonymousSurvey</span><span class="font8">类能够正确地工作，我们来编写一个使用它的程序：</span></p>
+<h6><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>language_survey.py</span></h6>
+<p><span class="font0">from survey import AnonymousSurvey</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 定义一个问题，并创建一个表示调查的</span><span class="font0">AnonymousSurvey</span><span class="font7">对象</span></p></li></ul>
+<p><span class="font0">question = &quot;What language did you first learn to speak?&quot;</span></p>
+<p><span class="font0">my_survey = AnonymousSurvey(question)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 显示问题并存储答案</span></p></li></ul>
+<p><span class="font0">my_survey.show_question()</span></p>
+<p><span class="font0">print(&quot;Enter 'q' at any time to quit.\n&quot;)</span></p>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">response = input(&quot;Language: &quot;)</span></p>
+<p><span class="font0">if response == 'q':</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

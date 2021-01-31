@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:14pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:14pt SimHei, sans-serif; }
+ .font6 { font:15pt SimHei, sans-serif; }
+ .font7 { font:23pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:15pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<div>
+<p><span class="font6">第</span><span class="font10">11</span><span class="font6">章</span></p>
+</div><br clear="all"><a name="caption1"></a>
+<h4><a name="bookmark0"></a><span class="font7"><a name="bookmark1"></a>测试代码</span></h4>
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0204_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200204-1.jpg" alt="" style="width:98pt;height:98pt;">
+</div><br clear="all">
+<p><span class="font8">编写函数或类时，还可为其编写测试。通过测试，可确定代码 面对各种输入都能够按要求的那样工作。测试让你信心满满，深信 即便有更多的人使用你的程序，它也能正确地工作。在程序中添加 新代码时，你也可以对其进行测试，确认它们不会破坏程序既有的 行为。程序员都会犯错，因此每个程序员都必须经常测试其代码， 在用户发现问题前找出它们。</span></p>
+<p><span class="font8">在本章中，你将学习如何使用</span><span class="font9">Python</span><span class="font8">模块</span><span class="font4">unittest</span><span class="font8">中的工具来测 试代码。你将学习编写测试用例，核实一系列输入都将得到预期的</span></p>
+<p><span class="font8">输出。你将看到测试通过了是什么样子，测试未通过又是什么样子， 还将知道测试未通过如何有助于改进代码。你将学习如何测试函数和类，并将知道该为项 目编写多少个测试。</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">11</span></p>
+</div><br clear="all">
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>11.1</span><span class="font5"> 测试函数</span></h5></li></ul>
+<p><span class="font8">要学习测试，得有要测试的代码。下面是一个简单的函数，它接受名和姓并返回整洁的姓名：</span></p>
+<p><span class="font1">name_function.py</span></p>
+<p><span class="font0">def get_formatted_name(first, last):</span></p>
+<p><span class="font0">&quot;&quot;&quot;Generate a neatly formatted full name.&quot;&quot;&quot; full_name = first + ' ' + last</span></p>
+<p><span class="font0">return full_name.title()</span></p>
+<p><span class="font8">函数</span><span class="font4">get_formatted_name()</span><span class="font8">将名和姓合并成姓名，在名和姓之间加上一个空格，并将它们的 首字母都大写，再返回结果。为核实</span><span class="font4">get_formatted_name()</span><span class="font8">像期望的那样工作，我们来编写一个 使用这个函数的程序。程序</span><span class="font9">names.py</span><span class="font8">让用户输入名和姓，并显示整洁的全名：</span></p>
+<p><span class="font1">names.py</span></p>
+<p><span class="font0">from name_function import get_formatted_name</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

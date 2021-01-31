@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Consolas, monospace; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:14pt SimHei, sans-serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">454</span></p>
+<p><span class="font8">附录</span><span class="font9">D </span><span class="font8">使用</span><span class="font9">Git</span><span class="font8">进行版本控制</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>D.6 </span><span class="font7">将文件加入到仓库中</span></h5>
+<p><span class="font8">下面将这两个文件加入到仓库中，并再次检查状态：</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git add .</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li>
+<li>
+<p><span class="font1"># Initial commit</span></p></li>
+<li>
+<p><span class="font1">#</span></p></li>
+<li>
+<p><span class="font1"># Changes to be committed:</span></p></li>
+<li>
+<p><span class="font1"># （use &quot;git rm --cached &lt;file&gt;...&quot; to unstage）</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span></p></li></ul>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1"># new file: &nbsp;&nbsp;.gitignore</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># &nbsp;&nbsp;new file: &nbsp;&nbsp;hello_world.py</span></p></li></ul>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span></p></li></ul>
+<p><span class="font1">git_practice$</span></p>
+<p><span class="font8">命令</span><span class="font4">git add .</span><span class="font8">将项目中未被跟踪的所有文件都加入到仓库中（见</span><span class="font6">❶</span><span class="font8">）。它不提交这些文件， 而只是让</span><span class="font9">Git</span><span class="font8">开始关注它们。现在我们检查项目的状态时，发现</span><span class="font9">Git</span><span class="font8">找出了需要提交的一些修改（见 </span><span class="font6">❷</span><span class="font8">）。标签</span><span class="font4">new file</span><span class="font8">意味着这些文件是新添加到仓库中的（见</span><span class="font6">❸</span><span class="font8">）。</span></p>
+<p><span class="font2">D.7 </span><span class="font7">执行提交</span></p>
+<p><span class="font8">下面来执行第一次提交：</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git commit -m &quot;Started project.&quot;</span></p>
+<p><span class="font0">❷</span><span class="font1">[master （root-commit） c03d2a3] Started project.</span></p>
+<p><span class="font0">❸</span><span class="font5"> </span><span class="font1">2 files changed, 1 insertion（+）</span></p>
+<p><span class="font1">create mode 100644 .gitignore</span></p>
+<p><span class="font1">create mode 100644 hello_world.py</span></p>
+<p><span class="font0">❹</span><span class="font5"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean git_practice$</span></p>
+<p><span class="font8">我们执行命令</span><span class="font4">git commit -m &quot;</span><span class="font8">帕</span><span class="font3" style="font-style:italic;">ssage</span><span class="font4">”</span><span class="font8">（见</span><span class="font6">❶</span><span class="font8">）以拍摄项目的快照。标志</span><span class="font4">-m</span><span class="font8">让</span><span class="font9">Git</span><span class="font8">将接下来的 消息（</span><span class="font4">&quot;Started project.&quot;</span><span class="font8">）记录到项目的历史记录中。输出表明我们在分支</span><span class="font9">master</span><span class="font8">上（见</span><span class="font6">❷</span><span class="font8">）， 且有两个文件被修改了（见</span><span class="font6">❸</span><span class="font8">）。</span></p>
+<p><span class="font8">现在我们检查状态时，发现我们在分支</span><span class="font9">master</span><span class="font8">上，且工作目录是干净的（见</span><span class="font6">❹</span><span class="font8">）。这是你每次 提交项目的可行状态时都希望看到的消息。如果显示的消息不是这样的，请仔细阅读，很可能你 在提交前忘记了添加文件。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

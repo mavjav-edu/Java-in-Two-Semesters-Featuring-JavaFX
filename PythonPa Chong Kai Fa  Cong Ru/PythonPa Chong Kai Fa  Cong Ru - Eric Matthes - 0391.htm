@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">374</span></p>
+<p><span class="font7">第</span><span class="font8">18</span><span class="font7">章</span><span class="font8">Django</span><span class="font7">入门</span></p>
+<p><span class="font7">生成一个</span><span class="font8">URL</span><span class="font7">,该</span><span class="font8">URL</span><span class="font7">与</span><span class="font8">learning_logs/urls.py</span><span class="font7">中定义的名为</span><span class="font3">index</span><span class="font7">的</span><span class="font8">URL</span><span class="font7">模式匹配（见</span><span class="font5">❶</span><span class="font7">）。在这 个示例中，</span><span class="font3">learning_logs</span><span class="font7">是一个</span><span class="font6">命名空间</span><span class="font7">，而</span><span class="font3">index</span><span class="font7">是该命名空间中一个名称独特的</span><span class="font8">URL</span><span class="font7">模式。</span></p>
+<p><span class="font7">在简单的</span><span class="font8">HTML</span><span class="font7">页面中，链接是使用</span><span class="font6">锚</span><span class="font7">标签定义的：</span></p>
+<p><span class="font1">&lt;a href=&quot;link_url&quot;&gt;link text&lt;/a&gt;</span></p>
+<p><span class="font7">让模板标签来生成</span><span class="font8">URL</span><span class="font7">，可让链接保持最新容易得多。要修改项目中的</span><span class="font8">URL</span><span class="font7">，只需修改</span><span class="font8">urls.py </span><span class="font7">中的</span><span class="font8">URL</span><span class="font7">模式，这样网页被请求时，</span><span class="font8">Django</span><span class="font7">将自动插入修改后的</span><span class="font8">URL</span><span class="font7">。在我们的项目中，每个网 页都将继承</span><span class="font8">base.html</span><span class="font7">，因此从现在开始，每个网页都包含到主页的链接。</span></p>
+<p><span class="font7">在</span><span class="font5">❷</span><span class="font7">处，我们插入了一对块标签。这个块名为</span><span class="font3">content</span><span class="font7">，是一个占位符，其中包含的信息将 由子模板指定。</span></p>
+<p><span class="font7">子模板并非必须定义父模板中的每个块，因此在父模板中，可使用任意多个块来预留空间， 而子模板可根据需要定义相应数量的块。</span></p>
+<p><span class="font5">注意 </span><span class="font6">在</span><span class="font8">Python</span><span class="font6">代码中，我们几乎总是缩进四个空格。相比于</span><span class="font8">Python</span><span class="font6">文件，模板文件的缩进层级 更多，因此每个层级通常只缩进两个空格。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2 . </span><span class="font5">子模板</span></p></li></ul>
+<p><span class="font7">现在需要重新编写</span><span class="font8">index html</span><span class="font7">，使其继承</span><span class="font8">base.html</span><span class="font7">，如下所示：</span></p>
+<p><span class="font2">index.html</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font4">@ </span><span class="font1">{% block content %}</span></p>
+<p><span class="font1">&lt;p&gt;Learning Log helps you keep track of your learning, for any topic you're learning about.&lt;/p&gt;</span></p>
+<p><span class="font0">®</span><span class="font4"> </span><span class="font1">{% endblock content %}</span></p>
+<p><span class="font7">如果将这些代码与原来的</span><span class="font8">index html</span><span class="font7">进行比较，可发现我们将标题</span><span class="font8">Learning Log</span><span class="font7">替换成了从父 模板那里继承的代码（见</span><span class="font5">❶</span><span class="font7">）。子模板的第一行必须包含标签</span><span class="font3">{</span><span class="font5">% </span><span class="font3">extends </span><span class="font5">%</span><span class="font3">}</span><span class="font7">，让</span><span class="font8">Django</span><span class="font7">知道它继 承了哪个父模板。文件</span><span class="font8">base.html</span><span class="font7">位于文件夹</span><span class="font8">learning_logs</span><span class="font7">中，因此父模板路径中包含</span><span class="font8">learning_logs</span><span class="font7">。 这行代码导入模板</span><span class="font8">base html</span><span class="font7">的所有内容，让</span><span class="font8">index.html</span><span class="font7">能够指定要在</span><span class="font3">content</span><span class="font7">块预留的空间中添加 的内容。</span></p>
+<p><span class="font7">在</span><span class="font5">❷</span><span class="font7">处，我们插入了一个名为</span><span class="font3">conten^^</span><span class="font5">% </span><span class="font3">block </span><span class="font5">%</span><span class="font3">}</span><span class="font7">标签，以定义</span><span class="font3">content</span><span class="font7">块。不是从父模板 继承的内容都包含在</span><span class="font3">content</span><span class="font7">块中，在这里是一个描述项目“学习笔记”的段落。在</span><span class="font5">❸</span><span class="font7">处，我们 使用标签</span><span class="font3">{</span><span class="font5">% </span><span class="font3">endblock content </span><span class="font5">%</span><span class="font3">}</span><span class="font7">指出了内容定义的结束位置。</span></p>
+<p><span class="font7">模板继承的优点开始显现出来了：在子模板中，只需包含当前网页特有的内容。这不仅简化 了每个模板，还使得网站修改起来容易得多。要修改很多网页都包含的元素，只需在父模板中修 改该元素，你所做的修改将传导到继承该父模板的每个页面。在包含数十乃至数百个网页的项目</span></p>
+</body>
+</html>

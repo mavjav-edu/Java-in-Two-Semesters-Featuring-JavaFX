@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:11pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">11.2 </span><span class="font8">测试类 </span><span class="font9">197</span></p>
+<p><span class="font0">my_survey.store_response(response)</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">for response in responses:</span></p>
+<p><span class="font0">self.assertIn(response, my_survey.responses)</span></p>
+<p><span class="font0">unittest.main()</span></p>
+<p><span class="font8">我们将这个方法命名为</span><span class="font3">test_store_three_responses()</span><span class="font8">，并像</span><span class="font3">test_store_single_response() </span><span class="font8">一样，在其中创建一个调查对象。我们定义了一个包含三个不同答案的列表(见</span><span class="font10" style="font-weight:bold;">O</span><span class="font8">)再对其中 每个答案都调用</span><span class="font3">store_response()</span><span class="font8">。存储这些答案后，我们使用一个循环来确认每个答案都包含 在 </span><span class="font3">my_survey.responses </span><span class="font8">中(见</span><span class="font5">❷</span><span class="font8">)。</span></p>
+<p><span class="font8">我们再次运行</span><span class="font9">test_survey.py</span><span class="font8">时，两个测试(针对单个答案的测试和针对三个答案的测试)都 通过了：</span></p>
+<p><span class="font0">Ran 2 tests in 0.000s</span></p>
+<p><span class="font0">OK</span></p>
+<p><span class="font8">前述做法的效果很好，但这些测试有些重复的地方。下面使用</span><span class="font3">unittest</span><span class="font8">的另一项功能来提高 它们的效率。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">11.2.4</span><span class="font6"> 方法 </span><span class="font1">setUp()</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">11</span></p>
+</div><br clear="all"></li></ul>
+<p><span class="font8">在前面的</span><span class="font9">test_survey.py</span><span class="font8">中，我们在每个测试方法中都创建了一个</span><span class="font3">AnonymousSurvey</span><span class="font8">实例，并在 每个方法中都创建了答案。</span><span class="font3">unittest.TestCase</span><span class="font8">类包含方法</span><span class="font3">setUp()</span><span class="font8">，让我们只需创建这些对象一 次，并在每个测试方法中使用它们。如果你在</span><span class="font3">TestCase</span><span class="font8">类中包含了方法</span><span class="font3">setUp()</span><span class="font8">，</span><span class="font9">Python</span><span class="font8">将先运行 它，再运行各个以</span><span class="font9">test_</span><span class="font8">打头的方法。这样，在你编写的每个测试方法中都可使用在方法</span><span class="font3">setUp() </span><span class="font8">中创建的对象了。</span></p>
+<p><span class="font8">下面使用</span><span class="font3">setUp()</span><span class="font8">来创建一个调查对象和一组答案，供方法</span><span class="font3">test_store_single_response()</span><span class="font8">和 </span><span class="font3">test_store_three_responses()</span><span class="font8">使用：</span></p>
+<p><span class="font0">import unittest</span></p>
+<p><span class="font0">from survey import AnonymousSurvey</span></p>
+<p><span class="font0">class TestAnonymousSurvey(unittest.TestCase):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">针对 </span><span class="font0">AnonymousSurvey </span><span class="font7">类的测试</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def setUp(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font7">创建一个调查对象和一组答案，供使用的测试方法使用</span></p>
+<p><span class="font0">question = &quot;What language did you first learn to speak?</span></p>
+<p><span class="font4">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.my_survey = AnonymousSurvey(question)</span></p>
+<p><span class="font4">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.responses = ['English', 'Spanish', 'Mandarin']</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

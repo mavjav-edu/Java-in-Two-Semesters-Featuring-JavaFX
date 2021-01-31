@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">12.8 </span><span class="font8">射击</span></p>
+<p><span class="font9">227</span></p><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>12.8.4 </span><span class="font6">开火</span></h5>
+<p><span class="font8">在</span><span class="font9">game_functions.py</span><span class="font8">中，我们需要修改</span><span class="font3">check_keydown_events()</span><span class="font8">,以便在玩家按空格键时发射 一颗子弹。我们无需修改</span><span class="font3">check_keyup_events()</span><span class="font8">,因为玩家松开空格键时什么都不会发生。我们 还需修改</span><span class="font3">update_screen()</span><span class="font8">，确保在调用</span><span class="font3">flip()</span><span class="font8">前在屏幕上重绘每颗子弹。下面是对</span><span class="font9">game_ fUnctions.py</span><span class="font8">所做的相关修改:</span></p>
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">from bullet import Bullet</span></p>
+<p><span class="font4">❶ </span><span class="font0">def check_keydown_events(event, ai_settings, screen, ship, bullets):</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font4">❷ </span><span class="font0">elif event.key == pygame.K_SPACE:</span></p>
+<p><span class="font0">#</span><span class="font7">创建一颗子弹，并将其加入到编组</span><span class="font0">bullets</span><span class="font7">中</span></p>
+<p><span class="font0">new_bullet = Bullet(ai_settings, screen, ship) bullets.add(new_bullet)</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font4">❸ </span><span class="font0">def check_events(ai_settings, screen, ship, bullets):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">响应按键和鼠标事件</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">for event in pygame.event.get():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">elif event.type == pygame.KEYDOWN:</span></p>
+<p><span class="font0">check_keydown_events(event, ai_settings, screen, ship, bullets)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font4">❹ </span><span class="font0">def update_screen(ai_settings, screen, ship, bullets):</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">12</span></p>
+</div><br clear="all">
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font7">在飞船和外星人后面重绘所有子弹</span></p></li></ul>
+<p><span class="font4">❺ </span><span class="font0">for bullet in bullets.sprites(): bullet.draw_bullet()</span></p>
+<p><span class="font0">ship.blitme() --</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font8">编组</span><span class="font3">bulltes</span><span class="font8">传递给了</span><span class="font3">check_keydown_events()(</span><span class="font8">见</span><span class="font5">❶</span><span class="font8">)。玩家按空格键时，创建一颗新子弹(一 个名为</span><span class="font3">new_bullet</span><span class="font8">的</span><span class="font3">Bullet</span><span class="font8">实例)，并使用方法</span><span class="font3">add()</span><span class="font8">将其加入到编组</span><span class="font3">bullets</span><span class="font8">中(见</span><span class="font5">❷</span><span class="font8">)；代码 </span><span class="font3">bullets.add(new_bullet)</span><span class="font8">将新子弹存储到编组 </span><span class="font3">bullets </span><span class="font8">中。</span></p>
+<p><span class="font8">在</span><span class="font3">check_events()</span><span class="font8">的定义中，我们需要添加形参</span><span class="font3">bullets</span><span class="font8">(见</span><span class="font5">❸</span><span class="font8">)；调用</span><span class="font3">check_keydown_events() </span><span class="font8">时，我们也需要将</span><span class="font3">bullets</span><span class="font8">作为实参传递给它。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- &nbsp;&nbsp;&nbsp;-</span></p>
+<p><span class="font8">在</span><span class="font5">❹</span><span class="font8">处，我们给在屏幕上绘制子弹的</span><span class="font3">update_screen()</span><span class="font8">添加了形参</span><span class="font3">bullets</span><span class="font8">。方法 </span><span class="font3">bullets.sprites()</span><span class="font8">返回一个列表，其中包含编组</span><span class="font3">bullets</span><span class="font8">中的所有精灵。为在屏幕上绘制发射的 所有子弹，我们遍历编组</span><span class="font3">bullets</span><span class="font8">中的精灵，并对每个精灵都调用</span><span class="font3">draw_bullet()</span><span class="font8">(见</span><span class="font5">❺</span><span class="font8">)。</span></p>
+<p><span class="font8">如果此时运行</span><span class="font9">alien_rnvasion.py</span><span class="font8">，将能够左右移动飞船，并发射任意数量的子弹。子弹在屏 幕上向上穿行，抵达屏幕顶部后消失，如图</span><span class="font9">12-3</span><span class="font8">所示。可在</span><span class="font9">settings.py</span><span class="font8">中修改子弹的尺寸、颜色和 速度。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">13.2 </span><span class="font7">创建第一个外星人 </span><span class="font9">235</span></p>
+<p><span class="font7">在这里，我们导入了新创建的</span><span class="font3">Alien</span><span class="font7">类，并在进入主</span><span class="font3">while</span><span class="font7">循环前创建了一个</span><span class="font3">Alien</span><span class="font7">实例。我们 没有修改外星人的位置，因此该</span><span class="font3">while</span><span class="font7">循环没有任何新东西，但我们修改了对</span><span class="font3">update_screen()</span><span class="font7">的 调用，传递了一个外星人实例。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">13.2.3 </span><span class="font5">让外星人出现在屏幕上</span></p></li></ul>
+<p><span class="font7">为让外星人出现在屏幕上，我们在</span><span class="font3">update_screen()</span><span class="font7">中调用其方法</span><span class="font3">blitme()</span><span class="font7">： </span><span class="font1">game_functions.py</span></p>
+<p><span class="font0">def update_screen(ai_settings, screen, ship, alien, bullets):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font6"> 在飞船和外星人后面重绘所有的子弹</span></p></li></ul>
+<p><span class="font0">for bullet in bullets:</span></p>
+<p><span class="font0">bullet.draw_bullet()</span></p>
+<p><span class="font0">ship.blitme()</span></p>
+<p><span class="font0">alien.blitme()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font6"> 让最近绘制的屏幕可见</span></p></li></ul>
+<p><span class="font0">pygame.display.flip()</span></p>
+<p><span class="font7">我们先绘制飞船和子弹，再绘制外星人，让外星人在屏幕上位于最前面。图</span><span class="font9">13-2</span><span class="font7">显示了屏幕 上的第一个外星人。</span></p>
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0252_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200252-1.jpg" alt="" style="width:291pt;height:200pt;">
+<p><span class="font4">图</span><span class="font8">13-2 </span><span class="font4">第一个外星人现身</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font2" style="font-weight:bold;">13</span></p>
+</div><br clear="all">
+<p><span class="font7">第一个外星人正确地现身后，下面来编写绘制一群外星人的代码。</span></p>
+</body>
+</html>

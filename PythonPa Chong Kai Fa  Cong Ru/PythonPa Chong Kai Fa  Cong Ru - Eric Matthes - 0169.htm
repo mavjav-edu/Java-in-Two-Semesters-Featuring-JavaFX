@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">152</span></p>
+<p><span class="font7">第</span><span class="font8">9</span><span class="font7">章 类</span></p>
+<p><span class="font0">class Car():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">class Battery():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font3">❶ </span><span class="font0">def get_range(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">打印一条消息，指出电瓶的续航里程</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if self.battery_size == 70:</span></p>
+<p><span class="font0">range = 240</span></p>
+<p><span class="font0">elif self.battery_size == 85:</span></p>
+<p><span class="font0">range = 270</span></p>
+<div>
+<p><span class="font0">go approximately &quot;&nbsp;+ str(range) full charge.&quot;</span></p>
+</div><br clear="all">
+<p><span class="font0">message = &quot;This car can message += &quot;&nbsp;miles on a print(message)</span></p>
+<p><span class="font0">class ElectricCar(Car):</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">my_tesla = ElectricCar('tesla', 'model s', 2016)</span></p>
+<p><span class="font0">print(my_tesla.get_descriptive_name())</span></p>
+<p><span class="font0">my_tesla.battery.describe_battery()</span></p>
+<p><span class="font3">❷ </span><span class="font0">my_tesla.battery.get_range()</span></p>
+<p><span class="font4">❶</span><span class="font7">处新增的方法</span><span class="font2">get_range()</span><span class="font7">做了一些简单的分析：如果电瓶的容量为</span><span class="font8">70kWh</span><span class="font7">,它就将续航里 程设置为</span><span class="font8">240</span><span class="font7">英里；如果容量为</span><span class="font8">85kWh</span><span class="font7">，就将续航里程设置为</span><span class="font8">270</span><span class="font7">英里，然后报告这个值。为使用 这个方法，我们也通过汽车的属性</span><span class="font2">battery</span><span class="font7">来调用它(见</span><span class="font4">❷</span><span class="font7">)。</span></p>
+<p><span class="font7">输出指出了汽车的续航里程(这取决于电瓶的容量)：</span></p>
+<p><span class="font0">2016 Tesla Model S</span></p>
+<p><span class="font0">This car has a 70-kWh battery.</span></p>
+<p><span class="font0">This car can go approximately 240 miles on a full charge.</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>9.3.6</span><span class="font5"> 模拟实物</span></h5></li></ul>
+<p><span class="font7">模拟较复杂的物件(如电动汽车)时，需要解决一些有趣的问题。续航里程是电瓶的属性还 是汽车的属性呢？如果我们只需描述一辆汽车，那么将方法</span><span class="font2">get_range()</span><span class="font7">放在</span><span class="font2">Battery</span><span class="font7">类中也许是合 适的；但如果要描述一家汽车制造商的整个产品线，也许应该将方法</span><span class="font2">get_range()</span><span class="font7">移到</span><span class="font2">ElectricCar </span><span class="font7">类中。在这种情况下，</span><span class="font2">get_range</span><span class="font7">。依然根据电瓶容量来确定续航里程，但报告的是一款汽车的续 航里程。我们也可以这样做：将方法</span><span class="font2">get_range()</span><span class="font7">还留在</span><span class="font2">Battery</span><span class="font7">类中，但向它传递一个参数，如 </span><span class="font2">car_model</span><span class="font7">；在这种情况下，方法</span><span class="font2">get_range()</span><span class="font7">将根据电瓶容量和汽车型号报告续航里程。</span></p>
+<p><span class="font7">这让你进入了程序员的另一个境界：解决上述问题时，你从较高的逻辑层面(而不是语法层 面)考虑；你考虑的不是</span><span class="font8">Python</span><span class="font7">，而是如何使用代码来表示实物。到达这种境界后，你经常会发 现，现实世界的建模方法并没有对错之分。有些方法的效率更高，但要找出效率最高的表示法，</span></p>
+</body>
+</html>

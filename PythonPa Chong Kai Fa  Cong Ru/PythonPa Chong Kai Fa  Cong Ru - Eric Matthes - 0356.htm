@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:12pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:11pt SimSun, serif; }
+ .font6 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font6">17.1 </span><span class="font4">使用 </span><span class="font6">Web API 339</span></p>
+<p><span class="font4">的项目。在本章中，我们将编写一个程序，它自动下载</span><span class="font6">GitHub</span><span class="font4">上星级最高的</span><span class="font6">Python</span><span class="font4">项目的信息， 并对这些信息进行可视化。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>17.1.2</span><span class="font3"> 使用</span><span class="font1">API</span><span class="font3">调用请求数据</span></h5></li></ul>
+<p><span class="font6">GitHub</span><span class="font4">的</span><span class="font6">API</span><span class="font4">让你能够通过</span><span class="font6">API</span><span class="font4">调用来请求各种信息。要知道</span><span class="font6">API</span><span class="font4">调用是什么样的，请在浏览 器的地址栏中输入如下地址并按回车键：</span></p>
+<p><a href="https://api.github.com/search/repositories?q=language:python&amp;sort=stars"><span class="font0" style="font-weight:bold;">https://api.github.com/search/repositories?q=language:python&amp;sort=stars</span></a></p>
+<p><span class="font4">这个调用返回</span><span class="font6">GitHub</span><span class="font4">当前托管了多少个</span><span class="font6">Python</span><span class="font4">项目，还有有关最受欢迎的</span><span class="font6">Python</span><span class="font4">仓库的信息。 下面来仔细研究这个调用。第一部分(</span><span class="font2">https://api.github.com/</span><span class="font4">)将请求发送到</span><span class="font6">GitHub</span><span class="font4">网站中响 应</span><span class="font6">API</span><span class="font4">调用的部分；接下来的一部分(</span><span class="font2">search/repositories</span><span class="font4">)让</span><span class="font6">API</span><span class="font4">搜索</span><span class="font6">GitHub</span><span class="font4">上的所有仓库。</span></p>
+<p><span class="font2">repositories</span><span class="font4">后面的问号指出我们要传递一个实参。</span><span class="font2">q</span><span class="font4">表示查询，而等号让我们能够开始指定 查询(</span><span class="font2">q=</span><span class="font4">)。通过使用</span><span class="font2">language</span><span class="font5">：</span><span class="font2">python</span><span class="font4">，我们指出只想获取主要语言为</span><span class="font6">Python</span><span class="font4">的仓库的信息。最 后一部分(</span><span class="font2">&amp;sort=stars</span><span class="font4">)指定将项目按其获得的星级进行排序。</span></p>
+<p><span class="font4">下面显示了响应的前几行。从响应可知，该</span><span class="font6">URL</span><span class="font4">并不适合人工输入。</span></p>
+<p><span class="font0">{</span></p>
+<p><span class="font0">&quot;total_count&quot;: 713062,</span></p>
+<p><span class="font0">&quot;incomplete_results&quot;: false,</span></p>
+<p><span class="font0">&quot;items&quot;: [</span></p>
+<p><span class="font0">{</span></p>
+<p><span class="font0">&quot;id&quot;: 3544424,</span></p>
+<p><span class="font0">&quot;name&quot;: &quot;httpie&quot;,</span></p>
+<p><span class="font0">&quot;full_name&quot;: &quot;jkbrzt/httpie&quot;, --</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font4">从第二行输出可知，编写本书时，</span><span class="font6">GitHub</span><span class="font4">总共有</span><span class="font6">713 062</span><span class="font4">个</span><span class="font6">Python</span><span class="font4">项目。</span><span class="font2">“incomplete_results” </span><span class="font4">的值为</span><span class="font2">false</span><span class="font4">，据此我们知道请求是成功的(它并非不完整的)。倘若</span><span class="font6">GitHub</span><span class="font4">无法全面处理该</span><span class="font6">API</span><span class="font4">， 它返回的这个值将为</span><span class="font2">true</span><span class="font4">。接下来的列表中显示了返回的</span><span class="font2">“items&quot;</span><span class="font4">，其中包含</span><span class="font6">GitHub</span><span class="font4">上最受欢迎 的</span><span class="font6">Python</span><span class="font4">项目的详细信息。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>17.1.3</span><span class="font3"> 安装 </span><span class="font1">requests</span></h5></li></ul>
+<p><span class="font6">requests</span><span class="font4">包让</span><span class="font6">Python</span><span class="font4">程序能够轻松地向网站请求信，息以及检查返回的响应。要安装</span><span class="font6">requests</span><span class="font4">， 请执行类似于下面的命令：</span></p>
+<p><span class="font0">$ </span><span class="font0" style="font-weight:bold;">pip install --user requests</span></p>
+<p><span class="font4">如果你还没有使用过</span><span class="font6">pip</span><span class="font4">，请参阅</span><span class="font6">12.2.1</span><span class="font4">节(根据系统的设置，你可能需要使用这个命令的稍 微不同的版本)。</span></p>
+<p><span class="font1" style="font-weight:bold;">17</span></p>
+</body>
+</html>

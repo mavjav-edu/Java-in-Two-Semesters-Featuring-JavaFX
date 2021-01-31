@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">226</span></p>
+<p><span class="font9">第</span><span class="font10">12</span><span class="font9">章 武装飞船</span></p>
+<p><span class="font9">需要绘制子弹时，我们调用</span><span class="font4">draw_bullet()</span><span class="font9">。函数</span><span class="font4">draw.rect()</span><span class="font9">使用存储在</span><span class="font4">sef.color</span><span class="font9">中的颜色 填充表示子弹的</span><span class="font4">rect</span><span class="font9">占据的屏幕部分(见</span><span class="font5">❸</span><span class="font9">)。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">12.8.3 </span><span class="font6">将子弹存储到编组中</span></p></li></ul>
+<p><span class="font9">定义</span><span class="font4">Bullet</span><span class="font9">类和必要的设置后，就可以编写代码了，在玩家每次按空格键时都射出一发子弹。 首先，我们将在</span><span class="font10">alien_invasion.py</span><span class="font9">中创建一个编组(</span><span class="font10">group</span><span class="font9">)，用于存储所有有效的子弹，以便能够 管理发射出去的所有子弹。这个编组将是</span><span class="font4">pygame.sprite.Group</span><span class="font9">类的一个实例；</span><span class="font4">pygame.sprite. Group</span><span class="font9">类类似于列表，但提供了有助于开发游戏的额外功能。在主循环中，我们将使用这个编组 在屏幕上绘制子弹，以及更新每颗子弹的位置：</span></p>
+<p><span class="font2">alien_invasion.py</span></p>
+<p><span class="font0">import pygame</span></p>
+<p><span class="font0">from pygame.sprite import Group</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">def run_game():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 创建一艘飞船</span></p></li></ul>
+<p><span class="font0">ship = Ship(ai_settings, screen)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 创建一个用于存储子弹的编组</span></p></li></ul>
+<p><span class="font1">❶ </span><span class="font0">bullets = Group()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">gf.check_events(ai_settings, screen, ship, bullets) ship.update()</span></p>
+<p><span class="font1">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">bullets.update()</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship, bullets)</span></p>
+<p><span class="font0">run_game()</span></p>
+<p><span class="font9">我们导入了</span><span class="font4">pygame.sprite</span><span class="font9">中的</span><span class="font4">Group</span><span class="font9">类。在</span><span class="font5">。</span><span class="font9">处，我们创建了一个</span><span class="font4">Group</span><span class="font9">实例，并将其命名为 </span><span class="font4">bullets</span><span class="font9">。这个编组是在</span><span class="font4">while</span><span class="font9">循环外面创建的，这样就无需每次运行该循环时都创建一个新的子 弹编组。</span></p>
+<p><span class="font5">注意 </span><span class="font8">如果在循环内部创建这样的编组，游戏运行时将创建数千个子弹编组，导致游戏慢得像 蜗牛。如果游戏停滞不前，请仔细查看主</span><span class="font4">while</span><span class="font8">循环中发生的情况。</span></p>
+<p><span class="font9">我们将</span><span class="font4">bullets</span><span class="font9">传递给了</span><span class="font4">check_events()</span><span class="font9">和</span><span class="font4">update_screen()</span><span class="font9">。在</span><span class="font4">check_events()</span><span class="font9">中，需要在玩 家按空格键时处理</span><span class="font4">bullets</span><span class="font9">；而在</span><span class="font4">update_screen()</span><span class="font9">中「需要更新要绘制到屏幕上的</span><span class="font4">bullets</span><span class="font9">。</span></p>
+<p><span class="font9">当你对编组调用</span><span class="font4">update</span><span class="font9">。时，编组将自动对其中的每个精灵调用</span><span class="font4">update</span><span class="font9">。，因此代码行 </span><span class="font4">bullets.update()</span><span class="font9">将为编组 </span><span class="font4">bullets </span><span class="font9">中的每颗子弹调用</span><span class="font4">bullet.update()</span><span class="font9">。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

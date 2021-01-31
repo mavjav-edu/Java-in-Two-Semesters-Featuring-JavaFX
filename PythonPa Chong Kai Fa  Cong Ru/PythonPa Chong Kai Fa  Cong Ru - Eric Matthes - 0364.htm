@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:9pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:9pt Times New Roman, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">17.2 </span><span class="font8">使用</span><span class="font10">Pygal</span><span class="font8">可视化仓库</span></p>
+<p><span class="font10">347</span></p>
+<p><span class="font8">在</span><span class="font5">。</span><span class="font8">处，我们创建了一个</span><span class="font10">Pygal</span><span class="font8">类</span><span class="font3">Config</span><span class="font8">的实例，并将其命名为</span><span class="font3">my_config</span><span class="font8">。通过修改</span><span class="font3">my_config </span><span class="font8">的属性，可定制图表的外观。在</span><span class="font5">❷</span><span class="font8">处，我们设置了两个属性一</span><span class="font3">x_label_rotation</span><span class="font8">和</span><span class="font3">show_legend</span><span class="font8">, 它们原来是在创建</span><span class="font3">Bar</span><span class="font8">实例时以关键字实参的方式传递的。在</span><span class="font5">❸</span><span class="font8">处，我们设置了图表标题、副标 签和主标签的字体大小。在这个图表中，副标签是</span><span class="font10" style="font-style:italic;">x</span><span class="font8">轴上的项目名以及</span><span class="font10" style="font-style:italic;">y</span><span class="font8">轴上的大部分数字。主标 签是</span><span class="font10" style="font-style:italic;">y</span><span class="font8">轴上为</span><span class="font10">5000</span><span class="font8">整数倍的刻度；这些标签应更大，以与副标签区分开来。在</span><span class="font5">❹</span><span class="font8">处，我们使用 </span><span class="font3">truncate_label</span><span class="font8">将较长的项目名缩短为</span><span class="font10">15</span><span class="font8">个字符（如果你将鼠标指向屏幕上被截短的项目名，将 显示完整的项目名）。接下来，我们将</span><span class="font3">show_y_guides</span><span class="font8">设置为</span><span class="font3">False</span><span class="font8">，以隐藏图表中的水平线（见</span><span class="font5">❺</span><span class="font8">）。 最后，在</span><span class="font5">❻</span><span class="font8">处设置了自定义宽度，让图表更充分地利用浏览器中的可用空间。</span></p>
+<p><span class="font8">在</span><span class="font5">❼</span><span class="font8">处创建</span><span class="font3">Bar</span><span class="font8">实例时，我们将</span><span class="font3">my_config</span><span class="font8">作为第一个实参，从而通过一个实参传递了所有的 配置设置。我们可以通过</span><span class="font3">my_config</span><span class="font8">做任意数量的样式和配置修改，而</span><span class="font5">❼</span><span class="font8">处的代码行将保持不变。 图</span><span class="font10">17-2</span><span class="font8">显示了重新设置样式后的图表。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0364_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200364-1.jpg" alt="" style="width:375pt;height:207pt;">
+<p><span class="font4">图</span><span class="font9">17-2 </span><span class="font4">改进了图表的样式</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">17.2.2</span><span class="font6"> 添加自定义工具提示</span></p></li></ul>
+<p><span class="font8">在</span><span class="font10">Pygal</span><span class="font8">中，将鼠标指向条形将显示它表示的信息，这通常称为</span><span class="font7">工具提示</span><span class="font8">。在这个示例中， 当前显示的是项目获得了多少个星。下面来创建一个自定义工具提示，以同时显示项目的描述。</span></p>
+<p><span class="font8">来看一个简单的示例，它可视化前三个项目，并给每个项目对应的条形都指定自定义标签。 为此，我们向</span><span class="font3">add（）</span><span class="font8">传递一个字典列表，而不是值列表：</span></p>
+<p><span class="font1">bar_descriptions.py</span></p>
+<p><span class="font0">import pygal</span></p>
+<p><span class="font2" style="font-weight:bold;">17</span></p>
+</body>
+</html>

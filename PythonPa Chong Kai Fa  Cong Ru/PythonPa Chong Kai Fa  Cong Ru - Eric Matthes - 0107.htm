@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Segoe UI, sans-serif; }
+ .font2 { font:7pt SimHei, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:10pt SimSun, serif; }
+ .font5 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font5">90 </span><span class="font4">第</span><span class="font5">6</span><span class="font4">章字典</span></p>
+<p><span class="font4">遍历字典时，会默认遍历所有的键，因此，如果将上述代码中的</span><span class="font1">for name in favorite_ languages.keys():</span><span class="font4">替换为</span><span class="font1">for name in favorite_languages:</span><span class="font4">，输出将不变。</span></p>
+<p><span class="font4">如果显式地使用方法</span><span class="font1">keys()</span><span class="font4">可让代码更容易理解，你可以选择这样做，但如果你愿意，也可 省略它。</span></p>
+<p><span class="font4">在这种循环中，可使用当前键来访问与之相关联的值。下面来打印两条消息，指出两位朋友 喜欢的语言。我们像前面一样遍历字典中的名字，但在名字为指定朋友的名字时，打印一条消息， 指出其喜欢的语言：</span></p>
+<p><span class="font0">favorite_languages = { 'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', }</span></p>
+<p><span class="font2">❶ </span><span class="font0">friends = ['phil', 'sarah']</span></p>
+<p><span class="font0">for name in favorite_languages.keys(): print(name.title())</span></p>
+<p><span class="font2">❷ </span><span class="font0">if name in friends:</span></p>
+<p><span class="font0">print(&quot; Hi &quot;&nbsp;+ name.title() +</span></p>
+<p><span class="font0">&quot;, I see your favorite language is &quot;&nbsp;+</span></p>
+<p><span class="font2">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">favorite_languages[name].title() + &quot;!&quot;)</span></p>
+<p><span class="font4">在</span><span class="font3">❶</span><span class="font4">处，我们创建了一个列表，其中包含我们要通过打印消息，指出其喜欢的语言的朋友。 在循环中，我们打印每个人的名字，并检查当前的名字是否在列表</span><span class="font1">friends</span><span class="font4">中(见</span><span class="font3">❷</span><span class="font4">)。如果在列 表中，就打印一句特殊的问候语，其中包含这位朋友喜欢的语言。为访问喜欢的语言，我们使用 了字典名，并将变量</span><span class="font1">name</span><span class="font4">的当前值作为键(见</span><span class="font3">❸</span><span class="font4">)。每个人的名字都会被打印，但只对朋友打印 特殊消息：</span></p>
+<p><span class="font0">Edward</span></p>
+<p><span class="font0">Phil</span></p>
+<p><span class="font0">Hi Phil, I see your favorite language is Python! Sarah</span></p>
+<p><span class="font0">Hi Sarah, I see your favorite language is C!</span></p>
+<p><span class="font0">Jen</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font4"><a name="bookmark1"></a>你还可以使用</span><span class="font1">keys()</span><span class="font4">确定某个人是否接受了调查。下面的代码确定</span><span class="font5">Erin</span><span class="font4">是否接受了调查:</span></h6>
+<p><span class="font0">favorite_languages = { 'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python', }</span></p>
+<p><span class="font2">❶ </span><span class="font0">if 'erin' not in favorite_languages.keys():</span></p>
+</body>
+</html>

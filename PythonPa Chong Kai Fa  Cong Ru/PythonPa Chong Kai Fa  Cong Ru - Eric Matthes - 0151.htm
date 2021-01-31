@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:11pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+ .font8 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">134</span></p>
+<p><span class="font6">第</span><span class="font7">8</span><span class="font6">章 函数</span></p>
+<p><span class="font6">要调用被导入的模块中的函数，可指定导入的模块的名称</span><span class="font3">pizza</span><span class="font6">和函数名</span><span class="font3">make_pizza()</span><span class="font6">,并用 句点分隔它们(见</span><span class="font8" style="font-weight:bold;">0</span><span class="font6">)。这些代码的输出与没有导入模块的原始程序相同：</span></p>
+<p><span class="font0">Making a 16-inch pizza with the following toppings:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- pepperoni</span></p></li></ul>
+<p><span class="font0">Making a 12-inch pizza with the following toppings:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- mushrooms</span></p></li>
+<li>
+<p><span class="font0">- green peppers</span></p></li>
+<li>
+<p><span class="font0">- extra cheese</span></p></li></ul>
+<p><span class="font6">这就是一种导入方法：只需编写一条</span><span class="font3">import</span><span class="font6">语句并在其中指定模块名，就可在程序中使用该 模块中的所有函数。如果你使用这种</span><span class="font3">import</span><span class="font6">语句导入了名为</span><span class="font3">module_name.py</span><span class="font6">的整个模块，就可使 用下面的语法来使用其中任何一个函数：</span></p>
+<p><span class="font0" style="font-style:italic;">module name.functionname</span><span class="font0">()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">8.6.2</span><span class="font4"> 导入特定的函数</span></p></li></ul>
+<p><span class="font6">你还可以导入模块中的特定函数，这种导入方法的语法如下：</span></p>
+<p><span class="font0">from </span><span class="font0" style="font-style:italic;">modul</span><span class="font0" style="font-style:italic;text-decoration:underline;">en</span><span class="font0" style="font-style:italic;">ame</span><span class="font0"> import </span><span class="font0" style="font-style:italic;">functio</span><span class="font0" style="font-style:italic;text-decoration:underline;">nn</span><span class="font0" style="font-style:italic;">ame</span></p>
+<p><span class="font6">通过用逗号分隔函数名，可根据需要从模块中导入任意数量的函数：</span></p>
+<p><span class="font0">from </span><span class="font0" style="font-style:italic;">modul</span><span class="font0" style="font-style:italic;text-decoration:underline;">en</span><span class="font0" style="font-style:italic;">ame</span><span class="font0"> import </span><span class="font0" style="font-style:italic;">functio</span><span class="font0" style="font-style:italic;text-decoration:underline;">n0</span><span class="font0">, </span><span class="font0" style="font-style:italic;">functio</span><span class="font0" style="font-style:italic;text-decoration:underline;">n1</span><span class="font0">, </span><span class="font0" style="font-style:italic;">functio</span><span class="font0" style="font-style:italic;text-decoration:underline;">n2</span></p>
+<p><span class="font6">对于前面的</span><span class="font7">making_pizzas.py</span><span class="font6">示例，如果只想导入要使用的函数，代码将类似于下面这样：</span></p>
+<p><span class="font0">from pizza import make_pizza</span></p>
+<p><span class="font0">make_pizza(16, 'pepperoni')</span></p>
+<p><span class="font0">make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')</span></p>
+<p><span class="font6">若使用这种语法，调用函数时就无需使用句点。由于我们在</span><span class="font3">import</span><span class="font6">语句中显式地导入了函数 </span><span class="font3">make_pizza()</span><span class="font6">，因此调用它时只需指定其名称。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">8.6.3</span><span class="font4"> 使用</span><span class="font1">as</span><span class="font4">给函数指定别名</span></p></li></ul>
+<p><span class="font6">如果要导入的函数的名称可能与程序中现有的名称冲突，或者函数的名称太长，可指定简短 而独一无二的</span><span class="font5">别名</span><span class="font7">——</span><span class="font6">函数的另一个名称，类似于外号。要给函数指定这种特殊外号，需要在导 入它时这样做。</span></p>
+<p><span class="font6">下面给函数</span><span class="font3">make_pizza()</span><span class="font6">指定了别名</span><span class="font3">mp()</span><span class="font6">。这是在</span><span class="font3">import</span><span class="font6">语句中使用</span><span class="font3">make_pizza as mp</span><span class="font6">实现的， 关键字</span><span class="font3">as</span><span class="font6">将函数重命名为你提供的别名：</span></p>
+</body>
+</html>

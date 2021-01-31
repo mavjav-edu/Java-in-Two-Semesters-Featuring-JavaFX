@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">262</span></p>
+<p><span class="font6">第</span><span class="font7">14</span><span class="font6">章 记分</span></p>
+<p><span class="font6">为在玩家每次单击</span><span class="font7">Play</span><span class="font6">按钮时都重置游戏，需要重置统计信息、删除现有的外星人和子弹、 创建一群新的外星人，并让飞船居中，如下所示：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>game_functions.py</span></h6>
+<p><span class="font0">def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bullets, mouse_x, mouse_y):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">在玩家单击</span><span class="font0">Play</span><span class="font5">按钮时开始新游戏</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if play_button.rect.collidepoint(mouse_x, mouse_y):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 重置游戏统计信息</span></p></li></ul>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">stats.reset_stats()</span></p>
+<p><span class="font0">stats.game_active = True</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 清空外星人列表和子弹列表</span></p></li></ul>
+<p><span class="font3">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">aliens.empty()</span></p>
+<p><span class="font0">bullets.empty()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 创建一群新的外星人，并让飞船居中</span></p></li></ul>
+<p><span class="font3">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font0">ship.center_ship()</span></p>
+<p><span class="font6">我们更新了</span><span class="font2">check_play_button()</span><span class="font6">的定义，使其能够访问</span><span class="font2">ai_settings</span><span class="font6">、</span><span class="font2">stats</span><span class="font6">、</span><span class="font2">ship</span><span class="font6">、</span><span class="font2">aliens </span><span class="font6">和</span><span class="font2">bullets</span><span class="font6">。为重置在游戏期间发生了变化的设置以及刷新游戏的视觉元素，它需要这些对象。</span></p>
+<p><span class="font6">在</span><span class="font4">❶</span><span class="font6">处，我们重置了游戏统计信息，给玩家提供了三艘新飞船。接下来，我们将</span><span class="font2">game_active </span><span class="font6">设置为</span><span class="font2">True </span><span class="font6">(这样，这个函数的代码执行完毕后，游戏就会开始)，清空编组</span><span class="font2">aliens</span><span class="font6">和</span><span class="font2">bullets </span><span class="font6">(见 </span><span class="font4">❷</span><span class="font6">)，创建一群新的外星人，并将飞船居中(见</span><span class="font4">❸</span><span class="font6">)。</span></p>
+<p><span class="font2">check_events()</span><span class="font6">的定义需要修改，调用</span><span class="font2">check_play_button()</span><span class="font6">的代码亦如此：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>game_functions.py</span></h6>
+<p><span class="font0">def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">响应按键和鼠标事件</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">for event in pygame.event.get():</span></p>
+<p><span class="font0">if event.type == pygame.QUIT:</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">elif event.type == pygame.MOUSEBUTTONDOWN:</span></p>
+<p><span class="font0">mouse_x, mouse_y = pygame.mouse.get_pos()</span></p>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">check_play_button(ai_settings, screen, stats, play_button, ship,</span></p>
+<p><span class="font0">aliens, bullets, mouse_x, mouse_y)</span></p>
+<p><span class="font2">check_events()</span><span class="font6">的定义需要形参</span><span class="font2">aliens</span><span class="font6">，以便将它传递给</span><span class="font2">check_play_button()</span><span class="font6">。接下来，我 们修改了调用</span><span class="font2">check_play_button()</span><span class="font6">的代码，以将合适的实参传递给它(见</span><span class="font4">❶</span><span class="font6">)。</span></p>
+<p><span class="font6">下面来修改</span><span class="font7">alien_invasion.py</span><span class="font6">中调用</span><span class="font2">check_events()</span><span class="font6">的代码，以将实参</span><span class="font2">aliens</span><span class="font6">传递给它：</span></p>
+<h6><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>alien_invasion.py</span></h6>
+<p><span class="font0"># </span><span class="font5">开始游戏主循环</span></p>
+<p><span class="font0">while True:</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

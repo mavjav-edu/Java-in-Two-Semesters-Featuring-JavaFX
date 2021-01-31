@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:9pt SimSun, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">264 </span><span class="font7">第</span><span class="font3">14</span><span class="font7">章记分</span></p>
+<p><span class="font3">game_functions.py</span></p>
+<p><span class="font0" style="font-weight:bold;">def ship_hit(ai_settings, screen, stats, ship, aliens, bullets): </span><span class="font10">所应飞就会外星人撞到“”“</span></p>
+<p><span class="font0" style="font-weight:bold;">if stats.ships_left &gt;&nbsp;0:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1" style="font-style:italic;">--snip--</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">else:</span></p>
+<p><span class="font0" style="font-weight:bold;">stats.game_active = False</span></p>
+<p><span class="font0" style="font-weight:bold;">pygame.mouse.set_visible(True)</span></p>
+<p><span class="font7">在</span><span class="font12">ship_hit()</span><span class="font7">中，我们在游戏进入非活动状态后，立即让光标可见。关注这样的细节让游戏 显得更专业，也让玩家能够专注于玩游戏而不是费力搞明白用户界面。</span></p>
+<p><span class="font8">动手试一试</span></p>
+<p><span class="font2">14-1</span><span class="font11">按</span><span class="font2">P</span><span class="font11">开始新游戏：</span><span class="font7">鉴于游戏《外星人入侵》使用键盘来控制飞船，最好让玩 家也能够通过按键来开始游戏。请添加让玩家在按</span><span class="font12">P</span><span class="font7">时开始游戏的代码。也许这样做会 有所帮助：将</span><span class="font12">check_play_button()</span><span class="font7">的一些代码提取出来，放到一个名为</span><span class="font12">start_game() </span><span class="font7">的函数中，并在 </span><span class="font12">check_play_button()</span><span class="font7">和 </span><span class="font12">check_keydown_events()</span><span class="font7">中调用这个函数。</span></p>
+<p><span class="font2">14-2</span><span class="font11">射击</span><span class="font7">练习：创建一个矩形，它在屏幕右边缘以固定的速度上下移动。然后， 在屏幕左边缘创建一艘飞船，玩家可上下移动该飞船，并射击前述矩形目标。添加一个 用于开始游戏的</span><span class="font12">Play</span><span class="font7">按钮，在玩家三次未击中目标时结束游戏，并重新显示</span><span class="font12">Play</span><span class="font7">按钮， 让玩家能够通过单击该按钮来重新开始游戏。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">14.2</span><span class="font9">提高等级</span></p></li></ul>
+<p><span class="font7">当前，将整群外星人都消灭干净后，玩家将提高一个等级，但游戏的难度并没有变。下面 来增加一点趣味性：每当玩家将屏幕上的外星人都消灭干净后，加快游戏的节奏，让游戏玩起 来更难。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font4"><a name="bookmark1"></a>14.2.1</span><span class="font8"> 修改速度设置</span></h5></li></ul>
+<p><span class="font7">我们首先重新组织</span><span class="font12">Settings</span><span class="font7">类，将游戏设置划分成静态的和动态的两组。对于随着游戏进行 而变化的设置，我们还确保它们在开始新游戏时被重置。</span><span class="font12">settings.py</span><span class="font7">的方法</span><span class="font12">_init_()</span><span class="font7">如下：</span></p>
+<p><span class="font3">settings.py</span></p>
+<p><span class="font0" style="font-weight:bold;">def ―init—(self):</span></p>
+<p><span class="font10">懦“初嘉花游戏的冷态设变”””</span></p>
+<p><span class="font10">#屏幕设豆</span></p>
+<p><span class="font0" style="font-weight:bold;">self.screen_width = 1200</span></p>
+<p><span class="font0" style="font-weight:bold;">self.screen_height = 8(X)</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

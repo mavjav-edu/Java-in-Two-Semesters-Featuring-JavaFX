@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">394</span></p>
+<p><span class="font10">第</span><span class="font11">19</span><span class="font10">章 用户账户</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>19.2.2 </span><span class="font8">登录页面</span></h5></li></ul>
+<p><span class="font10">我们首先来实现登录页面的功能。为此，我们将使用</span><span class="font11">Django</span><span class="font10">提供的默认登录视图，因此</span><span class="font11">URL </span><span class="font10">模式会稍有不同。在目录</span><span class="font11">learning_log/users/</span><span class="font10">中，新建一个名为</span><span class="font11">urls.py</span><span class="font10">的文件，并在其中添加如下 代码：</span></p>
+<p><span class="font2">urls.py</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font9">为应用程序</span><span class="font1">users</span><span class="font9">定义</span><span class="font1">URL</span><span class="font9">模式</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font1">from django.conf.urls import url</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">from django.contrib.auth.views import login</span></p>
+<p><span class="font1">from . import views</span></p>
+<p><span class="font1">urlpatterns = [</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font9">登录页面</span></p></li></ul>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">url（r'<sup>A</sup>login/$', login, {'template_name': 'users/login.html'},</span></p>
+<p><span class="font1">name='login'）,</span></p>
+<p><span class="font1">]</span></p>
+<p><span class="font10">我们首先导入了默认视图</span><span class="font4">login </span><span class="font10">（见</span><span class="font7">❶</span><span class="font10">）。登录页面的</span><span class="font11">URL</span><span class="font10">模式与</span><span class="font11">URL </span><a href="http://localhost:8000/"><span class="font11">http://localhost:8000/</span></a><span class="font11"> users/login/</span><span class="font10">匹配（见</span><span class="font7">❷</span><span class="font10">）。这个</span><span class="font11">URL</span><span class="font10">中的单词</span><span class="font11">users</span><span class="font10">让</span><span class="font11">Django</span><span class="font10">在</span><span class="font11">users/urls.py</span><span class="font10">中查找，而单词</span><span class="font11">login</span><span class="font10">让 它将请求发送给</span><span class="font11">Django</span><span class="font10">默认视图</span><span class="font4">login </span><span class="font10">（请注意，视图实参为</span><span class="font4">login</span><span class="font10">，而不是</span><span class="font4">views.login</span><span class="font10">）。鉴于 我们没有编写自己的视图函数，我们传递了一个字典，告诉</span><span class="font11">Django</span><span class="font10">去哪里查找我们将编写的模板。 这个模板包含在应用程序</span><span class="font4">users</span><span class="font10">而不是</span><span class="font4">learning_logs</span><span class="font10">中。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">1.</span><span class="font7"> 模板 </span><span class="font2">login.html</span></p></li></ul>
+<p><span class="font10">用户请求登录页面时，</span><span class="font11">Django</span><span class="font10">将使用其默认视图</span><span class="font4">l</span><span class="font7">。</span><span class="font4">gin</span><span class="font10">,但我们依然需要为这个页面提供模 板。为此，在目录</span><span class="font11">learning_log/users/</span><span class="font10">中，创建一个名为</span><span class="font11">templates</span><span class="font10">的目录，并在其中创建一个名为 出©巧的目录。以下是模板</span><span class="font11">loginhtml</span><span class="font10">，你应将其存储到目录</span><span class="font11">learning_log/users/templates/users/</span><span class="font10">中：</span></p>
+<p><span class="font2">login.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font0">❶</span><span class="font5"> &nbsp;&nbsp;</span><span class="font1">{% if form.errors %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;p&gt;Your username and password didn't match. Please try again.&lt;/p&gt; {% endif %}</span></p></li></ul>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">&lt;form method=&quot;post&quot; action=&quot;{% url 'users:login' %}&quot;&gt; {% csrf_token %}</span></p>
+<p><span class="font0">❸</span><span class="font1">{{ form.as_p }}</span></p>
+<p><span class="font0">❹</span><span class="font5"> </span><span class="font6">〈</span><span class="font1">button name=&quot;submit&quot;&gt;log in&lt;/button&gt;</span></p>
+<p><span class="font0">❺</span><span class="font5"> </span><span class="font6">〈</span><span class="font1">input type=&quot;hidden&quot; name=&quot;next&quot; value=&quot;{% url 'learning_logs:index' %}&quot; /&gt;</span></p>
+<p><span class="font1">&lt;/form&gt;</span></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+ .font8 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">132 </span><span class="font6">第</span><span class="font7">8</span><span class="font6">章 函数</span></p>
+<p><span class="font0">profile[key] = value return profile</span></p>
+<p><span class="font0">user_profile = build_profile('albert', 'einstein',</span></p>
+<p><span class="font0">location='princeton', field='physics')</span></p>
+<p><span class="font0">print(user_profile)</span></p>
+<p><span class="font6">函数</span><span class="font2">build_prfile()</span><span class="font6">的定义要求提供名和姓，同时允许用户根据需要提供任意数量的名称</span><span class="font1">-</span><span class="font6">值对。形参</span><span class="font2">**user_info</span><span class="font6">中的两个星号让</span><span class="font7">Python</span><span class="font6">创建一个名为</span><span class="font2">user_info</span><span class="font6">的空字典，并将收到的所 有名称</span><span class="font1">-</span><span class="font6">值对都封装到这个字典中。在这个函数中，可以像访问其他字典那样访问</span><span class="font2">user_info</span><span class="font6">中的 名称</span><span class="font1">—</span><span class="font6">值对。</span></p>
+<p><span class="font6">在</span><span class="font2">build_profile()</span><span class="font6">的函数体内，我们创建了一个名为</span><span class="font2">profile</span><span class="font6">的空字典，用于存储用户简介。 在</span><span class="font8" style="font-weight:bold;">❶</span><span class="font6">处，我们将名和姓加入到这个字典中，因为我们总是会从用户那里收到这两项信息。在</span><span class="font3">❷</span><span class="font6">处， 我们遍历字典</span><span class="font2">user_info</span><span class="font6">中的键</span><span class="font1">-</span><span class="font6">值对，并将每个键</span><span class="font1">-</span><span class="font6">值对都加入到字典</span><span class="font2">profile</span><span class="font6">中。最后，我们将 字典</span><span class="font2">profile</span><span class="font6">返回给函数调用行。</span></p>
+<p><span class="font6">我们调用</span><span class="font2">build_profile()</span><span class="font6">，向它传递名(</span><span class="font2">'albert'</span><span class="font6">)、姓(</span><span class="font2">’einstein'</span><span class="font6">)和两个键</span><span class="font1">—</span><span class="font6">值对 (</span><span class="font2">location='princeton'</span><span class="font6">和</span><span class="font2">field='physics'</span><span class="font6">(并将返回的</span><span class="font2">profile</span><span class="font6">存储在变量</span><span class="font2">user_profile</span><span class="font6">中，再 打印这个变量：</span></p>
+<p><span class="font0">{'first_name': 'albert', 'last_name': 'einstein',</span></p>
+<p><span class="font0">'location': 'princeton', 'field': 'physics'}</span></p>
+<p><span class="font6">在这里，返回的字典包含用户的名和姓，还有求学的地方和所学专业。调用这个函数时，不 管额外提供了多少个键</span><span class="font1">—</span><span class="font6">值对，它都能正确地处理。</span></p>
+<p><span class="font6">编写函数时，你可以以各种方式混合使用位置实参、关键字实参和任意数量的实参。知道这 些实参类型大有裨益，因为阅读别人编写的代码时经常会见到它们。要正确地使用这些类型的实 参并知道它们的使用时机，需要经过一定的练习。就目前而言，牢记使用最简单的方法来完成任 务就好了。你继续往下阅读，就会知道在各种情况下哪种方法的效率是最高的。</span></p>
+<p><span class="font4">动手试一试</span></p>
+<p><span class="font1">8-12</span><span class="font3">三明治</span><span class="font5">：编写一个函数，它接受顾客要在三明治中添加的一系列食材。这个 函数只有一个形参(它收集函数调用中提供的所有食材)，并打印一条消息，对顾客点 的三明治进行概述。调用这个函数三次，每次都提供不同数量的实参。</span></p>
+<p><span class="font1">8-13</span><span class="font3">用户简介</span><span class="font5">：复制前面的程序</span><span class="font7">user_profile.py</span><span class="font5">，在其中调用</span><span class="font2">build_profile()</span><span class="font5">来 创建有关你的简介；调用这个函数时，指定你的名和姓，以及三个描述你的键</span><span class="font1">-</span><span class="font5">值对。</span></p>
+<p><span class="font1">8-14</span><span class="font3">汽车</span><span class="font5">：编写一个函数，将一辆汽车的信息存储在一个字典中。这个函数总是接 受制造商和型号，还接受任意数量的关键字实参。这样调用这个函数：提供必不可少的 信息，以及两个名称</span><span class="font1">-</span><span class="font5">值对，如颜色和选装配件。这个函数必须能够像下面这样进行调用：</span></p>
+</body>
+</html>

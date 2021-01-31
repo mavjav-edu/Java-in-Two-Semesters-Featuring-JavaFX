@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">20.2 </span><span class="font6">部署“学习笔记” </span><span class="font7">431</span></p>
+<p><span class="font7">Heroku</span><span class="font6">之前，必须检查状态并看到刚才所说的消息。如果你没有看到这样的消息，说明有未提交 的修改，而这些修改将不会推送到服务器。在这种情况下，可尝试再次执行命令</span><span class="font3">commit</span><span class="font6">，但如果 你不知道该如何解决这个问题，请阅读附录</span><span class="font7">D</span><span class="font6">，更深入地了解</span><span class="font7">Git</span><span class="font6">的用法。</span></p>
+<p><span class="font6">下面来将修改后的仓库推送到</span><span class="font7">Heroku</span><span class="font6">:</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">git push heroku master</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">remote: -----&gt; Python app detected</span></p>
+<p><span class="font0">remote: -----&gt; Installing dependencies with pip</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">remote: -----&gt; Launching... done, v8</span></p>
+<p><span class="font0">remote: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="https://learning-log.herokuapp.com/"><span class="font0">https://learning-log.herokuapp.com/</span></a><span class="font0"> deployed to Heroku</span></p>
+<p><span class="font0">remote: Verifying deploy.... done.</span></p>
+<p><span class="font0">To </span><a href="https://git.heroku.com/learning-log.git"><span class="font0">https://git.heroku.com/learning-log.git</span></a></p>
+<p><span class="font0">4c9d111..ef65d2b master -&gt; master</span></p>
+<p><span class="font0">(ll_env)learning_log$</span></p>
+<p><span class="font7">Heroku</span><span class="font6">发现仓库发生了变化，因此重建项目，确保所有的修改都已生效。它不会重建数据库， 因此这次无需执行命令</span><span class="font3">migrate</span><span class="font6">。</span></p>
+<p><span class="font6">现在要核实部署更安全了，请输入项目的</span><span class="font7">URL</span><span class="font6">，并在末尾加上我们未定义的扩展。例如，尝 试访问</span><a href="http://learning-log.herokuapp.com/letmein/%e3%80%82%e4%bd%a0%e5%b0%86%e7%9c%8b%e5%88%b0%e4%b8%80%e4%b8%aa%e9%80%9a%e7%94%a8%e7%9a%84%e9%94%99%e8%af%af%e9%a1%b5%e9%9d%a2%ef%bc%8c%e5%ae%83%e6%b2%a1%e6%9c%89%e6%b3%84%e9%9c%b2%e4%bb%bb"><span class="font7">http://learning-log.herokuapp.com/letmein/</span><span class="font6">。你将看到一个通用的错误页面，它没有泄露任</span></a><span class="font6"> 何有关该项目的具体信息。如果你尝试向本地的“学习笔记”发出同样的请求一输入</span><span class="font7">URL http://locmhost:8000/letmein/</span><span class="font6">，你将看到完整的</span><span class="font7">Django</span><span class="font6">错误页面。这样的结果非常理想，你接着开 发这个项目时，将看到信息丰富的错误消息，但用户看不到有关项目代码的重要信息。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">20.2.17 </span><span class="font5">创建自定义错误页面</span></p></li></ul>
+<p><span class="font6">在第</span><span class="font7">19</span><span class="font6">章，我们对“学习笔记”进行了配置，使其在用户请求不属于他的主题或条目时返回 </span><span class="font7">404</span><span class="font6">错误。你可能还遇到过一些</span><span class="font7">500</span><span class="font6">错误(内部错误)。</span><span class="font7">404</span><span class="font6">错误通常意味着你的</span><span class="font7">Django</span><span class="font6">代码是正确 的，但请求的对象不存在。</span><span class="font7">500</span><span class="font6">错误通常意味着你编写的代码有问题，如</span><span class="font7">views.py</span><span class="font6">中的函数有问题。 当前，在这两种情况下，</span><span class="font7">Django</span><span class="font6">都返回通用的错误页面，但我们可以编写外观与“学习笔记” 一 致的</span><span class="font7">404</span><span class="font6">和</span><span class="font7">500</span><span class="font6">错误页面模板。这些模板必须放在根模板目录中。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">1. </span><span class="font4">创建自定义模板</span></p></li></ul>
+<p><span class="font6">在文件夹</span><span class="font7">learning_log/learning_log</span><span class="font6">中，新建一个文件夹，并将其命名为</span><span class="font7">templates</span><span class="font6">；再在这个 文件夹中新建一个名为</span><span class="font7">404 html</span><span class="font6">的文件，并在其中输入如下内容：</span></p>
+<p><span class="font1">404.html</span></p>
+<p><span class="font0">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">{% block header %}</span></p></li></ul>
+<p><span class="font0">&lt;h2&gt;The item you requested is not available. (404)&lt;/h2&gt;</span></p>
+<p><span class="font0">{% endblock header %}</span></p>
+<p><span class="font2" style="font-weight:bold;">20</span></p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font2">198</span></p>
+<p><span class="font7">第</span><span class="font2">11</span><span class="font7">章测试代码</span></p>
+<p><span class="font0" style="font-weight:bold;">def test_store_single_response(self):</span></p>
+<p><span class="font5">…'疝试单不答案会薪妥善地存储</span></p>
+<p><span class="font0" style="font-weight:bold;">self.my_survey.store_response(self.responses[0])</span></p>
+<p><span class="font0" style="font-weight:bold;">self.assertln(self.responses[0], self.my_survey.responses)</span></p>
+<p><span class="font0" style="font-weight:bold;">def test_store_three_responses(self):</span></p>
+<p><span class="font5">…'疝试三不答案</span><span class="font8">A</span><span class="font5">被妥善地存储&quot;&quot;&quot;</span></p>
+<p><span class="font0" style="font-weight:bold;">for response in self.responses:</span></p>
+<p><span class="font0" style="font-weight:bold;">self.my_survey.store_response(response)</span></p>
+<p><span class="font0" style="font-weight:bold;">for response in self.responses:</span></p>
+<p><span class="font0" style="font-weight:bold;">self.assertln(response, self.my_survey.responses)</span></p>
+<p><span class="font0" style="font-weight:bold;">unittest.main()</span></p>
+<p><span class="font7">方法</span><span class="font9">setup</span><span class="font7">。做了两件事情：创建一个调查对象(见❶);创建一个答案列表(见❷</span><span class="font9">)o</span><span class="font7">存储这 两样东西的变量名包含前缀</span><span class="font9">self </span><span class="font7">(即存储在属性中),因此可在这个类的任何地方使用。这让两 个测试方法都更简单，因为它们都不用创建调查对象和答案。方法</span><span class="font9">test_store_three_response() </span><span class="font7">核实</span><span class="font9">self.responses</span><span class="font7">中的第一个答案 </span><span class="font9">self.responses[o] </span><span class="font7">被妥善地存储，而方法 </span><span class="font9">test_store_three_response()</span><span class="font7">核实</span><span class="font9">self .responses</span><span class="font7">中的全部三个答案都被妥善地存储。</span></p>
+<p><span class="font7">再次运行</span><span class="font9">test_survey.py</span><span class="font7">时，这两个测试也都通过了。如果要扩展</span><span class="font9">AnonymousSurvey,</span><span class="font7">使其允许 每位用户输入多个答案，这些测试将很有用。修改代码以接受多个答案后，可运行这些测试，确 认存储单个答案或一系列答案的行为未受影响。</span></p>
+<p><span class="font7">测试自己编写的类时，方法</span><span class="font9">setup</span><span class="font7">。让测试方法编写起来更容易：可在</span><span class="font9">setup</span><span class="font7">。方法中创建一 系列实例并设置它们的属性，再在测试方法中直接使用这些实例。相比于在每个测试方法中都创 建实例并设置其属性，这要容易得多。</span></p>
+<p><span class="font6">注意</span><span class="font3">运行测试用例时，每完成一个单元测试，</span><span class="font9">Python</span><span class="font3">都打印一个字符：测试通过时打印一个 句点；测试引发错误时打印一个</span><span class="font9">E</span><span class="font7">；</span><span class="font3">测试导致断言失败时打印一个</span><span class="font9">F</span><span class="font3">。这就是你运行测试 用例时，在输出的第一行中看到的句点和字符数量各不相同的原因。如果测试用例包含 很多单元测试，需要运行很长时间，就可通过观察这些结果来获悉有多少个测试通过了。</span></p>
+<p><span class="font4">动手试一试</span></p>
+<p><span class="font1">11-3</span><span class="font6">雇员：</span><span class="font3">编写一个名为</span><span class="font9">Employee</span><span class="font3">的类，其方法—</span><span class="font9">init—()</span><span class="font3">接受名、姓和年薪，并 将它们都存储在属性中。编写一个名为</span><span class="font9">give_raise()</span><span class="font3">的方法，它默认将年薪增加</span><span class="font9">5000 </span><span class="font3">美元，但也能够接受其他的年薪增加量。</span></p>
+<p><span class="font3">为</span><span class="font9">Employee</span><span class="font3">编写一个测试用例，其中包含两个测试方法：</span><span class="font9">test_give_default_ raise</span><span class="font3">。和</span><span class="font9">test_give_custom_raise()o</span><span class="font3">使用方法</span><span class="font9">setllp(),</span><span class="font3">以免在每个测试方法中都创 建新的雇员实例。运行这个测试用例，确认两个测试都通过了。</span></p>
+<p><span class="font3">图灵社区会员江子涛</span><span class="font9">Tesla(jiangzitao201314@foxmail.com)</span><span class="font3">专享尊重版权</span></p>
+</body>
+</html>

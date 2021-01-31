@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:11pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:10pt Segoe UI, sans-serif; }
+ .font6 { font:7pt SimHei, sans-serif; }
+ .font7 { font:8pt SimHei, sans-serif; }
+ .font8 { font:10pt SimHei, sans-serif; }
+ .font9 { font:12pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:9pt SimSun, serif; }
+ .font12 { font:10pt SimSun, serif; }
+ .font13 { font:9pt Times New Roman, serif; }
+ .font14 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font14">316</span></p>
+<p><span class="font12">第</span><span class="font14">16</span><span class="font12">章 下载数据</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font10"> 设置图形的格式</span></p></li></ul>
+<p><span class="font6">❷ </span><span class="font1">plt.title(&quot;Daily high temperatures, July 2014”, fontsize=24</span><span class="font11">)</span></p>
+<p><span class="font6">❸ </span><span class="font1">plt.xlabel('', fontsize=l6)</span></p>
+<p><span class="font1">plt.ylabel(&quot;Temperature (F)&quot;, fontsize=16)</span></p>
+<p><span class="font1">plt.tick_params(axis='both', which='major', labelsize=16)</span></p>
+<p><span class="font1">plt.show()</span></p>
+<p><span class="font12">我们将最高气温列表传给</span><span class="font5">plot()</span><span class="font12">(见</span><span class="font8">❶</span><span class="font12">)，并传递</span><span class="font5">c='red'</span><span class="font12">以便将数据点绘制为红色(红色显 示最高气温，蓝色显示最低气温)。接下来，我们设置了一些其他的格式，如字体大小和标签(见 </span><span class="font8">❷</span><span class="font12">)，这些都在第</span><span class="font14">15</span><span class="font12">章介绍过。鉴于我们还没有添加日期，因此没有给</span><span class="font14" style="font-style:italic;">x</span><span class="font12">轴添加标签，但</span><span class="font5">plt.xlabel() </span><span class="font12">确实修改了字体大小，让默认标签更容易看清。图</span><span class="font14">16-1</span><span class="font12">显示了绘制的图表：一个简单的折线图， 显示了阿拉斯加锡特卡</span><span class="font14">2014</span><span class="font12">年</span><span class="font14">7</span><span class="font12">月每天的最高气温。</span></p>
+<p><span class="font2">Daily high temperatures, July 2014</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0333_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200333-1.jpg" alt="" style="width:318pt;height:151pt;">
+<p><span class="font7">图</span><span class="font13">16-1 </span><span class="font7">阿拉斯加锡特卡</span><span class="font13">2014</span><span class="font7">年</span><span class="font13">7</span><span class="font7">月每日最高气温折线图</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">16.1.5</span><span class="font9"> 模块 </span><span class="font3">datetime</span></p></li></ul>
+<p><span class="font12">下面在图表中添加日期，使其更有用。在天气数据文件中，第一个日期在第二行：</span></p>
+<p><span class="font1">2014-7-1,64,56,50,53,51,48,96,83,58,30.19,--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<p><span class="font12">读取该数据时，获得的是一个字符串，因为我们需要想办法将字符串</span><span class="font5">'2014-7-1'</span><span class="font12">转换为一个 表示相应日期的对象。为创建一个表示</span><span class="font14">2014</span><span class="font12">年</span><span class="font14">7</span><span class="font12">月</span><span class="font14">1</span><span class="font12">日的对象，可使用模块</span><span class="font5">datetime</span><span class="font12">中的方法 </span><span class="font5">strptime()</span><span class="font12">。我们在终端会话中看看</span><span class="font5">st</span><span class="font12">邛</span><span class="font5">time()</span><span class="font12">的工作原理：</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">from datetime import datetime</span></p></li>
+<li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">first_date = datetime.strptime('2014-7-1', '</span><span class="font0" style="font-weight:bold;">%</span><span class="font1" style="font-weight:bold;">Y-</span><span class="font0" style="font-weight:bold;">%</span><span class="font1" style="font-weight:bold;">m-</span><span class="font0" style="font-weight:bold;">%</span><span class="font1" style="font-weight:bold;">d')</span></p></li>
+<li>
+<p><span class="font1">&gt; &gt;&gt;&nbsp;</span><span class="font1" style="font-weight:bold;">print(first_date)</span></p></li></ul>
+<p><span class="font1">2014-07-01 00:00:00</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

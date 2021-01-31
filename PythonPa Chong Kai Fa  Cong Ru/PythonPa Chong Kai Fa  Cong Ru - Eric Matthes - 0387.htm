@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:8pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">370</span></p>
+<p><span class="font8">第</span><span class="font9">18</span><span class="font8">章</span><span class="font9">Django</span><span class="font8">入门</span></p>
+<p><span class="font2">urls.py</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">from django.conf.urls import include, url from django.contrib import admin</span></p>
+<p><span class="font0">❷</span><span class="font4"> </span><span class="font1">urlpatterns =[</span></p>
+<p><span class="font0">❸</span><span class="font4"> </span><span class="font1">url(r'<sup>A</sup>admin/', include(admin.site.urls)),</span></p>
+<p><span class="font1">]</span></p>
+<p><span class="font8">前两行导入了为项目和管理网站管理</span><span class="font9">URL</span><span class="font8">的函数和模块(见</span><span class="font6">❶</span><span class="font8">)。这个文件的主体定义了变 量</span><span class="font3">urlpatterns </span><span class="font8">(见</span><span class="font6">❷</span><span class="font8">)。在这个针对整个项目的迎心工丫文件中，变量</span><span class="font3">urlpatterns</span><span class="font8">包含项目中的应 用程序的</span><span class="font9">URL</span><span class="font8">。</span><span class="font6">❸</span><span class="font8">处的代码包含模块</span><span class="font3">admin.site.urls</span><span class="font8">，该模块定义了可在管理网站中请求的所有 </span><span class="font9">URL</span><span class="font8">。</span></p>
+<p><span class="font8">我们需要包含</span><span class="font9">learning_logs</span><span class="font8">的</span><span class="font9">URL</span><span class="font8">:</span></p>
+<p><span class="font1">from django.conf.urls import include, url</span></p>
+<p><span class="font1">from django.contrib import admin</span></p>
+<p><span class="font1">urlpatterns = [</span></p>
+<p><span class="font1">ur1T<sup>A</sup>admin/', include(admin.site.urls)),</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">url(r'', include('learning_logs.urls', namespace='learning_logs')), ]</span></p>
+<p><span class="font8">在</span><span class="font6">❶</span><span class="font8">处，我们添加了一行代码来包含模块</span><span class="font3">learning_logs.urls</span><span class="font8">。这行代码包含实参 </span><span class="font3">namespace</span><span class="font8">，让我们能够将</span><span class="font3">learning_logs</span><span class="font8">的</span><span class="font9">URL</span><span class="font8">同项目中的其他</span><span class="font9">URL</span><span class="font8">区分开来，这在项目开始扩 展时很有帮助。</span></p>
+<p><span class="font8">默认的</span><span class="font9">urls.py</span><span class="font8">包含在文件夹</span><span class="font9">learning_log</span><span class="font8">中，现在我们需要在文件夹</span><span class="font9">learning_logs</span><span class="font8">中创建另一 个</span><span class="font9">urls.py</span><span class="font8">文件：</span></p>
+<p><span class="font2">urls.py</span></p>
+<p><span class="font0">❶</span><span class="font1">&quot;&quot;&quot;</span><span class="font7">定义</span><span class="font1">1earning_1</span><span class="font5">。</span><span class="font1">gs </span><span class="font7">的 </span><span class="font1">URL </span><span class="font7">模式</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font0">❷</span><span class="font4"> </span><span class="font1">from django.conf.urls import url</span></p>
+<p><span class="font0">❸</span><span class="font4"> </span><span class="font1">from . import views</span></p>
+<p><span class="font0">❹</span><span class="font4"> </span><span class="font1">urlpatterns =[</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font7">主页</span></p></li></ul>
+<p><span class="font0">❺</span><span class="font4"> </span><span class="font1">url(r'A$', views.index, name='index'),</span></p>
+<p><span class="font1">]</span></p>
+<p><span class="font8">为弄清楚当前位于哪个</span><span class="font9">urls.py</span><span class="font8">文件中，我们在这个文件开头添加了一个文档字符串(见</span><span class="font6">❶</span><span class="font8">)。 接下来，我们导入了函数</span><span class="font3">url</span><span class="font8">，因为我们需要使用它来将</span><span class="font9">URL</span><span class="font8">映射到视图(见</span><span class="font6">❷)。</span><span class="font8">我们还导入了 模块</span><span class="font3">views </span><span class="font8">(见</span><span class="font6">❸</span><span class="font8">)，其中的句点让</span><span class="font9">Python</span><span class="font8">从当前的</span><span class="font9">urls.py</span><span class="font8">模块所在的文件夹中导入视图。在这个 模块中，变量</span><span class="font3">urlpatterns</span><span class="font8">是一个列表，包含可在应用程序</span><span class="font3">learning_logs</span><span class="font8">中请求的网页(见</span><span class="font6">❹</span><span class="font8">)。</span></p>
+</body>
+</html>

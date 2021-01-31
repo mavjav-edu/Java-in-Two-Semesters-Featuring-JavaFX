@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">390</span></p>
+<p><span class="font9">第</span><span class="font10">19</span><span class="font9">章 用户账户</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>19.1.3 </span><span class="font7">编辑条目</span></h5></li></ul>
+<p><span class="font9">下面来创建一个页面，让用户能够编辑既有的条目。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">1. URL </span><span class="font6">模式 </span><span class="font4">edit_entry</span></p></li></ul>
+<p><span class="font9">这个页面的</span><span class="font10">U—</span><span class="font9">需要传递要编辑的条目的</span><span class="font10">ID</span><span class="font9">。修改后的</span><span class="font10">learning_logs/urls.py</span><span class="font9">如下:</span></p>
+<h6><a name="bookmark2"></a><span class="font2"><a name="bookmark3"></a>urls.py</span></h6>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--urlpatterns = [</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font8">用于编辑条目的页面</span></p></li></ul>
+<p><span class="font1">url(r'<sup>A</sup>edit_entry/(?P&lt;entry_id&gt;\d+)/$', views.edit_entry,</span></p>
+<p><span class="font1">name='edit_entry'),</span></p>
+<p><span class="font1">]</span></p>
+<p><span class="font9">在</span><span class="font10">URL </span><span class="font9">(如</span><span class="font10">http://localhost:8000/edit_entry/1/</span><span class="font9">)中传递的</span><span class="font10">2</span><span class="font9">存储在形参</span><span class="font4">entry_id</span><span class="font9">中。这个</span><span class="font10">URL </span><span class="font9">模式将预期匹配的请求发送给视图函数</span><span class="font4">edit_entry()</span><span class="font9">。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">2.</span><span class="font6">视图函数 </span><span class="font4">edit_entry()</span></p></li></ul>
+<p><span class="font9">页面</span><span class="font4">60</span><span class="font6">江_</span><span class="font4">6</span><span class="font6">。</span><span class="font4">h</span><span class="font6">丫</span><span class="font9">收到</span><span class="font10">6£</span><span class="font9">丁请求时，</span><span class="font4">edit_entry()</span><span class="font9">将返回一个表单，让用户能够对条目进行编 辑。该页面收到</span><span class="font10">POST</span><span class="font9">请求(条目文本经过修订)时，它将修改后的文本保存到数据库中：</span></p>
+<h6><a name="bookmark4"></a><span class="font2"><a name="bookmark5"></a>views.py</span></h6>
+<p><span class="font1">from django.shortcuts import render</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1">from .models import Topic, Entry</span></p>
+<p><span class="font1">from .forms import TopicForm, EntryForm</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">-</span></p></li></ul>
+<p><span class="font1">def edit_entry(request, entry_id):</span></p>
+<p><span class="font1">&quot;&quot;&quot;</span><span class="font8">编辑既有条目</span><span class="font1">&quot;&quot;&quot;</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">entry = Entry.objects.get(id=entry_id)</span></p>
+<p><span class="font1">topic = entry.topic</span></p>
+<p><span class="font1">if request.method != 'POST':</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8"> 初次请求，使用当前条目填充表单</span></p></li></ul>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">form = EntryForm(instance=entry)</span></p>
+<p><span class="font1">else:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># POST</span><span class="font8">提交的数据，对数据进行处理</span></p></li></ul>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">form = EntryForm(instance=entry, data=request.POST)</span></p>
+<p><span class="font1">if form.is_valid():</span></p>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">form.save()</span></p>
+<p><span class="font0">❺</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">return HttpResponseRedirect(reverse('learning_logs:topic',</span></p>
+<p><span class="font1">args=[topic.id]))</span></p>
+<p><span class="font1">context = {'entry': entry, 'topic': topic, 'form': form} return render(request, 'learning_logs/edit_entry.html', context)</span></p>
+</body>
+</html>

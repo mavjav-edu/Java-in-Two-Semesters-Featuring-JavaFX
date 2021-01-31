@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:9pt SimSun, serif; }
+ .font12 { font:10pt SimSun, serif; }
+ .font13 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">116</span></p>
+<p><span class="font12">第</span><span class="font3">8</span><span class="font12">章函数</span></p>
+<p><span class="font7">注意 </span><span class="font12">大家有时候会形参、实参不分，因此如果你看到有人将函数定义中的变量称为实参或将 函数调用中的变量称为形参，不要大惊小怪。</span></p>
+<p><span class="font8">动手试一试</span></p>
+<p><span class="font2">8-1</span><span class="font12">消息：编写一个名为</span><span class="font13">display_message()</span><span class="font12">的函数，它打印一个句子，指出你在本 章学的是什么。调用这个函数，确认显示的消息正确无误。</span></p>
+<p><span class="font2">8-2</span><span class="font7">喜欢的图书：</span><span class="font12">编写一个名为</span><span class="font13">favorite_book()</span><span class="font12">的函数，其中包含&quot;一•个名为</span><span class="font13">title </span><span class="font12">的形参。这个函数打印一条消息，如 </span><span class="font13">One of my favorite books is Alice in Wonderland<sub>o </sub></span><span class="font12">调用这个函数，并将一本图书的名称作为实参传递给它。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font5"><a name="bookmark1"></a>8.2</span><span class="font9">传递实参</span></h5></li></ul>
+<p><span class="font12">鉴于函数定义中可能包含多个形参，因此函数调用中也可能包含多个实参。向函数传递实参 的方式很多，可使用位置实参，这要求实参的顺序与形参的顺序相同；也可使用关键字实参，其 中每个实参都由变量名和值组成；还可使用列表和字典。下面来依次介绍这些方式。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font4"><a name="bookmark3"></a>8.2.1</span><span class="font8"> 位置实参</span></h5></li></ul>
+<p><span class="font12">你调用函数时，</span><span class="font13">Python</span><span class="font12">必须将函数调用中的每个实参都关联到函数定义中的一个形参。为此, 最简单的关联方式是基于实参的顺序。这种关联方式被称为位置实参。</span></p>
+<p><span class="font12">为明白其中的工作原理，来看一个显示宠物信息的函数。这个函数指出一个宠物属于哪种动 物以及它叫什么名字，如下所示：</span></p>
+<h5><a name="bookmark4"></a><span class="font4"><a name="bookmark5"></a>pets.py</span></h5>
+<p><span class="font11" style="font-weight:bold;">❶</span><span class="font0" style="font-weight:bold;"> def describe_pet(animal_type, pet_name):</span></p>
+<p><span class="font10">&quot;””显示宠物的信息””二</span></p>
+<p><span class="font0" style="font-weight:bold;">print(&quot;\nl have a &quot;&nbsp;+ animal_type +</span></p>
+<p><span class="font0" style="font-weight:bold;">print(&quot;My &quot;&nbsp;+ animal_type + &quot;'s name is &quot;&nbsp;+ pet_name.title() +</span></p>
+<p><span class="font11" style="font-weight:bold;">❷</span><span class="font0" style="font-weight:bold;"> describe_pet('hamster', 'harry')</span></p>
+<p><span class="font12">这个函数的定义表明，它需要一种动物类型和一个名字(见❶)。调用</span><span class="font13">describe_pet()</span><span class="font12">时，需 要按顺序提供一种动物类型和一个名字。例如，在前面的函数调用中，实参</span><span class="font13">'hamster</span><span class="font12">，存储在形 参</span><span class="font13">animal_type</span><span class="font12">中，而实参</span><span class="font13">‘11&quot;</span><span class="font12">工丫’存储在形参「</span><span class="font13">61:_</span><span class="font12">的［</span><span class="font13">11±</span><span class="font12">中(见❷)。在函数体内，使用了这两个形 参来显藕物的信息。</span></p>
+<p><span class="font12">输出描述了一只名为</span><span class="font13">Harry</span><span class="font12">的仓鼠：</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

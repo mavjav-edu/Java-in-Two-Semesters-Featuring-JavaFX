@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:9pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">16.2</span><span class="font10">制作世界人口地图：</span><span class="font11">JSON</span><span class="font10">格式 </span><span class="font11">333</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">16.2.8 </span><span class="font7">根据人口数量将国家分组</span></p></li></ul>
+<p><span class="font10">印度和中国的人口比其他国家多得多，但在当前的地图中，它们的颜色与其他国家差别较小。 中国和印度的人口都超过了</span><span class="font11">10</span><span class="font10">亿，接下来人口最多的国家是美国，但只有大约</span><span class="font11">3</span><span class="font10">亿。下面不将所 有国家都作为一个编组，而是根据人口数量分成三组</span><span class="font11">——</span><span class="font10">少于</span><span class="font11">1000</span><span class="font10">万的、介于</span><span class="font11">1000</span><span class="font10">万和</span><span class="font11">10</span><span class="font10">亿之间 的以及超过</span><span class="font11">10</span><span class="font10">亿的：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>world_population.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0"># </span><span class="font8">创建一个包含人口数据的字典</span></p></li></ul>
+<p><span class="font0">cc_populations = {}</span></p>
+<p><span class="font0">for pop_dict in pop_data:</span></p>
+<p><span class="font0">if pop_dict['Year'] == '2010':</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">if code:</span></p>
+<p><span class="font0">cc_populations[code] = population</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 根据人口数量将所有的国家分成三组</span></p></li></ul>
+<p><span class="font5">❶ </span><span class="font0"><sup>CC_</sup>P<sup>O</sup>P<sup>S_1</sup>, <sup>CC_</sup>P<sup>O</sup>P<sup>S_2, cc_</sup>pop<sup>s_3</sup> = {}, {}, {}</span></p>
+<p><span class="font5">❷</span><span class="font0">for cc, pop in cc_populations.items():</span></p>
+<p><span class="font0">if pop &lt;&nbsp;10000000:</span></p>
+<p><span class="font0">cc_pops_1[cc] = pop</span></p>
+<p><span class="font0">elif pop &lt;&nbsp;1000000000:</span></p>
+<p><span class="font0">cc_pops_2[cc] = pop</span></p>
+<p><span class="font0">else:</span></p>
+<p><span class="font0">cc_pops_3[cc] = pop</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 看看每组分别包含多少个国家</span></p></li></ul>
+<p><span class="font5">❸ </span><span class="font0">print(len(cc_pops_1), len(cc_pops_2</span><span class="font9">)</span><span class="font0">, len(cc_pops_3</span><span class="font9">)</span><span class="font0">)</span></p>
+<p><span class="font0">wm = pygal.Worldmap()</span></p>
+<p><span class="font0">wm.title = 'World Population in 2010, by Country'</span></p>
+<p><span class="font5">❹ </span><span class="font0">wm.add('0-10m', cc_pops_1)</span></p>
+<p><span class="font0">wm.add('10m-1bn', cc_pops_2)</span></p>
+<p><span class="font0">wm.add('&gt;1bn', cc_pops_3)</span></p>
+<p><span class="font0">wm.render_to_file('world_population.svg')</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">16</span></p>
+</div><br clear="all">
+<p><span class="font10">为将国家分组，我们创建了三个空字典(见</span><span class="font6">❶</span><span class="font10">)。接下来，遍历</span><span class="font4">cc_populations</span><span class="font10">,检查每个国 家的人口数量(见</span><span class="font6">❷</span><span class="font10">)。</span><span class="font4">if-elif-else</span><span class="font10">代码块将每个国别码</span><span class="font1">-</span><span class="font10">人口数量对加入到合适的字典 (</span><span class="font4">cc_pops_1</span><span class="font10">、</span><span class="font4">cc_pops_2</span><span class="font10">或</span><span class="font4">cc_pops_3</span><span class="font10">)中。</span></p>
+<p><span class="font10">一在</span><span class="font6">❸</span><span class="font10">处，我们打印这些字典的长度，以获悉每个分组的规模。绘制地图时，我们将全部三个 分组都添加到</span><span class="font4">Worldmap</span><span class="font10">中(见</span><span class="font6">❹</span><span class="font10">)。如果你现在运行这个程序，首先看到的将是每个分组的规模:</span></p>
+<p><span class="font0">85 69 2</span></p>
+<p><span class="font10">上述输出表明，人口少于</span><span class="font11">1000</span><span class="font10">万的国家有</span><span class="font11">85</span><span class="font10">个，人口介于</span><span class="font11">1000</span><span class="font10">万和</span><span class="font11">10</span><span class="font10">亿之间的国家有</span><span class="font11">69</span><span class="font10">个， </span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

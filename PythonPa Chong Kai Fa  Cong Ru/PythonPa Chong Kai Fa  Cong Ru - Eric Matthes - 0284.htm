@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:14pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:14pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">14.3 </span><span class="font10">记分</span></p>
+<p><span class="font11">267</span></p>
+<p><span class="font3">14.3 </span><span class="font8">记分</span></p>
+<p><span class="font10">下面来实现一个记分系统，以实时地跟踪玩家的得分，并显示最高得分、当前等级和余下的 飞船数。</span></p>
+<p><span class="font10">得分是游戏的一项统计信息，因此我们在</span><span class="font4">GameStats</span><span class="font10">中添加一个</span><span class="font4">score</span><span class="font10">属性：</span></p>
+<p><span class="font1">game_stats.py</span></p>
+<p><span class="font0">class GameStats():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p>
+<p><span class="font0">def reset_stats(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">初始化随游戏进行可能变化的统计信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.ships_left = self.ai_settings.ship_limit</span></p>
+<p><span class="font0">self.score = 0</span></p>
+<p><span class="font10">为在每次开始游戏时都重置得分，我们在</span><span class="font4">reset_stats()</span><span class="font10">而不是</span><span class="font4">_init__()</span><span class="font10">中初始化</span><span class="font4">score</span><span class="font10">。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>14.3.1</span><span class="font7"> 显示得分</span></h5></li></ul>
+<p><span class="font10">为在屏幕上显示得分，我们首先创建一个新类</span><span class="font4">Scoreboard</span><span class="font10">。就当前而言，这个类只显示当前 得分，但后面我们也将使用它来显示最高得分、等级和余下的飞船数。下面是这个类的前半部分， 它被保存为文件</span><span class="font11">scoreboard.py </span><span class="font10">：</span></p>
+<p><span class="font1">scoreboard.py</span></p>
+<p><span class="font0">import pygame.font</span></p>
+<p><span class="font0">class Scoreboard():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">显示得分信息的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font5">❶ </span><span class="font0">def ―init—(self, ai_settings, screen, stats):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font9">初始化显示得分涉及的属性</span><span class="font0">&quot;&quot;&quot;</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">14</span></p>
+</div><br clear="all">
+<p><span class="font0">self.screen = screen</span></p>
+<p><span class="font0">self.screen_rect = screen.get_rect()</span></p>
+<p><span class="font0">self.ai_settings = ai_settings</span></p>
+<p><span class="font0">self.stats = stats</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9"> 显示得分信息时使用的字体设置</span></p></li></ul>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.text_color = (30, 30, 30)</span></p>
+<p><span class="font5">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.font = pygame.font.SysFont(None, 48)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font9"> 准备初始得分图像</span></p></li></ul>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.prep_score()</span></p>
+<p><span class="font10">由于</span><span class="font4">Scoreboard</span><span class="font10">在屏幕上显示文本，因此我们首先导入模块</span><span class="font4">pygame.font</span><span class="font10">。接下来，我们在 </span><span class="font4">_init_()</span><span class="font10">中包含形参</span><span class="font4">ai_settings</span><span class="font10">、</span><span class="font4">screen</span><span class="font10">和</span><span class="font4">stats</span><span class="font10">，让它能够报告我们跟踪的值(见</span><span class="font6">❶</span><span class="font10">)。然后， 我们设置文本颜色(见</span><span class="font6">❷</span><span class="font10">)并实例化一个字体对象(见</span><span class="font6">❸</span><span class="font10">)。</span></p>
+<p><span class="font10">为将要显示的文本转换为图像，我们调用了</span><span class="font4">prep_score()</span><span class="font10">(见</span><span class="font6">❹</span><span class="font10">)，其定义如下:</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

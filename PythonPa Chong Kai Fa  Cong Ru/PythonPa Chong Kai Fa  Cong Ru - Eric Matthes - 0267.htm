@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:8pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">250 </span><span class="font7">第</span><span class="font3">13</span><span class="font7">章外星人</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font10"># 删除已消失的子弹</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">for bullet in bullets.copy():</span></p>
+<p><span class="font0" style="font-weight:bold;">if bullet.rect.bottom &lt;= 0:</span></p>
+<p><span class="font0" style="font-weight:bold;">bullets.remove(bullet)</span></p>
+<p><span class="font0" style="font-weight:bold;">check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets)</span></p>
+<p><span class="font0" style="font-weight:bold;">def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):</span></p>
+<p><span class="font10">…'响应于谆嘉外星</span><span class="font0" style="font-weight:bold;">4</span><span class="font10">的碰撞&quot;&quot;&quot;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font10"># 删除发生碰撞的子弹和外星人</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)</span></p>
+<p><span class="font0" style="font-weight:bold;">if len(aliens) == 0:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font10">#删除现有的所有子弹，并创建一个新的外星人群 </span><span class="font0" style="font-weight:bold;">bullets.empty()</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font7">我们创建了一个新函数---</span><span class="font11">check_bullet_alien_collisions(),</span><span class="font7">以检测子弹和外星人之间的</span></p>
+<p><span class="font7">碰撞，以及在整群外星人都被消灭干*时采取相应的措施。这避免了叩</span><span class="font11">ddte_bunets()</span><span class="font7">太长，简 化了后续的开发工作。</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>动手试一试</span></h6>
+<p><span class="font2">13-5</span><span class="font7">抓球：创建一个游戏，在屏幕底端放置一个玩家可左右移动的角色。让一个 球出现在屏幕顶端，且水平位置是随机的，并让这个球以固定的速度往下落。如果角色 与球发生碰撞(表示将球抓住了 ),就让球消失。每当角色抓住球或球因抵达屏幕底端 而消失后，都创建一个新球。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">13.6</span><span class="font9">结束游戏</span></p></li></ul>
+<p><span class="font7">如果玩家根本不会输，游戏还有什么趣味和挑战性可言？如果玩家没能在足够短的时间内将 整群外星人都消灭干净，且有外星人撞到了飞船，飞船将被摧毁。与此同时，我们还限制了可供 玩家使用的飞船数，而有外星人抵达屏幕底端时，飞船也将被摧毁。玩家用光了飞船后，游戏便 结束。</span></p>
+<ul style="list-style:none;"><li>
+<h6><a name="bookmark2"></a><span class="font4"><a name="bookmark3"></a>13.6.1</span><span class="font8"> 检测外星人和飞船碰撞</span></h6></li></ul>
+<p><span class="font7">我们首先检查外星人和飞船之间的碰撞，以便外星人撞上飞船时我们能够作出合适的响应。 我们在更新每个外星人的位置后立即检测外星人和飞船之间的碰撞。</span></p>
+<h6><a name="bookmark4"></a><span class="font3"><a name="bookmark5"></a>game_functions.py</span></h6>
+<p><span class="font0" style="font-weight:bold;">def update_aliens(ai_settings, ship, aliens):</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

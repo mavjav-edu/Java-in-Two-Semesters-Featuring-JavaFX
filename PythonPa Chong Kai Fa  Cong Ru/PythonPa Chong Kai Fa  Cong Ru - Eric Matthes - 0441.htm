@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">424</span></p>
+<p><span class="font7">第</span><span class="font8">20</span><span class="font7">章 设置应用程序的样式并对其进行部署</span></p>
+<p><span class="font1">os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;learning_log.settings&quot;)</span></p>
+<p><span class="font1">application = Cling(get_wsgi_application())</span></p>
+<p><span class="font7">我们导入了帮助正确地提供静态文件的</span><span class="font8">Cling</span><span class="font7">,并使用它来启动应用程序。这些代码在本地 也适用，因此无需将其放在</span><span class="font4">f</span><span class="font7">代码块内。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">20.2.9</span><span class="font6"> 创建用于存储静态文件的目录</span></p></li></ul>
+<p><span class="font7">在</span><span class="font8">Heroku</span><span class="font7">上，</span><span class="font8">Django</span><span class="font7">搜集所有的静态文件，并将它们放在一个地方，以便能够高效地管理它 们。我们将创建一个用于存储这些静态文件的目录。在文件夹</span><span class="font8">learning_log</span><span class="font7">中，有一个名称也为 </span><span class="font8">learning_log</span><span class="font7">的子文件夹。在这个子文件夹中，新建一个名为</span><span class="font8">static</span><span class="font7">的文件夹，因此这个文件夹的路 径为</span><span class="font8">learning_log/learning_log/static/</span><span class="font7">。我们还需在这个文件夹中创建一个占位文件，因为项目被推 送到</span><span class="font8">Heroku</span><span class="font7">时，它将不会包含原来为空的文件夹。在目录</span><span class="font8">static/</span><span class="font7">中，创建一个名为</span><span class="font8">placeholder.txt </span><span class="font7">的文件：</span></p>
+<p><span class="font2">placeholder.txt</span></p>
+<p><span class="font1">This file ensures that learning_log/static/ will be added to the project.</span></p>
+<p><span class="font1">Django will collect static files and place them in learning_log/static/.</span></p>
+<p><span class="font7">上述内容没有什么特别之处,只是指出了在项目中添加这个文件的原因。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.2.10</span><span class="font6"> 在本地使用</span><span class="font3">gunicorn</span><span class="font6">服务器</span></h5></li></ul>
+<p><span class="font7">如果你使用的是</span><span class="font8">Linux</span><span class="font7">或</span><span class="font8">OS X</span><span class="font7">，可在部署到</span><span class="font8">Heroku</span><span class="font7">前尝试在本地使用</span><span class="font8">gunicorn</span><span class="font7">服务器。为此， 在活动的虚拟环境中，执行命令</span><span class="font4">heroku local</span><span class="font7">以启动</span><span class="font8">Procfile</span><span class="font7">指定的进程：</span></p>
+<p><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">heroku local </span><span class="font1">Installing Heroku Toolbelt v4... done</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p>
+<table border="1">
+<tr><td style="vertical-align:top;"></td><td style="vertical-align:bottom;">
+<p><span class="font1">forego</span></p></td><td style="vertical-align:bottom;">
+<p><span class="font1">| starting web.1 on port 5000</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">❶</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">web.1 |</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">[2015-08-13 22:00:45 -0800] [12875] [INFO] Starting gunicorn 19.3.0</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">❷</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">web.1 |</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">[2015-08-13 22:00:45 -0800] [12875] [INFO] Listening at:</span></p></td></tr>
+<tr><td style="vertical-align:top;"></td><td colspan="2" style="vertical-align:bottom;">
+<p><a href="http://0.0.0.0:5000"><span class="font1">http://0.0.0.0:5000</span></a><span class="font1"> (12875)</span></p></td></tr>
+<tr><td style="vertical-align:top;">
+<p><span class="font0">❸</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">web.1 |</span></p></td><td style="vertical-align:top;">
+<p><span class="font1">[2015-08-13 22:00:45 -0800] [12878] [INFO] Booting worker with pid: 12878</span></p></td></tr>
+</table>
+<p><span class="font7">首次执行命令</span><span class="font4">heroku local</span><span class="font7">时，将安装</span><span class="font8">Heroku Toolbelt</span><span class="font7">中的很多包。这里的输出表明启动了 </span><span class="font8">gunicorn</span><span class="font7">，其进程</span><span class="font8">id</span><span class="font7">为</span><span class="font8">12875</span><span class="font7">(见</span><span class="font5">❶</span><span class="font7">)。</span><span class="font5">❷</span><span class="font7">处的输出表明，</span><span class="font8">gunicorn</span><span class="font7">在端口</span><span class="font8">5000</span><span class="font7">上侦听请求。另外， </span><span class="font8">gunicorn</span><span class="font7">还启动了一个工作进程( </span><span class="font8">12878</span><span class="font7">)，用于帮助处理请求(见</span><span class="font5">❸</span><span class="font7">)。</span></p>
+<p><span class="font7">为确认一切运行正常，请访问</span><a href="http://localhost:5000/%ef%bc%8c%e4%bd%a0%e5%b0%86%e7%9c%8b%e5%88%b0%e2%80%9c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%e2%80%9d%e7%9a%84%e4%b8%bb%e9%a1%b5%ef%bc%8c%e5%b0%b1%e5%83%8f%e4%bd%bf"><span class="font8">http://localhost:5000/</span><span class="font7">，你将看到“学习笔记”的主页，就像使</span></a><span class="font7"> 用</span><span class="font8">Django</span><span class="font7">服务器(</span><span class="font8">runserver</span><span class="font7">)时一样。为停止</span><span class="font4">heroku local</span><span class="font7">启动的进程，请按</span><span class="font8">Ctrl + C</span><span class="font7">，你将在本 地开发中继续使用</span><span class="font4">runserver</span><span class="font7">。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

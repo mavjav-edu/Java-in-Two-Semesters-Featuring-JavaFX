@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:12pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">9.4 </span><span class="font7">导入类</span></p>
+<p><span class="font8">155</span></p>
+<p><span class="font0">my_new_car.read_odometer()</span></p>
+<p><span class="font4">。</span><span class="font7">处的</span><span class="font3">import</span><span class="font7">语句让</span><span class="font8">Python</span><span class="font7">打开模块</span><span class="font3">car</span><span class="font7">,并导入其中的</span><span class="font3">Car</span><span class="font7">类。这样我们就可以使用</span><span class="font3">Car</span><span class="font7">类了， 就像它是在这个文件中定义的一样。输出与我们在前面看到的一样：</span></p>
+<p><span class="font0">2016 Audi A4</span></p>
+<p><span class="font0">This car has 23 miles on it.</span></p>
+<p><span class="font7">导人类是一种有效的编程方式。如果在这个程序中包含了整个</span><span class="font3">Car</span><span class="font7">类，它该有多长呀！通过 将这个类移到一个模块中，并导入该模块，你依然可以使用其所有功能，但主程序文件变得整洁 而易于阅读了。这还能让你将大部分逻辑存储在独立的文件中；确定类像你希望的那样工作后， 你就可以不管这些文件，而专注于主程序的高级逻辑了。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">9.4.2</span><span class="font5"> 在一个模块中存储多个类</span></p></li></ul>
+<p><span class="font7">虽然同一个模块中的类之间应存在某种相关性，但可根据需要在一个模块中存储任意数量的 类。类</span><span class="font3">Battery</span><span class="font7">和</span><span class="font3">ElectricCar</span><span class="font7">都可帮助模拟汽车，因此下面将它们都加入模块</span><span class="font8">car.py</span><span class="font7">中：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>car.py</span></h6>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">一组用于表示燃油汽车和电动汽车的类</span></p>
+<p><span class="font0">class Car():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<p><span class="font0">class Battery():</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">一次模拟电动汽车电瓶的简单尝试</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, battery_size=60):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">初始化电瓶的属性</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.battery_size = battery_size</span></p>
+<p><span class="font0">def describe_battery(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">打印一条描述电瓶容量的消息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;This car has a &quot;&nbsp;+ str(self.battery_size) + &quot;-kWh battery.&quot;)</span></p>
+<p><span class="font0">def get_range(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">打印一条描述电瓶续航里程的消息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if self.battery_size == 70:</span></p>
+<p><span class="font0">range = 240</span></p>
+<p><span class="font0">elif self.battery_size == 85:</span></p>
+<p><span class="font0">range = 270</span></p>
+<p><span class="font0">message = &quot;This car can go approximately &quot;&nbsp;+ str(range)</span></p>
+<p><span class="font0">message += &quot;&nbsp;miles on a full charge.&quot;</span></p>
+<p><span class="font0">print(message)</span></p>
+<p><span class="font0">class ElectricCar(Car):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font6">模拟电动汽车的独特之处</span><span class="font0">&quot;&quot;&quot;</span></p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">11.1 </span><span class="font6">测试函数 </span><span class="font7">191</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">11.1.4</span><span class="font4"> 测试未通过时怎么办</span></p></li></ul>
+<p><span class="font6">测试未通过时怎么办呢？如果你检查的条件没错，测试通过了意味着函数的行为是对的，而 测试未通过意味着你编写的新代码有错。因此，测试未通过时，不要修改测试，而应修复导致测 试不能通过的代码：检查刚对函数所做的修改，找出导致函数行为不符合预期的修改。</span></p>
+<p><span class="font6">在这个示例中，</span><span class="font3">get_formatted_name()</span><span class="font6">以前只需要两个实参一名和姓，但现在它要求提供 名、中间名和姓。新增的中间名参数是必不可少的，这导致</span><span class="font3">get_formatted_name()</span><span class="font6">的行为不符合 预期。就这里而言，最佳的选择是让中间名变为可选的。这样做后，使用类似于</span><span class="font7">Janis Joplin</span><span class="font6">的姓 名进行测试时，测试就会通过了，同时这个函数还能接受中间名。下面来修改 </span><span class="font3">get_formatted_name()</span><span class="font6">，将中间名设置为可选的，然后再次运行这个测试用例。如果通过了，我 们接着确认这个函数能够妥善地处理中间名。</span></p>
+<p><span class="font6">要将中间名设置为可选的，可在函数定义中将形参</span><span class="font3">middle</span><span class="font6">移到形参列表末尾，并将其默认值 指定为一个空字符串。我们还要添加一个</span><span class="font3">if</span><span class="font6">测试，以便根据是否提供了中间名相应地创建姓名：</span></p>
+<p><span class="font1">name_function.py</span></p>
+<p><span class="font0">def get_formatted_name(first, last, middle=''):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">生成整洁的姓名</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if middle:</span></p>
+<p><span class="font0">full_name = first + ' ' + middle + ' ' + last</span></p>
+<p><span class="font0">else:</span></p>
+<p><span class="font0">full_name = first + ' ' + last return full_name.title()</span></p>
+<div>
+<p><span class="font2" style="font-weight:bold;">11</span></p>
+</div><br clear="all">
+<p><span class="font6">在</span><span class="font3">get_formatted_name()</span><span class="font6">的这个新版本中，中间名是可选的。如果向这个函数传递了中间名 (</span><span class="font3">if middle:</span><span class="font6">)，姓名将包含名、中间名和姓，否则姓名将只包含名和姓。现在，对于两种不同的 姓名，这个函数都应该能够正确地处理。为确定这个函数依然能够正确地处理像</span><span class="font7">Janis Joplin</span><span class="font6">这样 的姓名，我们再次运行</span><span class="font7">test_name_function.py </span><span class="font6">：</span></p>
+<p><span class="font0">Ran 1 test in 0.000s</span></p>
+<p><span class="font0">OK</span></p>
+<p><span class="font6">现在，测试用例通过了。太好了，这意味着这个函数又能正确地处理像</span><span class="font7">Janis Joplin</span><span class="font6">这样的姓 名了，而且我们无需手工测试这个函数。这个函数很容易就修复了，因为未通过的测试让我们得 知新代码破坏了函数原来的行为。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font2"><a name="bookmark1"></a>11.1.5</span><span class="font4"> 添加新测试</span></h5></li></ul>
+<p><span class="font6">确定</span><span class="font3">get_formatted_name</span><span class="font6">。又能正确地处理简单的姓名后，我们再编写一个测试，用于测试 包含中间名的姓名。为此，我们在</span><span class="font3">NamesTestCase</span><span class="font6">类中再添加一个方法：</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+ .font10 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">234</span></p>
+<p><span class="font8">第</span><span class="font9">13</span><span class="font8">章 外星人</span></p>
+<p><span class="font0">class Alien(Sprite):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">表示单个外星人的类</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, ai_settings, screen):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">初始化外星人并设置其起始位置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">super(Alien, self).__init__() self.screen = screen</span></p>
+<p><span class="font0">self.ai_settings = ai_settings</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 加载外星人图像，并设置其^^属性</span></p></li></ul>
+<p><span class="font0">self.image = pygame.image.load('images/alien.bmp')</span></p>
+<p><span class="font0">self.rect = self.image.get_rect()</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 每个外星人最初都在屏幕左上角附近</span></p></li></ul>
+<p><span class="font5">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.rect.x = self.rect.width</span></p>
+<p><span class="font0">self.rect.y = self.rect.height</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 存储外星人的准确位置 </span><span class="font0">self.x = float(self.rect.x)</span></p></li></ul>
+<p><span class="font0">def blitme(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font7">在指定位置绘制外星人</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.screen.blit(self.image, self.rect)</span></p>
+<p><span class="font8">除位置不同外，这个类的大部分代码都与</span><span class="font4">Ship</span><span class="font8">类相似。每个外星人最初都位于屏幕左上 角附近，我们将每个外星人的左边距都设置为外星人的宽度，并将上边距设置为外星人的高 度(见</span><span class="font10" style="font-weight:bold;">O</span><span class="font8">)。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">13.2.2 </span><span class="font6">创建</span><span class="font2">Alien</span><span class="font6">实例</span></p></li></ul>
+<p><span class="font8">下面在</span><span class="font9">alien_invasion.py</span><span class="font8">中创建一个</span><span class="font4">Alien</span><span class="font8">实例：</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">from ship import Ship</span></p>
+<p><span class="font0">from alien import Alien</span></p>
+<p><span class="font0">import game_functions as gf</span></p>
+<p><span class="font0">def run_game():</span></p>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 创建一个外星人</span></p></li></ul>
+<p><span class="font0">alien = Alien(ai_settings, screen)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">gf.check_events(ai_settings, screen, ship, bullets) ship.update()</span></p>
+<p><span class="font0">gf.update_bullets(bullets)</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship, alien, bullets)</span></p>
+<p><span class="font0">run_game()</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">218 </span><span class="font6">第</span><span class="font7">12</span><span class="font6">章 武装飞船</span></p>
+<p><span class="font0">self.rect.centerx = self.screen_rect.centerx</span></p>
+<p><span class="font0">self.rect.bottom = self.screen_rect.bottom</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 移动标志</span></p></li></ul>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.moving_right = False</span></p>
+<p><span class="font3">❷ </span><span class="font0">def update(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">根据移动标志调整飞船的位置</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">if self.moving_right: self.rect.centerx += 1</span></p>
+<p><span class="font0">def blitme(self):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font6">在方法</span><span class="font2">_init__</span><span class="font6">。中，我们添加了属性</span><span class="font2">self.moving_right</span><span class="font6">,并将其初始值设置为</span><span class="font2">False</span><span class="font6">(见</span><span class="font4">❶</span><span class="font6">)。</span></p>
+<p><span class="font6">接下来，我们添加了方法</span><span class="font2">update</span><span class="font6">。，它在前述标志为</span><span class="font2">True</span><span class="font6">时向右移动飞船(见</span><span class="font4">❷</span><span class="font6">)。</span></p>
+<p><span class="font6">下面来修改</span><span class="font2">check_events()</span><span class="font6">,使其在玩家按下右箭头键时将</span><span class="font2">moving_right</span><span class="font6">设置为</span><span class="font2">True</span><span class="font6">，并在 玩家松开时将</span><span class="font2">moving_right</span><span class="font6">设置为</span><span class="font2">False</span><span class="font6">:</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>game_functions.py</span></h6>
+<p><span class="font0">def check_events(ship):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">响应按键和鼠标事件</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">for event in pygame.event.get():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">elif event.type == pygame.KEYDOWN:</span></p>
+<p><span class="font0">if event.key == pygame.K_RIGHT:</span></p>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">ship.moving_right = True</span></p>
+<p><span class="font3">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">elif event.type == pygame.KEYUP:</span></p>
+<p><span class="font0">if event.key == pygame.K_RIGHT:</span></p>
+<p><span class="font0">ship.moving_right = False</span></p>
+<p><span class="font6">在</span><span class="font4">❶</span><span class="font6">处，我们修改了游戏在玩家按下右箭头键时响应的方式：不直接调整飞船的位置，而只 是将</span><span class="font2">moving_right</span><span class="font6">设置为</span><span class="font2">True</span><span class="font6">。在</span><span class="font4">❷</span><span class="font6">处，我们添加了一个新的</span><span class="font2">elif</span><span class="font6">代码块，用于响应</span><span class="font2">KEYUP</span><span class="font6">事件： 玩家松开右箭头键(</span><span class="font2">K_RIGHT</span><span class="font6">)时，我们将</span><span class="font2">moving_right</span><span class="font6">设置为</span><span class="font2">False</span><span class="font6">。</span></p>
+<p><span class="font6">最后，我们需要修改</span><span class="font2">alien_invasion.py</span><span class="font6">中的</span><span class="font2">while</span><span class="font6">循环，以便每次执行循环时都调用飞船的 方法</span><span class="font2">update()</span><span class="font6">:</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>alien_invasion.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font5">开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">gf.check_events(ship)</span></p>
+<p><span class="font0">ship.update()</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship)</span></p>
+<p><span class="font6">飞船的位置将在检测到键盘事件后(但在更新屏幕前)更新。这样，玩家输入时，飞船的位 置将更新，从而确保使用更新后的位置将飞船绘制到屏幕上。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

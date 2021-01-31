@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:9pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">19.1 </span><span class="font9">让用户能够输入数据 </span><span class="font10">385</span></p>
+<p><span class="font4">topics</span><span class="font9">的</span><span class="font10">URL</span><span class="font9">,并将其传递给</span><span class="font4">HttpResponseRedirect（）</span><span class="font9">（见</span><span class="font7">❻</span><span class="font9">），后者将用户的浏览器重定向到页 面</span><span class="font4">topics</span><span class="font9">。在页面</span><span class="font4">topics</span><span class="font9">中，用户将在主题列表中看到他刚输入的主题。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">5 .</span><span class="font7">模板 </span><span class="font2">new_topic</span></p></li></ul>
+<p><span class="font9">下面来创建新模板</span><span class="font10">new_topic html</span><span class="font9">，用于显示我们刚创建的表单： </span><span class="font2">new_topic.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font1">{% block content %} &lt;p&gt;Add a new topic:&lt;/p&gt;</span></p>
+<p><span class="font0">❶</span><span class="font5"> </span><span class="font1">&lt;form action=&quot;{% url 'learning_logs:new_topic' %}&quot; method='post'&gt;</span></p>
+<p><span class="font0">❷</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{% csrf_token %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;</span></p>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1">{{ form.as_p }}</span></p>
+<p><span class="font0">❹</span><span class="font5"> </span><span class="font6">〈</span><span class="font1">button name=&quot;submit&quot;&gt;add topic&lt;/button&gt; &lt;/form&gt;</span></p>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font9">这个模板继承了</span><span class="font10">base html</span><span class="font9">，因此其基本结构与项目“学习笔记”的其他页面相同。在</span><span class="font7">❶</span><span class="font9">处， 我们定义了一个</span><span class="font10">HTML</span><span class="font9">表单。实参</span><span class="font4">action</span><span class="font9">告诉服务器将提交的表单数据发送到哪里，这里我们将 它发回给视图函数</span><span class="font4">new_topic（）</span><span class="font9">。实参</span><span class="font4">method</span><span class="font9">让浏览器以</span><span class="font10">POST</span><span class="font9">请求的方式提交数据。</span></p>
+<p><span class="font10">Django</span><span class="font9">使用模板标签</span><span class="font4">{</span><span class="font7">% </span><span class="font4">csrf_token </span><span class="font7">%</span><span class="font4">}</span><span class="font9">（见</span><span class="font7">❷</span><span class="font9">）来防止攻击者利用表单来获得对服务器未经 授权的访问（这种攻击被称为</span><span class="font8">跨站请求伪造</span><span class="font9">）。在</span><span class="font7">❸</span><span class="font9">处，我们显示表单，从中可知</span><span class="font10">Django</span><span class="font9">使得完 成显示表单等任务有多简单：我们只需包含模板变量</span><span class="font4">{{ form.as_p }}</span><span class="font9">，就可让</span><span class="font10">Django</span><span class="font9">自动创建显 示表单所需的全部字段。修饰符</span><span class="font4">as_p</span><span class="font9">让</span><span class="font10">Django</span><span class="font9">以段落格式渲染所有表单元素，这是一种整洁地显 示表单的简单方式。</span></p>
+<p><span class="font10">Django</span><span class="font9">不会为表单创建提交按钮，因此我们在</span><span class="font7">❹</span><span class="font9">处定义了一个这样的按钮。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">6 .</span><span class="font7">链接到页面</span><span class="font4">new_topic</span></p></li></ul>
+<p><span class="font9">接下来，我们在页面</span><span class="font4">topics</span><span class="font9">中添加一个到页面</span><span class="font4">new_topic</span><span class="font9">的链接：</span></p>
+<p><span class="font2">topics.html</span></p>
+<p><span class="font1">{% extends &quot;learning_logs/base.html&quot; %}</span></p>
+<p><span class="font1">{% block content %}</span></p>
+<p><span class="font1">&lt;p&gt;Topics&lt;/p&gt;</span></p>
+<p><span class="font1">&lt;ul&gt;</span></p>
+<p><span class="font1">--</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--&lt;/ul&gt;</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">&lt;a href=&quot;{% url 'learning_logs:new_topic' %}&quot;&gt;Add a new topic:&lt;/a&gt;</span></p></li></ul>
+<p><span class="font1">{% endblock content %}</span></p>
+<p><span class="font3" style="font-weight:bold;">19</span></p>
+</body>
+</html>

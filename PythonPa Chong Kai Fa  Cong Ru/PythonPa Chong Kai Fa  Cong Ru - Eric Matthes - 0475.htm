@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:14pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:14pt SimHei, sans-serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font8">458</span></p>
+<p><span class="font7">附录</span><span class="font8">D </span><span class="font7">使用</span><span class="font8">Git</span><span class="font7">进行版本控制</span></p>
+<p><span class="font1">HEAD is now at be017b7... Started project.</span></p>
+<p><span class="font1">git_practice$</span></p>
+<p><span class="font7">检出以前的提交后，你将离开分支</span><span class="font8">master</span><span class="font7">,并进入</span><span class="font8">Git</span><span class="font7">所说的分离头指针（</span><span class="font8">detached HEAD</span><span class="font7">） 状态（见</span><span class="font5">❶</span><span class="font7">）。</span><span class="font8">HEAD</span><span class="font7">表示项目的当前状态，之所以说我们处于分离状态，是因为我们离开了一个 命名分支（这里是</span><span class="font3">master</span><span class="font7">）。</span></p>
+<p><span class="font7">要回到分支</span><span class="font3">master</span><span class="font7">，可检出它：</span></p>
+<p><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git checkout master</span></p>
+<p><span class="font1">Previous HEAD position was be017b7... Started project.</span></p>
+<p><span class="font1">Switched to branch 'master'</span></p>
+<p><span class="font1">git_practice$</span></p>
+<p><span class="font7">这让你回到分支</span><span class="font3">master</span><span class="font7">。除非你要使用</span><span class="font8">Git</span><span class="font7">的高级功能，否则在检出以前的提交后，最好不要 对项目做任何修改。然而，如果参与项目开发的人只有你自己，而你又想放弃较近的所有提交， 并恢复到以前的状态，也可以将项目重置到以前的提交。为此，可在处于分支</span><span class="font3">master</span><span class="font7">上的情况下， 执行如下命令：</span></p>
+<p><span class="font0">❶</span><span class="font4"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean</span></p>
+<p><span class="font0">❷</span><span class="font4"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git log --pretty=oneline</span></p>
+<p><span class="font1">08d4d5e39cb906f6cff197bd48e9ab32203d7ed6 Extended greeting.</span></p>
+<p><span class="font1">be017b7f06d390261dbc64ff593be6803fd2e3a1 Started project.</span></p>
+<p><span class="font0">❸</span><span class="font4"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git reset --hard be017b</span></p>
+<p><span class="font1">HEAD is now at be017b7 Started project.</span></p>
+<p><span class="font0">❹</span><span class="font4"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git status</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># On branch master</span></p></li></ul>
+<p><span class="font1">nothing to commit, working directory clean</span></p>
+<p><span class="font0">❺</span><span class="font4"> </span><span class="font1">git_practice$ </span><span class="font1" style="font-weight:bold;">git log --pretty=oneline</span></p>
+<p><span class="font1">be017b7f06d390261dbc64ff593be6803fd2e3a1 Started project.</span></p>
+<p><span class="font1">git_practice$</span></p>
+<p><span class="font7">我们首先查看了状态，确认我们在分支</span><span class="font8">master</span><span class="font7">上（见</span><span class="font5">❶</span><span class="font7">）。查看提交历史时，我们看到了两个 提交（见</span><span class="font5">❷</span><span class="font7">）。接下来，我们执行命令</span><span class="font3">git reset--hard</span><span class="font7">，并在其中指定了要永久地恢复到的提交 的引用</span><span class="font8">ID</span><span class="font7">的前</span><span class="font8">6</span><span class="font7">个字符（见</span><span class="font5">❸</span><span class="font7">）。再次查看状态，发现我们在分支</span><span class="font3">master</span><span class="font7">上，且没有需要提交的修 改（见</span><span class="font5">❹</span><span class="font7">）。再次查看提交历史时，发现我们处于要从它重新开始的提交中（见</span><span class="font5">❺</span><span class="font7">）。</span></p>
+<p><span class="font2">D.12 </span><span class="font6">删除仓库</span></p>
+<p><span class="font7">有时候，仓库的历史记录被你搞乱了，而你又不知道如何恢复。在这种情况下，你首先应考 虑使用附录</span><span class="font8">C</span><span class="font7">介绍的方法寻求帮助。如果无法恢复且参与项目开发的只有你一个人，可继续使用 这些文件，但要将项目的历史记录删除一删除目录</span><span class="font8">.git</span><span class="font7">。这不会影响任何文件的当前状态，而 只会删除所有的提交，因此你将无法检出项目的其他任何状态。</span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">15.4 </span><span class="font7">使用</span><span class="font3">Pygal</span><span class="font7">模拟掷骰子</span></p>
+<p><span class="font3">303</span></p>
+<p><span class="font7">函数</span><span class="font11">figure</span><span class="font7">。用于指定图表的宽度、高度、分辨率和背景色。你需要给形参</span><span class="font11">figsize</span><span class="font7">指定一个 元组，向</span><span class="font11">matplotlib</span><span class="font7">指出绘图窗口的尺寸，单位为英寸。</span></p>
+<p><span class="font11">Python</span><span class="font7">假定屏幕分辨率为</span><span class="font11">80</span><span class="font7">像素硬寸，如果上述代码指定的图表尺寸不合适，可根据需要调 整其中的数字。如果你知道自己的系统的分辨率，可使用形参</span><span class="font11">dpi</span><span class="font7">向</span><span class="font11">figure</span><span class="font7">。传递该分辨率，以 有效地利用可用的屏幕空间，如下所示：</span></p>
+<p><span class="font0" style="font-weight:bold;">pit.figure(dpi=128, figsize=(10, 6))</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font8"><a name="bookmark1"></a>动手试一试</span></h6>
+<p><span class="font2">15-3</span><span class="font7">分子运动：修改</span><span class="font11">rw_visual.py,</span><span class="font7">将其中的</span><span class="font11">pit .scatter</span><span class="font7">。替换为</span><span class="font11">plt.plot()<sub>o</sub></span><span class="font7">为 模拟花粉在水滴表面的运动路径，向</span><span class="font11">plt.plot()</span><span class="font7">传递</span><span class="font11">rw</span><span class="font10">・</span><span class="font11">x_values</span><span class="font7">和</span><span class="font11">rw.y_values,</span><span class="font7">并 指定实参值</span><span class="font11">linewidth</span><span class="font7">。使用</span><span class="font11">5000</span><span class="font7">个点而不是</span><span class="font11">50 000</span><span class="font7">个点。</span></p>
+<p><span class="font2">15-4</span><span class="font7">改进的随机漫步：在类</span><span class="font11">RandomWalk</span><span class="font7">中，</span><span class="font11">x_step</span><span class="font7">和</span><span class="font11">y_step</span><span class="font7">是根据相同的条件生 成的：从列表</span><span class="font11">［1, -1］</span><span class="font7">中随机地选择方向，并从列表</span><span class="font11">［0, 1, 2, 3, 4］</span><span class="font7">中随机地选择距离。 请修改这些列表中的值，看看对随机漫步路径有何影响。尝试使用更长的距离选择列表, 如</span><span class="font11">0</span><span class="font10">〜</span><span class="font11">8;</span><span class="font7">或者将</span><span class="font11">-1</span><span class="font7">从</span><span class="font11">x</span><span class="font7">或</span><span class="font11">y</span><span class="font7">方向列表中删除。</span></p>
+<p><span class="font2">15-5</span><span class="font7">重构：方法</span><span class="font11">fill_walk()</span><span class="font7">很长。请新建一个名为</span><span class="font11">get_step()</span><span class="font7">的方法，用于确定 每次漫步的距离和方向，并计算这次漫步将如何移动。然后，在</span><span class="font11">fill_walk()</span><span class="font7">中调用 </span><span class="font11">get_step()</span><span class="font7">两次：</span></p>
+<p><span class="font0" style="font-weight:bold;">x_step = get_step()</span></p>
+<p><span class="font0" style="font-weight:bold;">y_step = get_step()</span></p>
+<p><span class="font7">通过这样的重构，可缩小</span><span class="font11">fin_walk()</span><span class="font7">的规模，让这个方法阅读和理解起来更容易。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">15.4</span><span class="font9">使用</span><span class="font5">Pygal</span><span class="font9">模拟掷骰子</span></p>
+<div>
+<p><span class="font4" style="font-weight:bold;">15</span></p>
+</div><br clear="all"></li></ul>
+<p><span class="font7">在本节中，我们将使用</span><span class="font11">Python</span><span class="font7">可视化包</span><span class="font11">Pygal</span><span class="font7">来生成可缩放的矢量图形文件。对于需要在尺寸 不同的屏幕上显示的图表，这很有用，因为它们将自动缩放，以适合观看者的屏幕。如果你打算 以在线方式使用图表，请考虑使用</span><span class="font11">Pygal</span><span class="font7">来生成它们，这样它们在任何设备上显示时都会很美观。</span></p>
+<p><span class="font7">在这个项目中，我们将对掷骰子的结果进行分析。掷</span><span class="font11">6</span><span class="font7">面的常规骰子时，可能出现的结果为 </span><span class="font11">1</span><span class="font10">〜</span><span class="font11">6</span><span class="font7">点，且出现每种结果的可能性相同。然而，如果同时掷两个骰子，某些点数出现的可能性将 比其他点数大。为确定哪些点数出现的可能性最大，我们将生成一个表示掷骰子结果的数据集， 并根据结果绘制出一个图形。</span></p>
+<p><span class="font7">在数学领域，常常利用掷骰子来解释各种数据分析，但它在赌场和其他博弈场景中也得到了</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

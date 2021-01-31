@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:10pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+ .font8 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">252</span></p>
+<p><span class="font6">第</span><span class="font7">13</span><span class="font6">章 外星人</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">跟踪游戏的统计信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">def __init__(self, ai_settings):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">初始化统计信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.ai_settings = ai_settings</span></p>
+<p><span class="font3">❶ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">self.reset_stats()</span></p>
+<p><span class="font0">def reset_stats(self):</span></p>
+<p><span class="font0">&quot;&quot;&quot;</span><span class="font5">初始化在游戏运行期间可能变化的统计信息</span><span class="font0">&quot;&quot;&quot;</span></p>
+<p><span class="font0">self.ships_left = self.ai_settings.ship_limit</span></p>
+<p><span class="font6">在这个游戏运行期间，我们只创建一个</span><span class="font2">GameStats</span><span class="font6">实例，但每当玩家开始新游戏时，需要重 置一些统计信息。为此，我们在方法</span><span class="font2">reset_stats()</span><span class="font6">中初始化大部分统计信息，而不是在</span><span class="font2">_init__</span><span class="font6">。 中直接初始化它们。我们在</span><span class="font2">_init__()</span><span class="font6">中调用这个方法，这样创建</span><span class="font2">GameStats</span><span class="font6">实例时将妥善地设置 这些统计信息(见</span><span class="font8" style="font-weight:bold;">O</span><span class="font6">)，同时在玩家开始新游戏时也能调用</span><span class="font2">reset_stats()</span><span class="font6">。</span></p>
+<p><span class="font6">当前只有一项统计信息一</span><span class="font2">ships_left</span><span class="font6">，其值在游戏运行期间将不断变化。一开始玩家拥有 的飞船数存储在</span><span class="font7">settings.py</span><span class="font6">的</span><span class="font2">ship_limit</span><span class="font6">中：</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>settings.py</span></h6>
+<p><span class="font0"># </span><span class="font5">飞船设置</span></p>
+<p><span class="font0">self.ship_speed_factor = 1.5</span></p>
+<p><span class="font0">self.ship_limit = 3</span></p>
+<p><span class="font6">我们还需对</span><span class="font7">alien_invasion.py</span><span class="font6">做些修改，以创建一个</span><span class="font2">GameStats</span><span class="font6">实例：</span></p>
+<h6><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>alien_invasion.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">from settings import Settings</span></p>
+<p><span class="font3">❶ </span><span class="font0">from game_stats import GameStats</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">def run_game():</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">pygame.display.set_caption(&quot;Alien Invasion&quot;)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font5"> 创建一个用于存储游戏统计信息的实例</span></p></li></ul>
+<p><span class="font3">❷ </span><span class="font0">stats = GameStats(ai_settings)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font5"> 开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font0">gf.update_bullets(ai_settings, screen, ship, aliens, bullets)</span></p>
+<p><span class="font3">❸ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font6">我们导入了新类</span><span class="font2">GameStats </span><span class="font6">(见</span><span class="font8" style="font-weight:bold;">❶</span><span class="font6">)，创建了一个名为</span><span class="font2">stats</span><span class="font6">的实例(见</span><span class="font4">❷</span><span class="font6">)，再调用 </span><span class="font2">update_aliens()</span><span class="font6">并添加了实参</span><span class="font2">stats</span><span class="font6">、</span><span class="font2">screen</span><span class="font6">和</span><span class="font2">ship </span><span class="font6">(见</span><span class="font4">❸</span><span class="font6">)。在有外星人撞到飞船时，我们将使 </span></p>
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>

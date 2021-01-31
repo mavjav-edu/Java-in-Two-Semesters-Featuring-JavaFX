@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:8pt SimSun, serif; }
+ .font6 { font:9pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">8.1 </span><span class="font7">定义函数</span></p>
+<p><span class="font9">115</span></p>
+<p><span class="font7">有关程序中函数的文档。</span></p>
+<p><span class="font7">代码行</span><span class="font2">print(&quot;Hello!”)</span><span class="font7">(见</span><span class="font3">❸</span><span class="font7">)是函数体内的唯一一行代码，</span><span class="font2">greet_user()</span><span class="font7">只做一项工作： 打印 </span><span class="font2">Hello!</span><span class="font7">。</span></p>
+<p><span class="font7">要使用这个函数，可调用它。</span><span class="font6">函数调用</span><span class="font7">让</span><span class="font9">Python</span><span class="font7">执行函数的代码。要</span><span class="font6">调用</span><span class="font7">函数，可依次指定 函数名以及用括号括起的必要信息，如</span><span class="font3">❹</span><span class="font7">处所示。由于这个函数不需要任何信息，因此调用它时 只需输入</span><span class="font2">greet_user()</span><span class="font7">即可。和预期的一样，它打印</span><span class="font2">Hello!</span><span class="font7">：</span></p>
+<p><span class="font0">Hello!</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">8.1.1</span><span class="font4"> 向函数传递信息</span></p></li></ul>
+<p><span class="font7">只需稍作修改，就可以让函数</span><span class="font2">greet_user()</span><span class="font7">不仅向用户显示</span><span class="font2">Hello!</span><span class="font7">，还将用户的名字用作抬 头。为此，可在函数定义</span><span class="font2">def greet_user()</span><span class="font7">的括号内添加</span><span class="font2">username</span><span class="font7">。通过在这里添加</span><span class="font2">username</span><span class="font7">， 就可让函数接受你给</span><span class="font2">username</span><span class="font7">指定的任何值。现在，这个函数要求你调用它时给</span><span class="font2">username</span><span class="font7">指定一 个值。调用</span><span class="font2">greet_user()</span><span class="font7">时，可将一个名字传递给它，如下所示：</span></p>
+<p><span class="font0">def greet_user(username):</span></p>
+<p><span class="font8">&quot;&quot;&quot;</span><span class="font5">显示简单的问候语</span><span class="font8">&quot;&quot;&quot;</span></p>
+<p><span class="font0">print(&quot;Hello, &quot;&nbsp;+ username.title() + &quot;!&quot;)</span></p>
+<p><span class="font0">greet_user('jesse')</span></p>
+<p><span class="font7">代码</span><span class="font2">greet_user(jesse')</span><span class="font7">调用函数</span><span class="font2">greet_user()</span><span class="font7">，并向它提供执行</span><span class="font2">print</span><span class="font7">语句所需的信息。这 个函数接受你传递给它的名字，并向这个人发出问候：</span></p>
+<p><span class="font0">Hello, Jesse!</span></p>
+<p><span class="font7">同样，</span><span class="font2">greet_user('sarah')</span><span class="font7">调用函数</span><span class="font2">greet_user()</span><span class="font7">并向它传递</span><span class="font2">‘sarah'</span><span class="font7">，打印</span><span class="font2">Hello, Sarah!</span><span class="font7">。 你可以根据需要调用函数</span><span class="font2">greet_user()</span><span class="font7">任意次，调用时无论传入什么样的名字，都会生成相应的 输出。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>8.1.2</span><span class="font4"> 实参和形参</span></h5></li></ul>
+<p><span class="font7">前面定义函数</span><span class="font2">greet_user</span><span class="font7">。时，要求给变量</span><span class="font2">username</span><span class="font7">指定一个值。调用这个函数并提供这种 信息(人名)时，它将打印相应的问候语。</span></p>
+<p><span class="font7">在函数</span><span class="font2">greet_user()</span><span class="font7">的定义中，变量</span><span class="font2">username</span><span class="font7">是一个</span><span class="font6">形用---</span><span class="font7">函数完成其工作所需的一项信</span></p>
+<p><span class="font7">息。在代码</span><span class="font2">greet_user(jesse')</span><span class="font7">中，值</span><span class="font2">'jesse'</span><span class="font7">是一个</span><span class="font6">实参</span><span class="font7">。实参是调用函数时传递给函数的信 息。我们调用函数时，将要让函数使用的信息放在括号内。在</span><span class="font2">greet_user(jesse')</span><span class="font7">中，将实参 </span><span class="font2">jesse'</span><span class="font7">传递给了函数</span><span class="font2">greet_user()</span><span class="font7">，这个值被存储在形参</span><span class="font2">username</span><span class="font7">中。</span></p>
+<div>
+</div><br clear="all">
+</body>
+</html>

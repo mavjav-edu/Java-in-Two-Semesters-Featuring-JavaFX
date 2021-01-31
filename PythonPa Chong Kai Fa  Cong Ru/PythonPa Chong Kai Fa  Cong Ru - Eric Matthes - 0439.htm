@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:6pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:10pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font11">422</span></p>
+<p><span class="font10">第</span><span class="font11">20</span><span class="font10">章 设置应用程序的样式并对其进行部署</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font3"><a name="bookmark1"></a>20.2.5</span><span class="font7"> 指定</span><span class="font3">Python</span><span class="font7">版本</span></h5></li></ul>
+<p><span class="font10">如果你没有指定</span><span class="font11">Python</span><span class="font10">版本，</span><span class="font11">Heroku</span><span class="font10">将使用其当前的</span><span class="font11">Python</span><span class="font10">默认版本。下面来确保</span><span class="font11">Heroku</span><span class="font10">使 用我们使用的</span><span class="font11">Python</span><span class="font10">版本。为此，在活动的虚拟环境中，执行命令</span><span class="font4">python --version</span><span class="font10">：</span></p>
+<p><span class="font1">(ll_env)learning_log$ </span><span class="font1" style="font-weight:bold;">python --version</span></p>
+<p><span class="font1">Python 3.5.0</span></p>
+<p><span class="font10">上面的输出表明，我使用的是</span><span class="font11">Python 3.5.0</span><span class="font10">。请在</span><span class="font11">manage.py</span><span class="font10">所在的文件夹中新建一个名为 </span><span class="font11">runtime.txt</span><span class="font10">的文件，并在其中输入如下内容：</span></p>
+<p><span class="font2">runtime.txt</span></p>
+<p><span class="font1">python-3.5.0</span></p>
+<p><span class="font10">这个文件应只包含一行内容，以上面所示的格式指定了你使用的</span><span class="font11">Python</span><span class="font10">版本；请确保输入小 写的</span><span class="font4">python</span><span class="font10">，在它后面输入一个连字符，再输入由三部分组成的版本号。</span></p>
+<p><span class="font6">注意 </span><span class="font9">如果出现错误消息，指出不能使用你指定的</span><span class="font11">Python</span><span class="font9">版本，请访问</span><a href="https://devcenter"><span class="font11">https://devcenter</span></a><span class="font11">. heroku.com/</span><span class="font9">并单击</span><span class="font11">Python</span><span class="font9">,再单击链接</span><span class="font11">Specifying a Python Runtime</span><span class="font9"><sub>o</sub>浏览打开的文章，了 解支持的</span><span class="font11">Python</span><span class="font9">版本，并使用与你使用的</span><span class="font11">Python</span><span class="font9">版本最接近的版本。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font3"><a name="bookmark3"></a>20.2.6</span><span class="font7"> 为部署到 </span><span class="font3">Herohu </span><span class="font7">而修改 </span><span class="font3">settings.py</span></h5></li></ul>
+<p><span class="font10">现在需要在</span><span class="font11">settings.py</span><span class="font10">末尾添加一个片段，在其中指定一些</span><span class="font11">Heroku</span><span class="font10">环境设置:</span></p>
+<p><span class="font2">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">- -</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li>
+<li>
+<p><span class="font1"># django-bootstrap3 </span><span class="font8">设置</span></p></li></ul>
+<p><span class="font1">BOOTSTRAP3 = {</span></p>
+<p><span class="font1">'include_jquery': True, }</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># Heroku </span><span class="font8">设置</span></p></li></ul>
+<p><span class="font0">❶</span><span class="font1">if os.getcwd() == '/app':</span></p>
+<p><span class="font0">❷</span><span class="font5"> </span><span class="font1">import dj_database_url</span></p>
+<p><span class="font1">DATABASES = {</span></p>
+<p><span class="font1">'default': dj_database_url.config(default='postgres://localhost')</span></p>
+<p><span class="font1">}</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1"># </span><span class="font8">让 </span><span class="font1">request.is_secure()</span><span class="font8">承认 </span><span class="font1">X-Forwarded-Proto </span><span class="font8">头</span></p></li></ul>
+<p><span class="font0">❸</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1" style="font-variant:small-caps;">SECURE_PROXY_sSl_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font8">支持所有的主机头(</span><span class="font1">host header</span><span class="font8">)</span></p></li></ul>
+<p><span class="font0">❹</span><span class="font5"> &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font1" style="font-variant:small-caps;">allowed_hosts = ['*']</span></p>
+</body>
+</html>

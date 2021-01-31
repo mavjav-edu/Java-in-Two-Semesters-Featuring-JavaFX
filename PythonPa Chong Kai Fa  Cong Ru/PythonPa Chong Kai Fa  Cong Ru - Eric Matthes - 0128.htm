@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Calibri, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">7.3</span><span class="font8">使用</span><span class="font9">while</span><span class="font8">循环来处理列表和字典</span></p>
+<p><span class="font9">111</span></p>
+<p><span class="font5">❸ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">current_user = unconfirmed_users.pop()</span></p>
+<p><span class="font0">print(&quot;Verifying user: &quot;&nbsp;+ current_user.title())</span></p>
+<p><span class="font5">❹ &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">confirmed_users.append(current_user)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font7"> 显示所有已验证的用户</span></p></li></ul>
+<p><span class="font0">print(&quot;\nThe following users have been confirmed:&quot;)</span></p>
+<p><span class="font0">for confirmed_user in confirmed_users:</span></p>
+<p><span class="font0">print(confirmed_user.title())</span></p>
+<p><span class="font8">我们首先创建了一个未验证用户列表(见</span><span class="font3">O </span><span class="font8">),其中包含用户</span><span class="font9">Alice</span><span class="font8">、</span><span class="font9">Brian</span><span class="font8">和</span><span class="font9">Candace</span><span class="font8">,还创 建了一个空列表，用于存储已验证的用户。</span><span class="font3">❷</span><span class="font8">处的</span><span class="font4">while</span><span class="font8">循环将不断地运行，直到列表 </span><span class="font4">unconfirmed_users</span><span class="font8">变成空的。在这个循环中，</span><span class="font3">❸</span><span class="font8">处的函数</span><span class="font4">pop()</span><span class="font8">以每次一个的方式从列表 </span><span class="font4">unconfirmed_users</span><span class="font8">末尾删除未验证的用户。由于</span><span class="font9">Candace</span><span class="font8">位于列表</span><span class="font4">unconfirmed_users</span><span class="font8">末尾，因此 其名字将首先被删除、存储到变量</span><span class="font4">current_user</span><span class="font8">中并加入到列表</span><span class="font4">confirmed_users</span><span class="font8">中(见</span><span class="font3">❹</span><span class="font8">)。接 下来是</span><span class="font9">Brian</span><span class="font8">，然后是</span><span class="font9">Alice</span><span class="font8">。</span></p>
+<p><span class="font8">为模拟用户验证过程,我们打印一条验证消息并将用户加入到已验证用户列表中。未验证用 户列表越来越短，而已验证用户列表越来越长。未验证用户列表为空后结束循环，再打印已验证 用户列表：</span></p>
+<p><span class="font0">Verifying user: Candace</span></p>
+<p><span class="font0">Verifying user: Brian</span></p>
+<p><span class="font0">Verifying user: Alice</span></p>
+<p><span class="font0">The following users have been confirmed:</span></p>
+<p><span class="font0">Candace</span></p>
+<p><span class="font0">Brian</span></p>
+<p><span class="font0">Alice</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font2">7.3.2</span><span class="font6"> 删除包含特定值的所有列表元素</span></p></li></ul>
+<p><span class="font8">在第</span><span class="font9">3</span><span class="font8">章中，我们使用函数</span><span class="font4">remove()</span><span class="font8">来删除列表中的特定值，这之所以可行，是因为要删除 的值在列表中只出现了一次。如果要删除列表中所有包含特定值的元素，该怎么办呢？</span></p>
+<p><span class="font8">假设你有一个宠物列表，其中包含多个值为</span><span class="font4">‘cat’</span><span class="font8">的元素。要删除所有这些元素，可不断运 行一个</span><span class="font4">while</span><span class="font8">循环，直到列表中不再包含值</span><span class="font4">'cat'</span><span class="font8">，如下所示：</span></p>
+<p><span class="font1">pets.py</span></p>
+<p><span class="font0">pets </span><span class="font1">= </span><span class="font0">['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']</span></p>
+<p><span class="font0">print(pets)</span></p>
+<p><span class="font0">while 'cat' in pets:</span></p>
+<p><span class="font0">pets.remove('cat')</span></p>
+<p><span class="font0">print(pets)</span></p>
+</body>
+</html>

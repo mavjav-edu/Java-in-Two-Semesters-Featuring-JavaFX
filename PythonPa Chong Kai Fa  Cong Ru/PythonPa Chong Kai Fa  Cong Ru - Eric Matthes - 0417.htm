@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:14pt Arial, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:14pt SimHei, sans-serif; }
+ .font10 { font:9pt SimSun, serif; }
+ .font11 { font:10pt SimSun, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font3">400 </span><span class="font7">第</span><span class="font3">19</span><span class="font7">章用户账户</span></p>
+<p><span class="font3">base.html</span></p>
+<p><span class="font1" style="font-style:italic;">- snip--</span></p>
+<p><span class="font0" style="font-weight:bold;">{% if user.is_authenticated %)</span></p>
+<p><span class="font0" style="font-weight:bold;">Hello, {{ user.username }}.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-weight:bold;">&lt; a href=&quot;{% url 'users:logout' %}&quot;&gt;log out&lt;/a&gt;</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">{% else %]</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0" style="font-weight:bold;">&lt; a href=&quot;{% url 'users:register' %)&quot;&gt;register&lt;/a&gt; -</span></p></li>
+<li>
+<p><span class="font0" style="font-weight:bold;">&lt; a href=&quot;{% url 'users:login' %)&quot;&gt;log in&lt;/a&gt;</span></p></li></ul>
+<p><span class="font0" style="font-weight:bold;">{% endif %]</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1" style="font-style:italic;">- snip--</span></p></li></ul>
+<p><span class="font7">现在，已登录的用户看到的是个性化的问候语和注销链接，而未登录的用户看到的是注册链 接和登录链接。请尝试使用注册页面创建几个用户名各不相同的用户账户。</span></p>
+<p><span class="font7">在下一节，我们将对一些页面进行限制，仅让已登录的用户访问它们，我们还将确保每个主 题都属于特定用户。</span></p>
+<p><span class="font10">注意 </span><span class="font7">这里的注册系统允许用户创建任意数量的账户。有些系统要求用户确认其身份：发送一 封确认邮件，用户回复后其账户才生效。通过这样做，系统生成的垃圾账户将比这里使 用的简单系统少。然而，学习创建应用程序时，完全可以像这里所做的那样，使用简单 的用户注册系统。</span></p>
+<p><span class="font8">动手试一试</span></p>
+<p><span class="font2">19-2</span><span class="font10">博客账户：</span><span class="font7">在你为完成练习</span><span class="font1">19</span><span class="font11">・</span><span class="font1">1</span><span class="font7">而开发的项目</span><span class="font1">Blog</span><span class="font7">中，添加一个用户身份验 证和注册系统。让已登录的用户在屏幕上看到其用户名，并让未注册的用户看到一个到 注册页面的链接。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font5">19.3</span><span class="font9">让用户拥有自己的数据</span></p></li></ul>
+<p><span class="font7">用户应该能够输入其专有的数据，因此我们将创建一个系统，确定各项数据所属的用户，再 限制对页面的访问，让用户只能使用自己的数据。</span></p>
+<p><span class="font7">在本节中，我们将修改模型</span><span class="font1">Topic,</span><span class="font7">让每个主题都归属于特定用户。这也将影响条目，因为 每个条目都属于特定的主题。我们先来限制对一些页面的访问。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font4">19.3.1</span><span class="font8"> 使用</span><span class="font4">@login_required </span><span class="font8">限制访问</span></p></li></ul>
+<p><span class="font1">Django</span><span class="font7">提供了装饰器</span><span class="font1">@login_required,</span><span class="font7">让你能够轻松地实现这样的目标：对于某些页面，只 允许已登录的用户访问它们。装饰器</span><span class="font11">(</span><span class="font1">decorator)</span><span class="font7">是放在函数定义前面的指令，</span><span class="font1">Python</span><span class="font7">在函数运</span></p>
+<p><span class="font6">图灵社区会员江子涛</span><span class="font1">Tesla(jiangzitao201314@foxmail.com)</span><span class="font6">专享尊重版权</span></p>
+</body>
+</html>

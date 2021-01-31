@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:11pt Arial, sans-serif; }
+ .font3 { font:12pt Arial, sans-serif; }
+ .font4 { font:10pt Segoe UI, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:10pt SimHei, sans-serif; }
+ .font7 { font:12pt SimHei, sans-serif; }
+ .font8 { font:8pt SimSun, serif; }
+ .font9 { font:10pt SimSun, serif; }
+ .font10 { font:10pt Times New Roman, serif; }
+ .font11 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font10">13.5 </span><span class="font9">射杀外星人 </span><span class="font10">249</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 删除现有的子弹并新建一群外星人</span></p></li></ul>
+<p><span class="font5">❷ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font0">bullets.empty()</span></p>
+<p><span class="font0">create_fleet(ai_settings, screen, ship, aliens)</span></p>
+<p><span class="font9">在</span><span class="font11" style="font-weight:bold;">❶</span><span class="font9">处，我们检查编组</span><span class="font4">aliens</span><span class="font9">是否为空。如果是，就使用方法</span><span class="font4">empty()</span><span class="font9">删除编组中余下的所 有精灵，从而删除现有的所有子弹。我们还调用了</span><span class="font4">3</span><span class="font6">已己土已_千卜已江)</span><span class="font9">，再次在屏幕上显示一群外 星人。</span></p>
+<p><span class="font9">现在，</span><span class="font4">update_bullets()</span><span class="font9">的定义包含额外的形参</span><span class="font4">ai_settings</span><span class="font9">、</span><span class="font4">screen</span><span class="font9">和</span><span class="font4">ship</span><span class="font9">，因此我们需要 更新</span><span class="font10">@</span><span class="font9">反口</span><span class="font10">/</span><span class="font9">口丫</span><span class="font10">@$10</span><span class="font9">口》丫中对</span><span class="font4">update_bullets()</span><span class="font9">的调用：</span></p>
+<p><span class="font1">alien_invasion.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">#</span><span class="font8"> 开始游戏主循环</span></p></li></ul>
+<p><span class="font0">while True:</span></p>
+<p><span class="font0">gf.check_events(ai_settings, screen, ship, bullets) ship.update()</span></p>
+<p><span class="font0">gf.update_bullets(ai_settings, screen, ship, aliens, bullets) gf.update_aliens(ai_settings, aliens)</span></p>
+<p><span class="font0">gf.update_screen(ai_settings, screen, ship, aliens, bullets)</span></p>
+<p><span class="font9">现在，当前外星人群消灭干净后，将立刻出现一个新的外星人群。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">13.5.4 </span><span class="font7">提高子弹的速度</span></p></li></ul>
+<p><span class="font9">如果你现在尝试在这个游戏中射杀外星人，可能发现子弹的速度比以前慢，这是因为在每次 循环中，</span><span class="font10">Pygame</span><span class="font9">需要做的工作更多了。为提高子弹的速度，可调整</span><span class="font10">settings.py</span><span class="font9">中 </span><span class="font4">bullet_speed_factor</span><span class="font9">的值。例如，如果将这个值增大到</span><span class="font10">3</span><span class="font9">,子弹在屏幕上向上穿行的速度将变得 相当快：</span></p>
+<div>
+<p><span class="font3" style="font-weight:bold;">13</span></p>
+</div><br clear="all">
+<p><span class="font1">settings.py</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font8">子弹设置</span></p></li></ul>
+<p><span class="font0">self.bullet_speed_factor = 3</span></p>
+<p><span class="font0">self.bullet_width = 3</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">--</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+<p><span class="font9">这项设置的最佳值取决于你的系统速度，请找出适合你的值吧。</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font3">13.5.5 </span><span class="font7">重构 </span><span class="font2">update_bullets()</span></p></li></ul>
+<p><span class="font9">下面来重构</span><span class="font4">update_bullets()</span><span class="font9">，使其不再完成那么多任务。我们将把处理子弹和外星人碰撞 的代码移到一个独立的函数中：</span></p>
+<p><span class="font1">game_functions.py</span></p>
+<p><span class="font0">def update_bullets(ai_settings, screen, ship, aliens, bullets):</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li></ul>
+</body>
+</html>

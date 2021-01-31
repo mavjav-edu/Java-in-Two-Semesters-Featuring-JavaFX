@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:7pt SimHei, sans-serif; }
+ .font4 { font:8pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:8pt SimSun, serif; }
+ .font7 { font:10pt SimSun, serif; }
+ .font8 { font:9pt Times New Roman, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">364 </span><span class="font7">第</span><span class="font9">18</span><span class="font7">章 </span><span class="font9">Django</span><span class="font7">入门</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">2.</span><span class="font5"> 向管理网站注册模型</span></p></li></ul>
+<p><span class="font9">Django</span><span class="font7">自动在管理网站中添加了一些模型，如</span><span class="font2">User</span><span class="font7">和</span><span class="font2">Group</span><span class="font7">,但对于我们创建的模型，必须 手工进行注册。</span></p>
+<p><span class="font7">我们创建应用程序</span><span class="font2">learning_logs</span><span class="font7">时，</span><span class="font9">Django</span><span class="font7">在</span><span class="font9">models.py</span><span class="font7">所在的目录中创建了一个名为 </span><span class="font9">admin.py</span><span class="font7">的文件：</span></p>
+<p><span class="font1">admin.py</span></p>
+<p><span class="font0">from django.contrib import admin</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0"># </span><span class="font6">在这里注册你的模型</span></p></li></ul>
+<p><span class="font7">为向管理网站注册</span><span class="font2">Topic</span><span class="font7">，请输入下面的代码：</span></p>
+<p><span class="font0">from django.contrib import admin</span></p>
+<p><span class="font3">❶ </span><span class="font0">from learning_logs.models import Topic</span></p>
+<p><span class="font3">❷ </span><span class="font0">admin.site.register(Topic)</span></p>
+<p><span class="font7">这些代码导入我们要注册的模型</span><span class="font2">Topic </span><span class="font7">(见</span><span class="font5">❶</span><span class="font7">)，再使用</span><span class="font2">admin.site.register()</span><span class="font7">(见</span><span class="font5">❷</span><span class="font7">)让 </span><span class="font9">Django</span><span class="font7">通过管理网站管理我们的模型。</span></p>
+<p><span class="font7">现在，使用超级用户账户访问管理网站：访问</span><a href="http://locmhost:8000/admin/%ef%bc%8c%e5%b9%b6%e8%be%93%e5%85%a5%e4%bd%a0%e5%88%9a%e5%88%9b%e5%bb%ba"><span class="font9">http://locmhost:8000/admin/</span><span class="font7">，并输入你刚创建</span></a><span class="font7"> 的超级用户的用户名和密码，你将看到类似于图</span><span class="font9">18-2</span><span class="font7">所示的屏幕。这个网页让你能够添加和修改 用户和用户组，还可以管理与刚才定义的模型</span><span class="font2">Topic</span><span class="font7">相关的数据。</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0381_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200381-1.jpg" alt="" style="width:349pt;height:173pt;">
+<p><span class="font4">图</span><span class="font8">18-2</span><span class="font4">包含模型</span><span class="font0">Topic</span><span class="font4">的管理网站</span></p>
+</body>
+</html>

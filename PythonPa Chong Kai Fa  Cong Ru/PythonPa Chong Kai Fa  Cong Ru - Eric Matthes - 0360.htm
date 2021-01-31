@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:10pt Arial, sans-serif; }
+ .font2 { font:12pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:7pt SimHei, sans-serif; }
+ .font5 { font:10pt SimHei, sans-serif; }
+ .font6 { font:12pt SimHei, sans-serif; }
+ .font7 { font:8pt SimSun, serif; }
+ .font8 { font:10pt SimSun, serif; }
+ .font9 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font9">17.1 </span><span class="font8">使用 </span><span class="font9">Web API 343</span></p><a name="caption1"></a>
+<h6><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>python_repos.py</span></h6>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">--</span></p></li>
+<li>
+<p><span class="font0">#</span><span class="font7"> 研究有关仓库的信息</span></p></li></ul>
+<p><span class="font0">repo_dicts = response_dict['items']</span></p>
+<p><span class="font0">print(&quot;Repositories returned:&quot;, len(repo_dicts))</span></p>
+<p><span class="font4">❶ </span><span class="font0">print(&quot;\nSelected information about each repository:&quot;)</span></p>
+<p><span class="font4">❷ </span><span class="font0">for repo_dict in repo_dicts:</span></p>
+<p><span class="font0">print('\nName:', repo_dict['name'])</span></p>
+<p><span class="font0">print('Owner:', repo_dict['owner']['login'])</span></p>
+<p><span class="font0">print('Stars:', repo_dict['stargazers_count']) print('Repository:', repo_dict['html_url']) print('Description:', repo_dict['description'])</span></p>
+<h6><a name="bookmark2"></a><span class="font8"><a name="bookmark3"></a>在</span><span class="font5">❶</span><span class="font8">处，我们打印了一条说明性消息。在</span><span class="font5">❷</span><span class="font8">处，我们遍历</span><span class="font3">repo_dicts</span><span class="font8">中的所有字典。在这个 循环中，我们打印每个项目的名称、所有者、星级、在</span><span class="font9">GitHub</span><span class="font8">上的</span><span class="font9">URL</span><span class="font8">以及描述：</span></h6>
+<p><span class="font0">Status code: 200</span></p>
+<p><span class="font0">Total repositories: 713067</span></p>
+<p><span class="font0">Repositories returned: 30</span></p>
+<p><span class="font0">Selected information about each repository:</span></p>
+<p><span class="font0">Name: httpie</span></p>
+<p><span class="font0">Owner: jkbrzt</span></p>
+<p><span class="font0">Stars: 16101</span></p>
+<p><span class="font0">Repository: </span><a href="https://github.com/jkbrzt/httpie"><span class="font0">https://github.com/jkbrzt/httpie</span></a></p>
+<p><span class="font0">Description: CLI HTTP client; user-friendly cURL replacement featuring intuitive UI, JSON support, syntax highlighting, wget-like downloads, extensions, etc.</span></p>
+<p><span class="font0">Name: django</span></p>
+<p><span class="font0">Owner: django</span></p>
+<p><span class="font0">Stars: 15028</span></p>
+<p><span class="font0">Repository: </span><a href="https://github.com/django/django"><span class="font0">https://github.com/django/django</span></a></p>
+<p><span class="font0">Description: The Web framework for perfectionists with deadlines.</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font0">- -</span><span class="font0" style="font-style:italic;">snip</span><span class="font0">-</span></p></li></ul>
+<p><span class="font0">Name: powerline</span></p>
+<p><span class="font0">Owner: powerline</span></p>
+<p><span class="font0">Stars: 4315</span></p>
+<p><span class="font0">Repository: </span><a href="https://github.com/powerline/powerline"><span class="font0">https://github.com/powerline/powerline</span></a></p>
+<p><span class="font0">Description: Powerline is a statusline plugin for vim, and provides statuslines and prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.</span></p>
+<p><span class="font8">上述输出中有一些有趣的项目，可能值得再看一眼。但不要在这上面花费太多时间，因为我 们即将创建的可视化可让你更容易地看清结果。</span></p>
+<ul style="list-style:none;"><li><a name="caption2"></a>
+<h5><a name="bookmark4"></a><span class="font2"><a name="bookmark5"></a>17.1.7</span><span class="font6"> 监视</span><span class="font2">API</span><span class="font6">的速率限制</span></h5></li></ul>
+<p><span class="font8">大多数</span><span class="font9">API</span><span class="font8">都存在速率限制，即你在特定时间内可执行的请求数存在限制。要获悉你是否接近</span></p>
+<p><span class="font2" style="font-weight:bold;">17</span></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:8pt Arial, sans-serif; }
+ .font1 { font:12pt Arial, sans-serif; }
+ .font2 { font:10pt Segoe UI, sans-serif; }
+ .font3 { font:10pt SimHei, sans-serif; }
+ .font4 { font:12pt SimHei, sans-serif; }
+ .font5 { font:9pt SimSun, serif; }
+ .font6 { font:10pt SimSun, serif; }
+ .font7 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font7">420</span></p>
+<p><span class="font6">第</span><span class="font7">20</span><span class="font6">章 设置应用程序的样式并对其进行部署</span></p>
+<p><span class="font6">络连接的人都能够使用它。为此，我们将使用</span><span class="font7">Heroku</span><span class="font6">,这是一个基于</span><span class="font7">Web</span><span class="font6">的平台，让你能够管理 </span><span class="font7">Web</span><span class="font6">应用程序的部署。我们将让“学习笔记”在</span><span class="font7">Heroku</span><span class="font6">上运行。</span></p>
+<p><span class="font6">在</span><span class="font7">Windows</span><span class="font6">系统上的部署过程与在</span><span class="font7">Linux</span><span class="font6">和</span><span class="font7">OS X</span><span class="font6">系统上稍有不同。如果你使用的是</span><span class="font7">Windows</span><span class="font6">， 请阅读各节的“注意”，它们指出了在</span><span class="font7">Windows</span><span class="font6">系统上需要采取的不同做法。</span></p>
+<ul style="list-style:none;"><li><a name="caption1"></a>
+<h5><a name="bookmark0"></a><span class="font1"><a name="bookmark1"></a>20.2.1</span><span class="font4"> 建立</span><span class="font1">Heroku</span><span class="font4">账户</span></h5></li></ul>
+<p><span class="font6">要建立账户，请访问</span><a href="https://heroku.com/%ef%bc%8c%e5%b9%b6%e5%8d%95%e5%87%bb%e5%85%b6%e4%b8%ad%e7%9a%84%e4%b8%80%e4%b8%aa%e6%b3%a8%e5%86%8c%e9%93%be%e6%8e%a5%e3%80%82%e6%b3%a8%e5%86%8c%e8%b4%a6%e6%88%b7%e6%98%af%e5%85%8d%e8%b4%b9%e7%9a%84%ef%bc%8c"><span class="font7">https://heroku.com/</span><span class="font6">，并单击其中的一个注册链接。注册账户是免费的，</span></a></p>
+<p><span class="font7">Heroku</span><span class="font6">提供了免费试用服务，让你能够将项目部署到服务器并对其进行测试。</span></p>
+<p><span class="font3">注意</span><span class="font7">Heroku</span><span class="font5">提供的免费试用服务存在一些限制，如可部署的应用程序数量以及用户访问应用</span></p>
+<p><span class="font5">程序的频率。但这些限制都很宽松，让你完全能够在不支付任何费用的情况下练习部署 应用程序。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark2"></a><span class="font1"><a name="bookmark3"></a>20.2.2</span><span class="font4"> 安装 </span><span class="font1">Heroku Toolbelt</span></h5></li></ul>
+<p><span class="font6">要将项目部署到</span><span class="font7">Heroku</span><span class="font6">的服务器并对其进行管理，需要使用</span><span class="font7">Heroku Toolbelt</span><span class="font6">提供的工具。要 安装最新的</span><span class="font7">Heroku Toolbelt</span><span class="font6">版本，请访问</span><a href="https://toolbeltheroku.com/%ef%bc%8c%e5%b9%b6%e6%a0%b9%e6%8d%ae%e4%bd%a0%e4%bd%bf%e7%94%a8%e7%9a%84%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e6%8c%89"><span class="font7">https://toolbeltheroku.com/</span><span class="font6">，并根据你使用的操作系统按</span></a><span class="font6"> 相关的说明做：使用只包含一行的终端命令，或下载并运行安装程序。</span></p>
+<ul style="list-style:none;"><li>
+<h5><a name="bookmark4"></a><span class="font1"><a name="bookmark5"></a>20.2.3</span><span class="font4"> 安装必要的包</span></h5></li></ul>
+<p><span class="font6">你还需安装很多包，以帮助在服务器上支持</span><span class="font7">Django</span><span class="font6">项目提供的服务。为此，在活动的虚拟环 境中执行如下命令：</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip install dj-database-url</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip install dj-static</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip install static3</span></p>
+<p><span class="font0">(ll_env)learning_log$ </span><span class="font0" style="font-weight:bold;">pip install gunicorn</span></p>
+<p><span class="font6">务必逐个地执行这些命令，这样你就能知道哪些包未能正确地安装。</span><span class="font2">dj-database-url</span><span class="font6">包帮助 </span><span class="font7">Django</span><span class="font6">与</span><span class="font7">Heroku</span><span class="font6">使用的数据库进行通信，</span><span class="font2">dj-static</span><span class="font6">和</span><span class="font2">static3</span><span class="font6">包帮助</span><span class="font7">Django</span><span class="font6">正确地管理静态文件， 而</span><span class="font2">gunicorn</span><span class="font6">是一个服务器软件，能够在在线环境中支持应用程序提供的服务。（静态文件包括样 式规则和</span><span class="font7">JavaScript</span><span class="font6">文件。）</span></p>
+<p><span class="font3">注意 </span><span class="font5">在</span><span class="font7">Windows</span><span class="font5">系统中，有些必不可少的包可能无法安装，因此如果在你尝试安装有些这样 的包时出现错误消息，也不用担心。重要的是让</span><span class="font7">Heroku</span><span class="font5">在部署中安装这些包，下一节就 将这样做。</span></p>
+</body>
+</html>

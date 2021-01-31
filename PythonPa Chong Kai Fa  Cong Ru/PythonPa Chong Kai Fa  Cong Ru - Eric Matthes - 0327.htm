@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:7pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Segoe UI, sans-serif; }
+ .font4 { font:5pt SimHei, sans-serif; }
+ .font5 { font:6pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:10pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:9pt SimSun, serif; }
+ .font10 { font:10pt SimSun, serif; }
+ .font11 { font:9pt Times New Roman, serif; }
+ .font12 { font:10pt Times New Roman, serif; }
+ .font13 { font:11pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font12">310</span></p>
+<p><span class="font10">第</span><span class="font12">15</span><span class="font10">章 生成数据</span></p>
+<p><span class="font1">hist.x_title = &quot;Result&quot;</span></p>
+<p><span class="font1">hist.y_title = &quot;Frequency of Result&quot;</span></p>
+<p><span class="font1">hist.add('D6 + D10', frequencies)</span></p>
+<p><span class="font1">hist.render_to_file('dice_visual.svg')</span></p>
+<p><span class="font10">为创建</span><span class="font12">D10</span><span class="font10">骰子，我们在创建第二</span><span class="font2">j</span><span class="font3">Die</span><span class="font10">实例时传递了实参</span><span class="font3">10 </span><span class="font10">（见</span><span class="font13" style="font-weight:bold;">❶</span><span class="font10">）。我们还修改了第一个 循环，以模拟掷骰子</span><span class="font12">50 000</span><span class="font10">次而不是</span><span class="font12">1000</span><span class="font10">次。可能出现的最小总点数依然是</span><span class="font12">2</span><span class="font10">，但现在可能出现 的最大总点数为</span><span class="font12">16</span><span class="font10">,因此我们相应地调整了标题、</span><span class="font12" style="font-style:italic;">x</span><span class="font10">轴标签和数据系列标签（见</span><span class="font7">❷</span><span class="font10">）。</span></p>
+<p><span class="font10">图</span><span class="font12">15-13</span><span class="font10">显示了最终的图表。可能性最大的点数不是一个，而是</span><span class="font12">5</span><span class="font10">个，这是因为导致出现最小 点数和最大点数的组合都只有一种（</span><span class="font12">1</span><span class="font10">和</span><span class="font12">1</span><span class="font10">以及</span><span class="font12">6</span><span class="font10">和</span><span class="font12">10</span><span class="font10">），但面数较小的骰子限制了得到中间点数的 组合数：得到总点数</span><span class="font12">7</span><span class="font10">、</span><span class="font12">8</span><span class="font10">、</span><span class="font12">9</span><span class="font10">、</span><span class="font12">10</span><span class="font10">和</span><span class="font12">11</span><span class="font10">的组合数都是</span><span class="font12">6</span><span class="font10">种。因此，这些总点数是最常见的结果，它 们出现的可能性相同。</span></p>
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0327_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200327-1.jpg" alt="" style="width:319pt;height:23pt;">
+<p><span class="font0" style="font-weight:bold;">Results of rolling a D6 and a</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font4" style="font-weight:bold;">tris e aM-o </span><span class="font5">Auuorlb ①」</span><span class="font4" style="font-weight:bold;">LL.</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0327_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200327-2.jpg" alt="" style="width:147pt;height:149pt;">
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0327_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200327-3.jpg" alt="" style="width:91pt;height:175pt;">
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div style="border-top:solid;">
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<p><span class="font6">图</span><span class="font11">15-13 </span><span class="font6">同时掷</span><span class="font11">6</span><span class="font6">面骰子和</span><span class="font11">10</span><span class="font6">面骰子</span><span class="font11">50 000</span><span class="font6">次的结果</span></p>
+<p><span class="font10">通过使用</span><span class="font12">Pygal</span><span class="font10">来模拟掷骰子的结果，能够非常自由地探索这种现象。只需几分钟，就可以 掷各种骰子很多次。</span></p>
+<p><span class="font8">/ \ 动手试一试</span></p>
+<p><span class="font2">15-6</span><span class="font7">自动生成标签</span><span class="font9">：请修改</span><span class="font12">die.py</span><span class="font9">和</span><span class="font12">dice_visual.py</span><span class="font9">,将用来设置</span><span class="font3">hist.x_labels</span><span class="font9">值 的列表替换为一个自动生成这种列表的循环。如果你熟悉列表解析，可尝试将 </span><span class="font12">die_visual.py</span><span class="font9">和</span><span class="font12">dice_visual.py</span><span class="font9">中的其他</span><span class="font3">for</span><span class="font9">循环也替换为列表解析。</span></p>
+</body>
+</html>

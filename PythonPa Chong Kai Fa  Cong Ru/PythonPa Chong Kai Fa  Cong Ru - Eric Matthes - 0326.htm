@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="generator" content="ABBYY FineReader PDF 15">
+<style type="text/css">
+ table.main {}
+ tr.row {}
+ td.cell {}
+ div.block {}
+ div.paragraph {}
+ .font0 { font:4pt Arial, sans-serif; }
+ .font1 { font:8pt Arial, sans-serif; }
+ .font2 { font:9pt Arial, sans-serif; }
+ .font3 { font:10pt Arial, sans-serif; }
+ .font4 { font:12pt Arial, sans-serif; }
+ .font5 { font:7pt SimHei, sans-serif; }
+ .font6 { font:8pt SimHei, sans-serif; }
+ .font7 { font:9pt SimHei, sans-serif; }
+ .font8 { font:12pt SimHei, sans-serif; }
+ .font9 { font:8pt SimSun, serif; }
+ .font10 { font:9pt SimSun, serif; }
+ .font11 { font:10pt SimSun, serif; }
+ .font12 { font:8pt Times New Roman, serif; }
+ .font13 { font:9pt Times New Roman, serif; }
+ .font14 { font:10pt Times New Roman, serif; }
+
+</style>
+</head>
+<body>
+<p><span class="font14">15.4</span><span class="font11">使用</span><span class="font14">Pygal</span><span class="font11">模拟掷骰子</span></p>
+<p><span class="font14">309</span></p>
+<div>
+<p><span class="font0" style="font-weight:bold;">Results of rolling two I</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font0" style="font-weight:bold;">1000 times. - Chromium</span></p>
+</div><br clear="all">
+<div>
+<p><span class="font0" style="font-weight:bold;">Results oF rolling two x</span></p>
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0326_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200326-1.jpg" alt="" style="width:122pt;height:6pt;">
+</div><br clear="all">
+<div><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0326_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200326-2.jpg" alt="" style="width:10pt;height:6pt;">
+</div><br clear="all">
+<div style="border-top:solid;">
+<p><span class="font7">jo Aou ① nb ① JU-</span></p><img src="PythonPa Chong Kai Fa  Cong Ru - Eric Matthes - 0326_files/PythonPa20Chong20Kai20Fa2020Cong20Ru20-20Eric20Matthes20-200326-3.jpg" alt="" style="width:228pt;height:176pt;">
+</div><br clear="all">
+<p><span class="font2">□ D6 + D6 </span><span class="font12">i60.o</span></p>
+<p><span class="font12">150.0</span></p>
+<p><span class="font12">140.0</span></p>
+<p><span class="font12">130.0</span></p>
+<p><span class="font12">120.0</span></p>
+<p><span class="font12">110.0</span></p>
+<p><span class="font12">100.0</span></p>
+<p><span class="font6">图</span><span class="font13">15-12 </span><span class="font6">模拟同时掷两个</span><span class="font13">6</span><span class="font6">面骰子</span><span class="font13">1000</span><span class="font6">次的结果</span></p>
+<p><span class="font4">15.4.8 </span><span class="font8">同时掷两个面数不同的骰子</span></p>
+<p><span class="font11">下面来创建一个</span><span class="font14">6</span><span class="font11">面骰子和一个</span><span class="font14">10</span><span class="font11">面骰子，看看同时掷这两个骰子</span><span class="font14">50 000</span><span class="font11">次的结果如何：</span></p>
+<p><span class="font3">different_dice.py</span></p>
+<p><span class="font1">from die import Die</span></p>
+<p><span class="font1">import pygal</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font9"> 创建一个</span><span class="font1">D6</span><span class="font9">和一个</span><span class="font1">D10</span></p></li></ul>
+<p><span class="font1">die_1 = Die()</span></p>
+<p><span class="font5">❶ </span><span class="font1">die_2 = Die(10</span><span class="font10">)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font9"> 掷骰子多次，并将结果存储在一个列表中</span></p></li></ul>
+<p><span class="font1">results = []</span></p>
+<p><span class="font1">for roll_num in range(50000):</span></p>
+<p><span class="font1">result = die_1.roll() + die_2.roll() results.append(result)</span></p>
+<ul style="list-style:none;"><li>
+<p><span class="font1">#</span><span class="font9"> 分析结果</span></p></li>
+<li>
+<p><span class="font1">- -</span><span class="font1" style="font-style:italic;">snip</span><span class="font1">--</span></p></li></ul>
+<p><span class="font1"># </span><span class="font9">可视化结果</span></p>
+<p><span class="font1">hist = pygal.Bar()</span></p>
+<p><span class="font5">❷ </span><span class="font1">hist.title = &quot;Results of rolling a D6 and a D10 50,000 times.&quot; hist.x_labels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16']</span></p>
+<div>
+<p><span class="font4" style="font-weight:bold;">15</span></p>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+<div>
+</div><br clear="all">
+</body>
+</html>
