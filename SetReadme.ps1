@@ -17,7 +17,7 @@ foreach ($htmlFile in $htmlFiles) {
     $chNum = [int](Select-String -InputObject $htmlFile.Name -Pattern $chFileNamePattern).Matches.Groups[1].Value
     $chPath = (Resolve-Path "chapter$chNum*" -Relative)  -replace '^\.\\',''
     $README_md = Join-Path $chPath 'README.md'
-    # $chTitle has XPath //section[@class='selfTestQuestions Section1 RenderAsSection1'][1]
+    # $chTitle has XPath //section[@class='selfTestQuestions'][1]
     $chTitle = $HTML.getElementsByClassName("ChapterTitle")[0].innerHTML -replace "\d+\.&.*;",''
     $selfTests = $HTML.getElementsByClassName('selfTestQuestions')
     $exercises = $HTML.getElementsByClassName('programmingExercises')
